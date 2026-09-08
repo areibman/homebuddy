@@ -6,5 +6,5 @@ globalThis.FileReader=class {readAsArrayBuffer(blob){blob.arrayBuffer().then(v=>
 const plan=JSON.parse(await fs.readFile('app/decorate/plan.json','utf8'));
 const architecture=buildArchitecture(plan);const {root}=architecture;if(process.argv.includes('--cutaway'))architecture.cutaway(true);root.updateMatrixWorld(true);
 const glb=await new GLTFExporter().parseAsync(root,{binary:true});
-await fs.writeFile(process.argv.includes('--cutaway')?'/tmp/homebuddy-architecture-cutaway.glb':'public/plans/spera-architecture.glb',Buffer.from(glb));
+await fs.writeFile(process.argv.includes('--cutaway')?'public/plans/spera-cutaway.glb':'public/plans/spera-architecture.glb',Buffer.from(glb));
 console.log(`Exported shared architecture: ${glb.byteLength} bytes`);

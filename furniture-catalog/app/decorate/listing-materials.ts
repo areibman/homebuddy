@@ -1,8 +1,8 @@
 import * as T from 'three';
-import listing from './listing.json';
-
-/** Sample actual listing photographs; mirrored wrapping keeps crop edges continuous. */
-export async function loadListingMaterials(anisotropy:number){
+import defaultListing from './listing.json';
+import type {Listing} from './home-definitions';
+/** Sample archived listing photographs. Each surface keeps its own provenance. */
+export async function loadListingMaterials(anisotropy:number,listing:Listing=defaultListing){
  const textures:T.Texture[]=[];
  const sample=async(source:{src:string;crop:number[]})=>{
   const image=await new T.ImageLoader().loadAsync(source.src);
@@ -12,6 +12,7 @@ export async function loadListingMaterials(anisotropy:number){
   const texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;
   texture.wrapS=texture.wrapT=T.MirroredRepeatWrapping;texture.anisotropy=anisotropy;textures.push(texture);return texture;
  };
- const results=await Promise.allSettled([sample(listing.finishes.floor),sample(listing.finishes.wall),sample(listing.finishes.carpet)]);
- return {floor:results[0].status==='fulfilled'?results[0].value:null,wall:results[1].status==='fulfilled'?results[1].value:null,carpet:results[2].status==='fulfilled'?results[2].value:null,dispose:()=>textures.forEach(texture=>texture.dispose())};
+ const entries=Object.entries(listing.finishes),results=await Promise.allSettled(entries.map(([,source])=>sample(source)));
+ const maps:Record<string,T.Texture|null>={};entries.forEach(([key],i)=>{const result=results[i];maps[key]=result.status==='fulfilled'?result.value:null;});
+ return {maps,dispose:()=>textures.forEach(texture=>texture.dispose())};
 }

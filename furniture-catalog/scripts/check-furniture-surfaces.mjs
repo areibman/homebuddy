@@ -5,7 +5,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createFurnitureCollisions} from '../app/decorate/furniture-collisions.ts';
 import {createPlayer,stepPlayer,PLAYER} from '../app/decorate/player.ts';
 
-const items=JSON.parse(readFileSync('app/decorate/items.json'));
+const items=JSON.parse(readFileSync('app/catalog.json'));
 const collisions=createFurnitureCollisions(),floor=[[-5,-5,10,10]],idle={x:0,z:0,yaw:0,run:false,jump:false};
 // Geometry-only copies of the shipped GLBs keep this physics check independent of image decoding.
 async function model(id){

@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import * as T from 'three';
+import {createFurnitureVisibility} from '../app/decorate/furniture-visibility.ts';
+const scene=new T.Scene(),furniture=[new T.Group(),new T.Group()];
+furniture.forEach((g,i)=>{g.position.set(i+1,.01,3);g.rotation.y=.6;scene.add(g);});
+const transforms=furniture.map(g=>({position:g.position.clone(),rotation:g.quaternion.clone()}));
+const motion=createFurnitureVisibility(furniture);
+motion.setVisible(false,0);motion.update(400);assert(motion.active);assert(furniture[0].parent.position.y>0);
+motion.update(1000);assert(!motion.active);assert(furniture.every(g=>!g.visible&&g.parent===scene));
+motion.setVisible(true,1000);assert(furniture.every(g=>g.visible));motion.update(2000);
+furniture.forEach((g,i)=>{assert(g.position.equals(transforms[i].position));assert(g.quaternion.equals(transforms[i].rotation));assert.equal(g.parent,scene);});
+motion.setVisible(false,2000);motion.update(2300);motion.restore();assert(furniture.every(g=>g.visible&&g.parent===scene));
+motion.setVisible(false,3000,true);assert(!motion.active);assert(furniture.every(g=>!g.visible));motion.restore();
+assert.equal(scene.children.length,2);console.log('PASS: fly-out/in, exact placement preservation, interrupted restoration, reduced motion, and wrapper cleanup.');

@@ -54,7 +54,9 @@ try{
  await picture('on-bed');console.log('PASS: Space + W lands on the real bed mattress',landed);
  await page.keyboard.down('s');await page.waitForFunction(()=>window.__player.z>2.6);await page.keyboard.up('s');await page.waitForFunction(()=>window.__player.y===0);
  console.log('PASS: walking off the bed returns to the floor');
+ await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.pointerLockElement);
  await page.getByRole('button',{name:'Isometric',exact:true}).click();await page.setViewportSize({width:390,height:844});
+ await page.waitForFunction(()=>window.__camera.isOrthographicCamera&&document.querySelector('.room-canvas canvas').clientWidth===390);
  const mobile=await point(0);await page.mouse.click(mobile.x,mobile.y);
  await page.waitForTimeout(300);assert(Math.abs(await angle(0))<.001);
  await picture('mobile-closed');assert.deepEqual(errors,[]);

@@ -48,6 +48,9 @@ export default defineConfig(async ({ command }) => {
   const { cloudflare } = await import('@cloudflare/vite-plugin');
 
   return {
+    // Standalone verification servers must not replace the live preview's
+    // optimized modules. Builds also get their own cache while dev stays open.
+    cacheDir: command === 'build' ? 'node_modules/.vite-build' : 'node_modules/.vite-dev',
     css: { postcss: { plugins: [tailwindcss()] } },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }

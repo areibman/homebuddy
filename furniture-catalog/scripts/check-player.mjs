@@ -16,7 +16,7 @@ const air=createPlayer(3,4);step(air,{jump:true});step(air,{},[],floor,20);const
 const ceiling=createPlayer(3,4);for(let i=0;i<120;i++)stepPlayer(ceiling,{...idle,jump:i===0},1/120,[],floor,2);assert(ceiling.y+PLAYER.height<=2,'head collision');
 const landing=createPlayer(3,4);landing.y=1.1;landing.grounded=false;step(landing,{},[box(2,0,3,4,.5,5)],floor,120);assert.equal(landing.y,.5,'land on low furniture');assert(landing.grounded);
 const run=createPlayer(1,1),walk=createPlayer(1,1);step(run,{z:1,run:true},[],floor,120);step(walk,{z:1},[],floor,120);assert(run.z>walk.z+1,'sprint faster than walk');
-const plan=JSON.parse(fs.readFileSync('app/decorate/plan.json'));const items=JSON.parse(fs.readFileSync('app/decorate/items.json'));
+const plan=JSON.parse(fs.readFileSync('app/decorate/plan.json'));const items=JSON.parse(fs.readFileSync('app/catalog.json'));
 const obstacles=[...buildArchitecture(plan).colliders,...plan.furniture.filter(f=>f.id!=='rug').map(f=>{const d=items.find(i=>i.id===f.id).dimensions_m;const w=Math.abs(Math.cos(f.r))*d.width+Math.abs(Math.sin(f.r))*d.depth,h=Math.abs(Math.sin(f.r))*d.width+Math.abs(Math.cos(f.r))*d.depth;return box(f.x-w/2,.01,f.z-h/2,f.x+w/2,d.height+.01,f.z+h/2);})];
 const player=createPlayer(),queue=[[57,71]],seen=new Set(['57,71']);assert(!blocked(player,player.x,player.z,obstacles,plan.floors));
 for(let n=0;n<queue.length;n++){const [x,z]=queue[n];for(const [a,b] of [[x+1,z],[x-1,z],[x,z+1],[x,z-1]]){const k=[a,b].join(',');if(!seen.has(k)&&!blocked(player,a/10,b/10,obstacles,plan.floors)){seen.add(k);queue.push([a,b]);}}}

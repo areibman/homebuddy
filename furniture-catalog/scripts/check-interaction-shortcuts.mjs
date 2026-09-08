@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {interactionAction,rightClickAction,rotationDelta} from '../app/decorate/interaction-shortcuts.ts';
+import {interactionAction,rightClickAction,snappedRotation} from '../app/decorate/interaction-shortcuts.ts';
 for(const placing of [false,true])for(const selected of [false,true])assert.equal(interactionAction('E',placing,selected),'inventory');
 assert.equal(interactionAction('Enter',true,false),'place');
 assert.equal(rightClickAction(false,true),'details');
@@ -13,12 +13,24 @@ for(const key of ['Delete','Backspace']){
  assert.equal(interactionAction(key,false,false),null);
 }
 assert.equal(interactionAction('Escape',true,true),'cancel');
-assert.equal(interactionAction('r',true,true),null,'rotation uses elapsed time, never keyboard repeat steps');
-const rotation=(key,fps)=>Array.from({length:fps},()=>rotationDelta(new Set([key]),1/fps)).reduce((a,b)=>a+b,0);
-assert(Math.abs(rotation('r',30)-Math.PI/2)<1e-9);
-assert(Math.abs(rotation('r',144)-rotation('r',30))<1e-9,'rotation speed is independent of refresh rate');
-assert.equal(rotationDelta(new Set(['q','r']),.1),0);
-assert.equal(rotationDelta(new Set(['r','shift']),1),Math.PI/8);
-assert.equal(rotationDelta(new Set(),1),0,'releasing keys stops rotation');
-assert(rotationDelta(new Set(['q']),1/60)<0);
-console.log('PASS: E inventory in all states; right-click is details only; Escape cancel; smooth frame-independent Q/R and precision rotation.');
+assert.equal(interactionAction('Escape',false,false,true),null,'hover cannot consume Escape and trap mouse look');
+assert.equal(interactionAction('Delete',false,false,true),'remove');
+const rad=degrees=>degrees*Math.PI/180;
+const near=(actual,degrees)=>assert(Math.abs(actual-rad(degrees))<1e-9,`expected ${degrees}°, got ${actual*180/Math.PI}°`);
+near(snappedRotation(0,'r'),15);
+near(snappedRotation(0,'q'),345);
+near(snappedRotation(rad(7),'q'),0);
+near(snappedRotation(rad(7),'r'),15);
+near(snappedRotation(rad(-7),'q'),345);
+near(snappedRotation(rad(-7),'r'),0);
+near(snappedRotation(rad(15),'r',true),90);
+near(snappedRotation(rad(105),'q',true),90);
+near(snappedRotation(rad(270),'r',true),0);
+near(snappedRotation(3.14159,'r'),195);
+near(snappedRotation(3.14159,'q'),165);
+let angle=0;
+for(let i=0;i<24;i++){angle=snappedRotation(angle,'r');if((i+1)%6===0)near(angle,((i+1)*15)%360);}
+near(angle,0);
+for(let i=0;i<2400;i++)angle=snappedRotation(angle,'q');
+near(angle,0);
+console.log('PASS: inventory/deletion/cancel shortcuts; 15° stops, exact cardinal angles, 90° shortcuts, imported off-grid angles, and wraparound without drift.');

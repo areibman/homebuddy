@@ -3,7 +3,7 @@ import {useRef,useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type {Home} from '../city/explorer';
-import items from './items.json';
+import items from '../catalog.json';
 import './floor-plan-editor.css';
 
 type Piece={key:number;id:string;x:number;y:number;rotation:number};

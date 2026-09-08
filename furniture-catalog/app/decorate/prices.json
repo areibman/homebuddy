@@ -88,5 +88,95 @@
     "checked_date": "2026-09-08",
     "url": "https://www.ikea.com/us/en/p/lauters-floor-lamp-ash-white-00405048/",
     "note": "Light bulb sold separately."
+  },
+  {
+    "id": "glostad",
+    "article_number": "405.959.42",
+    "amount": 199.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/glostad-sofa-knisa-dark-gray-40595942/",
+    "note": ""
+  },
+  {
+    "id": "uppland",
+    "article_number": "194.424.80",
+    "amount": 849.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/uppland-sofa-hakebo-gray-green-s19442480/",
+    "note": ""
+  },
+  {
+    "id": "stockholm",
+    "article_number": "005.860.96",
+    "amount": 1999.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/stockholm-2025-sofa-sundhamn-beige-00586096/",
+    "note": ""
+  },
+  {
+    "id": "klippan",
+    "article_number": "090.106.17",
+    "amount": 349.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/klippan-loveseat-vissle-gray-s09010617/",
+    "note": ""
+  },
+  {
+    "id": "hyltarp",
+    "article_number": "394.896.45",
+    "amount": 1199.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/hyltarp-sofa-hallarp-white-s39489645/",
+    "note": ""
+  },
+  {
+    "id": "gullvalla",
+    "article_number": "806.185.12",
+    "amount": 449.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/gullvalla-sofa-silkeryd-gray-green-80618512/",
+    "note": ""
+  },
+  {
+    "id": "morabo",
+    "article_number": "893.178.59",
+    "amount": 1049.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/morabo-sofa-grann-bomstad-gray-green-wood-s89317859/",
+    "note": "Catalog sale price, while supplies last."
+  },
+  {
+    "id": "finnala",
+    "article_number": "093.190.70",
+    "amount": 1299.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/finnala-sofa-grann-bomstad-golden-brown-s09319070/",
+    "note": "Catalog sale price, while supplies last."
+  },
+  {
+    "id": "lillesaeter",
+    "article_number": "406.190.85",
+    "amount": 999.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/lillesaeter-sofa-axvall-off-white-40619085/",
+    "note": ""
+  },
+  {
+    "id": "mannarp",
+    "article_number": "696.040.69",
+    "amount": 649.0,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/mannarp-sofa-with-chaise-gunnared-beige-s69604069/",
+    "note": ""
   }
 ]

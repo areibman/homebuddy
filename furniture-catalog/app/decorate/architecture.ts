@@ -2,10 +2,10 @@ import * as T from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {createHingedDoor} from './hinged-door.ts';
 
-export type Fixture = {type:'closet'|'walk-in-closet'|'laundry'|'toilet'|'vanity'|'bathtub'|'shower'|'stove'|'dishwasher'|'sink'|'cabinet'|'refrigerator';x:number;z:number;width:number;depth:number;height:number;rotation?:number};
+export type Fixture = {type:'closet-interior'|'microwave'|'shelving'|'closet'|'walk-in-closet'|'laundry'|'toilet'|'vanity'|'bathtub'|'shower'|'stove'|'dishwasher'|'sink'|'cabinet'|'refrigerator';x:number;z:number;width:number;depth:number;height:number;rotation?:number;upper?:boolean;cooktop?:string;island?:boolean;y?:number;freezer?:string};
 export type Opening = {wall:number;start:number;width:number;sill:number;height:number};
-export type Door = {x:number;z:number;width:number;rotation:number;swing:number};
-export type ArchitecturePlan = {height:number;walls:number[][];fixtures:Fixture[];windows:Opening[];doors:Door[]};
+export type Door = {x:number;z:number;width:number;rotation:number;swing:number;label?:string;leaves?:2;initialOpen?:boolean;keepFullHeight?:boolean;glazed?:boolean};
+export type ArchitecturePlan = {height:number;closetVolumes?:{name:string;rect:number[];side:string;start:number;opening:number}[];walls:number[][];fixtures:Fixture[];windows:Opening[];doors:Door[];appearance?:{wood?:string;stone?:string;wall?:string;refrigerator?:string;trim?:boolean};columns?:number[][];lights?:number[][];surfacePanels?:{line:number[];height:number;bottom:number;finish:string}[]};
 const materials = () => ({
  ceramic:new T.MeshStandardMaterial({color:'#fafbf9',roughness:.24}),
  wood:new T.MeshStandardMaterial({color:'#a9b9ac',roughness:.62}),
@@ -20,8 +20,9 @@ const materials = () => ({
 /** Shared architecture for the interactive room and downloadable scene. Units are metres. */
 export function buildArchitecture(plan:ArchitecturePlan){
  const root=new T.Group();root.name='Floor plan architecture';
- const m=materials(),colliders:T.Box3[]=[],wallMeshes:T.Mesh[]=[],doorMeshes:T.Mesh[]=[],wallMounted:T.Object3D[]=[];
+ const m=materials(),colliders:T.Box3[]=[],wallMeshes:T.Mesh[]=[],doorMeshes:T.Mesh[]=[],wallMounted:T.Object3D[]=[],fixtureColliders:T.Box3[]=[];
  const doors:ReturnType<typeof createHingedDoor>[]=[];
+ if(plan.appearance){for(const key of ['wood','stone','wall'] as const){const color=plan.appearance[key];if(color)m[key].color.set(color);}}
  function mesh(parent:T.Object3D,name:string,g:T.BufferGeometry,material:T.Material,x=0,y=0,z=0){const o=new T.Mesh(g,material);o.name=name;o.position.set(x,y,z);o.castShadow=material!==m.glass;o.receiveShadow=true;const raycast=o.raycast.bind(o);o.raycast=(ray,hits)=>{for(let a:T.Object3D|null=o;a;a=a.parent){if(!a.visible)return;}raycast(ray,hits);};parent.add(o);return o;}
  function box(p:T.Object3D,n:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:T.Material){return mesh(p,n,new T.BoxGeometry(w,h,d),mat,x,y,z);}
  function cylinder(p:T.Object3D,n:string,x:number,y:number,z:number,r:number,h:number,mat:T.Material){return mesh(p,n,new T.CylinderGeometry(r,r,h,24),mat,x,y,z);}
@@ -55,18 +56,55 @@ export function buildArchitecture(plan:ArchitecturePlan){
   const top=roundedOutline(w+.025,d+.025,.012);top.holes.push(roundedOutline(bw,bd,.05));horizontalShape(p,'Fitted countertop',top,h-.02,.04,m.stone);
  }
  for(const f of plan.fixtures){
-  const g=new T.Group();g.name=f.type;g.position.set(f.x,0,f.z);g.rotation.y=f.rotation||0;root.add(g);const {width:w,depth:d,height:h}=f;
+  const g=new T.Group();g.name=f.type;g.position.set(f.x,f.y??0,f.z);g.rotation.y=f.rotation||0;root.add(g);const {width:w,depth:d,height:h}=f;
   // Collision follows the installed footprint, independent of decorative mesh detail.
-  const collision=new T.Box3(new T.Vector3(-w/2,0,-d/2),new T.Vector3(w/2,h,d/2));g.updateMatrixWorld(true);colliders.push(collision.applyMatrix4(g.matrixWorld));
+  const collision=new T.Box3(new T.Vector3(-w/2,0,-d/2),new T.Vector3(w/2,h,d/2));g.updateMatrixWorld(true);collision.applyMatrix4(g.matrixWorld);colliders.push(collision);fixtureColliders.push(collision);
   switch(f.type){
+   case 'microwave':{
+    roundedBox(g,'Microwave housing',0,h/2,0,w,h,d,m.metal,.012);
+    box(g,'Microwave glass door',-w*.10,h*.50,d/2+.006,w*.71,h*.76,.013,m.dark);
+    handle(g,w*.22,h*.50,d/2+.035,h*.57);
+    box(g,'Microwave display',w*.36,h*.73,d/2+.013,w*.15,h*.16,.01,m.dark);
+    for(const y of [.28,.42,.55])box(g,'Microwave controls',w*.36,h*y,d/2+.015,w*.12,.01,.01,m.ceramic);break;
+   }
+   case 'closet-interior':{
+    g.name='Closet hanging storage';
+    box(g,'Closet overhead shelf',0,h-.22,0,w,.025,d,m.ceramic);
+    const rod=cylinder(g,'Clothes rail',0,h-.40,0,.012,w-.06,m.metal);rod.rotation.z=Math.PI/2;
+    for(const x of [-w*.33,w*.33])box(g,'Rail wall bracket',x,h-.40,-d*.24,.025,.025,d*.5,m.metal);
+    break;
+   }
+   case 'shelving':{
+    box(g,'Cupboard back',0,h/2,-d/2,w,h,.025,m.ceramic);
+    for(const sign of [-1,1])box(g,'Cupboard side',sign*(w/2-.012),h/2,0,.025,h,d,m.ceramic);
+    for(const y of [.05,.45,.85,1.25,1.65,2.1])if(y<h)box(g,'Storage shelf',0,y,0,w,.025,d,m.ceramic);break;
+   }
    case 'closet':case 'walk-in-closet':{
-    box(g,'Closet back',0,h/2,-d/2+.02,w,h,.04,m.oak);
-    for(const sign of [-1,1])box(g,'Closet side',sign*(w/2-.025),h/2,0,.05,h,d,m.oak);
-    for(const y of [.08,.42,h-.25])box(g,'Closet shelf',0,y,0,w-.06,.035,d-.04,m.oak);
-    const rod=cylinder(g,'Hanging rail',0,h-.52,0,.016,w-.12,m.metal);rod.rotation.z=Math.PI/2;
-    for(let x=-w*.35;x<w*.4;x+=.18){pipe(g,'Clothes hanger',[[x,h-.5,0],[x,h-.62,0],[x-.06,h-.76,0],[x+.06,h-.76,0],[x,h-.62,0]],.006);}
-    // Park the sliding leaf over one half so the shelves and rail remain visible.
-    box(g,'Sliding closet door',w*.25,h/2,d/2,w*.48,h-.06,.035,m.ceramic);handle(g,w*.12,h*.48,d/2+.035,.08);
+    // Fitted white millwork with separate storage bays and aligned paired doors.
+    const finish=m.ceramic,t=.025,front=d/2+.035;
+    box(g,'Closet back',0,h/2,-d/2+t/2,w,h,t,finish);
+    for(const sign of [-1,1])box(g,'Closet side',sign*(w/2-t/2),h/2,0,t,h,d,finish);
+    for(const y of [t/2,h-t/2])box(g,'Closet cap',0,y,0,w-2*t,t,d,finish);
+    const divider=-w*.18;
+    box(g,'Closet divider',divider,h/2,0,t,h-.05,d-.04,finish);
+    const shelfWidth=w*.32-t*1.5,shelfX=-w/2+t+shelfWidth/2;
+    for(const y of [.38,.76,1.14,1.52,1.9])box(g,'Closet shelf',shelfX,y,-.015,shelfWidth,t,d-.08,finish);
+    const railWidth=w*.68-.065,railX=divider+.025+railWidth/2;
+    box(g,'Closet upper shelf',railX,h-.30,-.015,railWidth,t,d-.08,finish);
+    const rod=cylinder(g,'Hanging rail',railX,h-.43,-.02,.012,railWidth,m.metal);rod.rotation.z=Math.PI/2;
+    // Two flush leaves, each with a real pivot; no floating half-width sliding panel.
+    const leafWidth=(w-.07)/2;
+    for(const sign of [-1,1]){
+     const pivot=new T.Group();pivot.name='Closet door pivot';pivot.position.set(sign*(w/2-.025),.06,front);g.add(pivot);
+     // Local +X always points across the leaf from its hinge.
+     pivot.rotation.y=sign===-1?0:Math.PI;
+     const mount=new T.Group();mount.name='Closet hinge mount';mount.position.copy(pivot.position);mount.rotation.copy(pivot.rotation);g.remove(pivot);g.add(mount);pivot.position.set(0,0,0);pivot.rotation.set(0,0,0);mount.add(pivot);
+     box(pivot,'Closet door',leafWidth/2,(h-.10)/2,0,leafWidth-.008,h-.10,.024,finish);
+     const pull=cylinder(pivot,'Closet pull',leafWidth-.055,1.04,sign===-1?.027:-.027,.009,.16,m.metal);
+     const interactive=createHingedDoor(pivot,leafWidth,sign===-1?-Math.PI/2:Math.PI/2);doors.push(interactive);interactive.toggle();interactive.update(1,[],true);
+     // Closet doors are blocked by their cabinet body; they open outward into the room.
+     colliders.push(...interactive.colliders);pivot.traverse(o=>{o.userData.doorIndex=doors.length-1;});
+    }
     break;
    }
    case 'laundry':{
@@ -91,9 +129,10 @@ export function buildArchitecture(plan:ArchitecturePlan){
    }
    case 'vanity':case 'sink':{
     // Hollow cabinet top leaves the basin visible below its rim.
-    box(g,'Sink cabinet back',0,h/2,-d/2+.02,w,h,.04,m.wood);
-    for(const sign of [-1,1])box(g,'Sink cabinet side',sign*(w/2-.02),h/2,0,.04,h,d,m.wood);
-    box(g,'Sink cabinet front',0,h/2,d/2,w-.03,h-.07,.025,m.wood);handle(g,0,h-.13,d/2+.03);
+    const finish=f.type==='vanity'&&plan.appearance?.wood?m.ceramic:m.wood;
+    box(g,'Sink cabinet back',0,h/2,-d/2+.02,w,h,.04,finish);
+    for(const sign of [-1,1])box(g,'Sink cabinet side',sign*(w/2-.02),h/2,0,.04,h,d,finish);
+    box(g,'Sink cabinet front',0,h/2,d/2,w-.03,h-.07,.025,finish);handle(g,0,h-.13,d/2+.03);
     const bw=Math.min(w*.62,.52),bd=Math.min(d*.58,.36);apertureCounter(g,w,d,h,bw,bd);basin(g,bw,bd,h+.022,f.type==='sink');
     if(f.type==='vanity'){const mirror=new T.Group();g.add(mirror);wallMounted.push(mirror);box(mirror,'Mirror frame',0,h+.6,-d/2,w*.9,.8,.035,m.metal);box(mirror,'Bathroom mirror',0,h+.6,-d/2+.021,w*.86,.76,.012,m.glass);}break;
    }
@@ -111,20 +150,30 @@ export function buildArchitecture(plan:ArchitecturePlan){
    case 'stove':{
     roundedBox(g,'Oven body',0,h/2,0,w,h,d,m.metal,.012);box(g,'Oven plinth',0,.04,0,w-.06,.08,d-.04,m.dark);box(g,'Oven door',0,h*.42,d/2+.01,w-.07,h*.6,.025,m.dark);box(g,'Oven glass',0,h*.43,d/2+.027,w-.17,h*.37,.008,m.glass);handle(g,0,h*.72,d/2+.055,w*.65);
     box(g,'Cooktop',0,h+.01,0,w+.015,.04,d+.015,m.dark);
-    for(const x of [-w*.24,w*.24])for(const z of [-d*.24,d*.24]){cylinder(g,'Burner',x,h+.037,z,w*.145,.015,m.metal);cylinder(g,'Burner cap',x,h+.048,z,w*.095,.013,m.dark);}
+    for(const x of [-w*.24,w*.24])for(const z of [-d*.24,d*.24]){
+     if(f.cooktop==='ceramic'){const ring=mesh(g,'Ceramic hob zone',new T.TorusGeometry(w*.145,.002,6,32),m.metal,x,h+.032,z);ring.rotation.x=Math.PI/2;}
+     else{cylinder(g,'Burner',x,h+.037,z,w*.145,.015,m.metal);cylinder(g,'Burner cap',x,h+.048,z,w*.095,.013,m.dark);}}
+
     for(let i=0;i<4;i++){const knob=cylinder(g,'Oven knob',-w*.3+i*w*.2,h-.08,d/2+.028,.025,.022,m.dark);knob.rotation.x=Math.PI/2;}
-    const hood=new T.Group();hood.name='Wall mounted range hood';g.add(hood);wallMounted.push(hood);box(hood,'Range hood',0,1.86,-d*.10,w,.12,d*.8,m.metal);box(hood,'Hood chimney',0,2.28,-d*.36,w*.36,.84,d*.28,m.metal);break;
+    const hood=new T.Group();hood.name='Wall mounted range hood';g.add(hood);wallMounted.push(hood);box(hood,'Range hood',0,1.86,f.island?0:-d*.10,f.island?w+.18:w,.12,d*.8,m.metal);box(hood,'Hood chimney',0,2.28,f.island?0:-d*.36,w*.36,.84,d*.28,m.metal);break;
    }
    case 'dishwasher':{
     box(g,'Dishwasher',0,h/2,0,w,h,d,m.metal);box(g,'Dishwasher door seam',0,.45,d/2+.006,w-.035,h-.13,.015,m.dark);box(g,'Dishwasher front',0,.44,d/2+.02,w-.055,h-.18,.022,m.metal);handle(g,0,h-.10,d/2+.05,w*.65);box(g,'Dishwasher display',w*.2,h-.06,d/2+.02,.09,.025,.01,m.dark);box(g,'Counter over dishwasher',0,h,0,w+.015,.04,d+.015,m.stone);break;
    }
    case 'refrigerator':{
     box(g,'Refrigerator body',0,h/2,0,w,h,d,m.metal);
-    box(g,'Refrigerator lower door',0,h*.30,d/2,w-.025,h*.59,.035,m.ceramic);box(g,'Freezer door',0,h*.80,d/2,w-.025,h*.38,.035,m.ceramic);
+    if(f.freezer==='bottom'){box(g,'Freezer door',0,h*.145,d/2,w-.025,h*.28,.035,m.metal);box(g,'Refrigerator door',0,h*.65,d/2,w-.025,h*.69,.035,m.metal);}
+    else{box(g,'Refrigerator lower door',0,h*.30,d/2,w-.025,h*.59,.035,m.ceramic);box(g,'Freezer door',0,h*.80,d/2,w-.025,h*.38,.035,m.ceramic);}
+    if(plan.appearance?.refrigerator){for(const child of g.children){if(child instanceof T.Mesh&&child.name.includes('door'))child.material=m.metal;}}
     for(const y of [h*.56,h*.71])handle(g,-w*.22,y,d/2+.045,w*.26);break;
    }
-   case 'cabinet':{cabinet(g,w,d,h);const upper=new T.Group();upper.name='Wall mounted cabinet';g.add(upper);wallMounted.push(upper);box(upper,'Upper kitchen cabinet',0,1.94,-d*.25,w,.62,d*.5,m.wood);handle(upper,0,1.71,.035,w*.4);break;}
+   case 'cabinet':{cabinet(g,w,d,h);if(f.upper===false)break;const upper=new T.Group();upper.name='Wall mounted cabinet';g.add(upper);wallMounted.push(upper);box(upper,'Upper kitchen cabinet',0,1.94,-d*.25,w,.62,d*.5,m.wood);handle(upper,0,1.71,.035,w*.4);break;}
   }
+ }
+ // Continuous upper storage above the dishwasher and sink, when present in the listing.
+ for(const f of plan.fixtures.filter(f=>f.upper===true&&f.type!=='cabinet')){
+  const upper=new T.Group();upper.name='Wall mounted cabinet';upper.position.set(f.x,0,f.z);upper.rotation.y=f.rotation??0;root.add(upper);wallMounted.push(upper);
+  box(upper,'Upper kitchen cabinet',0,1.94,-f.depth*.25,f.width,.62,f.depth*.5,m.wood);handle(upper,0,1.71,.035,f.width*.4);
  }
  // Segment each wall around real window openings instead of drawing glass over solid walls.
  plan.walls.forEach(([x,z,xx,zz],index)=>{
@@ -139,23 +188,80 @@ export function buildArchitecture(plan:ArchitecturePlan){
    g.updateMatrixWorld(true);colliders.push(new T.Box3(new T.Vector3(-win.width/2,win.sill,-.06),new T.Vector3(win.width/2,win.sill+win.height,.06)).applyMatrix4(g.matrixWorld));
   }segment(cursor,length,0,plan.height);
  });
- for(const door of plan.doors){
-  const g=new T.Group();g.name='Door frame';g.position.set(door.x,0,door.z);g.rotation.y=door.rotation;root.add(g);
+ for(const [openingIndex,door] of plan.doors.entries()){
+  const g=new T.Group();g.name=door.leaves===2?'Double door frame':'Door frame';g.userData.label=door.label;g.position.set(door.x,0,door.z);g.rotation.y=door.rotation;root.add(g);
+  // One uninterrupted opening: paired leaves share the two outer jambs and one lintel.
   for(const x of [0,door.width])box(g,'Door jamb',x,1.05,0,.045,2.1,.12,m.ceramic);
   box(g,'Door lintel',door.width/2,2.12,0,door.width+.05,.06,.12,m.ceramic);
-  box(g,'Wall above doorway',door.width/2,2.425,0,door.width+.12,.55,.12,m.wall);
-  const pivot=new T.Group();pivot.name='Open door';pivot.rotation.y=door.swing;g.add(pivot);
-  const leaf=box(pivot,'Painted door leaf',door.width/2,1.05,0,door.width-.045,2.07,.035,m.ceramic);
-  for(const side of [-1,1]){const lever=box(pivot,'Door lever',door.width-.13,1,side*.043,.10,.016,.016,m.metal);const spindle=cylinder(pivot,'Door spindle',door.width-.18,1,side*.027,.018,.03,m.metal);spindle.rotation.x=Math.PI/2;}
-  root.updateMatrixWorld(true);const interactive=createHingedDoor(pivot,door.width,door.swing);doors.push(interactive);colliders.push(...interactive.colliders);
-  g.traverse(o=>{o.userData.doorIndex=doors.length-1;});
-  g.traverse(o=>{if(o instanceof T.Mesh){o.geometry.computeBoundingBox();const bounds=o.geometry.boundingBox!.clone().applyMatrix4(new T.Matrix4().compose(o.position,o.quaternion,o.scale));o.userData.bottom=bounds.min.y;o.userData.top=bounds.max.y;o.userData.originalY=o.position.y;doorMeshes.push(o);const raycast=o.raycast.bind(o);o.raycast=(ray,hits)=>{if(o.visible)raycast(ray,hits);};}});
+  box(g,'Wall above doorway',door.width/2,(2.15+plan.height)/2,0,door.width+.12,plan.height-2.15,.12,m.wall);
+  const firstIndex=doors.length,count=door.leaves??1,width=door.width/count;
+  for(let i=0;i<count;i++){
+   const mount=new T.Group();mount.name='Door hinge mount';mount.position.x=i===0?0:door.width;mount.rotation.y=i===0?0:Math.PI;g.add(mount);
+   const pivot=new T.Group();pivot.name=count===2?(i===0?'Left door leaf':'Right door leaf'):'Door leaf';mount.add(pivot);
+   if(door.glazed){
+    const panel=new T.Group();panel.name='Painted door leaf';pivot.add(panel);
+    const center=width/2+.0095,w=width-.026;
+    for(const sign of [-1,1])box(panel,'White door stile',center+sign*(w/2-.035),1.05,0,.07,2.07,.035,m.ceramic);
+    box(panel,'White door top rail',center,2.05,0,w,.07,.035,m.ceramic);
+    box(panel,'White lower door panel',center,.29,0,w,.55,.035,m.ceramic);
+    box(panel,'White door middle rail',center,.60,0,w,.07,.035,m.ceramic);
+    const frosted=new T.MeshStandardMaterial({color:'#e2ebe7',roughness:.8,transparent:true,opacity:.72,side:T.DoubleSide,depthWrite:false});
+    box(panel,'Frosted door glass',center,1.32,0,w-.14,1.36,.012,frosted);
+   }else{
+    box(pivot,'Painted door leaf',width/2+(count===2?.0095:0),1.05,0,width-(count===2?.026:.045),2.07,.035,m.ceramic);
+   }
+   // Shallow painted panels make closet fronts legible in both camera modes.
+   if(door.keepFullHeight&&!door.glazed)for(const side of [-1,1])for(const [y,h] of [[.56,.75],[1.52,.85]])box(pivot,'Door inset panel',width/2,y,side*.021,width-.17,h,.008,m.ceramic);
+   for(const side of [-1,1]){box(pivot,'Door lever',width-.13,1,side*.043,.10,.016,.016,m.metal);const spindle=cylinder(pivot,'Door spindle',width-.18,1,side*.027,.018,.03,m.metal);spindle.rotation.x=Math.PI/2;}
+   root.updateMatrixWorld(true);const interactive=createHingedDoor(pivot,width,i===0?door.swing:-door.swing);
+   if(door.initialOpen===false){interactive.toggle();interactive.update(1,[],true);}
+   pivot.userData.openingIndex=openingIndex;pivot.userData.paired=count===2;
+   doors.push(interactive);colliders.push(...interactive.colliders);
+   pivot.traverse(o=>{o.userData.doorIndex=doors.length-1;});
+  }
+  for(const o of g.children)if(o instanceof T.Mesh)o.userData.doorIndex=firstIndex;
+  g.traverse(o=>{if(o instanceof T.Mesh){o.geometry.computeBoundingBox();const bounds=o.geometry.boundingBox!.clone().applyMatrix4(new T.Matrix4().compose(o.position,o.quaternion,o.scale));o.userData.bottom=bounds.min.y;o.userData.top=bounds.max.y;o.userData.originalY=o.position.y;
+   // Closet fronts and paired leaves stay recognizable in isometric view.
+   if(!door.keepFullHeight)doorMeshes.push(o);
+  }});
  }
+ // Retain closed closet enclosures in the dollhouse view. Full-height mode uses
+ // the existing room walls, so these overlays are hidden there to avoid coplanar faces.
+ const closetShells=new T.Group();closetShells.name='Closet enclosures';closetShells.visible=false;root.add(closetShells);
+ for(const closet of plan.closetVolumes??[]){
+  const [x,z,w,d]=closet.rect,g=new T.Group();g.name=closet.name;closetShells.add(g);
+  function side(name:string,length:number){
+   const ranges=name===closet.side?[[0,closet.start],[closet.start+closet.opening,length]]:[[0,length]];
+   for(const [a,b] of ranges){if(b-a<.001)continue;const horizontal=name==='north'||name==='south';box(g,'Closet enclosure wall',horizontal?x+(a+b)/2:name==='east'?x+w:x,(.62+plan.height)/2,horizontal?(name==='north'?z:z+d):z+(a+b)/2,horizontal?b-a:.12,plan.height-.62,horizontal?.12:b-a,m.wall);}
+  }
+  side('north',w);side('south',w);side('west',d);side('east',d);
+  box(g,'Closet ceiling',x+w/2,plan.height+.035,z+d/2,w+.16,.07,d+.16,m.ceramic);
+ }
+
+ for(const [x,z] of plan.lights??[]){
+  const lamp=new T.Group();lamp.name='Recessed ceiling light';lamp.position.set(x,0,z);root.add(lamp);
+  wallMounted.push(cylinder(lamp,'Ceiling light trim',0,plan.height-.018,0,.09,.025,m.ceramic));
+  const glow=new T.MeshStandardMaterial({color:'#fff9ed',emissive:'#fff0d0',emissiveIntensity:2});wallMounted.push(cylinder(lamp,'Diffuser',0,plan.height-.035,0,.066,.015,glow));
+  // Broad, feathered downlights with occlusion; point lights lit through closed walls.
+  const light=new T.SpotLight('#ffe4be',5,6,Math.PI*.36,.65,2);
+  light.position.set(0,plan.height-.18,0);light.target.position.set(0,0,0);
+  light.castShadow=true;light.shadow.mapSize.set(512,512);light.shadow.camera.near=.1;light.shadow.camera.far=6;
+  light.shadow.bias=-.0003;light.shadow.normalBias=.02;light.shadow.radius=2;
+  lamp.add(light,light.target);
+ }
+ // Structural piers and finish liners use the same cutaway as the walls.
+ for(const [x,z,w,d] of plan.columns??[]){const o=box(root,'Structural pier',x+w/2,plan.height/2,z+d/2,w,plan.height,d,m.wall);o.userData.bottom=0;o.userData.top=plan.height;wallMeshes.push(o);o.updateMatrixWorld(true);colliders.push(new T.Box3().setFromObject(o));}
+ for(const panel of plan.surfacePanels??[]){const [x,z,xx,zz]=panel.line;const o=box(root,'Surface '+panel.finish,(x+xx)/2,panel.bottom+panel.height/2,(z+zz)/2,Math.hypot(xx-x,zz-z),panel.height,.015,m.stone.clone());o.rotation.y=-Math.atan2(zz-z,xx-x);o.userData.finish=panel.finish;o.userData.bottom=panel.bottom;o.userData.top=panel.bottom+panel.height;wallMeshes.push(o);}
+ if(plan.appearance?.trim){for(const [x,z,xx,zz] of plan.walls){const length=Math.hypot(xx-x,zz-z),angle=-Math.atan2(zz-z,xx-x);
+  const skirting=box(root,'White baseboard',(x+xx)/2,.055,(z+zz)/2,length,.11,.145,m.ceramic);skirting.rotation.y=angle;
+  const crown=box(root,'Ceiling trim',(x+xx)/2,plan.height-.055,(z+zz)/2,length,.11,.17,m.ceramic);crown.rotation.y=angle;wallMounted.push(crown);
+ }}
  function cutaway(enabled:boolean|number){
   const amount=typeof enabled==='boolean'?Number(enabled):T.MathUtils.clamp(enabled,0,1);
+  closetShells.visible=amount>0;closetShells.scale.y=Math.max(.001,amount);closetShells.position.y=plan.height*(1-amount);
   for(const wall of wallMeshes){const bottom=wall.userData.bottom as number,top=wall.userData.top as number;const visibleTop=T.MathUtils.lerp(top,Math.max(bottom,Math.min(top,.62)),amount);wall.visible=visibleTop>bottom;if(wall.visible){wall.scale.y=(visibleTop-bottom)/(top-bottom);wall.position.y=(visibleTop+bottom)/2;}}
   for(const door of doorMeshes){const {bottom,top,originalY}=door.userData;const visibleTop=T.MathUtils.lerp(top,Math.max(bottom,Math.min(top,.62)),amount);door.visible=visibleTop>bottom;door.scale.y=(visibleTop-bottom)/(top-bottom);door.position.y=originalY-(top-visibleTop)/2;}
   wallMounted.forEach(o=>{o.visible=amount<1;o.scale.y=Math.max(.001,1-amount);});
  }
- return {root,colliders,wallMeshes,doors,cutaway};
+ return {root,colliders,fixtureColliders,wallMeshes,doors,cutaway};
 }

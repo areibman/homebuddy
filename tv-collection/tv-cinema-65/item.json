@@ -1,0 +1,25 @@
+{
+  "id": "tv-cinema-65",
+  "name": "Cinema 65\u2033 TV \u00b7 walnut console",
+  "category": "TVs & media",
+  "description": "Original 65-inch TV concept with an integrated slatted media console and concealed equipment shelf.",
+  "materials": [
+    "Anti-glare glass",
+    "Graphite aluminum",
+    "Walnut"
+  ],
+  "dimensions_m": {
+    "width": 1.8,
+    "depth": 0.437,
+    "height": 1.3725
+  },
+  "dimensions_note": "Original Homebuddy design. TV and stand are one movable model; dimensions describe the whole assembly.",
+  "source": {
+    "retailer": "Homebuddy",
+    "url": "",
+    "photo_url": "",
+    "article_number": "",
+    "checked_date": "2026-09-08"
+  },
+  "provenance": "Original Homebuddy model and original geometric screen artwork. Not a retail product; no purchase price."
+}

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import {buildArchitecture} from '../app/decorate/architecture.ts';
 import assert from 'node:assert/strict';
-const p=JSON.parse(fs.readFileSync('app/decorate/plan.json'));const items=JSON.parse(fs.readFileSync('app/decorate/items.json'));
+const p=JSON.parse(fs.readFileSync('app/decorate/plan.json'));const items=JSON.parse(fs.readFileSync('app/catalog.json'));
 const inside=(x,z)=>p.floors.some(([a,b,w,d])=>x>=a&&x<=a+w&&z>=b&&z<=b+d);
 const overlap=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
 const fixed=buildArchitecture(p).colliders.map(b=>[b.min.x,b.min.z,b.max.x,b.max.z]);

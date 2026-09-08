@@ -1,0 +1,25 @@
+{
+  "id": "tv-easel-55",
+  "name": "Gallery 55\u2033 TV \u00b7 easel stand",
+  "category": "TVs & media",
+  "description": "Original 55-inch TV concept with a sculptural wooden easel stand.",
+  "materials": [
+    "Anti-glare glass",
+    "Graphite aluminum",
+    "Walnut"
+  ],
+  "dimensions_m": {
+    "width": 1.24259,
+    "depth": 0.64483,
+    "height": 1.4925
+  },
+  "dimensions_note": "Original Homebuddy design. TV and stand are one movable model; dimensions describe the whole assembly.",
+  "source": {
+    "retailer": "Homebuddy",
+    "url": "",
+    "photo_url": "",
+    "article_number": "",
+    "checked_date": "2026-09-08"
+  },
+  "provenance": "Original Homebuddy model and original geometric screen artwork. Not a retail product; no purchase price."
+}

@@ -18,11 +18,11 @@ door.toggle();assert(door.update(1,[obstacle],true),'swept motion detects player
 assert(!door.colliders.some(part=>part.intersectsBox(obstacle)),'door cannot crush an obstruction');
 door.update(1,[],true);assert(Math.abs(door.pivot.rotation.y-Math.PI/2)<1e-8,'blocked door reverses away');
 const plan=JSON.parse(readFileSync('app/decorate/plan.json')),architecture=buildArchitecture(plan);
-assert.equal(architecture.doors.length,3);
+assert.equal(architecture.doors.length,9);
 for(const door of architecture.doors){
- const before=door.colliders.map(part=>part.clone());architecture.cutaway(true);
+ const startingAngle=door.pivot.rotation.y;const before=door.colliders.map(part=>part.clone());architecture.cutaway(true);
  assert(door.colliders.every((part,i)=>part.equals(before[i])),'isometric cutaway never shortens physical doors');
- door.toggle();door.update(1,[],true);assert(Math.abs(door.pivot.rotation.y)<1e-8);
+ door.toggle();door.update(1,architecture.fixtureColliders,true);assert(Math.abs(door.pivot.rotation.y-startingAngle)>1,'door clears its cabinet and opens/closes fully');
  architecture.cutaway(false);assert(door.colliders.every(part=>part.max.y>2),'walking keeps full-height collision');
 }
-console.log('PASS: all 3 hinged doors, animated/reversible swing, cutaway, open/closed passage, and anti-crush sweep.');
+console.log('PASS: all 9 room and closet doors, animated/reversible swing, cutaway, open/closed passage, and anti-crush sweep.');

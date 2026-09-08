@@ -1,0 +1,25 @@
+{
+  "id": "tv-studio-43",
+  "name": "Studio 43\u2033 TV \u00b7 oak console",
+  "category": "TVs & media",
+  "description": "Original 43-inch TV concept with an integrated slatted media console and concealed equipment shelf.",
+  "materials": [
+    "Anti-glare glass",
+    "Graphite aluminum",
+    "Natural oak"
+  ],
+  "dimensions_m": {
+    "width": 1.12,
+    "depth": 0.377,
+    "height": 1.1425
+  },
+  "dimensions_note": "Original Homebuddy design. TV and stand are one movable model; dimensions describe the whole assembly.",
+  "source": {
+    "retailer": "Homebuddy",
+    "url": "",
+    "photo_url": "",
+    "article_number": "",
+    "checked_date": "2026-09-08"
+  },
+  "provenance": "Original Homebuddy model and original geometric screen artwork. Not a retail product; no purchase price."
+}
