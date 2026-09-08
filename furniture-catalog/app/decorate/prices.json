@@ -1,0 +1,92 @@
+[
+  {
+    "id": "sofa",
+    "article_number": "894.997.03",
+    "amount": 899,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/kivik-sofa-gunnared-beige-s89499703/",
+    "note": ""
+  },
+  {
+    "id": "armchair",
+    "article_number": "305.334.93",
+    "amount": 299,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/ekenaeset-armchair-kilanda-light-beige-30533493/",
+    "note": ""
+  },
+  {
+    "id": "bed",
+    "article_number": "199.316.05",
+    "amount": 249,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/malm-bed-frame-white-s19931605/",
+    "note": "Bed frame only. Slatted base and mattress sold separately."
+  },
+  {
+    "id": "dining-table",
+    "article_number": "404.164.98",
+    "amount": 299.99,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/lisabo-table-ash-veneer-40416498/",
+    "note": ""
+  },
+  {
+    "id": "rug",
+    "article_number": "502.773.93",
+    "amount": 129.99,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/lohals-rug-flatwoven-natural-50277393/",
+    "note": ""
+  },
+  {
+    "id": "dresser",
+    "article_number": "304.901.15",
+    "amount": 279.99,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/vihals-6-drawer-dresser-white-anchor-unlock-function-30490115/",
+    "note": ""
+  },
+  {
+    "id": "bookshelf",
+    "article_number": "205.220.46",
+    "amount": 79,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/billy-bookcase-white-20522046/",
+    "note": "IKEA Family in-store offers may differ."
+  },
+  {
+    "id": "nightstand",
+    "article_number": "202.004.56",
+    "amount": 129.99,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/hemnes-nightstand-white-stain-20200456/",
+    "note": ""
+  },
+  {
+    "id": "coffee-table",
+    "article_number": "904.499.05",
+    "amount": 29.99,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/lack-coffee-table-white-90449905/",
+    "note": ""
+  },
+  {
+    "id": "floor-lamp",
+    "article_number": "004.050.48",
+    "amount": 79.99,
+    "currency": "USD",
+    "checked_date": "2026-09-08",
+    "url": "https://www.ikea.com/us/en/p/lauters-floor-lamp-ash-white-00405048/",
+    "note": "Light bulb sold separately."
+  }
+]

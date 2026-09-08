@@ -1,0 +1,28 @@
+00:02.918  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/nightstand/nightstand.blend"
+01:16.545  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/nightstand/nightstand.png'
+Info: Saved as "nightstand.blend"
+12:16:02 | INFO: Data are loaded, start creating Blender stuff
+12:16:02 | INFO: Blender create Mesh node Cylinder
+12:16:02 | INFO: Blender create Mesh node Cylinder.001
+12:16:02 | INFO: Blender create Mesh node Cylinder.002
+12:16:02 | INFO: Blender create Mesh node Cylinder.003
+12:16:02 | INFO: Blender create Mesh node Cube.008
+12:16:02 | INFO: Blender create Mesh node Cube.010
+12:16:02 | INFO: Blender create Mesh node Cube.006
+12:16:02 | INFO: Blender create Mesh node Cube.007
+12:16:02 | INFO: Blender create Mesh node Cube.011
+12:16:03 | INFO: Blender create Mesh node Cube.005
+12:16:03 | INFO: Blender create Mesh node Sphere
+12:16:03 | INFO: Blender create Mesh node Cube.009
+12:16:03 | INFO: Blender create Mesh node Cube.001
+12:16:03 | INFO: Blender create Mesh node Cube.002
+12:16:03 | INFO: Blender create Mesh node Cube.003
+12:16:03 | INFO: Blender create Mesh node Cube.004
+12:16:03 | INFO: Blender create Mesh node Cube
+12:16:03 | INFO: Blender create Mesh node Cylinder.004
+12:16:03 | INFO: glTF import finished in 0.40s
+<string>:23: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+04:47.061  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/nightstand/roundtrip.png'
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

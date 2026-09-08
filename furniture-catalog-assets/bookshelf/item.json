@@ -1,0 +1,21 @@
+{
+  "id": "bookshelf",
+  "name": "Forma Open Bookshelf",
+  "category": "Storage",
+  "description": "A tall oak shelving unit with offset cubbies, softened edges and a recessed sage back panel.",
+  "dimensions_m": {
+    "width": 1.16,
+    "depth": 0.3805,
+    "height": 1.9875
+  },
+  "files": {
+    "blend": "bookshelf.blend",
+    "glb": "bookshelf.glb",
+    "preview": "bookshelf.png"
+  },
+  "provenance": "Original procedural concept design, created for this virtual furniture catalog; not a manufacturer product or CAD asset.",
+  "materials": [
+    "Natural oak",
+    "Sage painted backing"
+  ]
+}

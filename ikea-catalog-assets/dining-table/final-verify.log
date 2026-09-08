@@ -1,0 +1,40 @@
+00:07.074  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.blend"
+00:55.161  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.png'
+Info: Saved as "dining-table.blend"
+12:23:35 | INFO: Data are loaded, start creating Blender stuff
+12:23:35 | INFO: Blender create Mesh node Cube
+12:23:35 | INFO: Blender create Mesh node Cube.001
+12:23:35 | INFO: Blender create Mesh node Cube.002
+12:23:35 | INFO: Blender create Mesh node Cube.003
+12:23:35 | INFO: Blender create Mesh node Chamfered ash top
+12:23:35 | INFO: Blender create Mesh node Birch leg
+12:23:35 | INFO: Blender create Mesh node Birch leg.001
+12:23:35 | INFO: Blender create Mesh node Birch leg.002
+12:23:35 | INFO: Blender create Mesh node Birch leg.003
+12:23:35 | INFO: glTF import finished in 0.15s
+01:12.375  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/roundtrip.png'
+FINAL VERIFIED dining-table
+01:12.427  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.blend"
+01:41.859  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.png'
+Info: Saved as "coffee-table.blend"
+12:24:21 | INFO: Data are loaded, start creating Blender stuff
+12:24:21 | INFO: Blender create Mesh node Cube
+12:24:22 | INFO: Blender create Mesh node Cube.001
+12:24:22 | INFO: Blender create Mesh node Cube.002
+12:24:22 | INFO: Blender create Mesh node Cube.003
+12:24:22 | INFO: Blender create Mesh node Cube.004
+12:24:22 | INFO: Blender create Mesh node Cube.005
+12:24:22 | INFO: glTF import finished in 0.15s
+02:00.815  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/roundtrip.png'
+FINAL VERIFIED coffee-table
+02:00.873  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/rug/rug.blend"
+02:20.624  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/rug/rug.png'
+Info: Saved as "rug.blend"
+12:25:00 | INFO: Data are loaded, start creating Blender stuff
+12:25:00 | INFO: Blender create Mesh node Cube
+12:25:00 | INFO: glTF import finished in 0.04s
+02:37.491  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/rug/roundtrip.png'
+FINAL VERIFIED rug
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

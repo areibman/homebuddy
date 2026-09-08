@@ -1,0 +1,58 @@
+00:00.991  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.blend"
+00:16.285  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.png'
+12:54:06 | INFO: Data are loaded, start creating Blender stuff
+12:54:06 | INFO: Blender create Mesh node Back cushion perimeter seam
+12:54:06 | INFO: Blender create Mesh node Back cushion perimeter seam.001
+12:54:06 | INFO: Blender create Mesh node Cube.002
+12:54:06 | INFO: Blender create Mesh node Cube.003
+12:54:06 | INFO: Blender create Mesh node Inner arm cover seam
+12:54:06 | INFO: Blender create Mesh node Inner arm cover seam.001
+12:54:06 | INFO: Blender create Mesh node Inset cover seam on arm front
+12:54:06 | INFO: Blender create Mesh node Inset cover seam on arm front.001
+12:54:06 | INFO: Blender create Mesh node Loose back cushion 1
+12:54:06 | INFO: Blender create Mesh node Loose back cushion 2
+12:54:06 | INFO: Blender create Mesh node Loose seat cushion 1
+12:54:06 | INFO: Blender create Mesh node Loose seat cushion 2
+12:54:06 | INFO: Blender create Mesh node Cube.001
+12:54:06 | INFO: Blender create Mesh node Cube.004
+12:54:06 | INFO: Blender create Mesh node Cube.005
+12:54:06 | INFO: Blender create Mesh node Cube.006
+12:54:06 | INFO: Blender create Mesh node Cube.007
+12:54:06 | INFO: Blender create Mesh node Seat cushion bottom welt
+12:54:06 | INFO: Blender create Mesh node Seat cushion bottom welt.001
+12:54:06 | INFO: Blender create Mesh node Seat cushion top welt
+12:54:06 | INFO: Blender create Mesh node Seat cushion top welt.001
+12:54:06 | INFO: Blender create Mesh node Cube
+12:54:06 | INFO: glTF import finished in 0.13s
+00:29.434  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/roundtrip.png'
+VERIFIED sofa
+00:29.458  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/floor-lamp/floor-lamp.blend"
+00:43.881  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/floor-lamp/floor-lamp.png'
+12:54:33 | INFO: Data are loaded, start creating Blender stuff
+12:54:33 | INFO: Blender create Mesh node Cylinder.002
+12:54:34 | INFO: Blender create Mesh node Cylinder.003
+12:54:34 | INFO: Blender create Mesh node Tapered flat ash leg
+12:54:34 | INFO: Blender create Mesh node Tapered flat ash leg.001
+12:54:34 | INFO: Blender create Mesh node Tapered flat ash leg.002
+12:54:34 | INFO: Blender create Mesh node Cylinder.005
+12:54:34 | INFO: Blender create Mesh node Shade wire support
+12:54:34 | INFO: Blender create Mesh node Shade wire support.001
+12:54:34 | INFO: Blender create Mesh node Shade wire support.002
+12:54:34 | INFO: Blender create Mesh node Cylinder.001
+12:54:34 | INFO: Blender create Mesh node Cylinder
+12:54:34 | INFO: Blender create Mesh node Cylinder.004
+12:54:34 | INFO: Blender create Mesh node White bound shade rim
+12:54:34 | INFO: Blender create Mesh node White bound shade rim.001
+12:54:34 | INFO: Blender create Mesh node White cord wound around storage spool
+12:54:34 | INFO: Blender create Mesh node White cord wound around storage spool.001
+12:54:34 | INFO: Blender create Mesh node White cord wound around storage spool.002
+12:54:34 | INFO: Blender create Mesh node White cord wound around storage spool.003
+12:54:34 | INFO: Blender create Mesh node White cord wound around storage spool.004
+12:54:34 | INFO: Blender create Mesh node White hanging power cable
+12:54:34 | INFO: Blender create Mesh node Thin cylindrical textile shade
+12:54:34 | INFO: glTF import finished in 0.30s
+00:56.132  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/floor-lamp/roundtrip.png'
+VERIFIED floor-lamp
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

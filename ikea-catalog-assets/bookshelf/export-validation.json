@@ -1,0 +1,14 @@
+{
+  "id": "bookshelf",
+  "sha256": "cbda0987994681f97d651a52a7a92b0bbc947e269accb6a0268fb7025e055b18",
+  "geometry_dimensions_m": {
+    "width": 0.8,
+    "depth": 0.28,
+    "height": 2.02
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 1,
+  "materials": 3,
+  "occlusion_materials": 3,
+  "bytes": 1049748
+}

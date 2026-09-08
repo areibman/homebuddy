@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "glostad",
+    "name": "GLOSTAD",
+    "source": "https://www.ikea.com/us/en/p/glostad-sofa-knisa-dark-gray-40595942/"
+  },
+  {
+    "slug": "uppland",
+    "name": "UPPLAND",
+    "source": "https://www.ikea.com/us/en/p/uppland-sofa-hakebo-gray-green-s19442480/"
+  },
+  {
+    "slug": "stockholm",
+    "name": "STOCKHOLM 2025",
+    "source": "https://www.ikea.com/us/en/p/stockholm-2025-sofa-sundhamn-beige-00586096/"
+  },
+  {
+    "slug": "klippan",
+    "name": "KLIPPAN",
+    "source": "https://www.ikea.com/us/en/p/klippan-loveseat-vissle-gray-s09010617/"
+  },
+  {
+    "slug": "hyltarp",
+    "name": "HYLTARP",
+    "source": "https://www.ikea.com/us/en/p/hyltarp-sofa-hallarp-white-s39489645/"
+  },
+  {
+    "slug": "gullvalla",
+    "name": "GULLVALLA",
+    "source": "https://www.ikea.com/us/en/p/gullvalla-sofa-silkeryd-gray-green-80618512/"
+  },
+  {
+    "slug": "morabo",
+    "name": "MORABO",
+    "source": "https://www.ikea.com/us/en/p/morabo-sofa-grann-bomstad-gray-green-wood-s89317859/"
+  },
+  {
+    "slug": "finnala",
+    "name": "FINNALA",
+    "source": "https://www.ikea.com/us/en/p/finnala-sofa-grann-bomstad-golden-brown-s09319070/"
+  },
+  {
+    "slug": "lillesaeter",
+    "name": "LILLES\u00c4TER",
+    "source": "https://www.ikea.com/us/en/p/lillesaeter-sofa-axvall-off-white-40619085/"
+  },
+  {
+    "slug": "mannarp",
+    "name": "MANNARP",
+    "source": "https://www.ikea.com/us/en/p/mannarp-sofa-with-chaise-gunnared-beige-s69604069/"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "id": "dining-table",
+  "name": "Alder Round Dining Table",
+  "category": "Tables",
+  "description": "A compact round oak concept table with a fluted pedestal, recessed collars and softly rounded solid top.",
+  "dimensions_m": {
+    "width": 1.28,
+    "depth": 1.28,
+    "height": 0.75
+  },
+  "files": {
+    "blend": "dining-table.blend",
+    "glb": "dining-table.glb",
+    "preview": "dining-table.png"
+  },
+  "provenance": "Original procedural concept design, created for this virtual furniture catalog; not a manufacturer product or CAD asset."
+}

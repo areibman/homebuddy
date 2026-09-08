@@ -1,0 +1,21 @@
+{
+  "id": "coffee-table",
+  "name": "Sora Oval Coffee Table",
+  "category": "Tables",
+  "description": "An oval travertine concept coffee table on sculptural walnut supports, with subtle mineral banding and softened stone edges.",
+  "dimensions_m": {
+    "width": 1.4,
+    "depth": 0.74,
+    "height": 0.4307
+  },
+  "files": {
+    "blend": "coffee-table.blend",
+    "glb": "coffee-table.glb",
+    "preview": "coffee-table.png"
+  },
+  "provenance": "Original procedural concept design, created for this virtual furniture catalog; not a manufacturer product or CAD asset.",
+  "materials": [
+    "Ivory travertine",
+    "Walnut"
+  ]
+}

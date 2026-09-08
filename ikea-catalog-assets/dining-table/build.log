@@ -1,0 +1,1446 @@
+/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/build.py:5: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True;m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(*c,1);m.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.8;return m
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+11:50:48 | INFO: Starting glTF 2.0 export
+11:50:48 | INFO: Extracting primitive: Chamfered table top
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Tapered splayed leg
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Tapered splayed leg.001
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Tapered splayed leg.002
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Tapered splayed leg.003
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.001
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.002
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.003
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.004
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.005
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.006
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.007
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.008
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.009
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.010
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.011
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.012
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.013
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.014
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.015
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.016
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.017
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.018
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.019
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.020
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.021
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.022
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.023
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.024
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.025
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.026
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.027
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.028
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.029
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.030
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.031
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.032
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.033
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.034
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.035
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.036
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.037
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.038
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.039
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.040
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.041
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.042
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.043
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.044
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.045
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.046
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.047
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.048
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.049
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.050
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.051
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.052
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.053
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Extracting primitive: Subtle ash grain.054
+11:50:48 | INFO: Primitives created: 1
+11:50:48 | INFO: Finished glTF 2.0 export in 0.06536221504211426 s
+/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/build.py:5: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True;m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(*c,1);m.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.8;return m
+00:55.289  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.png'
+
+Info: Saved as "dining-table.blend"
+11:51:43 | INFO: Starting glTF 2.0 export
+11:51:43 | INFO: Extracting primitive: Cube.005
+11:51:43 | INFO: Primitives created: 1
+11:51:43 | INFO: Extracting primitive: Cube
+11:51:43 | INFO: Primitives created: 1
+11:51:43 | INFO: Extracting primitive: Cube.001
+11:51:43 | INFO: Primitives created: 1
+11:51:43 | INFO: Extracting primitive: Cube.002
+11:51:43 | INFO: Primitives created: 1
+11:51:43 | INFO: Extracting primitive: Cube.003
+11:51:43 | INFO: Primitives created: 1
+11:51:43 | INFO: Extracting primitive: Cube.004
+11:51:43 | INFO: Primitives created: 1
+11:51:43 | INFO: Finished glTF 2.0 export in 0.03931689262390137 s
+01:39.947  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.png'
+
+Info: Saved as "coffee-table.blend"
+11:52:29 | INFO: Starting glTF 2.0 export
+11:52:29 | INFO: Extracting primitive: Bound end selvedge
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Bound end selvedge.001
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Bound long selvedge
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Bound long selvedge.001
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.001
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.002
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.003
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.004
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.005
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.006
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.007
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.008
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.009
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.010
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.011
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.012
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.013
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.014
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.015
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.016
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.017
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.018
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.019
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.020
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.021
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.022
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.023
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.024
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.025
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.026
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.027
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.028
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.029
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.030
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.031
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.032
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.033
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.034
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.035
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.036
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.037
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.038
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.039
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.040
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.041
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.042
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.043
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.044
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.045
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.046
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.047
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.048
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.049
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.050
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.051
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.052
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.053
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.054
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.055
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.056
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.057
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.058
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.059
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.060
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.061
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.062
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.063
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.064
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.065
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.066
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.067
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.068
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.069
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.070
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.071
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.072
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.073
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.074
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.075
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.076
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.077
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.078
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.079
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.080
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.081
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.082
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.083
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.084
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.085
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.086
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.087
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.088
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.089
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.090
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.091
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.092
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.093
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.094
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.095
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.096
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.097
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.098
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.099
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.100
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.101
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.102
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.103
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.104
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.105
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.106
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.107
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.108
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.109
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.110
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.111
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.112
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.113
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.114
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.115
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.116
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.117
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.118
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.119
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.120
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.121
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.122
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.123
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.124
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.125
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.126
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.127
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.128
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.129
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.130
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.131
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.132
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.133
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.134
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.135
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.136
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.137
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.138
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.139
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.140
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.141
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.142
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.143
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.144
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.145
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.146
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.147
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.148
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.149
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.150
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.151
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.152
+11:52:29 | INFO: Primitives created: 1
+11:52:29 | INFO: Extracting primitive: Jute warp.153
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.154
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.155
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.156
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.157
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.158
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.159
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.160
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.161
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.162
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.163
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.164
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.165
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.166
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.167
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.168
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.169
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.170
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.171
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.172
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.173
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.174
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.175
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.176
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.177
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.178
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.179
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.180
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.181
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.182
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.183
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.184
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.185
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.186
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.187
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.188
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.189
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.190
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.191
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.192
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.193
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.194
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.195
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.196
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.197
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.198
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.199
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.200
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.201
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.202
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.203
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.204
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.205
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.206
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.207
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.208
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.209
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.210
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.211
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.212
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.213
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.214
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.215
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.216
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.217
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.218
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.219
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.220
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.221
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.222
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.223
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.224
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.225
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.226
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.227
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.228
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.229
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.230
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.231
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.232
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.233
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.234
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.235
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.236
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.237
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.238
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.239
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.240
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.241
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.242
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.243
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.244
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.245
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.246
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.247
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.248
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.249
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.250
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.251
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.252
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.253
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.254
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.255
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.256
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.257
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.258
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute warp.259
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.001
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.002
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.003
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.004
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.005
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.006
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.007
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.008
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.009
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.010
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.011
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.012
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.013
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.014
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.015
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.016
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.017
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.018
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.019
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.020
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.021
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.022
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.023
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.024
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.025
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.026
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.027
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.028
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.029
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.030
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.031
+11:52:30 | INFO: Primitives created: 1
+11:52:30 | INFO: Extracting primitive: Jute weft.032
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.033
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.034
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.035
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.036
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.037
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.038
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.039
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.040
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.041
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.042
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.043
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.044
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.045
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.046
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.047
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.048
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.049
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.050
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.051
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.052
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.053
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.054
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.055
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.056
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.057
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.058
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.059
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.060
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.061
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.062
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.063
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.064
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.065
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.066
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.067
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.068
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.069
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.070
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.071
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.072
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.073
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.074
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.075
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.076
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.077
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.078
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.079
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.080
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.081
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.082
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.083
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.084
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.085
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.086
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.087
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.088
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.089
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.090
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.091
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.092
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.093
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.094
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.095
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.096
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.097
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.098
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.099
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.100
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.101
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.102
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.103
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.104
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.105
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.106
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.107
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.108
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.109
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.110
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.111
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.112
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.113
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.114
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.115
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.116
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.117
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.118
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.119
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.120
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.121
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.122
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.123
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.124
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.125
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.126
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.127
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.128
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.129
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.130
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.131
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.132
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.133
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.134
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.135
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.136
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.137
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.138
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.139
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.140
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.141
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.142
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.143
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.144
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.145
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.146
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.147
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.148
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.149
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.150
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.151
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.152
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.153
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.154
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.155
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.156
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.157
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.158
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.159
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.160
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.161
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.162
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.163
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.164
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.165
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.166
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.167
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.168
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.169
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.170
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.171
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.172
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.173
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.174
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.175
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.176
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.177
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.178
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.179
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.180
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.181
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.182
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.183
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.184
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.185
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.186
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.187
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.188
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.189
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.190
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.191
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.192
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.193
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.194
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.195
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.196
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.197
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.198
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.199
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.200
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.201
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.202
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.203
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.204
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.205
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.206
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.207
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.208
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.209
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.210
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.211
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.212
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.213
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.214
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.215
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.216
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.217
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.218
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.219
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.220
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.221
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.222
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.223
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.224
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.225
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.226
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.227
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.228
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.229
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.230
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.231
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.232
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.233
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.234
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.235
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.236
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.237
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.238
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.239
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.240
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.241
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.242
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.243
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.244
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.245
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.246
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.247
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.248
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.249
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.250
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.251
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.252
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.253
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.254
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.255
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.256
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.257
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.258
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.259
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.260
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.261
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.262
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.263
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.264
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.265
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.266
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.267
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.268
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.269
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.270
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.271
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.272
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.273
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.274
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.275
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.276
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.277
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.278
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.279
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.280
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.281
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.282
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.283
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.284
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.285
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.286
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.287
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.288
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.289
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.290
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.291
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.292
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.293
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.294
+11:52:31 | INFO: Primitives created: 1
+11:52:31 | INFO: Extracting primitive: Jute weft.295
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.296
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.297
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.298
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.299
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.300
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.301
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.302
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.303
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.304
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.305
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.306
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.307
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.308
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.309
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.310
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.311
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.312
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.313
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.314
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.315
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.316
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.317
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.318
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.319
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.320
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.321
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.322
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.323
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.324
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.325
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.326
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.327
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.328
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.329
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.330
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.331
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.332
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.333
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.334
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.335
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.336
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.337
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.338
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.339
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.340
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.341
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.342
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.343
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.344
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.345
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.346
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.347
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.348
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.349
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.350
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.351
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.352
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.353
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.354
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.355
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.356
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.357
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.358
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.359
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.360
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.361
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.362
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.363
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.364
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.365
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.366
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.367
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.368
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.369
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.370
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.371
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.372
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.373
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.374
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.375
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.376
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.377
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.378
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Jute weft.379
+11:52:32 | INFO: Primitives created: 1
+11:52:32 | INFO: Extracting primitive: Cube
+11:52:32 | INFO: Primitives created: 1
+11:52:33 | INFO: Finished glTF 2.0 export in 3.9584579467773438 s
+02:35.202  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/rug/rug.png'
+
+Info: Saved as "rug.blend"
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

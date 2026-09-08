@@ -1,0 +1,53 @@
+00:10.271  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.blend"
+00:33.327  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.png'
+13:10:50 | INFO: Data are loaded, start creating Blender stuff
+13:10:50 | INFO: Blender create Mesh node Back cushion perimeter seam
+13:10:51 | INFO: Blender create Mesh node Back cushion perimeter seam.001
+13:10:51 | INFO: Blender create Mesh node Cube.002
+13:10:51 | INFO: Blender create Mesh node Cube.003
+13:10:51 | INFO: Blender create Mesh node Inner arm cover seam
+13:10:51 | INFO: Blender create Mesh node Inner arm cover seam.001
+13:10:51 | INFO: Blender create Mesh node Inset cover seam on arm front
+13:10:51 | INFO: Blender create Mesh node Inset cover seam on arm front.001
+13:10:51 | INFO: Blender create Mesh node Loose back cushion 1
+13:10:51 | INFO: Blender create Mesh node Loose back cushion 2
+13:10:51 | INFO: Blender create Mesh node Loose seat cushion 1
+13:10:51 | INFO: Blender create Mesh node Loose seat cushion 2
+13:10:51 | INFO: Blender create Mesh node Cube.001
+13:10:51 | INFO: Blender create Mesh node Cube.004
+13:10:51 | INFO: Blender create Mesh node Cube.005
+13:10:51 | INFO: Blender create Mesh node Cube.006
+13:10:51 | INFO: Blender create Mesh node Cube.007
+13:10:51 | INFO: Blender create Mesh node Seat cushion bottom welt
+13:10:51 | INFO: Blender create Mesh node Seat cushion bottom welt.001
+13:10:51 | INFO: Blender create Mesh node Seat cushion top welt
+13:10:51 | INFO: Blender create Mesh node Seat cushion top welt.001
+13:10:51 | INFO: Blender create Mesh node Cube
+13:10:51 | INFO: glTF import finished in 1.06s
+01:00.743  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/roundtrip.png'
+FINAL sofa
+01:01.028  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/armchair.blend"
+02:20.168  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/armchair.png'
+13:12:34 | INFO: Data are loaded, start creating Blender stuff
+13:12:34 | INFO: Blender create Mesh node Back side panel sewing
+13:12:34 | INFO: Blender create Mesh node Back side panel sewing.001
+13:12:34 | INFO: Blender create Mesh node Cube.010
+13:12:34 | INFO: Blender create Mesh node Cube.003
+13:12:34 | INFO: Blender create Mesh node Cube.008
+13:12:34 | INFO: Blender create Mesh node Fixed seat with squared lower apron
+13:12:35 | INFO: Blender create Mesh node Cube
+13:12:35 | INFO: Blender create Mesh node Cube.005
+13:12:35 | INFO: Blender create Mesh node Cube.001
+13:12:35 | INFO: Blender create Mesh node Cube.006
+13:12:35 | INFO: Blender create Mesh node Cube.002
+13:12:35 | INFO: Blender create Mesh node Cube.007
+13:12:35 | INFO: Blender create Mesh node Cube.011
+13:12:35 | INFO: Blender create Mesh node Cube.004
+13:12:35 | INFO: Blender create Mesh node Cube.009
+13:12:35 | INFO: Blender create Mesh node Cube.012
+13:12:35 | INFO: glTF import finished in 0.83s
+02:42.580  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/roundtrip.png'
+FINAL armchair
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

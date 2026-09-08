@@ -1,0 +1,17 @@
+{
+  "id": "bed",
+  "name": "Alder Platform Bed",
+  "category": "Beds",
+  "description": "A contemporary queen platform bed in pale oak, with an oatmeal upholstered headboard, eucalyptus duvet, ivory pillows and a sand runner.",
+  "dimensions_m": {
+    "width": 1.91,
+    "depth": 2.25,
+    "height": 1.31
+  },
+  "files": {
+    "blend": "bed.blend",
+    "glb": "bed.glb",
+    "preview": "bed.png"
+  },
+  "provenance": "Original procedural design created for this catalog; conceptual proportions, not manufacturer CAD."
+}

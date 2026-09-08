@@ -1,0 +1,75 @@
+/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/fidelity_build.py:6: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(n);m.use_nodes=True;p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(*[lin(v) for v in c],1);p.inputs['Roughness'].default_value=rough;m.diffuse_color=(*[lin(v) for v in c],1);return m
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:12:46 | INFO: Starting glTF 2.0 export
+12:12:46 | INFO: Extracting primitive: Cube
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Cube.001
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Cube.002
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Cube.003
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Chamfered ash top
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Birch leg
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Birch leg.001
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Birch leg.002
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Extracting primitive: Birch leg.003
+12:12:46 | INFO: Primitives created: 1
+12:12:46 | INFO: Finished glTF 2.0 export in 0.07589125633239746 s
+/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/fidelity_build.py:28: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  sc=bpy.context.scene;sc.unit_settings.system='METRIC';sc.render.engine='CYCLES';sc.cycles.samples=48;sc.cycles.use_denoising=True;sc.render.resolution_x=1200;sc.render.resolution_y=900;sc.render.resolution_percentage=100;sc.view_settings.view_transform='Standard';sc.view_settings.look='None';sc.view_settings.exposure=0;sc.world=bpy.data.worlds.new('White photographic studio');sc.world.use_nodes=True;sc.world.node_tree.nodes['Background'].inputs[0].default_value=(1,1,1,1);sc.world.node_tree.nodes['Background'].inputs[1].default_value=.6
+00:32.445  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.png'
+
+Info: Saved as "dining-table.blend"
+12:13:17 | INFO: Data are loaded, start creating Blender stuff
+12:13:17 | INFO: Blender create Mesh node Cube
+12:13:17 | INFO: Blender create Mesh node Cube.001
+12:13:17 | INFO: Blender create Mesh node Cube.002
+12:13:17 | INFO: Blender create Mesh node Cube.003
+12:13:17 | INFO: Blender create Mesh node Chamfered ash top
+12:13:17 | INFO: Blender create Mesh node Birch leg
+12:13:17 | INFO: Blender create Mesh node Birch leg.001
+12:13:17 | INFO: Blender create Mesh node Birch leg.002
+12:13:17 | INFO: Blender create Mesh node Birch leg.003
+12:13:17 | INFO: glTF import finished in 0.13s
+01:05.898  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/roundtrip.png'
+FINISHED dining-table
+/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/fidelity_build.py:6: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(n);m.use_nodes=True;p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(*[lin(v) for v in c],1);p.inputs['Roughness'].default_value=rough;m.diffuse_color=(*[lin(v) for v in c],1);return m
+12:13:50 | INFO: Starting glTF 2.0 export
+12:13:50 | INFO: Extracting primitive: Cube
+12:13:50 | INFO: Primitives created: 1
+12:13:50 | INFO: Extracting primitive: Cube.001
+12:13:50 | INFO: Primitives created: 1
+12:13:50 | INFO: Extracting primitive: Cube.002
+12:13:50 | INFO: Primitives created: 1
+12:13:50 | INFO: Extracting primitive: Cube.003
+12:13:50 | INFO: Primitives created: 1
+12:13:50 | INFO: Extracting primitive: Cube.004
+12:13:50 | INFO: Primitives created: 1
+12:13:50 | INFO: Extracting primitive: Cube.005
+12:13:50 | INFO: Primitives created: 1
+12:13:50 | INFO: Finished glTF 2.0 export in 0.11889910697937012 s
+02:07.649  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.png'
+
+Info: Saved as "coffee-table.blend"
+12:14:52 | INFO: Data are loaded, start creating Blender stuff
+12:14:52 | INFO: Blender create Mesh node Cube
+12:14:52 | INFO: Blender create Mesh node Cube.001
+12:14:52 | INFO: Blender create Mesh node Cube.002
+12:14:52 | INFO: Blender create Mesh node Cube.003
+12:14:52 | INFO: Blender create Mesh node Cube.004
+12:14:52 | INFO: Blender create Mesh node Cube.005
+12:14:52 | INFO: glTF import finished in 0.07s
+03:55.525  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/roundtrip.png'
+FINISHED coffee-table
+12:16:40 | INFO: Starting glTF 2.0 export
+12:16:40 | INFO: Extracting primitive: Cube
+12:16:40 | INFO: Primitives created: 1
+12:16:41 | INFO: Finished glTF 2.0 export in 0.49434685707092285 s

@@ -1,0 +1,409 @@
+/Users/hyperbox/homebuddy/couch-collection/build_collection.py:19: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True;p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(*c,1);p.inputs['Roughness'].default_value=rough
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+11:06:31 | INFO: Starting glTF 2.0 export
+11:06:31 | INFO: Extracting primitive: Cube.002
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.003
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.007
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.008
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.009
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.001
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cylinder
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cylinder.001
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cylinder.002
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cylinder.003
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.004
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.005
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube.006
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Seat front seam
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Seat front seam.001
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Seat front seam.002
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Extracting primitive: Cube
+11:06:31 | INFO: Primitives created: 1
+11:06:31 | INFO: Finished glTF 2.0 export in 0.025046110153198242 s
+/Users/hyperbox/homebuddy/couch-collection/build_collection.py:19: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True;p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(*c,1);p.inputs['Roughness'].default_value=rough
+00:09.644  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/glostad/glostad.png'
+
+Info: Saved as "glostad.blend"
+FINISHED 1 glostad
+11:06:40 | INFO: Starting glTF 2.0 export
+11:06:40 | INFO: Extracting primitive: Cube.002
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.003
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.007
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.008
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.009
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.001
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cylinder
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cylinder.001
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.004
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.005
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube.006
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Seat front seam
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Seat front seam.001
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Seat front seam.002
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cube
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cylinder.002
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cylinder.003
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cylinder.004
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Extracting primitive: Cylinder.005
+11:06:40 | INFO: Primitives created: 1
+11:06:40 | INFO: Finished glTF 2.0 export in 0.023648738861083984 s
+00:17.928  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/uppland/uppland.png'
+
+Info: Saved as "uppland.blend"
+FINISHED 2 uppland
+11:06:48 | INFO: Starting glTF 2.0 export
+11:06:48 | INFO: Extracting primitive: Cube.004
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.006
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.010
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.011
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.003
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.001
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.002
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.012
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.013
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.008
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.009
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Seat front seam
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Seat front seam.001
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.005
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube.007
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cube
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cylinder
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cylinder.001
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cylinder.002
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Extracting primitive: Cylinder.003
+11:06:48 | INFO: Primitives created: 1
+11:06:48 | INFO: Finished glTF 2.0 export in 0.02282881736755371 s
+00:26.272  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/stockholm/stockholm.png'
+
+Info: Saved as "stockholm.blend"
+FINISHED 3 stockholm
+11:06:56 | INFO: Starting glTF 2.0 export
+11:06:56 | INFO: Extracting primitive: Cube.002
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cube.003
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cube.005
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cube.001
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cylinder
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cylinder.001
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cylinder.002
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cylinder.003
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cube.004
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Extracting primitive: Cube
+11:06:56 | INFO: Primitives created: 1
+11:06:56 | INFO: Finished glTF 2.0 export in 0.016953229904174805 s
+00:33.979  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/klippan/klippan.png'
+
+Info: Saved as "klippan.blend"
+FINISHED 4 klippan
+11:07:04 | INFO: Starting glTF 2.0 export
+11:07:04 | INFO: Extracting primitive: Cube.002
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.003
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.008
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.009
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.010
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.001
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.004
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.011
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.012
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.007
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Seat front seam
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.005
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube.006
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Skirt pleat
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Skirt pleat.001
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cube
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cylinder
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cylinder.001
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cylinder.002
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Extracting primitive: Cylinder.003
+11:07:04 | INFO: Primitives created: 1
+11:07:04 | INFO: Finished glTF 2.0 export in 0.023356199264526367 s
+00:41.817  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/hyltarp/hyltarp.png'
+
+Info: Saved as "hyltarp.blend"
+FINISHED 5 hyltarp
+11:07:12 | INFO: Starting glTF 2.0 export
+11:07:12 | INFO: Extracting primitive: Cube.002
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube.003
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube.006
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube.007
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube.001
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube.004
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube.005
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Seat front seam
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Seat front seam.001
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cube
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cylinder
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cylinder.001
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cylinder.002
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Extracting primitive: Cylinder.003
+11:07:12 | INFO: Primitives created: 1
+11:07:12 | INFO: Finished glTF 2.0 export in 0.016025066375732422 s
+00:49.452  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/gullvalla/gullvalla.png'
+
+Info: Saved as "gullvalla.blend"
+FINISHED 6 gullvalla
+11:07:19 | INFO: Starting glTF 2.0 export
+11:07:19 | INFO: Extracting primitive: Cube.002
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube.003
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube.006
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube.007
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube.001
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube.004
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube.005
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Seat front seam
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Seat front seam.001
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cube
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.001
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.002
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.003
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.004
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.005
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.006
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Sphere.007
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cylinder
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cylinder.001
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cylinder.002
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Extracting primitive: Cylinder.003
+11:07:19 | INFO: Primitives created: 1
+11:07:19 | INFO: Finished glTF 2.0 export in 0.022471904754638672 s
+00:57.294  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/morabo/morabo.png'
+
+Info: Saved as "morabo.blend"
+FINISHED 7 morabo
+11:07:27 | INFO: Starting glTF 2.0 export
+11:07:27 | INFO: Extracting primitive: Cube.002
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.003
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.007
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.008
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.009
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.001
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.004
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.005
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube.006
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Seat front seam
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Seat front seam.001
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Seat front seam.002
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cube
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cylinder
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cylinder.001
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cylinder.002
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Extracting primitive: Cylinder.003
+11:07:27 | INFO: Primitives created: 1
+11:07:27 | INFO: Finished glTF 2.0 export in 0.022639751434326172 s
+01:04.880  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/finnala/finnala.png'
+
+Info: Saved as "finnala.blend"
+FINISHED 8 finnala
+11:07:35 | INFO: Starting glTF 2.0 export
+11:07:35 | INFO: Extracting primitive: Cube.002
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cube.003
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cube.005
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cube.001
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cube.004
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Seat front seam
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cube
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cylinder
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cylinder.001
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cylinder.002
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Extracting primitive: Cylinder.003
+11:07:35 | INFO: Primitives created: 1
+11:07:35 | INFO: Finished glTF 2.0 export in 0.015459060668945312 s
+01:12.595  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/lillesaeter/lillesaeter.png'
+
+Info: Saved as "lillesaeter.blend"
+FINISHED 9 lillesaeter
+11:07:42 | INFO: Starting glTF 2.0 export
+11:07:42 | INFO: Extracting primitive: Cube.002
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.003
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.008
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.009
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.010
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.001
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.006
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cylinder.004
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cylinder.005
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.004
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.005
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube.007
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Seat front seam
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Seat front seam.001
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Seat front seam.002
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cube
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cylinder
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cylinder.001
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cylinder.002
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Extracting primitive: Cylinder.003
+11:07:42 | INFO: Primitives created: 1
+11:07:42 | INFO: Finished glTF 2.0 export in 0.04656410217285156 s
+01:20.448  render           | Saved: '/Users/hyperbox/homebuddy/couch-collection/mannarp/mannarp.png'
+
+Info: Saved as "mannarp.blend"
+FINISHED 10 mannarp
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

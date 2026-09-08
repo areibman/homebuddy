@@ -1,0 +1,46 @@
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:16:37 | INFO: Starting glTF 2.0 export
+12:16:37 | INFO: Extracting primitive: Cylinder.002
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Cylinder.003
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Tapered flat ash leg
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Tapered flat ash leg.001
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Tapered flat ash leg.002
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Cylinder.005
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Shade wire support
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Shade wire support.001
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Shade wire support.002
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Cylinder.001
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Cylinder
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Cylinder.004
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White bound shade rim
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White bound shade rim.001
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White cord wound around storage spool
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White cord wound around storage spool.001
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White cord wound around storage spool.002
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White cord wound around storage spool.003
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White cord wound around storage spool.004
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: White hanging power cable
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Extracting primitive: Thin cylindrical textile shade
+12:16:37 | INFO: Primitives created: 1
+12:16:37 | INFO: Finished glTF 2.0 export in 0.5027909278869629 s

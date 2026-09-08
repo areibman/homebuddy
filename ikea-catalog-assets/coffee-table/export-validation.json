@@ -1,0 +1,14 @@
+{
+  "id": "coffee-table",
+  "sha256": "a456c1e319f98488dc89f60e28e9b08e1bcc40f93024cd267966c17f8dc62cae",
+  "geometry_dimensions_m": {
+    "width": 0.9,
+    "depth": 0.55,
+    "height": 0.45
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 1,
+  "materials": 1,
+  "occlusion_materials": 1,
+  "bytes": 402568
+}

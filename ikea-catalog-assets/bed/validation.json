@@ -1,0 +1,13 @@
+{
+  "render_dimensions": [
+    1200,
+    900
+  ],
+  "roundtrip_mean_absolute_rgb_error_8bit": [
+    0.0006361111111111112,
+    0.0005648148148148149,
+    0.000675
+  ],
+  "no_studio_in_glb": true,
+  "explicit_portable_PBR": true
+}

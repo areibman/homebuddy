@@ -1,0 +1,50 @@
+00:01.257  blend            | Read blend: "/Users/hyperbox/homebuddy/sofa-kivik/kivik-sofa.blend"
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+11:49:53 | INFO: Starting glTF 2.0 export
+11:49:53 | INFO: Extracting primitive: 1 | back cushion seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.006
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.005
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: 1 | seat lower seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: 1 | seat upper seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.001
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: 2 | back cushion seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.008
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.007
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.002
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: 2 | seat lower seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: 2 | seat upper seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.009
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.010
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.011
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.012
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Left | arm front seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.003
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Right | arm front seam
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Extracting primitive: Cube.004
+11:49:53 | INFO: Primitives created: 1
+11:49:53 | INFO: Finished glTF 2.0 export in 0.1538088321685791 s
+
+Info: Saved as "sofa.blend"
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

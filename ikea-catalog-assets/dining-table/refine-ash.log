@@ -1,0 +1,25 @@
+00:10.611  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.blend"
+/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/refine_ash.py:4: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Reference-derived pale ash top grain');m.use_nodes=True;n=m.node_tree.nodes;pr=n.get('Principled BSDF');pr.inputs['Roughness'].default_value=.42;t=n.new('ShaderNodeTexImage');t.image=bpy.data.images.load(p+'textures/ash-reference.jpg');t.image.pack();m.node_tree.links.new(t.outputs['Color'],pr.inputs['Base Color'])
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:19:21 | INFO: Starting glTF 2.0 export
+12:19:21 | INFO: Extracting primitive: Cube
+12:19:21 | INFO: Primitives created: 1
+12:19:21 | INFO: Extracting primitive: Cube.001
+12:19:21 | INFO: Primitives created: 1
+12:19:21 | INFO: Extracting primitive: Cube.002
+12:19:22 | INFO: Primitives created: 1
+12:19:22 | INFO: Extracting primitive: Cube.003
+12:19:22 | INFO: Primitives created: 1
+12:19:22 | INFO: Extracting primitive: Chamfered ash top
+12:19:22 | INFO: Primitives created: 2
+12:19:22 | INFO: Extracting primitive: Birch leg
+12:19:22 | INFO: Primitives created: 1
+12:19:22 | INFO: Extracting primitive: Birch leg.001
+12:19:22 | INFO: Primitives created: 1
+12:19:22 | INFO: Extracting primitive: Birch leg.002
+12:19:22 | INFO: Primitives created: 1
+12:19:22 | INFO: Extracting primitive: Birch leg.003
+12:19:22 | INFO: Primitives created: 1
+12:19:22 | INFO: Finished glTF 2.0 export in 0.8328671455383301 s

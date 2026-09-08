@@ -1,0 +1,17 @@
+{
+  "id": "armchair",
+  "name": "Ember Lounge Chair",
+  "category": "Armchairs",
+  "description": "Sculptural walnut lounge chair with splayed timber legs, brass dowel details and deep burnt-orange upholstered cushions.",
+  "dimensions_m": {
+    "width": 0.858,
+    "depth": 0.861,
+    "height": 0.889
+  },
+  "files": {
+    "blend": "armchair.blend",
+    "glb": "armchair.glb",
+    "preview": "armchair.png"
+  },
+  "provenance": "Original concept design created for this virtual catalog. Not a branded product or manufacturer CAD; materials and dimensions are illustrative."
+}

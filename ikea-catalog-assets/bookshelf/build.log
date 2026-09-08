@@ -1,0 +1,55 @@
+/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/build.py:7: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=tuple(lin(x) for x in srgb)+(1,);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=m.diffuse_color;p.inputs['Roughness'].default_value=rough;return m
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:47:35 | INFO: Starting glTF 2.0 export
+12:47:35 | INFO: Extracting primitive: Cube.004
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.005
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.007
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.008
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Side panel with skirting relief
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Side panel with skirting relief.001
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.001
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.006
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.002
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cylinder
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube.003
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Extracting primitive: Cube
+12:47:35 | INFO: Primitives created: 1
+12:47:35 | INFO: Finished glTF 2.0 export in 0.0298459529876709 s
+/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/build.py:7: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=tuple(lin(x) for x in srgb)+(1,);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=m.diffuse_color;p.inputs['Roughness'].default_value=rough;return m
+/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/build.py:41: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  s.world=bpy.data.worlds.new('Neutral white environment');s.world.use_nodes=True;s.world.node_tree.nodes['Background'].inputs[0].default_value=(1,1,1,1);s.world.node_tree.nodes['Background'].inputs[1].default_value=.7
+00:28.961  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/bookshelf.png'
+
+Info: Saved as "bookshelf.blend"
+12:48:00 | INFO: Data are loaded, start creating Blender stuff
+12:48:00 | INFO: Blender create Mesh node Cube.004
+12:48:01 | INFO: Blender create Mesh node Cube.005
+12:48:01 | INFO: Blender create Mesh node Cube.007
+12:48:01 | INFO: Blender create Mesh node Cube.008
+12:48:01 | INFO: Blender create Mesh node Side panel with skirting relief
+12:48:01 | INFO: Blender create Mesh node Side panel with skirting relief.001
+12:48:01 | INFO: Blender create Mesh node Cube.001
+12:48:01 | INFO: Blender create Mesh node Cube.006
+12:48:01 | INFO: Blender create Mesh node Cube.002
+12:48:01 | INFO: Blender create Mesh node Cylinder
+12:48:01 | INFO: Blender create Mesh node Cube.003
+12:48:01 | INFO: Blender create Mesh node Cube
+12:48:01 | INFO: glTF import finished in 0.11s
+00:51.502  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/bookshelf-roundtrip.png'
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

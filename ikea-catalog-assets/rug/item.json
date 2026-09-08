@@ -1,0 +1,27 @@
+{
+  "id": "rug",
+  "name": "LOHALS rug \u2014 natural",
+  "category": "Rugs",
+  "description": "IKEA LOHALS natural jute rug, 160 \u00d7 230 cm; tightly flatwoven with natural color variation.",
+  "dimensions_m": {
+    "width": 1.6,
+    "depth": 2.3,
+    "height": 0.013
+  },
+  "files": {
+    "blend": "rug.blend",
+    "glb": "rug.glb",
+    "preview": "rug.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+  "materials": [
+    "100% jute"
+  ],
+  "source": {
+    "url": "https://www.ikea.com/us/en/p/lohals-rug-flatwoven-natural-50277393/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/lohals-rug-flatwoven-natural__0280221_pe419173_s5.jpg",
+    "retailer": "IKEA",
+    "article_number": "502.773.93",
+    "checked_date": "2026-09-08"
+  }
+}

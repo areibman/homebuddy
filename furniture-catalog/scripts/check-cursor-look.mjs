@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {createCursorLook} from '../app/decorate/cursor-look.ts';
+const look=createCursorLook();
+assert.deepEqual(look.move(200,200,0,800),{dx:0,dy:0});
+assert.deepEqual(look.move(260,180,0,800),{dx:60,dy:-20},'ordinary cursor coordinates turn the view without buttons or movementX');
+assert.equal(look.turn(.1),0,'no drift in the center');
+look.move(798,180,0,800);assert(look.turn(.1)>0,'edge keeps turning');
+look.reset();assert.equal(look.turn(.1),0,'pause/leave stops edge turn');
+assert.deepEqual(look.move(20,400,0,800),{dx:0,dy:0},'reenter without camera snap');
+console.log('PASS: cursor look without dragging, edge turn, pause, and reentry.');

@@ -1,0 +1,65 @@
+/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/build.py:9: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=tuple(lin(x) for x in color)+(1,);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=m.diffuse_color;p.inputs['Roughness'].default_value=rough
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:45:40 | INFO: Starting glTF 2.0 export
+12:45:40 | INFO: Extracting primitive: Back side panel sewing
+12:45:40 | INFO: Primitives created: 1
+12:45:40 | INFO: Extracting primitive: Back side panel sewing.001
+12:45:40 | INFO: Primitives created: 1
+12:45:40 | INFO: Extracting primitive: Cube.010
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.003
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.008
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Fixed seat with squared lower apron
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.005
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.001
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.006
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.002
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.007
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.011
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.004
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.009
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Extracting primitive: Cube.012
+12:45:41 | INFO: Primitives created: 1
+12:45:41 | INFO: Finished glTF 2.0 export in 0.23131299018859863 s
+/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/build.py:82: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  s.world=bpy.data.worlds.new('Neutral white environment');s.world.use_nodes=True;s.world.node_tree.nodes['Background'].inputs[0].default_value=(1,1,1,1);s.world.node_tree.nodes['Background'].inputs[1].default_value=.5
+00:44.315  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/armchair.png'
+
+Info: Saved as "armchair.blend"
+12:46:22 | INFO: Data are loaded, start creating Blender stuff
+12:46:22 | INFO: Blender create Mesh node Back side panel sewing
+12:46:22 | INFO: Blender create Mesh node Back side panel sewing.001
+12:46:22 | INFO: Blender create Mesh node Cube.010
+12:46:22 | INFO: Blender create Mesh node Cube.003
+12:46:22 | INFO: Blender create Mesh node Cube.008
+12:46:22 | INFO: Blender create Mesh node Fixed seat with squared lower apron
+12:46:22 | INFO: Blender create Mesh node Cube
+12:46:22 | INFO: Blender create Mesh node Cube.005
+12:46:22 | INFO: Blender create Mesh node Cube.001
+12:46:22 | INFO: Blender create Mesh node Cube.006
+12:46:22 | INFO: Blender create Mesh node Cube.002
+12:46:22 | INFO: Blender create Mesh node Cube.007
+12:46:22 | INFO: Blender create Mesh node Cube.011
+12:46:22 | INFO: Blender create Mesh node Cube.004
+12:46:22 | INFO: Blender create Mesh node Cube.009
+12:46:22 | INFO: Blender create Mesh node Cube.012
+12:46:22 | INFO: glTF import finished in 0.12s
+01:15.346  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/armchair-roundtrip.png'
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

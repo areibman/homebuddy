@@ -1,0 +1,39 @@
+{
+  "id": "bed",
+  "name": "MALM Bed frame, white, Queen",
+  "category": "Beds",
+  "description": "White Queen MALM frame with flat full-width headboard and low footboard. Mattress shown for context and sold separately.",
+  "dimensions_m": {
+    "width": 1.679575,
+    "depth": 2.111375,
+    "height": 1.000125
+  },
+  "materials": [
+    "Particleboard",
+    "Fiberboard",
+    "Acrylic paint",
+    "Galvanized steel"
+  ],
+  "source": {
+    "retailer": "IKEA",
+    "url": "https://www.ikea.com/us/en/p/malm-bed-frame-white-s19931605/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/malm-bed-frame-white__0749130_pe745499_s5.jpg",
+    "article_number": "199.316.05",
+    "checked_date": "2026-09-08"
+  },
+  "files": {
+    "blend": "bed.blend",
+    "glb": "bed.glb",
+    "preview": "bed.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+  "dimension_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo.",
+  "view": {
+    "camera_orbit_degrees": {
+      "theta": 23,
+      "phi": 76
+    },
+    "note": "Catalog-reference three-quarter view, low elevation."
+  },
+  "fidelity_note": "Reconstructed from exact linked packshot, with subcomponent proportions inferred; see review.md. GLB round-trip rendered to verify portable materials."
+}

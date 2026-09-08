@@ -1,0 +1,723 @@
+11:53:31 | INFO: Data are loaded, start creating Blender stuff
+11:53:31 | INFO: Blender create Mesh node Chamfered table top
+11:53:31 | INFO: Blender create Mesh node Tapered splayed leg
+11:53:31 | INFO: Blender create Mesh node Tapered splayed leg.001
+11:53:31 | INFO: Blender create Mesh node Tapered splayed leg.002
+11:53:31 | INFO: Blender create Mesh node Tapered splayed leg.003
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.001
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.002
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.003
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.004
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.005
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.006
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.007
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.008
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.009
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.010
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.011
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.012
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.013
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.014
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.015
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.016
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.017
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.018
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.019
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.020
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.021
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.022
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.023
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.024
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.025
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.026
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.027
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.028
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.029
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.030
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.031
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.032
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.033
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.034
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.035
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.036
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.037
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.038
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.039
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.040
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.041
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.042
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.043
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.044
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.045
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.046
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.047
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.048
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.049
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.050
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.051
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.052
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.053
+11:53:31 | INFO: Blender create Mesh node Subtle ash grain.054
+11:53:31 | INFO: glTF import finished in 0.05s
+VALIDATED dining-table [1.0499999523162842, 1.0499999523162842, 0.7400000095367432] 60
+11:53:31 | INFO: Data are loaded, start creating Blender stuff
+11:53:31 | INFO: Blender create Mesh node Cube.005
+11:53:31 | INFO: Blender create Mesh node Cube
+11:53:31 | INFO: Blender create Mesh node Cube.001
+11:53:31 | INFO: Blender create Mesh node Cube.002
+11:53:31 | INFO: Blender create Mesh node Cube.003
+11:53:31 | INFO: Blender create Mesh node Cube.004
+11:53:31 | INFO: glTF import finished in 0.01s
+VALIDATED coffee-table [0.9000000357627869, 0.550000011920929, 0.45000001788139343] 6
+11:53:31 | INFO: Data are loaded, start creating Blender stuff
+11:53:31 | INFO: Blender create Mesh node Bound end selvedge
+11:53:31 | INFO: Blender create Mesh node Bound end selvedge.001
+11:53:31 | INFO: Blender create Mesh node Bound long selvedge
+11:53:31 | INFO: Blender create Mesh node Bound long selvedge.001
+11:53:31 | INFO: Blender create Mesh node Jute warp
+11:53:31 | INFO: Blender create Mesh node Jute warp.001
+11:53:31 | INFO: Blender create Mesh node Jute warp.002
+11:53:31 | INFO: Blender create Mesh node Jute warp.003
+11:53:31 | INFO: Blender create Mesh node Jute warp.004
+11:53:31 | INFO: Blender create Mesh node Jute warp.005
+11:53:31 | INFO: Blender create Mesh node Jute warp.006
+11:53:31 | INFO: Blender create Mesh node Jute warp.007
+11:53:31 | INFO: Blender create Mesh node Jute warp.008
+11:53:31 | INFO: Blender create Mesh node Jute warp.009
+11:53:31 | INFO: Blender create Mesh node Jute warp.010
+11:53:31 | INFO: Blender create Mesh node Jute warp.011
+11:53:31 | INFO: Blender create Mesh node Jute warp.012
+11:53:31 | INFO: Blender create Mesh node Jute warp.013
+11:53:31 | INFO: Blender create Mesh node Jute warp.014
+11:53:31 | INFO: Blender create Mesh node Jute warp.015
+11:53:31 | INFO: Blender create Mesh node Jute warp.016
+11:53:31 | INFO: Blender create Mesh node Jute warp.017
+11:53:31 | INFO: Blender create Mesh node Jute warp.018
+11:53:31 | INFO: Blender create Mesh node Jute warp.019
+11:53:31 | INFO: Blender create Mesh node Jute warp.020
+11:53:31 | INFO: Blender create Mesh node Jute warp.021
+11:53:31 | INFO: Blender create Mesh node Jute warp.022
+11:53:31 | INFO: Blender create Mesh node Jute warp.023
+11:53:31 | INFO: Blender create Mesh node Jute warp.024
+11:53:31 | INFO: Blender create Mesh node Jute warp.025
+11:53:31 | INFO: Blender create Mesh node Jute warp.026
+11:53:31 | INFO: Blender create Mesh node Jute warp.027
+11:53:31 | INFO: Blender create Mesh node Jute warp.028
+11:53:31 | INFO: Blender create Mesh node Jute warp.029
+11:53:31 | INFO: Blender create Mesh node Jute warp.030
+11:53:31 | INFO: Blender create Mesh node Jute warp.031
+11:53:31 | INFO: Blender create Mesh node Jute warp.032
+11:53:31 | INFO: Blender create Mesh node Jute warp.033
+11:53:31 | INFO: Blender create Mesh node Jute warp.034
+11:53:31 | INFO: Blender create Mesh node Jute warp.035
+11:53:31 | INFO: Blender create Mesh node Jute warp.036
+11:53:31 | INFO: Blender create Mesh node Jute warp.037
+11:53:31 | INFO: Blender create Mesh node Jute warp.038
+11:53:31 | INFO: Blender create Mesh node Jute warp.039
+11:53:31 | INFO: Blender create Mesh node Jute warp.040
+11:53:31 | INFO: Blender create Mesh node Jute warp.041
+11:53:31 | INFO: Blender create Mesh node Jute warp.042
+11:53:31 | INFO: Blender create Mesh node Jute warp.043
+11:53:31 | INFO: Blender create Mesh node Jute warp.044
+11:53:31 | INFO: Blender create Mesh node Jute warp.045
+11:53:31 | INFO: Blender create Mesh node Jute warp.046
+11:53:31 | INFO: Blender create Mesh node Jute warp.047
+11:53:31 | INFO: Blender create Mesh node Jute warp.048
+11:53:31 | INFO: Blender create Mesh node Jute warp.049
+11:53:31 | INFO: Blender create Mesh node Jute warp.050
+11:53:31 | INFO: Blender create Mesh node Jute warp.051
+11:53:31 | INFO: Blender create Mesh node Jute warp.052
+11:53:31 | INFO: Blender create Mesh node Jute warp.053
+11:53:31 | INFO: Blender create Mesh node Jute warp.054
+11:53:31 | INFO: Blender create Mesh node Jute warp.055
+11:53:31 | INFO: Blender create Mesh node Jute warp.056
+11:53:31 | INFO: Blender create Mesh node Jute warp.057
+11:53:32 | INFO: Blender create Mesh node Jute warp.058
+11:53:32 | INFO: Blender create Mesh node Jute warp.059
+11:53:32 | INFO: Blender create Mesh node Jute warp.060
+11:53:32 | INFO: Blender create Mesh node Jute warp.061
+11:53:32 | INFO: Blender create Mesh node Jute warp.062
+11:53:32 | INFO: Blender create Mesh node Jute warp.063
+11:53:32 | INFO: Blender create Mesh node Jute warp.064
+11:53:32 | INFO: Blender create Mesh node Jute warp.065
+11:53:32 | INFO: Blender create Mesh node Jute warp.066
+11:53:32 | INFO: Blender create Mesh node Jute warp.067
+11:53:32 | INFO: Blender create Mesh node Jute warp.068
+11:53:32 | INFO: Blender create Mesh node Jute warp.069
+11:53:32 | INFO: Blender create Mesh node Jute warp.070
+11:53:32 | INFO: Blender create Mesh node Jute warp.071
+11:53:32 | INFO: Blender create Mesh node Jute warp.072
+11:53:32 | INFO: Blender create Mesh node Jute warp.073
+11:53:32 | INFO: Blender create Mesh node Jute warp.074
+11:53:32 | INFO: Blender create Mesh node Jute warp.075
+11:53:32 | INFO: Blender create Mesh node Jute warp.076
+11:53:32 | INFO: Blender create Mesh node Jute warp.077
+11:53:32 | INFO: Blender create Mesh node Jute warp.078
+11:53:32 | INFO: Blender create Mesh node Jute warp.079
+11:53:32 | INFO: Blender create Mesh node Jute warp.080
+11:53:32 | INFO: Blender create Mesh node Jute warp.081
+11:53:32 | INFO: Blender create Mesh node Jute warp.082
+11:53:32 | INFO: Blender create Mesh node Jute warp.083
+11:53:32 | INFO: Blender create Mesh node Jute warp.084
+11:53:32 | INFO: Blender create Mesh node Jute warp.085
+11:53:32 | INFO: Blender create Mesh node Jute warp.086
+11:53:32 | INFO: Blender create Mesh node Jute warp.087
+11:53:32 | INFO: Blender create Mesh node Jute warp.088
+11:53:32 | INFO: Blender create Mesh node Jute warp.089
+11:53:32 | INFO: Blender create Mesh node Jute warp.090
+11:53:32 | INFO: Blender create Mesh node Jute warp.091
+11:53:32 | INFO: Blender create Mesh node Jute warp.092
+11:53:32 | INFO: Blender create Mesh node Jute warp.093
+11:53:32 | INFO: Blender create Mesh node Jute warp.094
+11:53:32 | INFO: Blender create Mesh node Jute warp.095
+11:53:32 | INFO: Blender create Mesh node Jute warp.096
+11:53:32 | INFO: Blender create Mesh node Jute warp.097
+11:53:32 | INFO: Blender create Mesh node Jute warp.098
+11:53:32 | INFO: Blender create Mesh node Jute warp.099
+11:53:32 | INFO: Blender create Mesh node Jute warp.100
+11:53:32 | INFO: Blender create Mesh node Jute warp.101
+11:53:32 | INFO: Blender create Mesh node Jute warp.102
+11:53:32 | INFO: Blender create Mesh node Jute warp.103
+11:53:32 | INFO: Blender create Mesh node Jute warp.104
+11:53:32 | INFO: Blender create Mesh node Jute warp.105
+11:53:32 | INFO: Blender create Mesh node Jute warp.106
+11:53:32 | INFO: Blender create Mesh node Jute warp.107
+11:53:32 | INFO: Blender create Mesh node Jute warp.108
+11:53:32 | INFO: Blender create Mesh node Jute warp.109
+11:53:32 | INFO: Blender create Mesh node Jute warp.110
+11:53:32 | INFO: Blender create Mesh node Jute warp.111
+11:53:32 | INFO: Blender create Mesh node Jute warp.112
+11:53:32 | INFO: Blender create Mesh node Jute warp.113
+11:53:32 | INFO: Blender create Mesh node Jute warp.114
+11:53:32 | INFO: Blender create Mesh node Jute warp.115
+11:53:32 | INFO: Blender create Mesh node Jute warp.116
+11:53:32 | INFO: Blender create Mesh node Jute warp.117
+11:53:32 | INFO: Blender create Mesh node Jute warp.118
+11:53:32 | INFO: Blender create Mesh node Jute warp.119
+11:53:32 | INFO: Blender create Mesh node Jute warp.120
+11:53:32 | INFO: Blender create Mesh node Jute warp.121
+11:53:32 | INFO: Blender create Mesh node Jute warp.122
+11:53:32 | INFO: Blender create Mesh node Jute warp.123
+11:53:32 | INFO: Blender create Mesh node Jute warp.124
+11:53:32 | INFO: Blender create Mesh node Jute warp.125
+11:53:32 | INFO: Blender create Mesh node Jute warp.126
+11:53:32 | INFO: Blender create Mesh node Jute warp.127
+11:53:32 | INFO: Blender create Mesh node Jute warp.128
+11:53:32 | INFO: Blender create Mesh node Jute warp.129
+11:53:32 | INFO: Blender create Mesh node Jute warp.130
+11:53:32 | INFO: Blender create Mesh node Jute warp.131
+11:53:32 | INFO: Blender create Mesh node Jute warp.132
+11:53:32 | INFO: Blender create Mesh node Jute warp.133
+11:53:32 | INFO: Blender create Mesh node Jute warp.134
+11:53:32 | INFO: Blender create Mesh node Jute warp.135
+11:53:32 | INFO: Blender create Mesh node Jute warp.136
+11:53:32 | INFO: Blender create Mesh node Jute warp.137
+11:53:32 | INFO: Blender create Mesh node Jute warp.138
+11:53:32 | INFO: Blender create Mesh node Jute warp.139
+11:53:32 | INFO: Blender create Mesh node Jute warp.140
+11:53:32 | INFO: Blender create Mesh node Jute warp.141
+11:53:32 | INFO: Blender create Mesh node Jute warp.142
+11:53:32 | INFO: Blender create Mesh node Jute warp.143
+11:53:32 | INFO: Blender create Mesh node Jute warp.144
+11:53:32 | INFO: Blender create Mesh node Jute warp.145
+11:53:32 | INFO: Blender create Mesh node Jute warp.146
+11:53:32 | INFO: Blender create Mesh node Jute warp.147
+11:53:32 | INFO: Blender create Mesh node Jute warp.148
+11:53:32 | INFO: Blender create Mesh node Jute warp.149
+11:53:32 | INFO: Blender create Mesh node Jute warp.150
+11:53:32 | INFO: Blender create Mesh node Jute warp.151
+11:53:32 | INFO: Blender create Mesh node Jute warp.152
+11:53:32 | INFO: Blender create Mesh node Jute warp.153
+11:53:32 | INFO: Blender create Mesh node Jute warp.154
+11:53:32 | INFO: Blender create Mesh node Jute warp.155
+11:53:32 | INFO: Blender create Mesh node Jute warp.156
+11:53:32 | INFO: Blender create Mesh node Jute warp.157
+11:53:32 | INFO: Blender create Mesh node Jute warp.158
+11:53:32 | INFO: Blender create Mesh node Jute warp.159
+11:53:32 | INFO: Blender create Mesh node Jute warp.160
+11:53:32 | INFO: Blender create Mesh node Jute warp.161
+11:53:32 | INFO: Blender create Mesh node Jute warp.162
+11:53:32 | INFO: Blender create Mesh node Jute warp.163
+11:53:32 | INFO: Blender create Mesh node Jute warp.164
+11:53:32 | INFO: Blender create Mesh node Jute warp.165
+11:53:32 | INFO: Blender create Mesh node Jute warp.166
+11:53:32 | INFO: Blender create Mesh node Jute warp.167
+11:53:32 | INFO: Blender create Mesh node Jute warp.168
+11:53:32 | INFO: Blender create Mesh node Jute warp.169
+11:53:32 | INFO: Blender create Mesh node Jute warp.170
+11:53:32 | INFO: Blender create Mesh node Jute warp.171
+11:53:32 | INFO: Blender create Mesh node Jute warp.172
+11:53:32 | INFO: Blender create Mesh node Jute warp.173
+11:53:32 | INFO: Blender create Mesh node Jute warp.174
+11:53:32 | INFO: Blender create Mesh node Jute warp.175
+11:53:32 | INFO: Blender create Mesh node Jute warp.176
+11:53:32 | INFO: Blender create Mesh node Jute warp.177
+11:53:32 | INFO: Blender create Mesh node Jute warp.178
+11:53:32 | INFO: Blender create Mesh node Jute warp.179
+11:53:32 | INFO: Blender create Mesh node Jute warp.180
+11:53:32 | INFO: Blender create Mesh node Jute warp.181
+11:53:32 | INFO: Blender create Mesh node Jute warp.182
+11:53:32 | INFO: Blender create Mesh node Jute warp.183
+11:53:32 | INFO: Blender create Mesh node Jute warp.184
+11:53:32 | INFO: Blender create Mesh node Jute warp.185
+11:53:32 | INFO: Blender create Mesh node Jute warp.186
+11:53:32 | INFO: Blender create Mesh node Jute warp.187
+11:53:32 | INFO: Blender create Mesh node Jute warp.188
+11:53:32 | INFO: Blender create Mesh node Jute warp.189
+11:53:32 | INFO: Blender create Mesh node Jute warp.190
+11:53:32 | INFO: Blender create Mesh node Jute warp.191
+11:53:32 | INFO: Blender create Mesh node Jute warp.192
+11:53:32 | INFO: Blender create Mesh node Jute warp.193
+11:53:32 | INFO: Blender create Mesh node Jute warp.194
+11:53:32 | INFO: Blender create Mesh node Jute warp.195
+11:53:32 | INFO: Blender create Mesh node Jute warp.196
+11:53:32 | INFO: Blender create Mesh node Jute warp.197
+11:53:32 | INFO: Blender create Mesh node Jute warp.198
+11:53:32 | INFO: Blender create Mesh node Jute warp.199
+11:53:32 | INFO: Blender create Mesh node Jute warp.200
+11:53:32 | INFO: Blender create Mesh node Jute warp.201
+11:53:32 | INFO: Blender create Mesh node Jute warp.202
+11:53:32 | INFO: Blender create Mesh node Jute warp.203
+11:53:32 | INFO: Blender create Mesh node Jute warp.204
+11:53:32 | INFO: Blender create Mesh node Jute warp.205
+11:53:32 | INFO: Blender create Mesh node Jute warp.206
+11:53:32 | INFO: Blender create Mesh node Jute warp.207
+11:53:32 | INFO: Blender create Mesh node Jute warp.208
+11:53:32 | INFO: Blender create Mesh node Jute warp.209
+11:53:32 | INFO: Blender create Mesh node Jute warp.210
+11:53:32 | INFO: Blender create Mesh node Jute warp.211
+11:53:32 | INFO: Blender create Mesh node Jute warp.212
+11:53:32 | INFO: Blender create Mesh node Jute warp.213
+11:53:32 | INFO: Blender create Mesh node Jute warp.214
+11:53:32 | INFO: Blender create Mesh node Jute warp.215
+11:53:32 | INFO: Blender create Mesh node Jute warp.216
+11:53:32 | INFO: Blender create Mesh node Jute warp.217
+11:53:32 | INFO: Blender create Mesh node Jute warp.218
+11:53:32 | INFO: Blender create Mesh node Jute warp.219
+11:53:32 | INFO: Blender create Mesh node Jute warp.220
+11:53:32 | INFO: Blender create Mesh node Jute warp.221
+11:53:32 | INFO: Blender create Mesh node Jute warp.222
+11:53:32 | INFO: Blender create Mesh node Jute warp.223
+11:53:32 | INFO: Blender create Mesh node Jute warp.224
+11:53:32 | INFO: Blender create Mesh node Jute warp.225
+11:53:32 | INFO: Blender create Mesh node Jute warp.226
+11:53:32 | INFO: Blender create Mesh node Jute warp.227
+11:53:32 | INFO: Blender create Mesh node Jute warp.228
+11:53:32 | INFO: Blender create Mesh node Jute warp.229
+11:53:32 | INFO: Blender create Mesh node Jute warp.230
+11:53:32 | INFO: Blender create Mesh node Jute warp.231
+11:53:32 | INFO: Blender create Mesh node Jute warp.232
+11:53:32 | INFO: Blender create Mesh node Jute warp.233
+11:53:32 | INFO: Blender create Mesh node Jute warp.234
+11:53:32 | INFO: Blender create Mesh node Jute warp.235
+11:53:32 | INFO: Blender create Mesh node Jute warp.236
+11:53:32 | INFO: Blender create Mesh node Jute warp.237
+11:53:32 | INFO: Blender create Mesh node Jute warp.238
+11:53:32 | INFO: Blender create Mesh node Jute warp.239
+11:53:32 | INFO: Blender create Mesh node Jute warp.240
+11:53:32 | INFO: Blender create Mesh node Jute warp.241
+11:53:32 | INFO: Blender create Mesh node Jute warp.242
+11:53:32 | INFO: Blender create Mesh node Jute warp.243
+11:53:32 | INFO: Blender create Mesh node Jute warp.244
+11:53:32 | INFO: Blender create Mesh node Jute warp.245
+11:53:32 | INFO: Blender create Mesh node Jute warp.246
+11:53:32 | INFO: Blender create Mesh node Jute warp.247
+11:53:32 | INFO: Blender create Mesh node Jute warp.248
+11:53:32 | INFO: Blender create Mesh node Jute warp.249
+11:53:32 | INFO: Blender create Mesh node Jute warp.250
+11:53:32 | INFO: Blender create Mesh node Jute warp.251
+11:53:32 | INFO: Blender create Mesh node Jute warp.252
+11:53:32 | INFO: Blender create Mesh node Jute warp.253
+11:53:32 | INFO: Blender create Mesh node Jute warp.254
+11:53:32 | INFO: Blender create Mesh node Jute warp.255
+11:53:32 | INFO: Blender create Mesh node Jute warp.256
+11:53:32 | INFO: Blender create Mesh node Jute warp.257
+11:53:32 | INFO: Blender create Mesh node Jute warp.258
+11:53:32 | INFO: Blender create Mesh node Jute warp.259
+11:53:32 | INFO: Blender create Mesh node Jute weft
+11:53:32 | INFO: Blender create Mesh node Jute weft.001
+11:53:32 | INFO: Blender create Mesh node Jute weft.002
+11:53:32 | INFO: Blender create Mesh node Jute weft.003
+11:53:32 | INFO: Blender create Mesh node Jute weft.004
+11:53:32 | INFO: Blender create Mesh node Jute weft.005
+11:53:32 | INFO: Blender create Mesh node Jute weft.006
+11:53:32 | INFO: Blender create Mesh node Jute weft.007
+11:53:32 | INFO: Blender create Mesh node Jute weft.008
+11:53:32 | INFO: Blender create Mesh node Jute weft.009
+11:53:32 | INFO: Blender create Mesh node Jute weft.010
+11:53:32 | INFO: Blender create Mesh node Jute weft.011
+11:53:32 | INFO: Blender create Mesh node Jute weft.012
+11:53:32 | INFO: Blender create Mesh node Jute weft.013
+11:53:32 | INFO: Blender create Mesh node Jute weft.014
+11:53:32 | INFO: Blender create Mesh node Jute weft.015
+11:53:32 | INFO: Blender create Mesh node Jute weft.016
+11:53:32 | INFO: Blender create Mesh node Jute weft.017
+11:53:32 | INFO: Blender create Mesh node Jute weft.018
+11:53:32 | INFO: Blender create Mesh node Jute weft.019
+11:53:32 | INFO: Blender create Mesh node Jute weft.020
+11:53:32 | INFO: Blender create Mesh node Jute weft.021
+11:53:32 | INFO: Blender create Mesh node Jute weft.022
+11:53:32 | INFO: Blender create Mesh node Jute weft.023
+11:53:32 | INFO: Blender create Mesh node Jute weft.024
+11:53:32 | INFO: Blender create Mesh node Jute weft.025
+11:53:32 | INFO: Blender create Mesh node Jute weft.026
+11:53:32 | INFO: Blender create Mesh node Jute weft.027
+11:53:32 | INFO: Blender create Mesh node Jute weft.028
+11:53:32 | INFO: Blender create Mesh node Jute weft.029
+11:53:32 | INFO: Blender create Mesh node Jute weft.030
+11:53:32 | INFO: Blender create Mesh node Jute weft.031
+11:53:32 | INFO: Blender create Mesh node Jute weft.032
+11:53:32 | INFO: Blender create Mesh node Jute weft.033
+11:53:32 | INFO: Blender create Mesh node Jute weft.034
+11:53:32 | INFO: Blender create Mesh node Jute weft.035
+11:53:32 | INFO: Blender create Mesh node Jute weft.036
+11:53:32 | INFO: Blender create Mesh node Jute weft.037
+11:53:32 | INFO: Blender create Mesh node Jute weft.038
+11:53:32 | INFO: Blender create Mesh node Jute weft.039
+11:53:32 | INFO: Blender create Mesh node Jute weft.040
+11:53:32 | INFO: Blender create Mesh node Jute weft.041
+11:53:32 | INFO: Blender create Mesh node Jute weft.042
+11:53:32 | INFO: Blender create Mesh node Jute weft.043
+11:53:32 | INFO: Blender create Mesh node Jute weft.044
+11:53:32 | INFO: Blender create Mesh node Jute weft.045
+11:53:32 | INFO: Blender create Mesh node Jute weft.046
+11:53:32 | INFO: Blender create Mesh node Jute weft.047
+11:53:32 | INFO: Blender create Mesh node Jute weft.048
+11:53:32 | INFO: Blender create Mesh node Jute weft.049
+11:53:32 | INFO: Blender create Mesh node Jute weft.050
+11:53:32 | INFO: Blender create Mesh node Jute weft.051
+11:53:32 | INFO: Blender create Mesh node Jute weft.052
+11:53:32 | INFO: Blender create Mesh node Jute weft.053
+11:53:32 | INFO: Blender create Mesh node Jute weft.054
+11:53:32 | INFO: Blender create Mesh node Jute weft.055
+11:53:32 | INFO: Blender create Mesh node Jute weft.056
+11:53:32 | INFO: Blender create Mesh node Jute weft.057
+11:53:32 | INFO: Blender create Mesh node Jute weft.058
+11:53:32 | INFO: Blender create Mesh node Jute weft.059
+11:53:32 | INFO: Blender create Mesh node Jute weft.060
+11:53:32 | INFO: Blender create Mesh node Jute weft.061
+11:53:32 | INFO: Blender create Mesh node Jute weft.062
+11:53:32 | INFO: Blender create Mesh node Jute weft.063
+11:53:32 | INFO: Blender create Mesh node Jute weft.064
+11:53:32 | INFO: Blender create Mesh node Jute weft.065
+11:53:32 | INFO: Blender create Mesh node Jute weft.066
+11:53:32 | INFO: Blender create Mesh node Jute weft.067
+11:53:32 | INFO: Blender create Mesh node Jute weft.068
+11:53:32 | INFO: Blender create Mesh node Jute weft.069
+11:53:32 | INFO: Blender create Mesh node Jute weft.070
+11:53:32 | INFO: Blender create Mesh node Jute weft.071
+11:53:32 | INFO: Blender create Mesh node Jute weft.072
+11:53:32 | INFO: Blender create Mesh node Jute weft.073
+11:53:32 | INFO: Blender create Mesh node Jute weft.074
+11:53:32 | INFO: Blender create Mesh node Jute weft.075
+11:53:32 | INFO: Blender create Mesh node Jute weft.076
+11:53:32 | INFO: Blender create Mesh node Jute weft.077
+11:53:32 | INFO: Blender create Mesh node Jute weft.078
+11:53:32 | INFO: Blender create Mesh node Jute weft.079
+11:53:32 | INFO: Blender create Mesh node Jute weft.080
+11:53:32 | INFO: Blender create Mesh node Jute weft.081
+11:53:32 | INFO: Blender create Mesh node Jute weft.082
+11:53:32 | INFO: Blender create Mesh node Jute weft.083
+11:53:32 | INFO: Blender create Mesh node Jute weft.084
+11:53:32 | INFO: Blender create Mesh node Jute weft.085
+11:53:32 | INFO: Blender create Mesh node Jute weft.086
+11:53:32 | INFO: Blender create Mesh node Jute weft.087
+11:53:32 | INFO: Blender create Mesh node Jute weft.088
+11:53:32 | INFO: Blender create Mesh node Jute weft.089
+11:53:32 | INFO: Blender create Mesh node Jute weft.090
+11:53:32 | INFO: Blender create Mesh node Jute weft.091
+11:53:32 | INFO: Blender create Mesh node Jute weft.092
+11:53:32 | INFO: Blender create Mesh node Jute weft.093
+11:53:32 | INFO: Blender create Mesh node Jute weft.094
+11:53:32 | INFO: Blender create Mesh node Jute weft.095
+11:53:32 | INFO: Blender create Mesh node Jute weft.096
+11:53:32 | INFO: Blender create Mesh node Jute weft.097
+11:53:32 | INFO: Blender create Mesh node Jute weft.098
+11:53:32 | INFO: Blender create Mesh node Jute weft.099
+11:53:32 | INFO: Blender create Mesh node Jute weft.100
+11:53:32 | INFO: Blender create Mesh node Jute weft.101
+11:53:32 | INFO: Blender create Mesh node Jute weft.102
+11:53:32 | INFO: Blender create Mesh node Jute weft.103
+11:53:32 | INFO: Blender create Mesh node Jute weft.104
+11:53:32 | INFO: Blender create Mesh node Jute weft.105
+11:53:32 | INFO: Blender create Mesh node Jute weft.106
+11:53:32 | INFO: Blender create Mesh node Jute weft.107
+11:53:32 | INFO: Blender create Mesh node Jute weft.108
+11:53:32 | INFO: Blender create Mesh node Jute weft.109
+11:53:32 | INFO: Blender create Mesh node Jute weft.110
+11:53:32 | INFO: Blender create Mesh node Jute weft.111
+11:53:32 | INFO: Blender create Mesh node Jute weft.112
+11:53:32 | INFO: Blender create Mesh node Jute weft.113
+11:53:32 | INFO: Blender create Mesh node Jute weft.114
+11:53:32 | INFO: Blender create Mesh node Jute weft.115
+11:53:32 | INFO: Blender create Mesh node Jute weft.116
+11:53:32 | INFO: Blender create Mesh node Jute weft.117
+11:53:32 | INFO: Blender create Mesh node Jute weft.118
+11:53:32 | INFO: Blender create Mesh node Jute weft.119
+11:53:32 | INFO: Blender create Mesh node Jute weft.120
+11:53:32 | INFO: Blender create Mesh node Jute weft.121
+11:53:32 | INFO: Blender create Mesh node Jute weft.122
+11:53:32 | INFO: Blender create Mesh node Jute weft.123
+11:53:32 | INFO: Blender create Mesh node Jute weft.124
+11:53:32 | INFO: Blender create Mesh node Jute weft.125
+11:53:32 | INFO: Blender create Mesh node Jute weft.126
+11:53:32 | INFO: Blender create Mesh node Jute weft.127
+11:53:32 | INFO: Blender create Mesh node Jute weft.128
+11:53:32 | INFO: Blender create Mesh node Jute weft.129
+11:53:32 | INFO: Blender create Mesh node Jute weft.130
+11:53:32 | INFO: Blender create Mesh node Jute weft.131
+11:53:32 | INFO: Blender create Mesh node Jute weft.132
+11:53:32 | INFO: Blender create Mesh node Jute weft.133
+11:53:32 | INFO: Blender create Mesh node Jute weft.134
+11:53:32 | INFO: Blender create Mesh node Jute weft.135
+11:53:32 | INFO: Blender create Mesh node Jute weft.136
+11:53:32 | INFO: Blender create Mesh node Jute weft.137
+11:53:32 | INFO: Blender create Mesh node Jute weft.138
+11:53:32 | INFO: Blender create Mesh node Jute weft.139
+11:53:32 | INFO: Blender create Mesh node Jute weft.140
+11:53:32 | INFO: Blender create Mesh node Jute weft.141
+11:53:32 | INFO: Blender create Mesh node Jute weft.142
+11:53:32 | INFO: Blender create Mesh node Jute weft.143
+11:53:32 | INFO: Blender create Mesh node Jute weft.144
+11:53:32 | INFO: Blender create Mesh node Jute weft.145
+11:53:32 | INFO: Blender create Mesh node Jute weft.146
+11:53:32 | INFO: Blender create Mesh node Jute weft.147
+11:53:32 | INFO: Blender create Mesh node Jute weft.148
+11:53:32 | INFO: Blender create Mesh node Jute weft.149
+11:53:32 | INFO: Blender create Mesh node Jute weft.150
+11:53:32 | INFO: Blender create Mesh node Jute weft.151
+11:53:32 | INFO: Blender create Mesh node Jute weft.152
+11:53:32 | INFO: Blender create Mesh node Jute weft.153
+11:53:32 | INFO: Blender create Mesh node Jute weft.154
+11:53:32 | INFO: Blender create Mesh node Jute weft.155
+11:53:32 | INFO: Blender create Mesh node Jute weft.156
+11:53:32 | INFO: Blender create Mesh node Jute weft.157
+11:53:32 | INFO: Blender create Mesh node Jute weft.158
+11:53:32 | INFO: Blender create Mesh node Jute weft.159
+11:53:32 | INFO: Blender create Mesh node Jute weft.160
+11:53:32 | INFO: Blender create Mesh node Jute weft.161
+11:53:32 | INFO: Blender create Mesh node Jute weft.162
+11:53:32 | INFO: Blender create Mesh node Jute weft.163
+11:53:32 | INFO: Blender create Mesh node Jute weft.164
+11:53:32 | INFO: Blender create Mesh node Jute weft.165
+11:53:32 | INFO: Blender create Mesh node Jute weft.166
+11:53:32 | INFO: Blender create Mesh node Jute weft.167
+11:53:32 | INFO: Blender create Mesh node Jute weft.168
+11:53:32 | INFO: Blender create Mesh node Jute weft.169
+11:53:32 | INFO: Blender create Mesh node Jute weft.170
+11:53:32 | INFO: Blender create Mesh node Jute weft.171
+11:53:32 | INFO: Blender create Mesh node Jute weft.172
+11:53:32 | INFO: Blender create Mesh node Jute weft.173
+11:53:32 | INFO: Blender create Mesh node Jute weft.174
+11:53:32 | INFO: Blender create Mesh node Jute weft.175
+11:53:32 | INFO: Blender create Mesh node Jute weft.176
+11:53:32 | INFO: Blender create Mesh node Jute weft.177
+11:53:32 | INFO: Blender create Mesh node Jute weft.178
+11:53:32 | INFO: Blender create Mesh node Jute weft.179
+11:53:32 | INFO: Blender create Mesh node Jute weft.180
+11:53:32 | INFO: Blender create Mesh node Jute weft.181
+11:53:32 | INFO: Blender create Mesh node Jute weft.182
+11:53:32 | INFO: Blender create Mesh node Jute weft.183
+11:53:32 | INFO: Blender create Mesh node Jute weft.184
+11:53:32 | INFO: Blender create Mesh node Jute weft.185
+11:53:32 | INFO: Blender create Mesh node Jute weft.186
+11:53:32 | INFO: Blender create Mesh node Jute weft.187
+11:53:32 | INFO: Blender create Mesh node Jute weft.188
+11:53:32 | INFO: Blender create Mesh node Jute weft.189
+11:53:32 | INFO: Blender create Mesh node Jute weft.190
+11:53:32 | INFO: Blender create Mesh node Jute weft.191
+11:53:32 | INFO: Blender create Mesh node Jute weft.192
+11:53:32 | INFO: Blender create Mesh node Jute weft.193
+11:53:32 | INFO: Blender create Mesh node Jute weft.194
+11:53:32 | INFO: Blender create Mesh node Jute weft.195
+11:53:32 | INFO: Blender create Mesh node Jute weft.196
+11:53:33 | INFO: Blender create Mesh node Jute weft.197
+11:53:33 | INFO: Blender create Mesh node Jute weft.198
+11:53:33 | INFO: Blender create Mesh node Jute weft.199
+11:53:33 | INFO: Blender create Mesh node Jute weft.200
+11:53:33 | INFO: Blender create Mesh node Jute weft.201
+11:53:33 | INFO: Blender create Mesh node Jute weft.202
+11:53:33 | INFO: Blender create Mesh node Jute weft.203
+11:53:33 | INFO: Blender create Mesh node Jute weft.204
+11:53:33 | INFO: Blender create Mesh node Jute weft.205
+11:53:33 | INFO: Blender create Mesh node Jute weft.206
+11:53:33 | INFO: Blender create Mesh node Jute weft.207
+11:53:33 | INFO: Blender create Mesh node Jute weft.208
+11:53:33 | INFO: Blender create Mesh node Jute weft.209
+11:53:33 | INFO: Blender create Mesh node Jute weft.210
+11:53:33 | INFO: Blender create Mesh node Jute weft.211
+11:53:33 | INFO: Blender create Mesh node Jute weft.212
+11:53:33 | INFO: Blender create Mesh node Jute weft.213
+11:53:33 | INFO: Blender create Mesh node Jute weft.214
+11:53:33 | INFO: Blender create Mesh node Jute weft.215
+11:53:33 | INFO: Blender create Mesh node Jute weft.216
+11:53:33 | INFO: Blender create Mesh node Jute weft.217
+11:53:33 | INFO: Blender create Mesh node Jute weft.218
+11:53:33 | INFO: Blender create Mesh node Jute weft.219
+11:53:33 | INFO: Blender create Mesh node Jute weft.220
+11:53:33 | INFO: Blender create Mesh node Jute weft.221
+11:53:33 | INFO: Blender create Mesh node Jute weft.222
+11:53:33 | INFO: Blender create Mesh node Jute weft.223
+11:53:33 | INFO: Blender create Mesh node Jute weft.224
+11:53:33 | INFO: Blender create Mesh node Jute weft.225
+11:53:33 | INFO: Blender create Mesh node Jute weft.226
+11:53:33 | INFO: Blender create Mesh node Jute weft.227
+11:53:33 | INFO: Blender create Mesh node Jute weft.228
+11:53:33 | INFO: Blender create Mesh node Jute weft.229
+11:53:33 | INFO: Blender create Mesh node Jute weft.230
+11:53:33 | INFO: Blender create Mesh node Jute weft.231
+11:53:33 | INFO: Blender create Mesh node Jute weft.232
+11:53:33 | INFO: Blender create Mesh node Jute weft.233
+11:53:33 | INFO: Blender create Mesh node Jute weft.234
+11:53:33 | INFO: Blender create Mesh node Jute weft.235
+11:53:33 | INFO: Blender create Mesh node Jute weft.236
+11:53:33 | INFO: Blender create Mesh node Jute weft.237
+11:53:33 | INFO: Blender create Mesh node Jute weft.238
+11:53:33 | INFO: Blender create Mesh node Jute weft.239
+11:53:33 | INFO: Blender create Mesh node Jute weft.240
+11:53:33 | INFO: Blender create Mesh node Jute weft.241
+11:53:33 | INFO: Blender create Mesh node Jute weft.242
+11:53:33 | INFO: Blender create Mesh node Jute weft.243
+11:53:33 | INFO: Blender create Mesh node Jute weft.244
+11:53:33 | INFO: Blender create Mesh node Jute weft.245
+11:53:33 | INFO: Blender create Mesh node Jute weft.246
+11:53:33 | INFO: Blender create Mesh node Jute weft.247
+11:53:33 | INFO: Blender create Mesh node Jute weft.248
+11:53:33 | INFO: Blender create Mesh node Jute weft.249
+11:53:33 | INFO: Blender create Mesh node Jute weft.250
+11:53:33 | INFO: Blender create Mesh node Jute weft.251
+11:53:33 | INFO: Blender create Mesh node Jute weft.252
+11:53:33 | INFO: Blender create Mesh node Jute weft.253
+11:53:33 | INFO: Blender create Mesh node Jute weft.254
+11:53:33 | INFO: Blender create Mesh node Jute weft.255
+11:53:33 | INFO: Blender create Mesh node Jute weft.256
+11:53:33 | INFO: Blender create Mesh node Jute weft.257
+11:53:33 | INFO: Blender create Mesh node Jute weft.258
+11:53:33 | INFO: Blender create Mesh node Jute weft.259
+11:53:33 | INFO: Blender create Mesh node Jute weft.260
+11:53:33 | INFO: Blender create Mesh node Jute weft.261
+11:53:33 | INFO: Blender create Mesh node Jute weft.262
+11:53:33 | INFO: Blender create Mesh node Jute weft.263
+11:53:33 | INFO: Blender create Mesh node Jute weft.264
+11:53:33 | INFO: Blender create Mesh node Jute weft.265
+11:53:33 | INFO: Blender create Mesh node Jute weft.266
+11:53:33 | INFO: Blender create Mesh node Jute weft.267
+11:53:33 | INFO: Blender create Mesh node Jute weft.268
+11:53:33 | INFO: Blender create Mesh node Jute weft.269
+11:53:33 | INFO: Blender create Mesh node Jute weft.270
+11:53:33 | INFO: Blender create Mesh node Jute weft.271
+11:53:33 | INFO: Blender create Mesh node Jute weft.272
+11:53:33 | INFO: Blender create Mesh node Jute weft.273
+11:53:33 | INFO: Blender create Mesh node Jute weft.274
+11:53:33 | INFO: Blender create Mesh node Jute weft.275
+11:53:33 | INFO: Blender create Mesh node Jute weft.276
+11:53:33 | INFO: Blender create Mesh node Jute weft.277
+11:53:33 | INFO: Blender create Mesh node Jute weft.278
+11:53:33 | INFO: Blender create Mesh node Jute weft.279
+11:53:33 | INFO: Blender create Mesh node Jute weft.280
+11:53:33 | INFO: Blender create Mesh node Jute weft.281
+11:53:33 | INFO: Blender create Mesh node Jute weft.282
+11:53:33 | INFO: Blender create Mesh node Jute weft.283
+11:53:33 | INFO: Blender create Mesh node Jute weft.284
+11:53:33 | INFO: Blender create Mesh node Jute weft.285
+11:53:33 | INFO: Blender create Mesh node Jute weft.286
+11:53:33 | INFO: Blender create Mesh node Jute weft.287
+11:53:33 | INFO: Blender create Mesh node Jute weft.288
+11:53:33 | INFO: Blender create Mesh node Jute weft.289
+11:53:33 | INFO: Blender create Mesh node Jute weft.290
+11:53:33 | INFO: Blender create Mesh node Jute weft.291
+11:53:33 | INFO: Blender create Mesh node Jute weft.292
+11:53:33 | INFO: Blender create Mesh node Jute weft.293
+11:53:33 | INFO: Blender create Mesh node Jute weft.294
+11:53:33 | INFO: Blender create Mesh node Jute weft.295
+11:53:33 | INFO: Blender create Mesh node Jute weft.296
+11:53:33 | INFO: Blender create Mesh node Jute weft.297
+11:53:33 | INFO: Blender create Mesh node Jute weft.298
+11:53:33 | INFO: Blender create Mesh node Jute weft.299
+11:53:33 | INFO: Blender create Mesh node Jute weft.300
+11:53:33 | INFO: Blender create Mesh node Jute weft.301
+11:53:33 | INFO: Blender create Mesh node Jute weft.302
+11:53:33 | INFO: Blender create Mesh node Jute weft.303
+11:53:33 | INFO: Blender create Mesh node Jute weft.304
+11:53:33 | INFO: Blender create Mesh node Jute weft.305
+11:53:33 | INFO: Blender create Mesh node Jute weft.306
+11:53:33 | INFO: Blender create Mesh node Jute weft.307
+11:53:33 | INFO: Blender create Mesh node Jute weft.308
+11:53:33 | INFO: Blender create Mesh node Jute weft.309
+11:53:33 | INFO: Blender create Mesh node Jute weft.310
+11:53:33 | INFO: Blender create Mesh node Jute weft.311
+11:53:33 | INFO: Blender create Mesh node Jute weft.312
+11:53:33 | INFO: Blender create Mesh node Jute weft.313
+11:53:33 | INFO: Blender create Mesh node Jute weft.314
+11:53:33 | INFO: Blender create Mesh node Jute weft.315
+11:53:33 | INFO: Blender create Mesh node Jute weft.316
+11:53:33 | INFO: Blender create Mesh node Jute weft.317
+11:53:33 | INFO: Blender create Mesh node Jute weft.318
+11:53:33 | INFO: Blender create Mesh node Jute weft.319
+11:53:33 | INFO: Blender create Mesh node Jute weft.320
+11:53:33 | INFO: Blender create Mesh node Jute weft.321
+11:53:33 | INFO: Blender create Mesh node Jute weft.322
+11:53:33 | INFO: Blender create Mesh node Jute weft.323
+11:53:33 | INFO: Blender create Mesh node Jute weft.324
+11:53:33 | INFO: Blender create Mesh node Jute weft.325
+11:53:33 | INFO: Blender create Mesh node Jute weft.326
+11:53:33 | INFO: Blender create Mesh node Jute weft.327
+11:53:33 | INFO: Blender create Mesh node Jute weft.328
+11:53:33 | INFO: Blender create Mesh node Jute weft.329
+11:53:33 | INFO: Blender create Mesh node Jute weft.330
+11:53:33 | INFO: Blender create Mesh node Jute weft.331
+11:53:33 | INFO: Blender create Mesh node Jute weft.332
+11:53:33 | INFO: Blender create Mesh node Jute weft.333
+11:53:33 | INFO: Blender create Mesh node Jute weft.334
+11:53:33 | INFO: Blender create Mesh node Jute weft.335
+11:53:33 | INFO: Blender create Mesh node Jute weft.336
+11:53:33 | INFO: Blender create Mesh node Jute weft.337
+11:53:33 | INFO: Blender create Mesh node Jute weft.338
+11:53:33 | INFO: Blender create Mesh node Jute weft.339
+11:53:33 | INFO: Blender create Mesh node Jute weft.340
+11:53:33 | INFO: Blender create Mesh node Jute weft.341
+11:53:33 | INFO: Blender create Mesh node Jute weft.342
+11:53:33 | INFO: Blender create Mesh node Jute weft.343
+11:53:33 | INFO: Blender create Mesh node Jute weft.344
+11:53:33 | INFO: Blender create Mesh node Jute weft.345
+11:53:33 | INFO: Blender create Mesh node Jute weft.346
+11:53:33 | INFO: Blender create Mesh node Jute weft.347
+11:53:33 | INFO: Blender create Mesh node Jute weft.348
+11:53:33 | INFO: Blender create Mesh node Jute weft.349
+11:53:33 | INFO: Blender create Mesh node Jute weft.350
+11:53:33 | INFO: Blender create Mesh node Jute weft.351
+11:53:33 | INFO: Blender create Mesh node Jute weft.352
+11:53:33 | INFO: Blender create Mesh node Jute weft.353
+11:53:33 | INFO: Blender create Mesh node Jute weft.354
+11:53:33 | INFO: Blender create Mesh node Jute weft.355
+11:53:33 | INFO: Blender create Mesh node Jute weft.356
+11:53:33 | INFO: Blender create Mesh node Jute weft.357
+11:53:33 | INFO: Blender create Mesh node Jute weft.358
+11:53:33 | INFO: Blender create Mesh node Jute weft.359
+11:53:33 | INFO: Blender create Mesh node Jute weft.360
+11:53:33 | INFO: Blender create Mesh node Jute weft.361
+11:53:33 | INFO: Blender create Mesh node Jute weft.362
+11:53:33 | INFO: Blender create Mesh node Jute weft.363
+11:53:33 | INFO: Blender create Mesh node Jute weft.364
+11:53:33 | INFO: Blender create Mesh node Jute weft.365
+11:53:33 | INFO: Blender create Mesh node Jute weft.366
+11:53:33 | INFO: Blender create Mesh node Jute weft.367
+11:53:33 | INFO: Blender create Mesh node Jute weft.368
+11:53:33 | INFO: Blender create Mesh node Jute weft.369
+11:53:33 | INFO: Blender create Mesh node Jute weft.370
+11:53:33 | INFO: Blender create Mesh node Jute weft.371
+11:53:33 | INFO: Blender create Mesh node Jute weft.372
+11:53:33 | INFO: Blender create Mesh node Jute weft.373
+11:53:33 | INFO: Blender create Mesh node Jute weft.374
+11:53:33 | INFO: Blender create Mesh node Jute weft.375
+11:53:33 | INFO: Blender create Mesh node Jute weft.376
+11:53:33 | INFO: Blender create Mesh node Jute weft.377
+11:53:33 | INFO: Blender create Mesh node Jute weft.378
+11:53:33 | INFO: Blender create Mesh node Jute weft.379
+11:53:33 | INFO: Blender create Mesh node Cube
+11:53:33 | INFO: glTF import finished in 1.63s
+VALIDATED rug [1.600000023841858, 2.299999952316284, 0.013000000268220901] 645
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

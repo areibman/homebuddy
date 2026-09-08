@@ -1,0 +1,10 @@
+.firecrawl/
+
+# Local dependencies, caches, and generated bundles
+node_modules/
+.DS_Store
+.env*
+*.pem
+*.key
+/*.zip
+/*-deploy*.tar.gz

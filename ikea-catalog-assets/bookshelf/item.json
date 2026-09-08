@@ -1,0 +1,34 @@
+{
+  "id": "bookshelf",
+  "name": "BILLY Bookcase \u2014 white",
+  "category": "Bookcases",
+  "description": "Unofficial recreation of the white BILLY bookcase with five interior shelves, thin panels, a recessed plinth, rear skirting cutouts and shelf adjustment holes.",
+  "dimensions_m": {
+    "width": 0.8,
+    "depth": 0.28,
+    "height": 2.02
+  },
+  "materials": [
+    "Particleboard with white paper foil",
+    "Painted fiberboard backing",
+    "Plastic edging"
+  ],
+  "source": {
+    "retailer": "IKEA",
+    "url": "https://www.ikea.com/us/en/p/billy-bookcase-white-20522046/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/billy-bookcase-white__1590272_pe1038911_s5.jpg",
+    "article_number": "205.220.46",
+    "checked_date": "2026-09-08"
+  },
+  "files": {
+    "blend": "bookshelf.blend",
+    "glb": "bookshelf.glb",
+    "preview": "bookshelf.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+  "validation": {
+    "roundtrip_preview": "bookshelf-roundtrip.png",
+    "review": "review.md",
+    "color_space": "Neutral white sRGB converted to linear PBR base color"
+  }
+}

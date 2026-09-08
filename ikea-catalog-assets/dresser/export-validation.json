@@ -1,0 +1,14 @@
+{
+  "id": "dresser",
+  "sha256": "4fa71b967706a5ef796f4bcf7a0899ebc22291ed22c98d71d09a3932d7636351",
+  "geometry_dimensions_m": {
+    "width": 1.40017,
+    "depth": 0.4699,
+    "height": 0.7493
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 1,
+  "materials": 2,
+  "occlusion_materials": 2,
+  "bytes": 636480
+}

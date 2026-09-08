@@ -1,0 +1,19 @@
+{
+  "render_dimensions": [
+    1200,
+    900
+  ],
+  "roundtrip_mean_absolute_rgb_error_8bit": [
+    0.0013898148148148149,
+    0.0014787037037037036,
+    0.0013296296296296296
+  ],
+  "no_studio_in_glb": true,
+  "explicit_portable_PBR": true,
+  "rear_panel_bounds_m": [
+    0.029,
+    0.7313
+  ],
+  "rear_overlap_fixed": true,
+  "latest_export_note": "Rear-only panel correction after roundtrip validation. Front geometry/materials unchanged; no additional render requested."
+}

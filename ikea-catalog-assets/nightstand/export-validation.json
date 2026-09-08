@@ -1,0 +1,14 @@
+{
+  "id": "nightstand",
+  "sha256": "032f98eca505b529d9d7f552a5c7fa697580a188c16110b2fe6d968d5718e72a",
+  "geometry_dimensions_m": {
+    "width": 0.46038,
+    "depth": 0.34925,
+    "height": 0.6985
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 2,
+  "materials": 3,
+  "occlusion_materials": 3,
+  "bytes": 571116
+}

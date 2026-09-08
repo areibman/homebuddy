@@ -1,0 +1,1045 @@
+/Users/hyperbox/homebuddy/furniture-catalog-assets/rug/build.py:5: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True;m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(*c,1);m.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.8;return m
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+11:10:18 | INFO: Starting glTF 2.0 export
+11:10:18 | INFO: Extracting primitive: Cream inset
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Cream inset.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.002
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.003
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.004
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.005
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.006
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.007
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.008
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.009
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.010
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.011
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.012
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.013
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.014
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.015
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.016
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.017
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.018
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.019
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.020
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.021
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.022
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.023
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.024
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.025
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.026
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.027
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.028
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.029
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.030
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.031
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.032
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.033
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.034
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.035
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.036
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.037
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.038
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.039
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.040
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.041
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.042
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.043
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.044
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.045
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.046
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.047
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.048
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.049
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.050
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.051
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.052
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.053
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.054
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.055
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.056
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.057
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.058
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.059
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.060
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.061
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.062
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.063
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.064
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.065
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.066
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.067
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.068
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.069
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.070
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.071
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.072
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.073
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.074
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.075
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.076
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.077
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.078
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.079
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.080
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.081
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.082
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.083
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.084
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.085
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.086
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.087
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.088
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.089
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.090
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.091
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.092
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.093
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.094
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.095
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.096
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.097
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.098
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.099
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.100
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.101
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.102
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.103
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.104
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.105
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.106
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.107
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.108
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.109
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.110
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.111
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.112
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.113
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.114
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.115
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.116
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.117
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.118
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.119
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.120
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.121
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.122
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.123
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.124
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.125
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.126
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.127
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.128
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.129
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.130
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.131
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.132
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.133
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.134
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.135
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.136
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.137
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.138
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.139
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.140
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.141
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.142
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.143
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.144
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.145
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.146
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.147
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.148
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.149
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.150
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.151
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.152
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.153
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.154
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.155
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.156
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.157
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.158
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.159
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.160
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.161
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.162
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.163
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.164
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.165
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.166
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.167
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.168
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.169
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.170
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.171
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.172
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.173
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.174
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.175
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.176
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.177
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.178
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Fine warp thread.179
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.002
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.003
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.004
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.005
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.006
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.007
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.008
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.009
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.010
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.011
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.012
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.013
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.014
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.015
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.016
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.017
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.018
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.019
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.020
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.021
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.022
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.023
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.024
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.025
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.026
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.027
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.028
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.029
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.030
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.031
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.032
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.033
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.034
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.035
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.036
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.037
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.038
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.039
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.040
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.041
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.042
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.043
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.044
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.045
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.046
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.047
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.048
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.049
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.050
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.051
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.052
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.053
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.054
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.055
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.056
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.057
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.058
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.059
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.060
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.061
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.062
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.063
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.064
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.065
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.066
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.067
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.068
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.069
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.070
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.071
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.072
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.073
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.074
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.075
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.076
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.077
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.078
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.079
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.080
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.081
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.082
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.083
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.084
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.085
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.086
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.087
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.088
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.089
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.090
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.091
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.092
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.093
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.094
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.095
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.096
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.097
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.098
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.099
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.100
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.101
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.102
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.103
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.104
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.105
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.106
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.107
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.108
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.109
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.110
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.111
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.112
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.113
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.114
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.115
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.116
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.117
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.118
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.119
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.120
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.121
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.122
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.123
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.124
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.125
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.126
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.127
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.128
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.129
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.130
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.131
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.132
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.133
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.134
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.135
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.136
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.137
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.138
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.139
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.140
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.141
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.142
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.143
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.144
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.145
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.146
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.147
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.148
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.149
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.150
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.151
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.152
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.153
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.154
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.155
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.156
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.157
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.158
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.159
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.160
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.161
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.162
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.163
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.164
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.165
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.166
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.167
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.168
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.169
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.170
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.171
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.172
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.173
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.174
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.175
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.176
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.177
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.178
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.179
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.180
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.181
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.182
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.183
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.184
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.185
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.186
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.187
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.188
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.189
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.190
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.191
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.192
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.193
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.194
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.195
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.196
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.197
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.198
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.199
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.200
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.201
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.202
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.203
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.204
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.205
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.206
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.207
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.208
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Hand tied fringe.209
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Ink diamond
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Ink diamond.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Cube.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Cube.002
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Side motif
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Side motif.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Side motif.002
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Side motif.003
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Cube.003
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Cube.004
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Terracotta woven medallion
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Terracotta woven medallion.001
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Extracting primitive: Cube
+11:10:18 | INFO: Primitives created: 1
+11:10:18 | INFO: Finished glTF 2.0 export in 0.3613450527191162 s
+/Users/hyperbox/homebuddy/furniture-catalog-assets/rug/build.py:5: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True;m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(*c,1);m.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.8;return m
+00:28.163  render           | Saved: '/Users/hyperbox/homebuddy/furniture-catalog-assets/rug/rug.png'
+
+Info: Saved as "rug.blend"
+11:10:46 | INFO: Starting glTF 2.0 export
+11:10:46 | INFO: Extracting primitive: Cylinder.046
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.002
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.003
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.004
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.005
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.006
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.007
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.008
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.009
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.010
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.011
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.012
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.013
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.014
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.015
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.016
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.017
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.018
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.019
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.020
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.021
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.022
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.023
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.024
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.025
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.026
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.027
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.028
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.029
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.030
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.031
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.032
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.033
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.034
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.035
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.036
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.037
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.038
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.039
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.040
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.041
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.042
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.043
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.044
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.045
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.046
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.047
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.048
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.049
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.050
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.051
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.052
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.053
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Fine oak grain.054
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.047
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.045
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.004
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.005
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.006
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.007
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.008
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.009
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.010
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.011
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.012
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.013
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.014
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.015
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.016
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.017
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.018
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.019
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.020
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.021
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.022
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.023
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.024
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.025
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.026
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.027
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.028
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.029
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.030
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.031
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.032
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.033
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.034
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.035
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.036
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.037
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.038
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.039
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.040
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.041
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.042
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.043
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.003
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Tabletop board join
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Tabletop board join.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Tabletop board join.002
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Tabletop board join.003
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Tabletop board join.004
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.002
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: Cylinder.044
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Finished glTF 2.0 export in 0.3369448184967041 s
+01:09.026  render           | Saved: '/Users/hyperbox/homebuddy/furniture-catalog-assets/dining-table/dining-table.png'
+
+Info: Saved as "dining-table.blend"
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

@@ -1,0 +1,105 @@
+00:03.097  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dresser/dresser.blend"
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:13:11 | INFO: Starting glTF 2.0 export
+12:13:11 | INFO: Extracting primitive: Cube.024
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.025
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.026
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.027
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.028
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.029
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.007
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.010
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.013
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.016
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.019
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.022
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.008
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.011
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.014
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.017
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.020
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.023
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.005
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.001
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.006
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.009
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.012
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.018
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.015
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.021
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.002
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.003
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube.004
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Extracting primitive: Cube
+12:13:11 | INFO: Primitives created: 1
+12:13:11 | INFO: Finished glTF 2.0 export in 0.10745692253112793 s
+01:14.397  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dresser/dresser.png'
+
+Info: Saved as "dresser.blend"
+12:14:24 | INFO: Data are loaded, start creating Blender stuff
+12:14:24 | INFO: Blender create Mesh node Cube.024
+12:14:24 | INFO: Blender create Mesh node Cube.025
+12:14:24 | INFO: Blender create Mesh node Cube.026
+12:14:24 | INFO: Blender create Mesh node Cube.027
+12:14:24 | INFO: Blender create Mesh node Cube.028
+12:14:24 | INFO: Blender create Mesh node Cube.029
+12:14:24 | INFO: Blender create Mesh node Cube.007
+12:14:24 | INFO: Blender create Mesh node Cube.010
+12:14:24 | INFO: Blender create Mesh node Cube.013
+12:14:24 | INFO: Blender create Mesh node Cube.016
+12:14:24 | INFO: Blender create Mesh node Cube.019
+12:14:24 | INFO: Blender create Mesh node Cube.022
+12:14:24 | INFO: Blender create Mesh node Cube.008
+12:14:24 | INFO: Blender create Mesh node Cube.011
+12:14:24 | INFO: Blender create Mesh node Cube.014
+12:14:24 | INFO: Blender create Mesh node Cube.017
+12:14:24 | INFO: Blender create Mesh node Cube.020
+12:14:24 | INFO: Blender create Mesh node Cube.023
+12:14:24 | INFO: Blender create Mesh node Cube.005
+12:14:24 | INFO: Blender create Mesh node Cube.001
+12:14:24 | INFO: Blender create Mesh node Cube.006
+12:14:24 | INFO: Blender create Mesh node Cube.009
+12:14:24 | INFO: Blender create Mesh node Cube.012
+12:14:24 | INFO: Blender create Mesh node Cube.018
+12:14:24 | INFO: Blender create Mesh node Cube.015
+12:14:24 | INFO: Blender create Mesh node Cube.021
+12:14:24 | INFO: Blender create Mesh node Cube.002
+12:14:24 | INFO: Blender create Mesh node Cube.003
+12:14:24 | INFO: Blender create Mesh node Cube.004
+12:14:24 | INFO: Blender create Mesh node Cube
+12:14:24 | INFO: glTF import finished in 0.22s
+<string>:23: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+02:17.337  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dresser/roundtrip.png'
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

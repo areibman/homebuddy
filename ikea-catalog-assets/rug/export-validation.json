@@ -1,0 +1,14 @@
+{
+  "id": "rug",
+  "sha256": "a4f9582d35c93a1572ebcc1fe411f8fd5c6b68da1cf6296c3577f97e32e7032f",
+  "geometry_dimensions_m": {
+    "width": 1.6,
+    "depth": 2.3,
+    "height": 0.013
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 2,
+  "materials": 1,
+  "occlusion_materials": 0,
+  "bytes": 693244
+}

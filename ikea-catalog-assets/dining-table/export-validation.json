@@ -1,0 +1,14 @@
+{
+  "id": "dining-table",
+  "sha256": "df5322abceb24bbe3d02fcf40b0e25c8ba1abd757b40c70bd40f4f3ba101842a",
+  "geometry_dimensions_m": {
+    "width": 1.05,
+    "depth": 1.05,
+    "height": 0.74
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 3,
+  "materials": 3,
+  "occlusion_materials": 3,
+  "bytes": 767148
+}

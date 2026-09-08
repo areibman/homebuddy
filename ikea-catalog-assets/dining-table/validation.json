@@ -1,0 +1,19 @@
+{
+  "valid": true,
+  "measured_dimensions_m": [
+    1.0499999523162842,
+    1.0499999523162842,
+    0.7400000095367432
+  ],
+  "nominal_dimensions_m": [
+    1.05,
+    1.05,
+    0.74
+  ],
+  "mesh_count": 9,
+  "glb_bytes": 536512,
+  "roundtrip_render": "roundtrip.png",
+  "textures_embedded": true,
+  "material_check": "Explicit sRGB-decoded factor or embedded images; GLB reimport rendered with same light and camera",
+  "roundtrip_mean_absolute_rgb_error_255": 0.002143827160493827
+}

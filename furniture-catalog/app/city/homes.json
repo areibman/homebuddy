@@ -1,0 +1,350 @@
+[
+  {
+    "id": "01",
+    "name": "119 Ellert St",
+    "area": "Bernal Heights",
+    "x": 5,
+    "z": 9,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1385,
+    "images": [
+      "/city-plans/119-ellert-st-1.jpg"
+    ],
+    "source": "https://www.119ellert.com/",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "02",
+    "name": "3052 Sacramento St",
+    "area": "Pacific Heights",
+    "x": -2,
+    "z": -7,
+    "beds": 4,
+    "baths": 2.5,
+    "sqft": 2692,
+    "images": [
+      "/city-plans/3052-sacramento-st-1.jpg"
+    ],
+    "source": "https://www.realtor.com/realestateandhomes-detail/3052-Sacramento-St_San-Francisco_CA_94115_M26581-04034",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "03",
+    "name": "2210 39th Ave",
+    "area": "Outer Sunset",
+    "x": -9,
+    "z": 8,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1368,
+    "images": [
+      "/city-plans/2210-39th-ave-1.jpg"
+    ],
+    "source": "https://www.realtor.com/realestateandhomes-detail/2210-39th-Ave_San-Francisco_CA_94116_M12499-27642",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "04",
+    "name": "740 Masonic Ave",
+    "area": "Haight-Ashbury",
+    "x": -3,
+    "z": -1,
+    "beds": 2,
+    "baths": 1.5,
+    "sqft": 1220,
+    "images": [
+      "/city-plans/740-masonic-ave-1.jpg",
+      "/city-plans/740-masonic-ave-2.jpg"
+    ],
+    "source": "https://www.realtor.com/realestateandhomes-detail/740-Masonic-Ave_San-Francisco_CA_94117_M10569-71377",
+    "note": "",
+    "kind": "Apartment",
+    "decoratorPath": null
+  },
+  {
+    "id": "05",
+    "name": "20 Belvedere St",
+    "area": "Cole Valley",
+    "x": -4,
+    "z": 2,
+    "beds": 3,
+    "baths": 1.5,
+    "sqft": 1474,
+    "images": [
+      "/city-plans/20-belvedere-st-redfin-1.jpg"
+    ],
+    "source": "https://www.redfin.com/CA/San-Francisco/20-Belvedere-St-94117/home/110052380",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "06",
+    "name": "1733 15th Ave",
+    "area": "Inner Sunset",
+    "x": -6,
+    "z": 4,
+    "beds": 5,
+    "baths": 4,
+    "sqft": 3114,
+    "images": [
+      "/city-plans/1733-15th-ave-1.jpg",
+      "/city-plans/1733-15th-ave-2.jpg",
+      "/city-plans/1733-15th-ave-3.jpg",
+      "/city-plans/1733-15th-ave-4.jpg"
+    ],
+    "source": "https://www.realtor.com/realestateandhomes-detail/1733-15th-Ave_San-Francisco_CA_94122_M17883-94617",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "07",
+    "name": "1618 Judah St",
+    "area": "Inner Sunset",
+    "x": -5,
+    "z": 1,
+    "beds": 2,
+    "baths": 2,
+    "sqft": 1890,
+    "images": [
+      "/city-plans/1618-judah-st-1.jpg",
+      "/city-plans/1618-judah-st-2.jpg",
+      "/city-plans/1618-judah-st-3.jpg",
+      "/city-plans/1618-judah-st-4.jpg"
+    ],
+    "source": "https://www.realtor.com/realestateandhomes-detail/1616-Judah-St_San-Francisco_CA_94122_M26214-86134",
+    "note": "The supplied link resolves to 1616 Judah St. Plans cover multiple levels of the building; unit attribution is unverified.",
+    "kind": "Apartment",
+    "decoratorPath": null
+  },
+  {
+    "id": "08",
+    "name": "2751 15th Ave",
+    "area": "West Portal",
+    "x": -5,
+    "z": 10,
+    "beds": 4,
+    "baths": 3.5,
+    "sqft": 3251,
+    "images": [
+      "/city-plans/2751-15th-ave-1.jpg"
+    ],
+    "source": "https://www.2751-15thave.com/",
+    "note": "Includes a floor-plan PDF and a site-plan PDF.",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "09",
+    "name": "3913 26th St",
+    "area": "Noe Valley",
+    "x": 2,
+    "z": 9,
+    "beds": 2,
+    "baths": 1,
+    "sqft": null,
+    "images": [
+      "/city-plans/3913-26th-st-1.jpg"
+    ],
+    "source": "https://www.3913-26th-street.com/",
+    "note": "",
+    "kind": "Apartment",
+    "decoratorPath": null
+  },
+  {
+    "id": "10",
+    "name": "953 Leavenworth St",
+    "area": "Nob Hill",
+    "x": 4,
+    "z": -7,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1884,
+    "images": [
+      "/city-plans/953-leavenworth-st-1.jpg"
+    ],
+    "source": "http://www.949-953leavenworthst.com/",
+    "note": "Plan covers the entire 949-953 Leavenworth building, including unit 953; the plan states 1,635 sq ft for unit 953, differing from the supplied table.",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "11",
+    "name": "862 Wisconsin St",
+    "area": "Potrero Hill",
+    "x": 9,
+    "z": 7,
+    "beds": 4,
+    "baths": 3.5,
+    "sqft": 2349,
+    "images": [
+      "/city-plans/862-wisconsin-st-1.jpg"
+    ],
+    "source": "https://www.realtor.com/realestateandhomes-detail/862-Wisconsin-St_San-Francisco_CA_94107_M14849-89498",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "12",
+    "name": "Towers at Rincon - Pier 39 studio",
+    "area": "Rincon Hill",
+    "x": 10,
+    "z": -6,
+    "beds": 0,
+    "baths": 1,
+    "sqft": 300,
+    "images": [
+      "/city-plans/towers-at-rincon-pier-39-studio-1.jpg"
+    ],
+    "source": "https://www.thetowersatrincon.com/floorplans",
+    "note": "Building plan type, not a specific unit.",
+    "kind": "Studio",
+    "decoratorPath": null
+  },
+  {
+    "id": "13",
+    "name": "Spera - Plan E",
+    "area": "SoMa",
+    "x": 9,
+    "z": -3,
+    "beds": 1,
+    "baths": 1,
+    "sqft": 503,
+    "images": [
+      "/city-plans/spera-plan-e-1.jpg"
+    ],
+    "source": "https://www.sperasf.com/floor-plans/",
+    "note": "Building plan type, not a specific unit.",
+    "kind": "Apartment",
+    "decoratorPath": "/decorate"
+  },
+  {
+    "id": "14",
+    "name": "88 Arkansas Street Unit 526",
+    "area": "Potrero Hill",
+    "x": 9,
+    "z": 3,
+    "beds": 0,
+    "baths": 1,
+    "sqft": 462,
+    "images": [
+      "/city-plans/88-arkansas-street-unit-526-1.jpg"
+    ],
+    "source": "https://88atthepark.com/floor-plans/",
+    "note": "",
+    "kind": "Studio",
+    "decoratorPath": null
+  },
+  {
+    "id": "15",
+    "name": "333 Bush Street Unit 4101",
+    "area": "Financial District",
+    "x": 8,
+    "z": -8,
+    "beds": 2,
+    "baths": 2,
+    "sqft": 1250,
+    "images": [
+      "/city-plans/333-bush-street-unit-4101-1.jpg"
+    ],
+    "source": "https://333bush4101.com/",
+    "note": "",
+    "kind": "Apartment",
+    "decoratorPath": null
+  },
+  {
+    "id": "16",
+    "name": "3749 17th Street Unit A",
+    "area": "Mission Dolores",
+    "x": 3,
+    "z": 3,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1375,
+    "images": [
+      "/city-plans/3749-17th-street-unit-a-1.png"
+    ],
+    "source": "https://soldedoloressky.com/",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "17",
+    "name": "370 Church Street Unit E",
+    "area": "Castro",
+    "x": 1,
+    "z": 3,
+    "beds": 2,
+    "baths": 2,
+    "sqft": null,
+    "images": [
+      "/city-plans/370-church-street-unit-e-2.jpg",
+      "/city-plans/370-church-street-unit-e-1.jpg"
+    ],
+    "source": "https://www.2levelcondo.com/",
+    "note": "Includes 2D and furnished 3D layouts. No verified floor area. The 3D drawing is illustrative, not to scale or based on actual measurements.",
+    "kind": "Apartment",
+    "decoratorPath": null
+  },
+  {
+    "id": "18",
+    "name": "1159 Green Street Unit 1",
+    "area": "Russian Hill",
+    "x": 3,
+    "z": -10,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1520,
+    "images": [
+      "/city-plans/1159-green-street-unit-1-1.jpg"
+    ],
+    "source": "https://homeongreen.com/",
+    "note": "Plan depicts 3 bedroom labels and 2 baths across both levels. The property site describes the 666 sq ft lower level as an unwarranted bonus apartment; upper level is 854 sq ft. Do not treat this as confirmation of permitted bedrooms or dwelling units.",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "19",
+    "name": "1422 Rhode Island Street",
+    "area": "Potrero Hill",
+    "x": 9,
+    "z": 10,
+    "beds": 4,
+    "baths": 3.5,
+    "sqft": 2244,
+    "images": [
+      "/city-plans/1422-rhode-island-street-1.jpg"
+    ],
+    "source": "https://www.homeinpotrero.com/",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  },
+  {
+    "id": "20",
+    "name": "842 35th Avenue",
+    "area": "Outer Richmond",
+    "x": -9,
+    "z": -3,
+    "beds": 4,
+    "baths": 2,
+    "sqft": 2380,
+    "images": [
+      "/city-plans/842-35th-avenue-1.jpg"
+    ],
+    "source": "https://websites.open.homes/site/1ef286d7-51c8-6c4c-b653-02ffe917ffb9",
+    "note": "",
+    "kind": "Large home",
+    "decoratorPath": null
+  }
+]

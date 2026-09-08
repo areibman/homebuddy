@@ -1,0 +1,29 @@
+{
+  "id": "dining-table",
+  "name": "LISABO table \u2014 ash veneer",
+  "category": "Dining tables",
+  "description": "IKEA round table in ash veneer, 105 cm diameter, with tapered solid birch legs.",
+  "dimensions_m": {
+    "width": 1.05,
+    "depth": 1.05,
+    "height": 0.74
+  },
+  "files": {
+    "blend": "dining-table.blend",
+    "glb": "dining-table.glb",
+    "preview": "dining-table.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+  "materials": [
+    "Ash veneer",
+    "Solid birch",
+    "Clear acrylic lacquer"
+  ],
+  "source": {
+    "url": "https://www.ikea.com/us/en/p/lisabo-table-ash-veneer-40416498/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/lisabo-table-ash-veneer__0631745_pe695175_s5.jpg",
+    "retailer": "IKEA",
+    "article_number": "404.164.98",
+    "checked_date": "2026-09-08"
+  }
+}

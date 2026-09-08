@@ -1,0 +1,143 @@
+[
+  {
+    "id": "sofa",
+    "sha256": "75b83a93df8c275e0a9066291f6aacbc006a92870b4f9393fe521375233fe665",
+    "geometry_dimensions_m": {
+      "width": 2.28,
+      "depth": 0.95,
+      "height": 0.83
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 3,
+    "materials": 3,
+    "occlusion_materials": 3,
+    "bytes": 1642492
+  },
+  {
+    "id": "armchair",
+    "sha256": "51db1c957ffebcbbc1963fcee1566a128aea3fec743475769ad420b0cedbc6ba",
+    "geometry_dimensions_m": {
+      "width": 0.64,
+      "depth": 0.78,
+      "height": 0.76
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 4,
+    "materials": 4,
+    "occlusion_materials": 4,
+    "bytes": 4384000
+  },
+  {
+    "id": "bed",
+    "sha256": "35088efefc72301f0a1c3650e429df5e373b03f1ed33095c343e208ad154a68c",
+    "geometry_dimensions_m": {
+      "width": 1.67957,
+      "depth": 2.11137,
+      "height": 1.00013
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 1,
+    "materials": 3,
+    "occlusion_materials": 3,
+    "bytes": 616140
+  },
+  {
+    "id": "dining-table",
+    "sha256": "df5322abceb24bbe3d02fcf40b0e25c8ba1abd757b40c70bd40f4f3ba101842a",
+    "geometry_dimensions_m": {
+      "width": 1.05,
+      "depth": 1.05,
+      "height": 0.74
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 3,
+    "materials": 3,
+    "occlusion_materials": 3,
+    "bytes": 767148
+  },
+  {
+    "id": "rug",
+    "sha256": "a4f9582d35c93a1572ebcc1fe411f8fd5c6b68da1cf6296c3577f97e32e7032f",
+    "geometry_dimensions_m": {
+      "width": 1.6,
+      "depth": 2.3,
+      "height": 0.013
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 2,
+    "materials": 1,
+    "occlusion_materials": 0,
+    "bytes": 693244
+  },
+  {
+    "id": "dresser",
+    "sha256": "4fa71b967706a5ef796f4bcf7a0899ebc22291ed22c98d71d09a3932d7636351",
+    "geometry_dimensions_m": {
+      "width": 1.40017,
+      "depth": 0.4699,
+      "height": 0.7493
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 1,
+    "materials": 2,
+    "occlusion_materials": 2,
+    "bytes": 636480
+  },
+  {
+    "id": "bookshelf",
+    "sha256": "cbda0987994681f97d651a52a7a92b0bbc947e269accb6a0268fb7025e055b18",
+    "geometry_dimensions_m": {
+      "width": 0.8,
+      "depth": 0.28,
+      "height": 2.02
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 1,
+    "materials": 3,
+    "occlusion_materials": 3,
+    "bytes": 1049748
+  },
+  {
+    "id": "nightstand",
+    "sha256": "032f98eca505b529d9d7f552a5c7fa697580a188c16110b2fe6d968d5718e72a",
+    "geometry_dimensions_m": {
+      "width": 0.46038,
+      "depth": 0.34925,
+      "height": 0.6985
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 2,
+    "materials": 3,
+    "occlusion_materials": 3,
+    "bytes": 571116
+  },
+  {
+    "id": "coffee-table",
+    "sha256": "a456c1e319f98488dc89f60e28e9b08e1bcc40f93024cd267966c17f8dc62cae",
+    "geometry_dimensions_m": {
+      "width": 0.9,
+      "depth": 0.55,
+      "height": 0.45
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 1,
+    "materials": 1,
+    "occlusion_materials": 1,
+    "bytes": 402568
+  },
+  {
+    "id": "floor-lamp",
+    "sha256": "336e3df674c9945dc6244ac11668a1acec1dd1310cb4349c31dada9fb436cc19",
+    "geometry_dimensions_m": {
+      "width": 0.65002,
+      "depth": 0.50243,
+      "height": 1.49676
+    },
+    "published_dimensions_pass": true,
+    "embedded_images": 5,
+    "materials": 4,
+    "occlusion_materials": 4,
+    "bytes": 1314632,
+    "dimension_note": "Published width/depth describe tripod base diameter. GLB rectangle includes loose power cable."
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "id": "bed",
+  "sha256": "35088efefc72301f0a1c3650e429df5e373b03f1ed33095c343e208ad154a68c",
+  "geometry_dimensions_m": {
+    "width": 1.67957,
+    "depth": 2.11137,
+    "height": 1.00013
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 1,
+  "materials": 3,
+  "occlusion_materials": 3,
+  "bytes": 616140
+}

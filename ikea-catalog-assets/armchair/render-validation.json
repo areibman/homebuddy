@@ -1,0 +1,9 @@
+{
+  "resolution": [
+    1200,
+    900
+  ],
+  "samples": 4,
+  "mean_absolute_srgb_difference_255": 0.6392033950617284,
+  "p95_absolute_srgb_difference_255": 3.0
+}

@@ -1,0 +1,14 @@
+{
+  "id": "sofa",
+  "sha256": "75b83a93df8c275e0a9066291f6aacbc006a92870b4f9393fe521375233fe665",
+  "geometry_dimensions_m": {
+    "width": 2.28,
+    "depth": 0.95,
+    "height": 0.83
+  },
+  "published_dimensions_pass": true,
+  "embedded_images": 3,
+  "materials": 3,
+  "occlusion_materials": 3,
+  "bytes": 1642492
+}

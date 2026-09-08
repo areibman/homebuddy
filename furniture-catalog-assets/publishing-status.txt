@@ -1,0 +1,7 @@
+Catalog source built and TypeScript checked. All 15 model/preview download URLs and ZIP respond 200 locally. All five GLB binary containers validated with no studio cameras, and studio renders inspected.
+Online publishing failed twice due to hosting authentication callback conflict (HTTP 409). Local catalog: http://localhost:3000/
+Site: appgprj_6aa04f7da41081918c23972b63637046
+Saved version: appgprj_6aa04f7da41081918c23972b63637046~appgver_07e7d41a41008191877718a1b1d1830e
+Latest failed deployment: appgdep_6aa051894f10819193686c55d1141afb
+Source commit: 0067ccd9a5a505a6dd8d37afcb0fed2ad8408c06
+No browser interaction or visual website QA was requested or performed. Model previews were inspected as offline assets.

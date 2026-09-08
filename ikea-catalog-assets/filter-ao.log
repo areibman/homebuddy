@@ -1,0 +1,343 @@
+00:01.143  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.blend"
+/Users/hyperbox/homebuddy/ikea-catalog-assets/filter_ao_exports.py:7: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if m.use_nodes:
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:52:14 | INFO: Starting glTF 2.0 export
+12:52:14 | INFO: Extracting primitive: Back cushion perimeter seam
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Back cushion perimeter seam.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.002
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.003
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Inner arm cover seam
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Inner arm cover seam.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Inset cover seam on arm front
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Inset cover seam on arm front.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Loose back cushion 1
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Loose back cushion 2
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Loose seat cushion 1
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Loose seat cushion 2
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.004
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.005
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.006
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.007
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Seat cushion bottom welt
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Seat cushion bottom welt.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Seat cushion top welt
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Seat cushion top welt.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Finished glTF 2.0 export in 0.09556007385253906 s
+
+Info: Saved as "sofa.blend"
+FILTERED sofa
+00:01.513  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dresser/dresser.blend"
+/Users/hyperbox/homebuddy/ikea-catalog-assets/filter_ao_exports.py:7: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if m.use_nodes:
+12:52:14 | INFO: Starting glTF 2.0 export
+12:52:14 | INFO: Extracting primitive: Cube.024
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.025
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.026
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.027
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.028
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.029
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.007
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.010
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.013
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.016
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.019
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.022
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.008
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.011
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.014
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.017
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.020
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.023
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.005
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.001
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.006
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.009
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.012
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.018
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.015
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.021
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.002
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.003
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube.004
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Extracting primitive: Cube
+12:52:14 | INFO: Primitives created: 1
+12:52:14 | INFO: Finished glTF 2.0 export in 0.07006382942199707 s
+
+Info: Saved as "dresser.blend"
+FILTERED dresser
+00:01.618  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Cube
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.005
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.02434515953063965 s
+
+Info: Saved as "coffee-table.blend"
+FILTERED coffee-table
+00:01.666  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/bed/bed.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Cube.005
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.03870201110839844 s
+
+Info: Saved as "bed.blend"
+FILTERED bed
+00:01.733  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/nightstand/nightstand.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Cylinder
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.008
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.010
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.006
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.007
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.011
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.005
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Sphere
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.009
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.047437191009521484 s
+
+Info: Saved as "nightstand.blend"
+FILTERED nightstand
+00:01.800  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/armchair.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Back side panel sewing
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Back side panel sewing.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.010
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.008
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Fixed seat with squared lower apron
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.005
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.006
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.007
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.011
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.009
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.012
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.10016012191772461 s
+
+Info: Saved as "armchair.blend"
+FILTERED armchair
+00:01.939  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/bookshelf.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Cube.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.005
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.007
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.008
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Side panel with skirting relief
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Side panel with skirting relief.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.006
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.036460161209106445 s
+
+Info: Saved as "bookshelf.blend"
+FILTERED bookshelf
+00:01.999  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Cube
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cube.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Chamfered ash top
+12:52:15 | INFO: Primitives created: 2
+12:52:15 | INFO: Extracting primitive: Birch leg
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Birch leg.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Birch leg.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Birch leg.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.06729292869567871 s
+
+Info: Saved as "dining-table.blend"
+FILTERED dining-table
+00:02.087  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/floor-lamp/floor-lamp.blend"
+12:52:15 | INFO: Starting glTF 2.0 export
+12:52:15 | INFO: Extracting primitive: Cylinder.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Tapered flat ash leg
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Tapered flat ash leg.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Tapered flat ash leg.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.005
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Shade wire support
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Shade wire support.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Shade wire support.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Cylinder.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White bound shade rim
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White bound shade rim.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White cord wound around storage spool
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White cord wound around storage spool.001
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White cord wound around storage spool.002
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White cord wound around storage spool.003
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White cord wound around storage spool.004
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: White hanging power cable
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Extracting primitive: Thin cylindrical textile shade
+12:52:15 | INFO: Primitives created: 1
+12:52:15 | INFO: Finished glTF 2.0 export in 0.06521201133728027 s
+
+Info: Saved as "floor-lamp.blend"
+FILTERED floor-lamp
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

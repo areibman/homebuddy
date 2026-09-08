@@ -1,0 +1,28 @@
+{
+  "id": "sofa",
+  "name": "KIVIK Sofa",
+  "category": "Sofas",
+  "description": "Gunnared beige upholstery with wide low arms and two deep seat cushions.",
+  "materials": [
+    "Gunnared beige polyester",
+    "Upholstered frame"
+  ],
+  "dimensions_m": {
+    "width": 2.28,
+    "depth": 0.95,
+    "height": 0.83
+  },
+  "source": {
+    "retailer": "IKEA",
+    "url": "https://www.ikea.com/us/en/p/kivik-sofa-gunnared-beige-s89499703/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/kivik-sofa-gunnared-beige__1577008_pe1032893_s5.jpg?f=s",
+    "article_number": "894.997.03",
+    "checked_date": "2026-09-08"
+  },
+  "files": {
+    "blend": "sofa.blend",
+    "glb": "sofa.glb",
+    "preview": "sofa.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA."
+}

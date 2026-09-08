@@ -1,0 +1,429 @@
+[
+  {
+    "address": "1080 Hampshire St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1080-Hampshire-St_San-Francisco_CA_94110_M11921-31314",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "264 Precita Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/264-Precita-Ave_San-Francisco_CA_94110_M17713-93124",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "800 York St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/800-York-St_San-Francisco_CA_94110_M27284-45991",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "119 Ellert St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/119-Ellert-St_San-Francisco_CA_94110_M16371-87093",
+    "files": [
+      {
+        "address": "119 Ellert St",
+        "source": "https://www.119ellert.com/",
+        "url": "https://media.relahq.com/public/styles/kb_full/s3/property-docs/prop-nid-246034971/updates_dim_508.jpg",
+        "file": "119-ellert-st-1.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "41-43 Alvarado St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/41-43-Alvarado-St_San-Francisco_CA_94110_M15102-82037",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "4558 19th St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/4558-19th-St_San-Francisco_CA_94114_M11798-68248",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "4090 17th St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/4090-17th-St_San-Francisco_CA_94114_M24659-74040",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "2614 Sacramento St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/2614-Sacramento-St_San-Francisco_CA_94115_M14763-63732",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "3052 Sacramento St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/3052-Sacramento-St_San-Francisco_CA_94115_M26581-04034",
+    "files": [
+      {
+        "file": "3052-sacramento-st-1.jpg",
+        "url": "https://ap.rdcpix.com/19ade295b297dbda441e83f9812b578fl-m3766190038rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/19ade295b297dbda441e83f9812b578fl-m3766190038s.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "1310 Fillmore St PH 2E",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1310-Fillmore-St-2E_San-Francisco_CA_94115_M99888-21731",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "2143 28th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/2143-28th-Ave_San-Francisco_CA_94116_M15998-92108",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "2447 24th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/2447-24th-Ave_San-Francisco_CA_94116_M19309-62741",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "310 Pacheco St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/310-Pacheco-St_San-Francisco_CA_94116_M16705-36962",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "1927 Taraval St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1927-Taraval-St_San-Francisco_CA_94116_M29747-74054",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "2439 41st Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/2439-41st-Ave_San-Francisco_CA_94116_M17548-43897",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "2210 39th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/2210-39th-Ave_San-Francisco_CA_94116_M12499-27642",
+    "files": [
+      {
+        "file": "2210-39th-ave-1.jpg",
+        "url": "https://ap.rdcpix.com/21aa66240da1005645f214d77d6e3bf5l-m3041854501rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/21aa66240da1005645f214d77d6e3bf5l-m3041854501s.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "740 Masonic Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/740-Masonic-Ave_San-Francisco_CA_94117_M10569-71377",
+    "files": [
+      {
+        "file": "740-masonic-ave-1.jpg",
+        "url": "https://ap.rdcpix.com/9c7aca141f040ca81ccb787b50f1f108l-m3318789410rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/9c7aca141f040ca81ccb787b50f1f108l-m3318789410s.jpg"
+      },
+      {
+        "file": "740-masonic-ave-2.jpg",
+        "url": "https://ap.rdcpix.com/9c7aca141f040ca81ccb787b50f1f108l-m2210197630rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/9c7aca141f040ca81ccb787b50f1f108l-m2210197630s.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "50 Carmelita St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/50-Carmelita-St_San-Francisco_CA_94117_M23018-33065",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "20 Belvedere St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/20-Belvedere-St_San-Francisco_CA_94117_M13894-40475",
+    "files": [
+      {
+        "address": "20 Belvedere St",
+        "source": "https://www.redfin.com/CA/San-Francisco/20-Belvedere-St-94117/home/110052380",
+        "file": "20-belvedere-st-redfin-1.jpg",
+        "url": "https://ssl.cdn-redfin.com/photo/9/bigphoto/997/426120997_63_1.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "1459 Oak St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1459-Oak-St_San-Francisco_CA_94117_M17995-59879",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "525 7th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/523-7th-Ave_San-Francisco_CA_94118_M12185-35197",
+    "files": [],
+    "status": "Not recovered",
+    "notes": "Supplied Realtor URL uses 523 7th Ave."
+  },
+  {
+    "address": "464 11th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/464-11th-Ave_San-Francisco_CA_94118_M90469-79575",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "550 4th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/550-4th-Ave_San-Francisco_CA_94118_M12564-71926",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "30 5th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/30-5th-Ave_San-Francisco_CA_94118_M21961-44039",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "772 47th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/772-47th-Ave_San-Francisco_CA_94121_M15973-80768",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "722 17th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/722-17th-Ave_San-Francisco_CA_94121_M17454-75624",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "1733 15th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1733-15th-Ave_San-Francisco_CA_94122_M17883-94617",
+    "files": [
+      {
+        "file": "1733-15th-ave-1.jpg",
+        "url": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m174488948rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m174488948s.jpg"
+      },
+      {
+        "file": "1733-15th-ave-2.jpg",
+        "url": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m3715225681rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m3715225681s.jpg"
+      },
+      {
+        "file": "1733-15th-ave-3.jpg",
+        "url": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m2190628855rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m2190628855s.jpg"
+      },
+      {
+        "file": "1733-15th-ave-4.jpg",
+        "url": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m1938938710rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/6fec405a06c0c8e296207d7cfa1fff2dl-m1938938710s.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "1663 23rd Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1663-23rd-Ave_San-Francisco_CA_94122_M19027-63795",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "1775 46th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1775-46th-Ave_San-Francisco_CA_94122_M19348-87037",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "1619 33rd Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1619-33rd-Ave_San-Francisco_CA_94122_M13754-13442",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "1618 Judah St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1616-Judah-St_San-Francisco_CA_94122_M26214-86134",
+    "files": [
+      {
+        "file": "1618-judah-st-1.jpg",
+        "url": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m508606933rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m508606933s.jpg"
+      },
+      {
+        "file": "1618-judah-st-2.jpg",
+        "url": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m2442364387rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m2442364387s.jpg"
+      },
+      {
+        "file": "1618-judah-st-3.jpg",
+        "url": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m151952133rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m151952133s.jpg"
+      },
+      {
+        "file": "1618-judah-st-4.jpg",
+        "url": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m2792664829rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/5a89d928255152178de021a9916d10f4l-m2792664829s.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": "The supplied link resolves to 1616 Judah St. Plans cover multiple levels of the building; unit attribution is unverified."
+  },
+  {
+    "address": "3731 Webster St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/3731-3733-Webster-St_San-Francisco_CA_94123_M27357-77631",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "3132 Laguna St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/3132-Laguna-St_San-Francisco_CA_94123_M26799-15983",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "2751 15th Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/2751-15th-Ave_San-Francisco_CA_94127_M21776-18799",
+    "files": [
+      {
+        "address": "2751 15th Ave",
+        "source": "https://www.2751-15thave.com/",
+        "url": "https://cdn.openhomesphotography.com/uploads/2751-15th-avenue.1f1351b3-b46e-68fc-96f6-02ffe917ffb9/batchUploads/fp4k.3efedf98-3a8b-11f1-a220-02ffd8b76bfd/processed/floor_plans/2751-15th-avenue.89775.fp4k.2d.no-calc.mstr.01.pdf",
+        "file": "2751-15th-ave-1.pdf"
+      },
+      {
+        "address": "2751 15th Ave",
+        "source": "https://www.2751-15thave.com/",
+        "url": "https://cdn.openhomesphotography.com/uploads/2751-15th-avenue.1f1351b3-b46e-68fc-96f6-02ffe917ffb9/batchUploads/fp4k.3efedf98-3a8b-11f1-a220-02ffd8b76bfd/processed/floor_plans/2751-15th-avenue.89775.fp4k.2d.no-calc.site.01.pdf",
+        "file": "2751-15th-ave-2.pdf"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": "Includes a floor-plan PDF and a site-plan PDF."
+  },
+  {
+    "address": "110 Pinehurst Way",
+    "source": "https://www.realtor.com/realestateandhomes-detail/110-Pinehurst-Way_San-Francisco_CA_94127_M11583-79742",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "50 El Verano Way",
+    "source": "https://www.realtor.com/realestateandhomes-detail/50-El-Verano-Way_San-Francisco_CA_94127_M10178-12607",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "411 Hazelwood Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/411-Hazelwood-Ave_San-Francisco_CA_94127_M10670-78183",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "95 Nordhoff St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/95-Nordhoff-St_San-Francisco_CA_94131_M15523-84329",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "3913 26th St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/3913-26th-St_San-Francisco_CA_94131_M16248-60410",
+    "files": [
+      {
+        "address": "3913 26th St",
+        "source": "https://www.3913-26th-street.com/",
+        "url": "https://media.relahq.com/public/styles/kb_full/s3/property-docs/prop-nid-235732806/floorplan_345.jpg",
+        "file": "3913-26th-st-1.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "260 Gellert Dr",
+    "source": "https://www.realtor.com/realestateandhomes-detail/260-Gellert-Dr_San-Francisco_CA_94132_M18094-44800",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "378 Ralston St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/378-Ralston-St_San-Francisco_CA_94132_M18895-66577",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "953 Leavenworth St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/953-Leavenworth-St_San-Francisco_CA_94109_M22386-49958",
+    "files": [
+      {
+        "address": "953 Leavenworth St",
+        "source": "http://www.949-953leavenworthst.com/",
+        "url": "https://media.relahq.com/public/styles/kb_full/s3/property-docs/prop-nid-218788376/949-953-leavenworth-street.85969.fprd_.2d.calc_.mstr_.01.b_907.jpg",
+        "file": "953-leavenworth-st-1.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": "Plan covers the entire 949-953 Leavenworth building, including unit 953; the plan states 1,635 sq ft for unit 953, differing from the supplied table."
+  },
+  {
+    "address": "1423 31st Ave",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1423-31st-Ave_San-Francisco_CA_94122_M22235-97667",
+    "files": [],
+    "status": "Not recovered",
+    "notes": ""
+  },
+  {
+    "address": "862 Wisconsin St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/862-Wisconsin-St_San-Francisco_CA_94107_M14849-89498",
+    "files": [
+      {
+        "file": "862-wisconsin-st-1.jpg",
+        "url": "https://ap.rdcpix.com/2146952eee44bb66d622721d20d2ee84l-m1258885016rd-w1920_h1440.jpg",
+        "original": "https://ap.rdcpix.com/2146952eee44bb66d622721d20d2ee84l-m1258885016s.jpg"
+      }
+    ],
+    "status": "Downloaded",
+    "notes": ""
+  },
+  {
+    "address": "1066 Bryant St",
+    "source": "https://www.realtor.com/realestateandhomes-detail/1070-Bryant-St_San-Francisco_CA_94103_M27562-29723",
+    "files": [],
+    "status": "Not recovered",
+    "notes": "Supplied Realtor URL uses 1070 Bryant St."
+  }
+]

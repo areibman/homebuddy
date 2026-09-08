@@ -1,0 +1,17 @@
+{
+  "id": "sofa",
+  "name": "Harbor modular sofa",
+  "category": "Sofas",
+  "description": "Deep navy upholstery, generous rounded arms, and two broad cushions on recessed oak feet.",
+  "dimensions_m": {
+    "width": 2.4,
+    "depth": 1.0,
+    "height": 0.79
+  },
+  "files": {
+    "blend": "sofa.blend",
+    "glb": "sofa.glb",
+    "preview": "sofa.png"
+  },
+  "provenance": "Original design created for this catalog. Modeled dimensions are approximate."
+}

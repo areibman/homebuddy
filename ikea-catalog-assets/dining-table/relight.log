@@ -1,0 +1,17 @@
+00:04.167  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.blend"
+01:47.255  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.png'
+Info: Saved as "dining-table.blend"
+12:17:37 | INFO: Data are loaded, start creating Blender stuff
+12:17:37 | INFO: Blender create Mesh node Cube
+12:17:38 | INFO: Blender create Mesh node Cube.001
+12:17:38 | INFO: Blender create Mesh node Cube.002
+12:17:38 | INFO: Blender create Mesh node Cube.003
+12:17:38 | INFO: Blender create Mesh node Chamfered ash top
+12:17:38 | INFO: Blender create Mesh node Birch leg
+12:17:38 | INFO: Blender create Mesh node Birch leg.001
+12:17:38 | INFO: Blender create Mesh node Birch leg.002
+12:17:38 | INFO: Blender create Mesh node Birch leg.003
+12:17:38 | INFO: glTF import finished in 0.35s
+04:09.570  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/roundtrip.png'
+RELIT dining-table
+04:09.635  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.blend"

@@ -1,0 +1,17 @@
+{
+  "id": "rug",
+  "name": "Mesa Woven Rug",
+  "category": "Rugs",
+  "description": "A natural wool concept rug with terracotta diamond medallions, ink accents and hand-tied fringe.",
+  "dimensions_m": {
+    "width": 2,
+    "depth": 3,
+    "height": 0.021
+  },
+  "files": {
+    "blend": "rug.blend",
+    "glb": "rug.glb",
+    "preview": "rug.png"
+  },
+  "provenance": "Original procedural concept design, created for this virtual furniture catalog; not a manufacturer product or CAD asset."
+}

@@ -1,0 +1,14 @@
+{
+  "render_dimensions": [
+    1200,
+    900
+  ],
+  "roundtrip_mean_absolute_rgb_error_8bit": [
+    0.0017009259259259258,
+    0.0016629629629629629,
+    0.0017555555555555556
+  ],
+  "no_studio_in_glb": true,
+  "explicit_portable_PBR": true,
+  "embedded_albedo_png": true
+}

@@ -1,0 +1,21 @@
+{
+  "id": "nightstand",
+  "name": "Cove Nightstand",
+  "category": "Nightstands",
+  "description": "Rounded walnut bedside cabinet with an inset drawer, brushed-brass bar pull, open lower shelf and short splayed legs.",
+  "dimensions_m": {
+    "width": 0.57,
+    "depth": 0.496,
+    "height": 0.587
+  },
+  "materials": [
+    "Oiled walnut",
+    "Brushed brass"
+  ],
+  "files": {
+    "blend": "nightstand.blend",
+    "glb": "nightstand.glb",
+    "preview": "nightstand.png"
+  },
+  "provenance": "Original concept design created for this virtual catalog. Not a branded product or manufacturer CAD; materials and dimensions are illustrative."
+}

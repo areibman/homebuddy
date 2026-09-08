@@ -1,0 +1,30 @@
+{
+  "id": "coffee-table",
+  "name": "LACK coffee table \u2014 white",
+  "category": "Coffee tables",
+  "description": "IKEA LACK coffee table in white, 90 \u00d7 55 cm, with a lower storage shelf.",
+  "dimensions_m": {
+    "width": 0.9,
+    "depth": 0.55,
+    "height": 0.45
+  },
+  "files": {
+    "blend": "coffee-table.blend",
+    "glb": "coffee-table.glb",
+    "preview": "coffee-table.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+  "materials": [
+    "White acrylic finish",
+    "Particleboard",
+    "Fiberboard",
+    "Paper honeycomb core"
+  ],
+  "source": {
+    "url": "https://www.ikea.com/us/en/p/lack-coffee-table-white-90449905/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/lack-coffee-table-white__0750652_pe746803_s5.jpg",
+    "retailer": "IKEA",
+    "article_number": "904.499.05",
+    "checked_date": "2026-09-08"
+  }
+}

@@ -1,0 +1,79 @@
+Info: Removed 100 vertices
+Info: Removed 100 vertices
+Info: Removed 100 vertices
+Info: Removed 100 vertices
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:15:26 | INFO: Starting glTF 2.0 export
+12:15:26 | INFO: Extracting primitive: Back cushion perimeter seam
+12:15:26 | INFO: Primitives created: 1
+12:15:26 | INFO: Extracting primitive: Back cushion perimeter seam.001
+12:15:26 | INFO: Primitives created: 1
+12:15:26 | INFO: Extracting primitive: Cube.002
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube.003
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Inner arm cover seam
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Inner arm cover seam.001
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Inset cover seam on arm front
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Inset cover seam on arm front.001
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Loose back cushion 1
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Loose back cushion 2
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Loose seat cushion 1
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Loose seat cushion 2
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube.001
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube.004
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube.005
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube.006
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube.007
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Seat cushion bottom welt
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Seat cushion bottom welt.001
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Seat cushion top welt
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Seat cushion top welt.001
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Extracting primitive: Cube
+12:15:27 | INFO: Primitives created: 1
+12:15:27 | INFO: Finished glTF 2.0 export in 0.3979194164276123 s
+02:40.315  render           | Saved: '/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.png'
+
+Info: Saved as "sofa.blend"
+12:18:03 | INFO: Data are loaded, start creating Blender stuff
+12:18:03 | INFO: Blender create Mesh node Back cushion perimeter seam
+12:18:03 | INFO: Blender create Mesh node Back cushion perimeter seam.001
+12:18:03 | INFO: Blender create Mesh node Cube.002
+12:18:03 | INFO: Blender create Mesh node Cube.003
+12:18:04 | INFO: Blender create Mesh node Inner arm cover seam
+12:18:04 | INFO: Blender create Mesh node Inner arm cover seam.001
+12:18:04 | INFO: Blender create Mesh node Inset cover seam on arm front
+12:18:04 | INFO: Blender create Mesh node Inset cover seam on arm front.001
+12:18:04 | INFO: Blender create Mesh node Loose back cushion 1
+12:18:06 | INFO: Blender create Mesh node Loose back cushion 2
+12:18:06 | INFO: Blender create Mesh node Loose seat cushion 1
+12:18:07 | INFO: Blender create Mesh node Loose seat cushion 2
+12:18:08 | INFO: Blender create Mesh node Cube.001
+12:18:08 | INFO: Blender create Mesh node Cube.004
+12:18:08 | INFO: Blender create Mesh node Cube.005
+12:18:08 | INFO: Blender create Mesh node Cube.006
+12:18:08 | INFO: Blender create Mesh node Cube.007
+12:18:08 | INFO: Blender create Mesh node Seat cushion bottom welt
+12:18:08 | INFO: Blender create Mesh node Seat cushion bottom welt.001
+12:18:08 | INFO: Blender create Mesh node Seat cushion top welt
+12:18:08 | INFO: Blender create Mesh node Seat cushion top welt.001
+12:18:08 | INFO: Blender create Mesh node Cube
+12:18:08 | INFO: glTF import finished in 5.00s

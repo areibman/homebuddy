@@ -1,0 +1,21 @@
+{
+  "id": "floor-lamp",
+  "name": "Solstice Floor Lamp",
+  "category": "Lighting",
+  "description": "A slender brass floor lamp with a pleated linen shade, weighted graphite base, and discreet foot switch.",
+  "materials": [
+    "Brushed brass",
+    "Pleated linen"
+  ],
+  "dimensions_m": {
+    "width": 0.535,
+    "depth": 0.544,
+    "height": 1.669
+  },
+  "files": {
+    "blend": "floor-lamp.blend",
+    "glb": "floor-lamp.glb",
+    "preview": "floor-lamp.png"
+  },
+  "provenance": "Original concept for FORM catalog. Approximate illustrative dimensions."
+}

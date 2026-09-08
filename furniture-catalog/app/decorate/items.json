@@ -1,0 +1,345 @@
+[
+  {
+    "id": "sofa",
+    "name": "KIVIK Sofa",
+    "category": "Sofas",
+    "description": "Gunnared beige upholstery with wide low arms and two deep seat cushions.",
+    "materials": [
+      "Gunnared beige polyester",
+      "Upholstered frame"
+    ],
+    "dimensions_m": {
+      "width": 2.28,
+      "depth": 0.95,
+      "height": 0.83
+    },
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/kivik-sofa-gunnared-beige-s89499703/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/kivik-sofa-gunnared-beige__1577008_pe1032893_s5.jpg?f=s",
+      "article_number": "894.997.03",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/sofa/sofa.blend?v=7e353f3ed583",
+      "glb": "/models/ikea/sofa/sofa.glb?v=75b83a93df8c",
+      "preview": "/models/ikea/sofa/sofa.png?v=98b3b1be0c0b"
+    },
+    "provenance": "Photo-based independent recreation; reconstructed upholstery and embedded PBR fabric, not official manufacturer CAD.",
+    "viewer": {
+      "orbit": "22deg 75deg 122%",
+      "target": "auto auto auto",
+      "field_of_view": "30deg"
+    }
+  },
+  {
+    "id": "armchair",
+    "name": "EKENÄSET Armchair — Kilanda light beige",
+    "category": "Armchairs",
+    "description": "Unofficial recreation of the EKENÄSET chair in Kilanda light beige, with a rectangular dark-brown beech frame, tailored fixed upholstery and embedded woven fabric texture.",
+    "dimensions_m": {
+      "width": 0.64,
+      "depth": 0.78,
+      "height": 0.76
+    },
+    "materials": [
+      "Polyester upholstery",
+      "Tinted lacquer solid beech",
+      "Foam cushioning"
+    ],
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/ekenaeset-armchair-kilanda-light-beige-30533493/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/ekenaeset-armchair-kilanda-light-beige__1109687_pe870153_s5.jpg",
+      "article_number": "305.334.93",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/armchair/armchair.blend?v=d7f8876bc635",
+      "glb": "/models/ikea/armchair/armchair.glb?v=51db1c957ffe",
+      "preview": "/models/ikea/armchair/armchair.png?v=de7d7f31cee9"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "validation": {
+      "roundtrip_preview": "armchair-roundtrip.png",
+      "embedded_textures": [
+        "kilanda-basecolor.png",
+        "kilanda-normal.png",
+        "beech-basecolor.png"
+      ],
+      "review": "review.md"
+    }
+  },
+  {
+    "id": "bed",
+    "name": "MALM Bed frame, white, Queen",
+    "category": "Beds",
+    "description": "White Queen MALM frame with flat full-width headboard and low footboard. Mattress shown for context and sold separately.",
+    "dimensions_m": {
+      "width": 1.679575,
+      "depth": 2.111375,
+      "height": 1.000125
+    },
+    "materials": [
+      "Particleboard",
+      "Fiberboard",
+      "Acrylic paint",
+      "Galvanized steel"
+    ],
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/malm-bed-frame-white-s19931605/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/malm-bed-frame-white__0749130_pe745499_s5.jpg",
+      "article_number": "199.316.05",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/bed/bed.blend?v=bcdc37ea6c2b",
+      "glb": "/models/ikea/bed/bed.glb?v=35088efefc72",
+      "preview": "/models/ikea/bed/bed.png?v=10a122e6ee27"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "dimension_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo.",
+    "view": {
+      "camera_orbit_degrees": {
+        "theta": 23,
+        "phi": 76
+      },
+      "note": "Catalog-reference three-quarter view, low elevation."
+    },
+    "fidelity_note": "Reconstructed from exact linked packshot, with subcomponent proportions inferred; see review.md. GLB round-trip rendered to verify portable materials.",
+    "dimensions_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo."
+  },
+  {
+    "id": "dining-table",
+    "name": "LISABO table — ash veneer",
+    "category": "Dining tables",
+    "description": "IKEA round table in ash veneer, 105 cm diameter, with tapered solid birch legs.",
+    "dimensions_m": {
+      "width": 1.05,
+      "depth": 1.05,
+      "height": 0.74
+    },
+    "files": {
+      "blend": "/models/ikea/dining-table/dining-table.blend?v=cad995b1845c",
+      "glb": "/models/ikea/dining-table/dining-table.glb?v=df5322abceb2",
+      "preview": "/models/ikea/dining-table/dining-table.png?v=702e5386cbad"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "materials": [
+      "Ash veneer",
+      "Solid birch",
+      "Clear acrylic lacquer"
+    ],
+    "source": {
+      "url": "https://www.ikea.com/us/en/p/lisabo-table-ash-veneer-40416498/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/lisabo-table-ash-veneer__0631745_pe695175_s5.jpg",
+      "retailer": "IKEA",
+      "article_number": "404.164.98",
+      "checked_date": "2026-09-08"
+    }
+  },
+  {
+    "id": "rug",
+    "name": "LOHALS rug — natural",
+    "category": "Rugs",
+    "description": "IKEA LOHALS natural jute rug, 160 × 230 cm; tightly flatwoven with natural color variation.",
+    "dimensions_m": {
+      "width": 1.6,
+      "depth": 2.3,
+      "height": 0.013
+    },
+    "files": {
+      "blend": "/models/ikea/rug/rug.blend?v=dc3896cc9c6f",
+      "glb": "/models/ikea/rug/rug.glb?v=a4f9582d35c9",
+      "preview": "/models/ikea/rug/rug.png?v=b5433dd40562"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "materials": [
+      "100% jute"
+    ],
+    "source": {
+      "url": "https://www.ikea.com/us/en/p/lohals-rug-flatwoven-natural-50277393/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/lohals-rug-flatwoven-natural__0280221_pe419173_s5.jpg",
+      "retailer": "IKEA",
+      "article_number": "502.773.93",
+      "checked_date": "2026-09-08"
+    }
+  },
+  {
+    "id": "dresser",
+    "name": "VIHALS 6-drawer dresser, white",
+    "category": "Storage",
+    "description": "Wide white VIHALS with six flat-front drawers in two columns, small white edge pulls, and larger bottom drawers.",
+    "dimensions_m": {
+      "width": 1.400175,
+      "depth": 0.4699,
+      "height": 0.7493
+    },
+    "materials": [
+      "Particleboard",
+      "Acrylic paint",
+      "Fiberboard"
+    ],
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/vihals-6-drawer-dresser-white-anchor-unlock-function-30490115/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/vihals-6-drawer-dresser-white-anchor-unlock-function__1112063_pe871092_s5.jpg",
+      "article_number": "304.901.15",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/dresser/dresser.blend?v=71eadd5c210f",
+      "glb": "/models/ikea/dresser/dresser.glb?v=4fa71b967706",
+      "preview": "/models/ikea/dresser/dresser.png?v=b7771e038296"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "dimension_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo.",
+    "view": {
+      "camera_orbit_degrees": {
+        "theta": 20,
+        "phi": 77
+      },
+      "note": "Catalog-reference three-quarter view, low elevation."
+    },
+    "fidelity_note": "Reconstructed from exact linked packshot, with subcomponent proportions inferred; see review.md. GLB round-trip rendered to verify portable materials.",
+    "dimensions_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo."
+  },
+  {
+    "id": "bookshelf",
+    "name": "BILLY Bookcase — white",
+    "category": "Bookcases",
+    "description": "Unofficial recreation of the white BILLY bookcase with five interior shelves, thin panels, a recessed plinth, rear skirting cutouts and shelf adjustment holes.",
+    "dimensions_m": {
+      "width": 0.8,
+      "depth": 0.28,
+      "height": 2.02
+    },
+    "materials": [
+      "Particleboard with white paper foil",
+      "Painted fiberboard backing",
+      "Plastic edging"
+    ],
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/billy-bookcase-white-20522046/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/billy-bookcase-white__1590272_pe1038911_s5.jpg",
+      "article_number": "205.220.46",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/bookshelf/bookshelf.blend?v=c3749b3810ae",
+      "glb": "/models/ikea/bookshelf/bookshelf.glb?v=cbda09879946",
+      "preview": "/models/ikea/bookshelf/bookshelf.png?v=ac15f0465c44"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "validation": {
+      "roundtrip_preview": "bookshelf-roundtrip.png",
+      "review": "review.md",
+      "color_space": "Neutral white sRGB converted to linear PBR base color"
+    }
+  },
+  {
+    "id": "nightstand",
+    "name": "HEMNES Nightstand, white stain",
+    "category": "Nightstands",
+    "description": "White-stained pine HEMNES with one drawer, a dark round knob, four square legs and an open lower shelf.",
+    "dimensions_m": {
+      "width": 0.460375,
+      "depth": 0.34925,
+      "height": 0.6985
+    },
+    "materials": [
+      "Solid pine",
+      "White stain",
+      "Clear acrylic lacquer",
+      "Fiberboard"
+    ],
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/hemnes-nightstand-white-stain-20200456/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/hemnes-nightstand-white-stain__0624424_pe691831_s5.jpg",
+      "article_number": "202.004.56",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/nightstand/nightstand.blend?v=046f80461760",
+      "glb": "/models/ikea/nightstand/nightstand.glb?v=032f98eca505",
+      "preview": "/models/ikea/nightstand/nightstand.png?v=ec943f66fead"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "dimension_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo.",
+    "view": {
+      "camera_orbit_degrees": {
+        "theta": 24,
+        "phi": 77
+      },
+      "note": "Catalog-reference three-quarter view, low elevation."
+    },
+    "fidelity_note": "Reconstructed from exact linked packshot, with subcomponent proportions inferred; see review.md. GLB round-trip rendered to verify portable materials.",
+    "dimensions_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo."
+  },
+  {
+    "id": "coffee-table",
+    "name": "LACK coffee table — white",
+    "category": "Coffee tables",
+    "description": "IKEA LACK coffee table in white, 90 × 55 cm, with a lower storage shelf.",
+    "dimensions_m": {
+      "width": 0.9,
+      "depth": 0.55,
+      "height": 0.45
+    },
+    "files": {
+      "blend": "/models/ikea/coffee-table/coffee-table.blend?v=b4194431a8d6",
+      "glb": "/models/ikea/coffee-table/coffee-table.glb?v=a456c1e319f9",
+      "preview": "/models/ikea/coffee-table/coffee-table.png?v=4ae59b6db2e9"
+    },
+    "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+    "materials": [
+      "White acrylic finish",
+      "Particleboard",
+      "Fiberboard",
+      "Paper honeycomb core"
+    ],
+    "source": {
+      "url": "https://www.ikea.com/us/en/p/lack-coffee-table-white-90449905/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/lack-coffee-table-white__0750652_pe746803_s5.jpg",
+      "retailer": "IKEA",
+      "article_number": "904.499.05",
+      "checked_date": "2026-09-08"
+    }
+  },
+  {
+    "id": "floor-lamp",
+    "name": "LAUTERS Floor Lamp",
+    "category": "Lighting",
+    "description": "Ash tripod base and white textile drum shade. Shown at the maximum adjustable height.",
+    "materials": [
+      "Solid ash",
+      "White textile shade"
+    ],
+    "dimensions_m": {
+      "width": 0.6096,
+      "depth": 0.6096,
+      "height": 1.4986
+    },
+    "dimensions_note": "Base diameter 24 in; maximum height 59 in. Height adjusts from 47 to 59 in.",
+    "source": {
+      "retailer": "IKEA",
+      "url": "https://www.ikea.com/us/en/p/lauters-floor-lamp-ash-white-00405048/",
+      "photo_url": "https://www.ikea.com/us/en/images/products/lauters-floor-lamp-ash-white__0663863_pe712536_s5.jpg?f=s",
+      "article_number": "004.050.48",
+      "checked_date": "2026-09-08"
+    },
+    "files": {
+      "blend": "/models/ikea/floor-lamp/floor-lamp.blend?v=9bc3f045cbf9",
+      "glb": "/models/ikea/floor-lamp/floor-lamp.glb?v=336e3df674c9",
+      "preview": "/models/ikea/floor-lamp/floor-lamp.png?v=440221fde16d"
+    },
+    "provenance": "Photo-based independent recreation with tapered ash tripod, white textile shade and embedded PBR textures; not official manufacturer CAD.",
+    "viewer": {
+      "orbit": "14deg 80deg 116%",
+      "field_of_view": "30deg"
+    }
+  }
+]

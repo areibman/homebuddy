@@ -1,0 +1,479 @@
+00:01.661  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/sofa/sofa.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+12:49:39 | INFO: Starting glTF 2.0 export
+12:49:39 | INFO: Extracting primitive: Back cushion perimeter seam
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Back cushion perimeter seam.001
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Cube.002
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Cube.003
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Inner arm cover seam
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Inner arm cover seam.001
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Inset cover seam on arm front
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Inset cover seam on arm front.001
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Loose back cushion 1
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Loose back cushion 2
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Loose seat cushion 1
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Loose seat cushion 2
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Cube.001
+12:49:39 | INFO: Primitives created: 1
+12:49:39 | INFO: Extracting primitive: Cube.004
+12:49:39 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Cube.005
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Cube.006
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Cube.007
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Seat cushion bottom welt
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Seat cushion bottom welt.001
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Seat cushion top welt
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Seat cushion top welt.001
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Extracting primitive: Cube
+12:49:40 | INFO: Primitives created: 1
+12:49:40 | INFO: Finished glTF 2.0 export in 0.16051506996154785 s
+
+Info: Saved as "sofa.blend"
+BAKED sofa 1770936 bytes
+00:09.336  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dresser/dresser.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:49:46 | INFO: Starting glTF 2.0 export
+12:49:46 | INFO: Extracting primitive: Cube.024
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.025
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.026
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.027
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.028
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.029
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.007
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.010
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.013
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.016
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.019
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.022
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.008
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.011
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.014
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.017
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.020
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.023
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.005
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.001
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.006
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.009
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.012
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.018
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.015
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.021
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.002
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.003
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube.004
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Extracting primitive: Cube
+12:49:47 | INFO: Primitives created: 1
+12:49:47 | INFO: Finished glTF 2.0 export in 0.06090593338012695 s
+
+Info: Saved as "dresser.blend"
+BAKED dresser 746508 bytes
+00:16.331  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/coffee-table/coffee-table.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:49:50 | INFO: Starting glTF 2.0 export
+12:49:50 | INFO: Extracting primitive: Cube
+12:49:50 | INFO: Primitives created: 1
+12:49:50 | INFO: Extracting primitive: Cube.001
+12:49:50 | INFO: Primitives created: 1
+12:49:50 | INFO: Extracting primitive: Cube.002
+12:49:50 | INFO: Primitives created: 1
+12:49:50 | INFO: Extracting primitive: Cube.003
+12:49:50 | INFO: Primitives created: 1
+12:49:50 | INFO: Extracting primitive: Cube.004
+12:49:50 | INFO: Primitives created: 1
+12:49:50 | INFO: Extracting primitive: Cube.005
+12:49:50 | INFO: Primitives created: 1
+12:49:50 | INFO: Finished glTF 2.0 export in 0.03688812255859375 s
+
+Info: Saved as "coffee-table.blend"
+BAKED coffee-table 574008 bytes
+00:19.783  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/bed/bed.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:49:53 | INFO: Starting glTF 2.0 export
+12:49:53 | INFO: Extracting primitive: Cube.005
+12:49:53 | INFO: Primitives created: 1
+12:49:53 | INFO: Extracting primitive: Cube.002
+12:49:53 | INFO: Primitives created: 1
+12:49:53 | INFO: Extracting primitive: Cube.003
+12:49:53 | INFO: Primitives created: 1
+12:49:53 | INFO: Extracting primitive: Cube
+12:49:53 | INFO: Primitives created: 1
+12:49:53 | INFO: Extracting primitive: Cube.001
+12:49:53 | INFO: Primitives created: 1
+12:49:53 | INFO: Extracting primitive: Cube.004
+12:49:53 | INFO: Primitives created: 1
+12:49:53 | INFO: Finished glTF 2.0 export in 0.061773061752319336 s
+
+Info: Saved as "bed.blend"
+BAKED bed 750500 bytes
+00:22.469  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/nightstand/nightstand.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:49:56 | INFO: Starting glTF 2.0 export
+12:49:56 | INFO: Extracting primitive: Cylinder
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cylinder.001
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cylinder.002
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cylinder.003
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.008
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.010
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.006
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.007
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.011
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.005
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Sphere
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.009
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.001
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.002
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.003
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube.004
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cube
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Extracting primitive: Cylinder.004
+12:49:56 | INFO: Primitives created: 1
+12:49:56 | INFO: Finished glTF 2.0 export in 0.03977704048156738 s
+
+Info: Saved as "nightstand.blend"
+BAKED nightstand 627520 bytes
+00:25.720  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/armchair/armchair.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:50:01 | INFO: Starting glTF 2.0 export
+12:50:01 | INFO: Extracting primitive: Back side panel sewing
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Back side panel sewing.001
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.010
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.003
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.008
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Fixed seat with squared lower apron
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.005
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.001
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.006
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.002
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.007
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.011
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.004
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.009
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Extracting primitive: Cube.012
+12:50:01 | INFO: Primitives created: 1
+12:50:01 | INFO: Finished glTF 2.0 export in 0.13264203071594238 s
+
+Info: Saved as "armchair.blend"
+BAKED armchair 4106488 bytes
+00:30.807  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/bookshelf/bookshelf.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:50:05 | INFO: Starting glTF 2.0 export
+12:50:05 | INFO: Extracting primitive: Cube.004
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.005
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.007
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.008
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Side panel with skirting relief
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Side panel with skirting relief.001
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.001
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.006
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.002
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cylinder
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube.003
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Extracting primitive: Cube
+12:50:05 | INFO: Primitives created: 1
+12:50:05 | INFO: Finished glTF 2.0 export in 0.0567469596862793 s
+
+Info: Saved as "bookshelf.blend"
+BAKED bookshelf 1238368 bytes
+00:35.039  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/dining-table/dining-table.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:50:08 | INFO: Starting glTF 2.0 export
+12:50:08 | INFO: Extracting primitive: Cube
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Cube.001
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Cube.002
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Cube.003
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Chamfered ash top
+12:50:08 | INFO: Primitives created: 2
+12:50:08 | INFO: Extracting primitive: Birch leg
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Birch leg.001
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Birch leg.002
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Extracting primitive: Birch leg.003
+12:50:08 | INFO: Primitives created: 1
+12:50:08 | INFO: Finished glTF 2.0 export in 0.10390901565551758 s
+
+Info: Saved as "dining-table.blend"
+BAKED dining-table 802408 bytes
+00:37.746  blend            | Read blend: "/Users/hyperbox/homebuddy/ikea-catalog-assets/floor-lamp/floor-lamp.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+12:50:12 | INFO: Starting glTF 2.0 export
+12:50:12 | INFO: Extracting primitive: Cylinder.002
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Cylinder.003
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Tapered flat ash leg
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Tapered flat ash leg.001
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Tapered flat ash leg.002
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Cylinder.005
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Shade wire support
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Shade wire support.001
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Shade wire support.002
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Cylinder.001
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Cylinder
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Cylinder.004
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White bound shade rim
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White bound shade rim.001
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White cord wound around storage spool
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White cord wound around storage spool.001
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White cord wound around storage spool.002
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White cord wound around storage spool.003
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White cord wound around storage spool.004
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: White hanging power cable
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Extracting primitive: Thin cylindrical textile shade
+12:50:12 | INFO: Primitives created: 1
+12:50:12 | INFO: Finished glTF 2.0 export in 0.06286287307739258 s
+
+Info: Saved as "floor-lamp.blend"
+BAKED floor-lamp 1436020 bytes
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit

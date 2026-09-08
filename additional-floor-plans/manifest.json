@@ -1,0 +1,168 @@
+[
+  {
+    "name": "Towers at Rincon - Pier 39 studio",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 300,
+    "source": "https://www.thetowersatrincon.com/floorplans",
+    "urls": [
+      "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1800,h_1800/s3/2/92369/pier39_towers%20at%20rincon.jpg"
+    ],
+    "note": "Building plan type, not a specific unit.",
+    "files": [
+      {
+        "file": "towers-at-rincon-pier-39-studio-1.jpg",
+        "url": "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1800,h_1800/s3/2/92369/pier39_towers%20at%20rincon.jpg"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "Spera - Plan E",
+    "beds": 1,
+    "baths": 1,
+    "sqft": 503,
+    "source": "https://www.sperasf.com/floor-plans/",
+    "urls": [
+      "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/142604/SPERA_E.jpg"
+    ],
+    "note": "Building plan type, not a specific unit.",
+    "files": [
+      {
+        "file": "spera-plan-e-1.jpg",
+        "url": "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/142604/SPERA_E.jpg"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "88 Arkansas Street Unit 526",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 462,
+    "source": "https://88atthepark.com/floor-plans/",
+    "urls": [
+      "https://88atthepark.com/wp-content/uploads/2021/05/unit-526-2.pdf"
+    ],
+    "files": [
+      {
+        "file": "88-arkansas-street-unit-526-1.pdf",
+        "url": "https://88atthepark.com/wp-content/uploads/2021/05/unit-526-2.pdf"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "333 Bush Street Unit 4101",
+    "beds": 2,
+    "baths": 2,
+    "sqft": 1250,
+    "source": "https://333bush4101.com/",
+    "cache": "333bush4101.com.md",
+    "urls": [
+      "https://cdn.openhomesphotography.com/uploads/333-bush-street-4101.1eea66cf-9f59-6f86-811d-02ffd8b76bfd/manualBatchUploads/fp2k.1eea66cf-9fcc-67a2-8218-02ffd8b76bfd/floor_plans/333-bush-street-4101.69045.fp2k.2d.no-calc.mstr.01.a.pdf"
+    ],
+    "files": [
+      {
+        "file": "333-bush-street-unit-4101-1.pdf",
+        "url": "https://cdn.openhomesphotography.com/uploads/333-bush-street-4101.1eea66cf-9f59-6f86-811d-02ffd8b76bfd/manualBatchUploads/fp2k.1eea66cf-9fcc-67a2-8218-02ffd8b76bfd/floor_plans/333-bush-street-4101.69045.fp2k.2d.no-calc.mstr.01.a.pdf"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "3749 17th Street Unit A",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1375,
+    "source": "https://soldedoloressky.com/",
+    "cache": "soldedoloressky.com.md",
+    "urls": [
+      "https://imgx.openhomes.photo/q:60/https://cdn.openhomesphotography.com/cms/3749-17th-street-a.1f0770d4-d90d-68d2-8017-02ffd8b76bfd/a7d4eafb-2d3c-429e-be27-13da5fc85e36.png?signature=09eaacf7aede61645eb4193229c8ce194684aa5acee6337004cfd55b3f8d4296"
+    ],
+    "files": [
+      {
+        "file": "3749-17th-street-unit-a-1.png",
+        "url": "https://imgx.openhomes.photo/q:60/https://cdn.openhomesphotography.com/cms/3749-17th-street-a.1f0770d4-d90d-68d2-8017-02ffd8b76bfd/a7d4eafb-2d3c-429e-be27-13da5fc85e36.png?signature=09eaacf7aede61645eb4193229c8ce194684aa5acee6337004cfd55b3f8d4296"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "370 Church Street Unit E",
+    "beds": 2,
+    "baths": 2,
+    "sqft": null,
+    "source": "https://www.2levelcondo.com/",
+    "urls": [
+      "https://openhomesphotography.box.com/shared/static/nke2ypwnlz9h7kuceiodajlij02x1lyf.jpeg",
+      "https://openhomesphotography.box.com/shared/static/pq3anlgfb30msa9wzbdp79qwe7qrv5l0.jpg"
+    ],
+    "files": [
+      {
+        "file": "370-church-street-unit-e-1.jpg",
+        "url": "https://openhomesphotography.box.com/shared/static/nke2ypwnlz9h7kuceiodajlij02x1lyf.jpeg"
+      },
+      {
+        "file": "370-church-street-unit-e-2.jpg",
+        "url": "https://openhomesphotography.box.com/shared/static/pq3anlgfb30msa9wzbdp79qwe7qrv5l0.jpg"
+      }
+    ],
+    "note": "Includes 2D and furnished 3D layouts. No verified floor area. The 3D drawing is illustrative, not to scale or based on actual measurements.",
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "1159 Green Street Unit 1",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1520,
+    "source": "https://homeongreen.com/",
+    "urls": [
+      "https://openhomesphotography.box.com/shared/static/cc3he0g8e801uhw9c4put3jnqvbomt2p.pdf"
+    ],
+    "note": "Plan depicts 3 bedroom labels and 2 baths across both levels. The property site describes the 666 sq ft lower level as an unwarranted bonus apartment; upper level is 854 sq ft. Do not treat this as confirmation of permitted bedrooms or dwelling units.",
+    "files": [
+      {
+        "file": "1159-green-street-unit-1-1.pdf",
+        "url": "https://openhomesphotography.box.com/shared/static/cc3he0g8e801uhw9c4put3jnqvbomt2p.pdf"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "1422 Rhode Island Street",
+    "beds": 4,
+    "baths": 3.5,
+    "sqft": 2244,
+    "source": "https://www.homeinpotrero.com/",
+    "cache": "homeinpotrero.com.md",
+    "urls": [
+      "https://cdn.openhomesphotography.com/uploads/legacy-websites/28677/1422_Rhode_Island_Street_San_Francisco.2D_.CALC_.MSTR_.01_.PRINT_.pdf"
+    ],
+    "files": [
+      {
+        "file": "1422-rhode-island-street-1.pdf",
+        "url": "https://cdn.openhomesphotography.com/uploads/legacy-websites/28677/1422_Rhode_Island_Street_San_Francisco.2D_.CALC_.MSTR_.01_.PRINT_.pdf"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  },
+  {
+    "name": "842 35th Avenue",
+    "beds": 4,
+    "baths": 2,
+    "sqft": 2380,
+    "source": "https://websites.open.homes/site/1ef286d7-51c8-6c4c-b653-02ffe917ffb9",
+    "cache": "websites.open.homes-site-1ef286d7-51c8-6c4c-b653-02ffe917ffb9.md",
+    "urls": [
+      "https://imgx.openhomes.photo/q:60/https://cdn.openhomesphotography.com/uploads/842-35th-avenue.1ef286d7-51c8-6c4c-b653-02ffe917ffb9/batchUploads/fp3k.64458956-5936-11ef-bb06-02ffe917ffb9/processed/floor_plans/842-35th-avenue.73104.fp3k.2d.no-calc.mstr.01.a.jpg?signature=3a04745ce5e394851ae10dad279fc34cca84f8a7454f68335a6fa814c063f23c"
+    ],
+    "files": [
+      {
+        "file": "842-35th-avenue-1.jpg",
+        "url": "https://imgx.openhomes.photo/q:60/https://cdn.openhomesphotography.com/uploads/842-35th-avenue.1ef286d7-51c8-6c4c-b653-02ffe917ffb9/batchUploads/fp3k.64458956-5936-11ef-bb06-02ffe917ffb9/processed/floor_plans/842-35th-avenue.73104.fp3k.2d.no-calc.mstr.01.a.jpg?signature=3a04745ce5e394851ae10dad279fc34cca84f8a7454f68335a6fa814c063f23c"
+      }
+    ],
+    "verified": "Downloaded and visually inspected September 8, 2026; legible room layout and matching source property or plan type."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "id": "dresser",
+  "name": "VIHALS 6-drawer dresser, white",
+  "category": "Storage",
+  "description": "Wide white VIHALS with six flat-front drawers in two columns, small white edge pulls, and larger bottom drawers.",
+  "dimensions_m": {
+    "width": 1.400175,
+    "depth": 0.4699,
+    "height": 0.7493
+  },
+  "materials": [
+    "Particleboard",
+    "Acrylic paint",
+    "Fiberboard"
+  ],
+  "source": {
+    "retailer": "IKEA",
+    "url": "https://www.ikea.com/us/en/p/vihals-6-drawer-dresser-white-anchor-unlock-function-30490115/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/vihals-6-drawer-dresser-white-anchor-unlock-function__1112063_pe871092_s5.jpg",
+    "article_number": "304.901.15",
+    "checked_date": "2026-09-08"
+  },
+  "files": {
+    "blend": "dresser.blend",
+    "glb": "dresser.glb",
+    "preview": "dresser.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA.",
+  "dimension_note": "Converted from the published IKEA US inch dimensions; subcomponent proportions are estimated from the original catalog photo.",
+  "view": {
+    "camera_orbit_degrees": {
+      "theta": 20,
+      "phi": 77
+    },
+    "note": "Catalog-reference three-quarter view, low elevation."
+  },
+  "fidelity_note": "Reconstructed from exact linked packshot, with subcomponent proportions inferred; see review.md. GLB round-trip rendered to verify portable materials."
+}

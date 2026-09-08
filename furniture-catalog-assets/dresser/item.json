@@ -1,0 +1,21 @@
+{
+  "id": "dresser",
+  "name": "Linden Six-Drawer Dresser",
+  "category": "Storage",
+  "description": "A low dresser in warm natural oak with six drawers, narrow brass pulls, softened edges and raised feet.",
+  "dimensions_m": {
+    "width": 1.64,
+    "depth": 0.586,
+    "height": 1.03
+  },
+  "materials": [
+    "Natural oak",
+    "Brushed brass"
+  ],
+  "files": {
+    "blend": "dresser.blend",
+    "glb": "dresser.glb",
+    "preview": "dresser.png"
+  },
+  "provenance": "Original procedural design created for this catalog; conceptual proportions, not manufacturer CAD."
+}

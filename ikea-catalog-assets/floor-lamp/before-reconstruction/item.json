@@ -1,0 +1,29 @@
+{
+  "id": "floor-lamp",
+  "name": "LAUTERS Floor Lamp",
+  "category": "Lighting",
+  "description": "Ash tripod base and white textile drum shade. Shown at the maximum adjustable height.",
+  "materials": [
+    "Solid ash",
+    "White textile shade"
+  ],
+  "dimensions_m": {
+    "width": 0.6096,
+    "depth": 0.6096,
+    "height": 1.4986
+  },
+  "dimensions_note": "Base diameter 24 in; maximum height 59 in. Height adjusts from 47 to 59 in.",
+  "source": {
+    "retailer": "IKEA",
+    "url": "https://www.ikea.com/us/en/p/lauters-floor-lamp-ash-white-00405048/",
+    "photo_url": "https://www.ikea.com/us/en/images/products/lauters-floor-lamp-ash-white__0663863_pe712536_s5.jpg?f=s",
+    "article_number": "004.050.48",
+    "checked_date": "2026-09-08"
+  },
+  "files": {
+    "blend": "floor-lamp.blend",
+    "glb": "floor-lamp.glb",
+    "preview": "floor-lamp.png"
+  },
+  "provenance": "Unofficial simplified recreation based on linked IKEA product. Photo belongs to IKEA."
+}

@@ -1,0 +1,20 @@
+{
+  "valid": true,
+  "measured_dimensions_m": [
+    1.600000023841858,
+    2.299999952316284,
+    0.013000000268220901
+  ],
+  "nominal_dimensions_m": [
+    1.6,
+    2.3,
+    0.013
+  ],
+  "mesh_count": 1,
+  "glb_bytes": 693244,
+  "roundtrip_render": "roundtrip.png",
+  "textures_embedded": true,
+  "material_check": "Explicit sRGB-decoded factor or embedded images; GLB reimport rendered with same light and camera",
+  "uv_check": "Only intended material UV layer exported; primitive default UV removed",
+  "roundtrip_mean_absolute_rgb_error_255": 0.0006675925925925926
+}
