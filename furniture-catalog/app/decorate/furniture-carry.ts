@@ -1,5 +1,14 @@
 import {Group,Mesh,Scene} from 'three';
 
+export function removePlacedFurniture(scene:Scene,furniture:Group[],target:Group|null){
+ if(!target)return false;
+ const index=furniture.indexOf(target);
+ if(index<0)return false;
+ scene.remove(target);
+ furniture.splice(index,1);
+ return true;
+}
+
 /** Move transactions leave the original transform intact until a valid drop. */
 export function createFurnitureCarry(scene:Scene,templates:Map<string,Group>,add:(id:string,x:number,z:number,angle:number)=>Group|undefined){
  let preview:Group|null=null,source:Group|null=null;

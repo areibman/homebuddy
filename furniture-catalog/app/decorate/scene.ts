@@ -5,7 +5,8 @@ import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import plan from './plan.json';
 import {buildArchitecture,type ArchitecturePlan} from './architecture';
 import items from './items.json';
-import {createFurnitureCarry} from './furniture-carry';
+import {createFurnitureCarry,removePlacedFurniture} from './furniture-carry';
+import {CARRY_REACH,clampCarryReach,nearbyCarryPosition,createDragAnchor,dragCarryPosition} from './carry-position';
 import {createPlayer,stepPlayer,PLAYER,overlaps} from './player';
 import {createCursorLook} from './cursor-look';
 import {lookDelta,type LookDirection,type ObjectHint} from './look-input';
@@ -15,7 +16,7 @@ import {createAssembly,createViewTransition} from './scene-motion';
 type Callbacks={status:(s:string)=>void;count:(n:number)=>void;active:(s:string)=>void;playing:(v:boolean)=>void;hint:(hint:ObjectHint)=>void;motion:(phase:'assembly'|'camera'|null)=>void;inventory:()=>void;details:(id:string,placed:boolean)=>void;placement:(valid:boolean)=>void};
 export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  const player=createPlayer(),cursorLook=createCursorLook();let playing=false,fallback=false,jumpQueued=false;let lockTimer:ReturnType<typeof setTimeout>|undefined;
- const scene=new T.Scene();scene.background=new T.Color('#e5ece9');const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1;renderer.outputColorSpace=T.SRGBColorSpace;renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D apartment. WASD to move, arrow keys to look, E inventory, left-click move or place, hold Q or R to rotate, right-click details.');host.appendChild(renderer.domElement);
+ const scene=new T.Scene();scene.background=new T.Color('#e5ece9');const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1;renderer.outputColorSpace=T.SRGBColorSpace;renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D apartment. WASD to move, arrow keys to look, E inventory, left-click move or place, hold Q or R to rotate, right-click details, Delete or Backspace to remove furniture.');host.appendChild(renderer.domElement);
  const iso=new T.OrthographicCamera(-8,8,8,-8,.1,100);iso.position.set(13,15,18);const fps=new T.PerspectiveCamera(65,1,.05,80);fps.position.set(5.7,PLAYER.eye,7.1);fps.rotation.order='YXZ';fps.rotation.y=Math.PI/2;let camera:T.Camera=iso;const controls=new OrbitControls(iso,renderer.domElement);controls.target.set(3.1,0,4.3);controls.maxPolarAngle=Math.PI/2.5;controls.minZoom=.6;controls.maxZoom=3;controls.update();
  const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
  const viewTransition=createViewTransition(iso,fps,controls.target);let targetMode:'iso'|'fps'='iso';
@@ -61,14 +62,34 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
   showHint({id:target.userData.id,name:items.find(i=>i.id===target.userData.id)!.name,x:Math.round(T.MathUtils.clamp(x+24>host.clientWidth-292?x-304:x+24,12,Math.max(12,host.clientWidth-292))),y:Math.round(T.MathUtils.clamp(y-50,12,Math.max(12,host.clientHeight-190)))});
  }
 
- const grabOffset=new T.Vector3(),pickupPosition=new T.Vector3();let lastValid:boolean|undefined;
- function tintGhost(){const ghost=carry.preview;if(!ghost)return;valid=ghost.visible&&legal(ghost);if(valid!==lastValid){lastValid=valid;ui.placement(valid);}ghost.traverse(o=>{if(o instanceof T.Mesh){const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>{if(m instanceof T.MeshStandardMaterial)m.color.set(valid?'#6dab86':'#d97768');});}});}
- function ghostUpdate(){const ghost=carry.preview;if(!ghost||inputBlocked())return;if(centered()||mouseOverCanvas){cast();const hit=ray.intersectObjects(floors,false)[0];const obstruction=ray.intersectObjects(blockers.filter(isVisible),false)[0];ghost.visible=!!hit&&(!obstruction||obstruction.distance>hit.distance);if(hit&&ghost.visible)ghost.position.set(hit.point.x+grabOffset.x,.015,hit.point.z+grabOffset.z);}tintGhost();}
+ const pickupPosition=new T.Vector3(),carryPoint=new T.Vector3(),carryForward=new T.Vector3(),sightDirection=new T.Vector3(),sightRay=new T.Raycaster();let dragAnchor:ReturnType<typeof createDragAnchor>|null=null,carryReach=CARRY_REACH.default,placementBlocked=false,lastValid:boolean|undefined;
+ function tintGhost(){const ghost=carry.preview;if(!ghost)return;valid=ghost.visible&&!placementBlocked&&legal(ghost);if(valid!==lastValid){lastValid=valid;ui.placement(valid);}ghost.traverse(o=>{if(o instanceof T.Mesh){const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>{if(m instanceof T.MeshStandardMaterial)m.color.set(valid?'#6dab86':'#d97768');});}});}
+ function ghostUpdate(){const ghost=carry.preview;if(!ghost||inputBlocked())return;if(centered()||mouseOverCanvas){cast();placementBlocked=false;
+  if(camera===fps){
+   carryForward.set(-Math.sin(fps.rotation.y),0,-Math.cos(fps.rotation.y));
+   ghost.position.copy(nearbyCarryPosition(ray.ray,fps.position,carryForward,carryReach,carryPoint));ghost.visible=true;
+   const height=items.find(item=>item.id===ghost.userData.id)?.dimensions_m.height??.8;
+   sightDirection.copy(ghost.position).sub(fps.position);sightDirection.y+=height/2;
+   const distance=sightDirection.length();sightRay.set(fps.position,sightDirection.normalize());
+   const obstruction=sightRay.intersectObjects(blockers.filter(isVisible),false)[0];
+   placementBlocked=!!obstruction&&obstruction.distance<distance-.02;
+  }else if(dragAnchor){const point=dragCarryPosition(ray.ray,dragAnchor,carryPoint);ghost.visible=!!point;if(point)ghost.position.copy(point);}
+ }tintGhost();}
  function syncControls(){controls.enabled=targetMode==='iso'&&!inputBlocked()&&!carry.preview;}
- function cancel(){const restored=carry.source;carry.cancel();if(restored&&camera===fps){const b=bounds(restored);if(player.y<b.max.y&&player.y+PLAYER.height>b.min.y&&overlaps(player.x,player.z,b)){player.x=pickupPosition.x;player.y=pickupPosition.y;player.z=pickupPosition.z;player.vx=player.vz=player.vy=0;fps.position.set(player.x,player.y+PLAYER.eye,player.z);}}grabOffset.set(0,0,0);valid=false;lastValid=undefined;keys.delete('q');keys.delete('r');ui.active('');showHint(null);syncControls();}
- function choose(id:string,object:T.Group|null=null){if(inputBlocked())return;cancel();if(!carry.begin(id,object)){ui.status('This model is unavailable. Choose another piece.');return;}if(object){pickupPosition.set(player.x,player.y,player.z);cast();const hit=ray.intersectObjects(floors,false)[0];if(hit)grabOffset.set(object.position.x-hit.point.x,0,object.position.z-hit.point.z);}ui.active(id);select(null);syncControls();tintGhost();updateHint();renderer.domElement.focus();ui.status('');}
+ function cancel(restorePlayer=true){const restored=carry.source;carry.cancel();if(restorePlayer&&restored&&camera===fps){const b=bounds(restored);if(player.y<b.max.y&&player.y+PLAYER.height>b.min.y&&overlaps(player.x,player.z,b)){player.x=pickupPosition.x;player.y=pickupPosition.y;player.z=pickupPosition.z;player.vx=player.vz=player.vy=0;fps.position.set(player.x,player.y+PLAYER.eye,player.z);}}dragAnchor=null;placementBlocked=false;valid=false;lastValid=undefined;keys.delete('q');keys.delete('r');ui.active('');showHint(null);syncControls();}
+ function choose(id:string,object:T.Group|null=null){if(inputBlocked())return;cancel();cast();const hit=object?ray.intersectObject(object,true)[0]:null;
+  dragAnchor=createDragAnchor(ray.ray,object?.position,hit?.point.y);
+  carryReach=clampCarryReach(object?Math.hypot(object.position.x-player.x,object.position.z-player.z):CARRY_REACH.default);
+  if(!carry.begin(id,object)){ui.status('This model is unavailable. Choose another piece.');return;}
+  if(object)pickupPosition.set(player.x,player.y,player.z);
+  ui.active(id);select(null);syncControls();ghostUpdate();tintGhost();updateHint();renderer.domElement.focus();ui.status('');
+ }
  function place(){tintGhost();if(!carry.preview||!valid){ui.status('Choose a clear floor area for this piece.');return;}const moving=!!carry.source;carry.place(valid);cancel();select(null);ui.status(moving?'Moved':'Placed');}
- function remove(){if(!current)return;scene.remove(current);furniture.splice(furniture.indexOf(current),1);select(null);ui.count(furniture.length);ui.status('Removed from room');}
+ function remove(){if(assembly.active||viewTransition.active)return;const target=carry.source??current??(carry.preview?null:pick());const hadPreview=!!carry.preview;
+  cancel(false);select(null);
+  if(removePlacedFurniture(scene,furniture,target)){ui.count(furniture.length);ui.status('Removed from room');}
+  else if(hadPreview)ui.status('Placement canceled');
+ }
  function rotate(direction:'q'|'r',pressed:boolean){if(!carry.preview||inputBlocked())return;if(pressed)keys.add(direction);else keys.delete(direction);}
  function openInventory(){if(inputBlocked())return;cancel();select(null);setOverlay(true);ui.inventory();}
  function details(){if(inputBlocked())return;const target=carry.source??(carry.preview?null:pick());const id=carry.preview?.userData.id??target?.userData.id;if(!id)return;select(target);setOverlay(true);ui.details(id,!!target);}
@@ -107,7 +128,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  function key(e:KeyboardEvent){if(inputBlocked())return;const target=e.target as HTMLElement;if(target?.closest('dialog,input,textarea,select,[contenteditable="true"]'))return;const k=e.key.toLowerCase();
   if(k==='e'){e.preventDefault();if(!e.repeat)openInventory();return;}
   const inPopover=!!target?.closest('.placement-popover');const focused=document.activeElement===renderer.domElement;
-  if(focused||inPopover){if(carry.preview&&(k==='q'||k==='r')){e.preventDefault();keys.add(k);return;}const action=interactionAction(k,!!carry.preview,!!current);if(action){e.preventDefault();if(!e.repeat)runAction(action);return;}}
+  if(focused||inPopover){if(carry.preview&&(k==='q'||k==='r')){e.preventDefault();keys.add(k);return;}const action=interactionAction(k,!!carry.preview,!!current||!!pick());if(action){e.preventDefault();if(!e.repeat)runAction(action);return;}}
   if(camera===fps){if(!focused)return;if(k.startsWith('arrow')){e.preventDefault();keys.add(k);aimWithKeys=true;cursorLook.reset();return;}if(['w','a','s','d',' ','shift'].includes(k)){e.preventDefault();keys.add(k);}if(k===' '&&!e.repeat)jumpQueued=true;if(k==='b'||k==='escape'){e.preventDefault();document.exitPointerLock?.();pause();cancel();select(null);showHint(null);return;}}
   else if(k==='shift'&&focused)keys.add(k);
  }

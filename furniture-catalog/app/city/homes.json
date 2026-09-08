@@ -14,7 +14,7 @@
     "source": "https://www.119ellert.com/",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=01"
   },
   {
     "id": "02",
@@ -31,7 +31,7 @@
     "source": "https://www.realtor.com/realestateandhomes-detail/3052-Sacramento-St_San-Francisco_CA_94115_M26581-04034",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=02"
   },
   {
     "id": "03",
@@ -48,7 +48,7 @@
     "source": "https://www.realtor.com/realestateandhomes-detail/2210-39th-Ave_San-Francisco_CA_94116_M12499-27642",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=03"
   },
   {
     "id": "04",
@@ -66,7 +66,7 @@
     "source": "https://www.realtor.com/realestateandhomes-detail/740-Masonic-Ave_San-Francisco_CA_94117_M10569-71377",
     "note": "",
     "kind": "Apartment",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=04"
   },
   {
     "id": "05",
@@ -83,7 +83,7 @@
     "source": "https://www.redfin.com/CA/San-Francisco/20-Belvedere-St-94117/home/110052380",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=05"
   },
   {
     "id": "06",
@@ -103,7 +103,7 @@
     "source": "https://www.realtor.com/realestateandhomes-detail/1733-15th-Ave_San-Francisco_CA_94122_M17883-94617",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=06"
   },
   {
     "id": "07",
@@ -123,7 +123,7 @@
     "source": "https://www.realtor.com/realestateandhomes-detail/1616-Judah-St_San-Francisco_CA_94122_M26214-86134",
     "note": "The supplied link resolves to 1616 Judah St. Plans cover multiple levels of the building; unit attribution is unverified.",
     "kind": "Apartment",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=07"
   },
   {
     "id": "08",
@@ -140,7 +140,7 @@
     "source": "https://www.2751-15thave.com/",
     "note": "Includes a floor-plan PDF and a site-plan PDF.",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=08"
   },
   {
     "id": "09",
@@ -157,7 +157,7 @@
     "source": "https://www.3913-26th-street.com/",
     "note": "",
     "kind": "Apartment",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=09"
   },
   {
     "id": "10",
@@ -174,7 +174,7 @@
     "source": "http://www.949-953leavenworthst.com/",
     "note": "Plan covers the entire 949-953 Leavenworth building, including unit 953; the plan states 1,635 sq ft for unit 953, differing from the supplied table.",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=10"
   },
   {
     "id": "11",
@@ -191,7 +191,7 @@
     "source": "https://www.realtor.com/realestateandhomes-detail/862-Wisconsin-St_San-Francisco_CA_94107_M14849-89498",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=11"
   },
   {
     "id": "12",
@@ -208,7 +208,7 @@
     "source": "https://www.thetowersatrincon.com/floorplans",
     "note": "Building plan type, not a specific unit.",
     "kind": "Studio",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=12"
   },
   {
     "id": "13",
@@ -225,7 +225,7 @@
     "source": "https://www.sperasf.com/floor-plans/",
     "note": "Building plan type, not a specific unit.",
     "kind": "Apartment",
-    "decoratorPath": "/decorate"
+    "decoratorPath": "/decorate?home=13"
   },
   {
     "id": "14",
@@ -242,7 +242,7 @@
     "source": "https://88atthepark.com/floor-plans/",
     "note": "",
     "kind": "Studio",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=14"
   },
   {
     "id": "15",
@@ -259,7 +259,7 @@
     "source": "https://333bush4101.com/",
     "note": "",
     "kind": "Apartment",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=15"
   },
   {
     "id": "16",
@@ -276,7 +276,7 @@
     "source": "https://soldedoloressky.com/",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=16"
   },
   {
     "id": "17",
@@ -294,7 +294,7 @@
     "source": "https://www.2levelcondo.com/",
     "note": "Includes 2D and furnished 3D layouts. No verified floor area. The 3D drawing is illustrative, not to scale or based on actual measurements.",
     "kind": "Apartment",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=17"
   },
   {
     "id": "18",
@@ -311,7 +311,7 @@
     "source": "https://homeongreen.com/",
     "note": "Plan depicts 3 bedroom labels and 2 baths across both levels. The property site describes the 666 sq ft lower level as an unwarranted bonus apartment; upper level is 854 sq ft. Do not treat this as confirmation of permitted bedrooms or dwelling units.",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=18"
   },
   {
     "id": "19",
@@ -328,7 +328,7 @@
     "source": "https://www.homeinpotrero.com/",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=19"
   },
   {
     "id": "20",
@@ -345,6 +345,6 @@
     "source": "https://websites.open.homes/site/1ef286d7-51c8-6c4c-b653-02ffe917ffb9",
     "note": "",
     "kind": "Large home",
-    "decoratorPath": null
+    "decoratorPath": "/decorate?home=20"
   }
 ]

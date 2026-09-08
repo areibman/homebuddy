@@ -7,6 +7,11 @@ assert.equal(rightClickAction(true,false),'details');
 assert.equal(rightClickAction(false,false),null);
 assert.equal(interactionAction('Delete',false,false),null);
 assert.equal(interactionAction('Delete',false,true),'remove');
+for(const key of ['Delete','Backspace']){
+ for(const selected of [false,true])assert.equal(interactionAction(key,true,selected),'remove','carried furniture can be deleted without a details selection');
+ assert.equal(interactionAction(key,false,true),'remove','hovered furniture can be deleted');
+ assert.equal(interactionAction(key,false,false),null);
+}
 assert.equal(interactionAction('Escape',true,true),'cancel');
 assert.equal(interactionAction('r',true,true),null,'rotation uses elapsed time, never keyboard repeat steps');
 const rotation=(key,fps)=>Array.from({length:fps},()=>rotationDelta(new Set([key]),1/fps)).reduce((a,b)=>a+b,0);

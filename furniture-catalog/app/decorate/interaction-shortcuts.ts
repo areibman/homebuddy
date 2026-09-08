@@ -4,7 +4,7 @@ export function interactionAction(key:string,placing:boolean,selected:boolean):I
  if(k==='e')return 'inventory';
  if(k==='escape')return placing?'cancel':selected?'dismiss':null;
  if(k==='enter'&&placing)return 'place';
- if((k==='delete'||k==='backspace')&&selected&&!placing)return 'remove';
+ if((k==='delete'||k==='backspace')&&(placing||selected))return 'remove';
  return null;
 }
 export function rightClickAction(placing:boolean,selected:boolean):InteractionAction{return placing||selected?'details':null;}

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {Group,Mesh,BoxGeometry,MeshStandardMaterial,Scene} from 'three';
-import {createFurnitureCarry} from '../app/decorate/furniture-carry.ts';
+import {createFurnitureCarry,removePlacedFurniture} from '../app/decorate/furniture-carry.ts';
 const scene=new Scene(),template=new Group(),material=new MeshStandardMaterial();template.userData.id='chair';template.add(new Mesh(new BoxGeometry(.6,.8,.6),material));const templates=new Map([['chair',template]]),furniture=[];
 const add=(id,x,z,r)=>{const g=templates.get(id).clone(true);g.position.set(x,.01,z);g.rotation.y=r;furniture.push(g);scene.add(g);return g;};
 const original=add('chair',2,3,.2),carry=createFurnitureCarry(scene,templates,add);let disposed=0;material.addEventListener('dispose',()=>disposed++);
@@ -9,4 +9,9 @@ assert.equal(original.position.x,2,'pickup never changes the original transform'
 carry.begin('chair',original);carry.preview.position.set(4,.015,5);carry.preview.rotation.y=.72;assert.equal(carry.place(true),original);assert.equal(furniture.length,1,'moving must not duplicate furniture');assert.equal(original.position.x,4);assert.equal(original.rotation.y,.72);assert(original.visible);assert.equal(carry.preview,null);
 carry.begin('chair',original);carry.preview.position.x=6;carry.begin('chair');assert(original.visible,'changing inventory choice restores the moving piece');assert.equal(original.position.x,4);assert.equal(carry.place(true),null,'unpositioned preview cannot be dropped');carry.preview.visible=true;carry.preview.position.set(1,.015,1);carry.preview.rotation.y=.37;assert(carry.place(true));assert.equal(furniture.length,2);assert.equal(furniture[1].rotation.y,.37);assert.equal(disposed,0);
 carry.begin('chair',original);assert.equal(carry.begin('missing'),false);assert(original.visible);assert.equal(carry.preview,null);assert.equal(scene.children.length,2,'no abandoned previews after switching/canceling');
-console.log('PASS: pickup, invalid drop, cancel rollback, continuous angle commit, no duplicates, inventory switch rollback, and shared material lifetime.');
+carry.begin('chair',original);const target=carry.source;carry.cancel();assert(removePlacedFurniture(scene,furniture,target));
+assert.equal(furniture.length,1);assert(!scene.children.includes(original));assert(!furniture.includes(original),'deleted piece is removed from collision candidates');
+carry.cancel();assert(!scene.children.includes(original),'cancel cannot resurrect deleted furniture');
+assert.equal(removePlacedFurniture(scene,furniture,original),false);assert.equal(removePlacedFurniture(scene,furniture,null),false);assert.equal(removePlacedFurniture(scene,furniture,new Group()),false);assert.equal(furniture.length,1,'stale targets cannot remove a different piece');
+carry.begin('chair');carry.cancel();assert.equal(furniture.length,1,'canceling new furniture does not delete placed furniture');assert.equal(disposed,0,'deletion cannot dispose shared furniture materials');
+console.log('PASS: pickup, rollback, move, deletion, stale-target safety, inventory cancel, and shared material lifetime.');

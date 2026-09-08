@@ -24,7 +24,7 @@ export default function Home(){
  const framingOrbit=item.viewer?.orbit||referenceOrbits[item.id]||(angles?`${angles.theta}deg ${angles.phi}deg 112%`:"20deg 78deg 112%");
  const orbit=framingOrbit;
  return <main>
- <header><a className="brand" href="/" aria-label="Homebuddy city home"><span className="brandmark"><Box size={23}/></span>FORM <span className="brand-sub">Furniture library</span></a><a className="collection-download" href="/decorate">Decorate a home ↗</a><a className="collection-download" href="/furniture-collection.zip" download><ArrowDownToLine size={16}/><span>Download 3D collection</span></a></header>
+ <header><a className="brand" href="/" aria-label="Homebuddy city home"><span className="brandmark"><Box size={23}/></span>homebuddy <span className="brand-sub">Furniture library</span></a><a className="collection-download" href="/">Choose a home ↗</a><a className="collection-download" href="/furniture-collection.zip" download><ArrowDownToLine size={16}/><span>Download 3D collection</span></a></header>
  <section className="intro"><div><p className="eyebrow">THE WHOLE HOME <span className="intro-dot">/</span> {catalog.length} IKEA PRODUCTS</p><h1>Real pieces. Every angle.</h1></div><div className="collection-count"><strong>{String(catalog.length).padStart(2,'0')}</strong><span>products<br/>to explore</span></div></section>
  <section className="workspace compare-workspace" aria-label="Selected furniture">
   <div className="viewer-area">

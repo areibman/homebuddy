@@ -1,0 +1,10 @@
+{
+  "name": "homebuddy",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix furniture-catalog run dev",
+    "build": "npm --prefix furniture-catalog run build",
+    "start": "npm --prefix furniture-catalog run start",
+    "lint": "npm --prefix furniture-catalog run lint"
+  }
+}
