@@ -1,7 +1,7 @@
 /** Coordinates use meters; y is the player's feet, not the camera. */
 export type Obstacle = {min:{x:number;y:number;z:number};max:{x:number;y:number;z:number}};
 export type Floor = number[];
-export const PLAYER = {radius:.12,height:1.68,eye:1.55,walk:2.3,run:3.8,gravity:18,jump:5.2};
+export const PLAYER = {radius:.12,height:1.68,eye:1.55,walk:2.3,run:3.8,gravity:18,jump:5.8};
 export type Player = {x:number;y:number;z:number;vx:number;vy:number;vz:number;grounded:boolean};
 export function createPlayer(x=5.7,z=7.1):Player{return {x,y:0,z,vx:0,vy:0,vz:0,grounded:true};}
 export function overlaps(x:number,z:number,b:Obstacle,r=PLAYER.radius){

@@ -2,8 +2,8 @@
 
 One application lives in `furniture-catalog/` (the historical directory name). Run `npm run dev` from this repository root.
 
-- `/`: select a San Francisco home, inspect its floor plans, then choose **Decorate this home**.
-- `/decorate?home=ID&plan=INDEX`: decorate the selected plan. Spera (13) has a walkable 3D model; other homes use their original images for 2D furniture layouts, with a user-adjustable scale.
+- `/`: browse a real OpenStreetMap street map and enter a playable home directly. Incomplete interiors are disabled in the list and omitted from the map.
+- `/decorate?home=13`: explore and decorate Spera Plan E. Other home IDs show an unavailable state until their playable interior is implemented. Availability and verified map coordinates live in `app/city/playable.ts`.
 - `/catalog`: the shared furniture library.
 
 The former `homebuddy-city` project is now only a compatibility launcher. Existing remote deployments are not changed by this local consolidation.

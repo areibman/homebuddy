@@ -1,0 +1,64 @@
+{
+  "source": "https://www.sperasf.com/residences/",
+  "photos": [
+    {
+      "src": "/listings/spera/shoootin-photo-21-1.jpg",
+      "alt": "Spera apartment interior",
+      "original": "https://www.sperasf.com/wp-content/uploads/2024/06/shoootin-photo-21-1.jpg"
+    },
+    {
+      "src": "/listings/spera/6l-kitchen-1.jpg",
+      "alt": "Spera kitchen with white cabinetry",
+      "original": "https://www.sperasf.com/wp-content/uploads/2024/02/6l-kitchen-1.jpg"
+    },
+    {
+      "src": "/listings/spera/spera-kitchen-3.jpg",
+      "alt": "Spera kitchen finishes",
+      "original": "https://www.sperasf.com/wp-content/uploads/2024/02/spera-kitchen-3.jpg"
+    },
+    {
+      "src": "/listings/spera/6l-living-2.jpg",
+      "alt": "Spera living room",
+      "original": "https://www.sperasf.com/wp-content/uploads/2024/02/6l-living-2.jpg"
+    },
+    {
+      "src": "/listings/spera/bedroom-image.jpg",
+      "alt": "Spera bedroom with white painted walls",
+      "original": "https://www.sperasf.com/wp-content/uploads/2024/06/bedroom-image.jpg"
+    },
+    {
+      "src": "/listings/spera/residence-image.jpg",
+      "alt": "Spera living area with pale wood flooring",
+      "original": "https://www.sperasf.com/wp-content/uploads/2024/02/residence-image.jpg"
+    }
+  ],
+  "finishes": {
+    "floor": {
+      "src": "/listings/spera/residence-image.jpg",
+      "crop": [
+        1480,
+        1000,
+        300,
+        330
+      ]
+    },
+    "wall": {
+      "src": "/listings/spera/bedroom-image.jpg",
+      "crop": [
+        1100,
+        320,
+        330,
+        350
+      ]
+    },
+    "carpet": {
+      "src": "/listings/spera/bedroom-image.jpg",
+      "crop": [
+        1200,
+        1080,
+        360,
+        180
+      ]
+    }
+  }
+}

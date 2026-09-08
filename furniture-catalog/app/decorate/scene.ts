@@ -1,11 +1,14 @@
 import * as T from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {Sky} from 'three/addons/objects/Sky.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {loadListingMaterials} from './listing-materials';
 import plan from './plan.json';
 import {buildArchitecture,type ArchitecturePlan} from './architecture';
 import items from './items.json';
 import {createFurnitureCarry,removePlacedFurniture} from './furniture-carry';
+import {createFurnitureCollisions} from './furniture-collisions';
 import {CARRY_REACH,clampCarryReach,nearbyCarryPosition,createDragAnchor,dragCarryPosition} from './carry-position';
 import {createPlayer,stepPlayer,PLAYER,overlaps} from './player';
 import {createCursorLook} from './cursor-look';
@@ -13,11 +16,12 @@ import {lookDelta,type LookDirection,type ObjectHint} from './look-input';
 import {pickFurniture,isVisible} from './scene-picking';
 import {interactionAction,rightClickAction,rotationDelta,type InteractionAction} from './interaction-shortcuts';
 import {createAssembly,createViewTransition} from './scene-motion';
-type Callbacks={status:(s:string)=>void;count:(n:number)=>void;active:(s:string)=>void;playing:(v:boolean)=>void;hint:(hint:ObjectHint)=>void;motion:(phase:'assembly'|'camera'|null)=>void;inventory:()=>void;details:(id:string,placed:boolean)=>void;placement:(valid:boolean)=>void};
+type Callbacks={status:(s:string)=>void;count:(n:number)=>void;active:(s:string)=>void;playing:(v:boolean)=>void;hint:(hint:ObjectHint)=>void;motion:(phase:'assembly'|'camera'|null)=>void;inventory:()=>void;details:(id:string,placed:boolean)=>void;placement:(valid:boolean)=>void;door?:(hint:{index:number;label:string}|null)=>void};
 export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  const player=createPlayer(),cursorLook=createCursorLook();let playing=false,fallback=false,jumpQueued=false;let lockTimer:ReturnType<typeof setTimeout>|undefined;
  const scene=new T.Scene();scene.background=new T.Color('#e5ece9');const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1;renderer.outputColorSpace=T.SRGBColorSpace;renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D apartment. WASD to move, arrow keys to look, E inventory, left-click move or place, hold Q or R to rotate, right-click details, Delete or Backspace to remove furniture.');host.appendChild(renderer.domElement);
  const iso=new T.OrthographicCamera(-8,8,8,-8,.1,100);iso.position.set(13,15,18);const fps=new T.PerspectiveCamera(65,1,.05,80);fps.position.set(5.7,PLAYER.eye,7.1);fps.rotation.order='YXZ';fps.rotation.y=Math.PI/2;let camera:T.Camera=iso;const controls=new OrbitControls(iso,renderer.domElement);controls.target.set(3.1,0,4.3);controls.maxPolarAngle=Math.PI/2.5;controls.minZoom=.6;controls.maxZoom=3;controls.update();
+ const sky=new Sky();sky.name='Daylight sky';sky.scale.setScalar(60);sky.material.uniforms.turbidity.value=3;sky.material.uniforms.rayleigh.value=1.5;sky.material.uniforms.mieCoefficient.value=.004;sky.material.uniforms.mieDirectionalG.value=.8;sky.material.uniforms.sunPosition.value.set(-5,10,6).normalize();scene.add(sky);
  const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
  const viewTransition=createViewTransition(iso,fps,controls.target);let targetMode:'iso'|'fps'='iso';
  const environmentRoom=new RoomEnvironment(),pmrem=new T.PMREMGenerator(renderer);const environmentMap=pmrem.fromScene(environmentRoom,.04);scene.environment=environmentMap.texture;scene.environmentIntensity=.08;environmentRoom.dispose();pmrem.dispose();
@@ -28,8 +32,19 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  const floors:T.Mesh[]=[],floorPieces:T.Group[]=[],fixed:T.Box3[]=[],furniture:T.Group[]=[];const templates=new Map<string,T.Group>();let current:T.Group|null=null,disposed=false,overlayOpen=false;
  const mat=(color:string)=>new T.MeshStandardMaterial({color,roughness:.85});
  function box(parent:T.Object3D,x:number,y:number,z:number,w:number,h:number,d:number,color:string){const m=new T.Mesh(new T.BoxGeometry(w,h,d),mat(color));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
- for(const [x,z,w,d] of plan.floors){const panel=new T.Group();panel.name='Floor section';scene.add(panel);floorPieces.push(panel);floors.push(box(panel,x+w/2,-.13,z+d/2,w,.25,d,z===3.8?'#c5d4cf':'#d3b690'));for(let p=x+.18;p<x+w;p+=.22){const seam=box(panel,p,.002,z+d/2,.006,.003,d,'#bd9e79');seam.castShadow=false;}}
+ const listingMaterials=await loadListingMaterials(renderer.capabilities.getMaxAnisotropy());
+ for(const [x,z,w,d] of plan.floors){
+  const panel=new T.Group();panel.name='Floor section';scene.add(panel);floorPieces.push(panel);
+  const floor=box(panel,x+w/2,-.13,z+d/2,w,.25,d,z===3.8?'#c5d4cf':'#bcb09d');floors.push(floor);
+  const floorMap=z===0?listingMaterials.carpet:z===3.8?null:listingMaterials.floor;
+  if(floorMap){const material=floor.material as T.MeshStandardMaterial;material.color.set('#ffffff');material.map=floorMap;material.roughness=z===0?.95:.72;
+   const position=floor.geometry.getAttribute('position'),uv=floor.geometry.getAttribute('uv');
+   for(let i=0;i<uv.count;i++)uv.setXY(i,(position.getX(i)+x+w/2)/.75,(position.getZ(i)+z+d/2)/.85);uv.needsUpdate=true;
+  }
+ }
  const architecture=buildArchitecture(plan as ArchitecturePlan);scene.add(architecture.root);fixed.push(...architecture.colliders);architecture.cutaway(true);
+ for(const wall of architecture.wallMeshes){const material=wall.material as T.MeshStandardMaterial;material.color.set('#ffffff');if(listingMaterials.wall)material.map=listingMaterials.wall;}
+
  architecture.root.traverse(o=>{if(o instanceof T.Mesh)blockers.push(o);});
  const loader=new GLTFLoader();
  const results=await Promise.allSettled(items.map(async item=>{const gltf=await loader.loadAsync(item.files.glb);const model=gltf.scene;model.updateMatrixWorld(true);let bounds=new T.Box3().setFromObject(model);const size=bounds.getSize(new T.Vector3());model.scale.set(item.dimensions_m.width/size.x,item.dimensions_m.height/size.y,item.dimensions_m.depth/size.z);model.updateMatrixWorld(true);bounds=new T.Box3().setFromObject(model);const center=bounds.getCenter(new T.Vector3());model.position.sub(new T.Vector3(center.x,bounds.min.y,center.z));const group=new T.Group();group.add(model);group.userData.id=item.id;group.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=true;o.receiveShadow=true;}});templates.set(item.id,group);}));
@@ -38,6 +53,8 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  function add(id:string,x:number,z:number,r:number){const template=templates.get(id);if(!template)return;const g=template.clone(true);g.position.set(x,.01,z);g.rotation.y=r;scene.add(g);furniture.push(g);ui.count(furniture.length);return g;}
  plan.furniture.forEach(f=>add(f.id,f.x,f.z,f.r));
  const carry=createFurnitureCarry(scene,templates,add);
+ const furnitureCollisions=createFurnitureCollisions();
+ let doorTarget:number|null=null,lastDoorHint='',overDoorAction=false;
  const assembly=createAssembly([
   ...floorPieces.map(object=>({object,layer:'floor' as const})),
   ...architecture.root.children.map(object=>({object,layer:'structure' as const})),
@@ -45,7 +62,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  ],new T.Vector3(3.35,0,4.225),motionPreference.matches);
  controls.enabled=!assembly.active;ui.motion(assembly.active?'assembly':null);
  function inputBlocked(){return assembly.active||viewTransition.active||overlayOpen;}
- const failures=results.filter(r=>r.status==='rejected').length;ui.status(failures?`${failures} catalog models could not load. Other pieces are ready.`:'');
+ const failures=results.filter(r=>r.status==='rejected').length;ui.status(failures?`${failures} catalog models could not load. Other pieces are ready.`:!listingMaterials.floor||!listingMaterials.wall?'Some listing finishes could not load. Showing fallback finishes.':'');
  const outline=new T.BoxHelper(new T.Object3D(),0x3b8a62);outline.visible=false;scene.add(outline);const ray=new T.Raycaster(),pointer=new T.Vector2(),keys=new Set<string>(),lookKeys=new Set<string>();let valid=false;
  function inside(x:number,z:number,margin=0){return plan.floors.some(([a,b,w,d])=>x>=a+margin&&x<=a+w-margin&&z>=b+margin&&z<=b+d-margin);}
  function bounds(g:T.Group){g.updateMatrixWorld(true);return new T.Box3().setFromObject(g);}
@@ -53,6 +70,22 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  function centered(){return camera===fps&&(document.pointerLockElement===renderer.domElement||aimWithKeys);}
  function cast(){ray.setFromCamera(centered()?new T.Vector2():pointer,camera);}
  function pick(){if(inputBlocked()||(!centered()&&!mouseOverCanvas))return null;cast();return pickFurniture(ray,furniture,blockers);}
+ function pickDoor(){
+  if(inputBlocked()||carry.preview||(!centered()&&!mouseOverCanvas))return null;
+  cast();const hit=ray.intersectObjects([...blockers,...furniture],true).find(hit=>isVisible(hit.object));
+  if(!hit||(camera===fps&&hit.distance>2.25))return null;
+  return typeof hit.object.userData.doorIndex==='number'?hit.object.userData.doorIndex as number:null;
+ }
+ function updateDoorHint(){
+  if(!overDoorAction)doorTarget=pickDoor();
+  if(inputBlocked()||carry.preview)doorTarget=null;
+  const hint=doorTarget===null?null:{index:doorTarget,label:architecture.doors[doorTarget].action};
+  const signature=JSON.stringify(hint);if(signature!==lastDoorHint){lastDoorHint=signature;ui.door?.(hint);}
+ }
+ function interactDoor(index=pickDoor()){
+  if(inputBlocked()||carry.preview||index===null||!architecture.doors[index])return;
+  architecture.doors[index].toggle();renderer.domElement.focus();updateDoorHint();
+ }
  function showHint(hint:ObjectHint){const signature=JSON.stringify(hint);if(signature!==lastHint){lastHint=signature;ui.hint(hint);}}
  function updateHint(){
   const target=carry.preview;if(overlayOpen||!target||!target.visible){showHint(null);return;}
@@ -111,6 +144,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  }
  function down(e:PointerEvent){downX=e.clientX;downY=e.clientY;const r=host.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);mouseOverCanvas=true;renderer.domElement.tabIndex=0;renderer.domElement.focus();}
  function move(e:PointerEvent){
+  overDoorAction=!!(e.target as HTMLElement)?.closest('.door-action');
   mouseOverCanvas=e.target===renderer.domElement;if(mouseOverCanvas)aimWithKeys=false;const r=host.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);
   if(inputBlocked()||camera!==fps||!playing)return;
   let dx=0,dy=0;
@@ -120,7 +154,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
   fps.rotation.y-=dx*.003;fps.rotation.x=T.MathUtils.clamp(fps.rotation.x-dy*.003,-1.45,1.45);
  }
  function leave(){mouseOverCanvas=false;cursorLook.reset();}
- function click(e:MouseEvent){if(inputBlocked()||e.button!==0)return;if(Math.hypot(e.clientX-downX,e.clientY-downY)>5&&document.pointerLockElement!==renderer.domElement)return;if(carry.preview){ghostUpdate();place();return;}const target=pick();if(target)choose(target.userData.id,target);}
+ function click(e:MouseEvent){if(inputBlocked()||e.button!==0)return;if(Math.hypot(e.clientX-downX,e.clientY-downY)>5&&document.pointerLockElement!==renderer.domElement)return;if(carry.preview){ghostUpdate();place();return;}const door=pickDoor();if(door!==null){interactDoor(door);return;}const target=pick();if(target)choose(target.userData.id,target);}
  function look(direction:LookDirection,pressed:boolean){if(inputBlocked()||camera!==fps)return;cursorLook.reset();aimWithKeys=true;if(pressed){renderer.domElement.tabIndex=0;renderer.domElement.focus();lookKeys.add('arrow'+direction);}else lookKeys.delete('arrow'+direction);}
  function lookStep(direction:LookDirection){if(inputBlocked()||camera!==fps)return;aimWithKeys=true;cursorLook.reset();const delta=lookDelta(new Set(['arrow'+direction]),.14);fps.rotation.y+=delta.yaw;fps.rotation.x=T.MathUtils.clamp(fps.rotation.x+delta.pitch,-1.45,1.45);updateHint();}
  function runAction(action:InteractionAction){if(action==='inventory')openInventory();if(action==='details')details();if(action==='remove')remove();if(action==='place')place();if(action==='cancel')cancel();if(action==='dismiss'){select(null);showHint(null);}}
@@ -128,6 +162,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  function key(e:KeyboardEvent){if(inputBlocked())return;const target=e.target as HTMLElement;if(target?.closest('dialog,input,textarea,select,[contenteditable="true"]'))return;const k=e.key.toLowerCase();
   if(k==='e'){e.preventDefault();if(!e.repeat)openInventory();return;}
   const inPopover=!!target?.closest('.placement-popover');const focused=document.activeElement===renderer.domElement;
+  if(k==='f'&&focused&&!carry.preview){e.preventDefault();if(!e.repeat)interactDoor();return;}
   if(focused||inPopover){if(carry.preview&&(k==='q'||k==='r')){e.preventDefault();keys.add(k);return;}const action=interactionAction(k,!!carry.preview,!!current||!!pick());if(action){e.preventDefault();if(!e.repeat)runAction(action);return;}}
   if(camera===fps){if(!focused)return;if(k.startsWith('arrow')){e.preventDefault();keys.add(k);aimWithKeys=true;cursorLook.reset();return;}if(['w','a','s','d',' ','shift'].includes(k)){e.preventDefault();keys.add(k);}if(k===' '&&!e.repeat)jumpQueued=true;if(k==='b'||k==='escape'){e.preventDefault();document.exitPointerLock?.();pause();cancel();select(null);showHint(null);return;}}
   else if(k==='shift'&&focused)keys.add(k);
@@ -137,8 +172,16 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks){
  let last=performance.now(),lastHover=0,frame=0,assemblyStart:number|undefined;function tick(now:number){if(disposed)return;const dt=Math.min((now-last)/1000,.05);last=now;
  if(assembly.active){assemblyStart??=now;if(motionPreference.matches)assembly.finish();else assembly.update((now-assemblyStart)/1000);if(!assembly.active){syncControls();ui.motion(null);}}
  if(viewTransition.active){if(motionPreference.matches)viewTransition.begin(targetMode,now,true);else viewTransition.update(now);camera=viewTransition.camera;architecture.cutaway(1-viewTransition.perspective);if(!viewTransition.active)completeView();}
- if(camera===fps&&!inputBlocked()){const looking=lookDelta(new Set([...keys,...lookKeys]),dt);fps.rotation.y+=looking.yaw;fps.rotation.x=T.MathUtils.clamp(fps.rotation.x+looking.pitch,-1.45,1.45);if(playing&&fallback)fps.rotation.y-=cursorLook.turn(dt);const obstacles=[...fixed,...furniture.filter(g=>g!==carry.source&&g.userData.id!=='rug').map(bounds)];
+ if(!inputBlocked()){
+  const movingDoors=architecture.doors.filter(door=>door.moving);
+  if(movingDoors.length){
+   const obstacles=[...fixed.slice(0,plan.fixtures.length),...furniture.filter(g=>g!==carry.source&&g.userData.id!=='rug').flatMap(furnitureCollisions)];
+   if(camera===fps)obstacles.push(new T.Box3(new T.Vector3(player.x-PLAYER.radius,player.y,player.z-PLAYER.radius),new T.Vector3(player.x+PLAYER.radius,player.y+PLAYER.height,player.z+PLAYER.radius)));
+   for(const door of movingDoors)if(door.update(dt,obstacles,motionPreference.matches))ui.status('Door blocked. Clear its swing area.');
+  }
+ }
+ if(camera===fps&&!inputBlocked()){const looking=lookDelta(new Set([...keys,...lookKeys]),dt);fps.rotation.y+=looking.yaw;fps.rotation.x=T.MathUtils.clamp(fps.rotation.x+looking.pitch,-1.45,1.45);if(playing&&fallback)fps.rotation.y-=cursorLook.turn(dt);const obstacles=[...fixed,...furniture.filter(g=>g!==carry.source&&g.userData.id!=='rug').flatMap(furnitureCollisions)];
   stepPlayer(player,{x:Number(keys.has('d'))-Number(keys.has('a')),z:Number(keys.has('s'))-Number(keys.has('w')),yaw:fps.rotation.y,run:keys.has('shift'),jump:jumpQueued},dt,obstacles,plan.floors,plan.height);jumpQueued=false;fps.position.set(player.x,player.y+PLAYER.eye,player.z);
- }if(carry.preview&&!inputBlocked())carry.preview.rotation.y+=rotationDelta(keys,dt);ghostUpdate();if(now-lastHover>70){updateHint();lastHover=now;}const hovered=pick(),highlighted=carry.preview?null:hovered;renderer.domElement.style.cursor=carry.preview?'grabbing':hovered?'grab':'default';outline.visible=!!highlighted;if(highlighted)outline.setFromObject(highlighted);renderer.render(scene,camera);frame=requestAnimationFrame(tick);}frame=requestAnimationFrame(tick);
- return {mode,choose,cancel,rotate,remove,place,walk,look,lookStep,setOverlay,openInventory,details,deselect(){select(null);showHint(null);},dispose(){disposed=true;carry.cancel();cancelAnimationFrame(frame);observer.disconnect();controls.dispose();document.exitPointerLock?.();window.removeEventListener('pointermove',move);renderer.domElement.removeEventListener('pointerleave',leave);document.removeEventListener('pointerlockerror',cursorMode);clearTimeout(lockTimer);renderer.domElement.removeEventListener('blur',blur);window.removeEventListener('keydown',key);window.removeEventListener('keyup',up);window.removeEventListener('blur',blur);document.removeEventListener('pointerlockchange',lock);renderer.domElement.removeEventListener('pointerdown',down);renderer.domElement.removeEventListener('click',click);renderer.domElement.removeEventListener('contextmenu',context);scene.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose());}});environmentMap.dispose();sun.shadow.dispose();renderer.dispose();renderer.domElement.remove();}};
+ }if(carry.preview&&!inputBlocked())carry.preview.rotation.y+=rotationDelta(keys,dt);ghostUpdate();if(now-lastHover>70){updateHint();updateDoorHint();lastHover=now;}const hovered=pick(),highlighted=carry.preview?null:hovered;renderer.domElement.style.cursor=carry.preview?'grabbing':doorTarget!==null?'pointer':hovered?'grab':'default';outline.visible=!!highlighted;if(highlighted)outline.setFromObject(highlighted);renderer.render(scene,camera);frame=requestAnimationFrame(tick);}frame=requestAnimationFrame(tick);
+ return {mode,choose,cancel,rotate,remove,place,walk,look,lookStep,setOverlay,openInventory,details,interactDoor,deselect(){select(null);showHint(null);},dispose(){disposed=true;carry.cancel();cancelAnimationFrame(frame);observer.disconnect();controls.dispose();document.exitPointerLock?.();window.removeEventListener('pointermove',move);renderer.domElement.removeEventListener('pointerleave',leave);document.removeEventListener('pointerlockerror',cursorMode);clearTimeout(lockTimer);renderer.domElement.removeEventListener('blur',blur);window.removeEventListener('keydown',key);window.removeEventListener('keyup',up);window.removeEventListener('blur',blur);document.removeEventListener('pointerlockchange',lock);renderer.domElement.removeEventListener('pointerdown',down);renderer.domElement.removeEventListener('click',click);renderer.domElement.removeEventListener('contextmenu',context);scene.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose());}});listingMaterials.dispose();environmentMap.dispose();sun.shadow.dispose();renderer.dispose();renderer.domElement.remove();}};
 }

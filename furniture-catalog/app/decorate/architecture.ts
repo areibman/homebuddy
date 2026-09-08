@@ -1,5 +1,6 @@
 import * as T from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+import {createHingedDoor} from './hinged-door.ts';
 
 export type Fixture = {type:'closet'|'walk-in-closet'|'laundry'|'toilet'|'vanity'|'bathtub'|'shower'|'stove'|'dishwasher'|'sink'|'cabinet'|'refrigerator';x:number;z:number;width:number;depth:number;height:number;rotation?:number};
 export type Opening = {wall:number;start:number;width:number;sill:number;height:number};
@@ -20,6 +21,7 @@ const materials = () => ({
 export function buildArchitecture(plan:ArchitecturePlan){
  const root=new T.Group();root.name='Floor plan architecture';
  const m=materials(),colliders:T.Box3[]=[],wallMeshes:T.Mesh[]=[],doorMeshes:T.Mesh[]=[],wallMounted:T.Object3D[]=[];
+ const doors:ReturnType<typeof createHingedDoor>[]=[];
  function mesh(parent:T.Object3D,name:string,g:T.BufferGeometry,material:T.Material,x=0,y=0,z=0){const o=new T.Mesh(g,material);o.name=name;o.position.set(x,y,z);o.castShadow=material!==m.glass;o.receiveShadow=true;const raycast=o.raycast.bind(o);o.raycast=(ray,hits)=>{for(let a:T.Object3D|null=o;a;a=a.parent){if(!a.visible)return;}raycast(ray,hits);};parent.add(o);return o;}
  function box(p:T.Object3D,n:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:T.Material){return mesh(p,n,new T.BoxGeometry(w,h,d),mat,x,y,z);}
  function cylinder(p:T.Object3D,n:string,x:number,y:number,z:number,r:number,h:number,mat:T.Material){return mesh(p,n,new T.CylinderGeometry(r,r,h,24),mat,x,y,z);}
@@ -145,7 +147,8 @@ export function buildArchitecture(plan:ArchitecturePlan){
   const pivot=new T.Group();pivot.name='Open door';pivot.rotation.y=door.swing;g.add(pivot);
   const leaf=box(pivot,'Painted door leaf',door.width/2,1.05,0,door.width-.045,2.07,.035,m.ceramic);
   for(const side of [-1,1]){const lever=box(pivot,'Door lever',door.width-.13,1,side*.043,.10,.016,.016,m.metal);const spindle=cylinder(pivot,'Door spindle',door.width-.18,1,side*.027,.018,.03,m.metal);spindle.rotation.x=Math.PI/2;}
-  root.updateMatrixWorld(true);colliders.push(new T.Box3().setFromObject(leaf));
+  root.updateMatrixWorld(true);const interactive=createHingedDoor(pivot,door.width,door.swing);doors.push(interactive);colliders.push(...interactive.colliders);
+  g.traverse(o=>{o.userData.doorIndex=doors.length-1;});
   g.traverse(o=>{if(o instanceof T.Mesh){o.geometry.computeBoundingBox();const bounds=o.geometry.boundingBox!.clone().applyMatrix4(new T.Matrix4().compose(o.position,o.quaternion,o.scale));o.userData.bottom=bounds.min.y;o.userData.top=bounds.max.y;o.userData.originalY=o.position.y;doorMeshes.push(o);const raycast=o.raycast.bind(o);o.raycast=(ray,hits)=>{if(o.visible)raycast(ray,hits);};}});
  }
  function cutaway(enabled:boolean|number){
@@ -154,5 +157,5 @@ export function buildArchitecture(plan:ArchitecturePlan){
   for(const door of doorMeshes){const {bottom,top,originalY}=door.userData;const visibleTop=T.MathUtils.lerp(top,Math.max(bottom,Math.min(top,.62)),amount);door.visible=visibleTop>bottom;door.scale.y=(visibleTop-bottom)/(top-bottom);door.position.y=originalY-(top-visibleTop)/2;}
   wallMounted.forEach(o=>{o.visible=amount<1;o.scale.y=Math.max(.001,1-amount);});
  }
- return {root,colliders,wallMeshes,cutaway};
+ return {root,colliders,wallMeshes,doors,cutaway};
 }

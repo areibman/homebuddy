@@ -11,7 +11,7 @@ const seam=[[0,0,3,3],[0,3,3,3]];const p=createPlayer(1.5,2.7);step(p,{z:1},[],s
 const doorway=[box(0,0,2,1.35,2.7,2.12),box(1.65,0,2,3,2.7,2.12)];const door=createPlayer(1.5,1.5);step(door,{z:1,run:true},doorway,floor,60);assert(door.z>2.4,'narrow doorway passage');
 const wall=[box(0,0,2,6,2.7,2.12)];const stop=createPlayer(3,1);step(stop,{z:1,run:true},wall,floor,240);assert(stop.z<=2-PLAYER.radius+.001,'sprint cannot tunnel through walls');
 const slide=createPlayer(1,1.75);step(slide,{x:1,z:1},wall,floor,100);assert(slide.x>2&&slide.z<2,'slide along wall');
-const jumper=createPlayer(3,4);step(jumper,{jump:true});let peak=0;for(let i=0;i<180;i++){step(jumper);peak=Math.max(peak,jumper.y);}assert(peak>.65&&peak<.9,'jump arc');assert.equal(jumper.y,0);assert(jumper.grounded,'lands on floor');
+const jumper=createPlayer(3,4);step(jumper,{jump:true});let peak=0;for(let i=0;i<180;i++){step(jumper);peak=Math.max(peak,jumper.y);}assert(peak>.85&&peak<1,'jump clears normal furniture without hitting the ceiling');assert.equal(jumper.y,0);assert(jumper.grounded,'lands on floor');
 const air=createPlayer(3,4);step(air,{jump:true});step(air,{},[],floor,20);const vy=air.vy;step(air,{jump:true});assert(air.vy<vy,'no double jump');
 const ceiling=createPlayer(3,4);for(let i=0;i<120;i++)stepPlayer(ceiling,{...idle,jump:i===0},1/120,[],floor,2);assert(ceiling.y+PLAYER.height<=2,'head collision');
 const landing=createPlayer(3,4);landing.y=1.1;landing.grounded=false;step(landing,{},[box(2,0,3,4,.5,5)],floor,120);assert.equal(landing.y,.5,'land on low furniture');assert(landing.grounded);
