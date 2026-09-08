@@ -1,0 +1,176 @@
+{
+  "id": "saved-astra-city",
+  "name": "City living",
+  "model": "gpt-6-astra",
+  "summary": "All 24 pieces fit. Both bedrooms have queen beds, paired nightstands, dressers and reading chairs; one second-bedroom nightstand is offset to avoid the column. Two armchairs serve as dining chairs with approximately 0.67 m behind each. The sofa faces the TV across a comfortable viewing distance. Door swings, storage access and continuous 0.65 m main routes remain clear.",
+  "furniture": [
+    {
+      "z": 12.02,
+      "x": 2.47,
+      "id": "bed",
+      "instanceId": "bed:1",
+      "r": 3.141593
+    },
+    {
+      "z": 7.16,
+      "x": 8.025,
+      "id": "bed",
+      "instanceId": "bed:2",
+      "r": -1.570796
+    },
+    {
+      "z": 12.87,
+      "x": 1.29,
+      "id": "nightstand",
+      "instanceId": "nightstand:1",
+      "r": 3.141593
+    },
+    {
+      "z": 12.87,
+      "x": 3.65,
+      "id": "nightstand",
+      "instanceId": "nightstand:2",
+      "r": 3.141593
+    },
+    {
+      "z": 6,
+      "x": 8.83,
+      "id": "nightstand",
+      "instanceId": "nightstand:3",
+      "r": -1.570796
+    },
+    {
+      "z": 8.42,
+      "x": 8.34,
+      "id": "nightstand",
+      "instanceId": "nightstand:4",
+      "r": -1.570796
+    },
+    {
+      "z": 9.91,
+      "x": 1.36,
+      "id": "dresser",
+      "instanceId": "dresser:1",
+      "r": 0
+    },
+    {
+      "z": 7.9,
+      "x": 5.87,
+      "id": "dresser",
+      "instanceId": "dresser:2",
+      "r": 1.570796
+    },
+    {
+      "z": 1.8,
+      "x": 13.23,
+      "id": "floor-lamp",
+      "instanceId": "floor-lamp:1",
+      "r": 0
+    },
+    {
+      "z": 5.25,
+      "x": 8.8,
+      "id": "floor-lamp",
+      "instanceId": "floor-lamp:2",
+      "r": 0
+    },
+    {
+      "z": 10.97,
+      "x": 4.32,
+      "id": "floor-lamp",
+      "instanceId": "floor-lamp:3",
+      "r": 0
+    },
+    {
+      "z": 1.7,
+      "x": 11.5,
+      "id": "rug",
+      "instanceId": "rug:1",
+      "r": 1.570796
+    },
+    {
+      "z": 7.14,
+      "x": 7.5,
+      "id": "rug",
+      "instanceId": "rug:2",
+      "r": 1.570796
+    },
+    {
+      "z": 11.4,
+      "x": 2.47,
+      "id": "rug",
+      "instanceId": "rug:3",
+      "r": 1.570796
+    },
+    {
+      "z": 2.3,
+      "x": 7.91,
+      "id": "armchair",
+      "instanceId": "armchair:1",
+      "r": 1.570796
+    },
+    {
+      "z": 2.3,
+      "x": 9.94,
+      "id": "armchair",
+      "instanceId": "armchair:2",
+      "r": -1.570796
+    },
+    {
+      "z": 2.65,
+      "x": 13.19,
+      "id": "armchair",
+      "instanceId": "armchair:3",
+      "r": -1.570796
+    },
+    {
+      "z": 5.97,
+      "x": 5.96,
+      "id": "armchair",
+      "instanceId": "armchair:4",
+      "r": 0
+    },
+    {
+      "z": 10.1,
+      "x": 4.27,
+      "id": "armchair",
+      "instanceId": "armchair:5",
+      "r": -1.570796
+    },
+    {
+      "z": 0.64,
+      "x": 11.25,
+      "id": "stockholm",
+      "instanceId": "stockholm:1",
+      "r": 0
+    },
+    {
+      "z": 3.96,
+      "x": 10.8,
+      "id": "tv-cinema-65",
+      "instanceId": "tv-cinema-65:1",
+      "r": 3.141593
+    },
+    {
+      "z": 1.93,
+      "x": 11.45,
+      "id": "coffee-table",
+      "instanceId": "coffee-table:1",
+      "r": 0
+    },
+    {
+      "z": 0.24,
+      "x": 9,
+      "id": "bookshelf",
+      "instanceId": "bookshelf:1",
+      "r": 0
+    },
+    {
+      "z": 2.3,
+      "x": 8.925,
+      "id": "dining-table",
+      "instanceId": "dining-table:1",
+      "r": 0
+    }
+  ]
+}

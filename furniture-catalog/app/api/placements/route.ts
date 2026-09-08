@@ -52,7 +52,7 @@ function requestBody(homeId:string,selection:Selection){
  };
 }
 async function present(response:OpenAIResponse,job:Job){
- const token=await tokenFor(job),base={token,model:MODEL,attempt:job.attempt,total:selectionTotal(job.selection)};
+ const token=await tokenFor(job),base={token,model:MODEL,attempt:job.attempt,checkedAt:Date.now(),total:selectionTotal(job.selection)};
  if(response.status==='queued'||response.status==='in_progress')return json({...base,status:response.status,attempt:job.attempt});
  if(response.status==='cancelled')return json({...base,status:'cancelled'});
  if(response.status!=='completed')return json({...base,status:'failed',error:response.incomplete_details?.reason==='max_output_tokens'?'Astra reached its response limit. Try fewer pieces.':'Astra could not complete the arrangement. Your furniture selection is saved.'});

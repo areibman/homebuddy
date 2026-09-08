@@ -2,36 +2,39 @@
 import {useEffect,useMemo,useRef,useState} from 'react';
 import Link from 'next/link';
 import {useSearchParams} from 'next/navigation';
-import {ArrowLeft,ArrowRight,Box,Check,LoaderCircle,Minus,Plus,Sparkles} from 'lucide-react';
+import {ArrowLeft,ArrowRight,Box,Check,Minus,Plus,Sparkles} from 'lucide-react';
 import catalog from '../catalog.json';
 import {homeDefinitions} from '../decorate/home-definitions';
 import {RoomEditor} from '../decorate/page';
-import {instances,MAX_PIECES,priceFor,selectionFromLayout,selectionTotal,usd,type Selection,type PlacementResult} from './selection';
+import {homeWithArrangement,homeWithSavedSuggestions} from './arrangement';
+import {ArrangementStatus,isPending,type ArrangementJob as Job} from './arrangement-status';
+import {instances,MAX_PIECES,priceFor,selectionFromLayout,selectionTotal,usd,type Selection} from './selection';
 import './furnish.css';
 
-type Job={token?:string;status:string;model?:string;attempt?:number;result?:PlacementResult;error?:string;issues?:string[];retryable?:boolean};
 const STORAGE='homebuddy-furnish-15-v1',home=homeDefinitions['15'];
 const presets=home.plan.layouts!;
-const pending=(job:Job|null)=>Boolean(job&&['submitting','queued','in_progress','revising','needs_revision'].includes(job.status));
+const savedHome=homeWithSavedSuggestions(home);
 class ArrangementError extends Error {constructor(message:string,readonly retryable=false){super(message);}}
 async function call(body:unknown):Promise<Job>{
- const response=await fetch('/api/placements',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+ const response=await fetch('/api/placements',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)});
  const data=await response.json() as Job;if(!response.ok)throw new ArrangementError(data.error??'The arrangement request failed.',data.retryable);return data;
 }
 function FurnitureDemo(){
  const [selection,setSelection]=useState<Selection>([]),[preset,setPreset]=useState('custom'),[category,setCategory]=useState('All');
  const [job,setJob]=useState<Job|null>(null),[started,setStarted]=useState(0),[elapsed,setElapsed]=useState(0),[error,setError]=useState('');
  const [configured,setConfigured]=useState<boolean|null>(null),[hydrated,setHydrated]=useState(false),[exploring,setExploring]=useState(false),[cancelling,setCancelling]=useState(false);
- const requestBusy=useRef(false),total=selectionTotal(selection),busy=pending(job);
+ const [initialLayout,setInitialLayout]=useState(0);
+ const [editorHome,setEditorHome]=useState(savedHome);
+ const requestBusy=useRef(false),total=selectionTotal(selection),busy=isPending(job);
  useEffect(()=>{
-  try{const saved=JSON.parse(localStorage.getItem(STORAGE)??'null');if(saved&&Array.isArray(saved.selection)&&saved.selection.every((s:{id:string;quantity:number})=>catalog.some(i=>i.id===s.id)&&Number.isInteger(s.quantity)&&s.quantity>0&&s.quantity<=10)&&selectionTotal(saved.selection).count<=MAX_PIECES){setSelection(saved.selection);setPreset(saved.preset??'custom');setStarted(saved.started??0);if(saved.job?.token)setJob(saved.job);}}
+  try{const saved=JSON.parse(localStorage.getItem(STORAGE)??'null');if(saved&&Array.isArray(saved.selection)&&saved.selection.every((s:{id:string;quantity:number})=>catalog.some(i=>i.id===s.id)&&Number.isInteger(s.quantity)&&s.quantity>0&&s.quantity<=10)&&selectionTotal(saved.selection).count<=MAX_PIECES){setSelection(saved.selection);setPreset(saved.preset??'custom');setStarted(saved.started??0);if(saved.job?.token||['failed','cancelled','unconfirmed'].includes(saved.job?.status))setJob(saved.job);else if(saved.job?.status==='submitting')setJob({status:'unconfirmed',error:'The page reloaded before OpenAI acknowledged the request.'});}}
   catch{}setHydrated(true);
   fetch('/api/placements').then(r=>r.json() as Promise<{configured:boolean}>).then(data=>setConfigured(Boolean(data.configured))).catch(()=>setConfigured(null));
  },[]);
  useEffect(()=>{if(hydrated)try{localStorage.setItem(STORAGE,JSON.stringify({selection,preset,job,started}));}catch{}},[selection,preset,job,started,hydrated]);
  useEffect(()=>{if(!busy)return;const tick=()=>setElapsed(Math.floor((Date.now()-started)/1000));tick();const timer=setInterval(tick,1000);return()=>clearInterval(timer);},[busy,started]);
  useEffect(()=>{
-  if(!job?.token||!['queued','in_progress','needs_revision'].includes(job.status))return;
+  if(cancelling||!job?.token||!['queued','in_progress','needs_revision'].includes(job.status))return;
   let disposed=false,timer:ReturnType<typeof setTimeout>;let failures=0;
   async function poll(){
    if(requestBusy.current){timer=setTimeout(poll,1000);return;}
@@ -46,8 +49,10 @@ function FurnitureDemo(){
   }
   timer=setTimeout(poll,job.status==='needs_revision'?100:2500);
   return()=>{disposed=true;clearTimeout(timer);};
- },[job?.token,job?.status,job?.attempt]);
- const arrangedHome=useMemo(()=>job?.result?{...home,plan:{...home.plan,furniture:job.result.placements,layouts:[{id:'astra',name:'Your Astra arrangement',furniture:job.result.placements}],design:{name:'Your Astra arrangement',description:job.result.summary}}}:home,[job?.result]);
+ },[job?.token,job?.status,job?.attempt,cancelling]);
+ const arrangedHome=useMemo(()=>job?.result?homeWithArrangement(savedHome,job.result):savedHome,[job?.result]);
+ const openResult=()=>{setEditorHome(arrangedHome);setInitialLayout(0);setExploring(true);};
+ const openSaved=(index:number)=>{setEditorHome(arrangedHome);setInitialLayout(index+(job?.result?1:0));setExploring(true);};
  function update(id:string,delta:number){
   if(busy)return;setPreset('custom');setJob(null);setError('');
   setSelection(current=>{const quantity=current.find(s=>s.id===id)?.quantity??0,next=Math.min(10,Math.max(0,quantity+delta));if(delta>0&&selectionTotal(current).count>=MAX_PIECES)return current;return [...current.filter(s=>s.id!==id),...(next?[{id,quantity:next}]:[])];});
@@ -56,17 +61,17 @@ function FurnitureDemo(){
  async function arrange(){
   if(requestBusy.current||busy||!total.count)return;requestBusy.current=true;setError('');setStarted(Date.now());setJob({status:'submitting'});
   try{setJob(await call({action:'create',homeId:'15',selection}));}
-  catch(e){setJob(null);setError(e instanceof Error?e.message:'Could not connect to OpenAI. Please try again.');}
+  catch(e){setJob(e instanceof ArrangementError&&!e.retryable?{status:'failed',error:e.message}:{status:'unconfirmed',error:'The connection ended before we could confirm that OpenAI received the request.'});}
   finally{requestBusy.current=false;}
  }
  async function cancel(){
-  if(!job?.token||requestBusy.current)return;requestBusy.current=true;setCancelling(true);
+  if(!job?.token||cancelling)return;setCancelling(true);
   try{setJob(await call({action:'cancel',token:job.token}));setError('');}
   catch(e){setError(e instanceof Error?e.message:'Cancellation could not be confirmed.');}
-  finally{requestBusy.current=false;setCancelling(false);}
+  finally{setCancelling(false);}
  }
  const result=job?.status==='completed'?job.result:undefined;
- if(exploring&&result)return <RoomEditor home={arrangedHome} furnishing={{total:usd(total.amount),unpriced:total.unpriced,onEdit:()=>setExploring(false)}}/>;
+ if(exploring)return <RoomEditor home={editorHome} layoutIndex={initialLayout} furnishing={{total:usd(total.amount),unpriced:total.unpriced,onEdit:()=>setExploring(false),requestLabel:busy?`Astra running · ${Math.floor(elapsed/60)}:${String(elapsed%60).padStart(2,'0')}`:result&&!editorHome.plan.layouts?.some(layout=>layout.id==='astra')?'Astra is ready':undefined}}/>;
  const categories=['All',...new Set(catalog.map(item=>item.category))];
  const shown=catalog.filter(item=>category==='All'||item.category===category);
  return <main className="furnish-page">
@@ -74,6 +79,8 @@ function FurnitureDemo(){
   <div className="furnish-body">
    <section className="furnish-heading"><div><p className="furnish-eyebrow">333 BUSH STREET · #4101</p><h1>Make yourself at home.</h1><p>Pick your furniture. We’ll find its place.</p></div><div className="furnish-property"><img src={home.listing.photos[0].src} alt="333 Bush Street apartment interior"/><span><strong>San Francisco</strong><small>2 bedrooms · 1,250 sq ft</small></span></div></section>
    <ol className="furnish-steps" aria-label="Furnishing progress"><li className={!busy&&!result?'current':'done'}><span>{busy||result?<Check size={14}/>:1}</span>Choose furniture</li><li className={busy?'current':result?'done':''}><span>{result?<Check size={14}/>:2}</span>Arrange with Astra</li><li className={result?'current':''}><span>3</span>Explore your home</li></ol>
+   {job&&<ArrangementStatus job={job} count={total.count} elapsed={elapsed} connectionError={error} cancelling={cancelling} onCancel={cancel} onRetry={arrange} onExplore={openResult}/>}
+   <section className="saved-suggestions" aria-label="Saved suggestions"><div><h2>Ready-to-view suggestions</h2><p>Saved layouts. Open instantly and switch between them in 3D.</p></div><div className="saved-suggestion-options">{savedHome.plan.layouts!.map((layout,index)=><button key={layout.id} onClick={()=>openSaved(index)}><strong>{layout.name}</strong><span>{layout.id==='saved-astra-city'?'Saved Astra design':'Saved preset'} <ArrowRight size={14}/></span></button>)}</div></section>
    <div className="furnish-workspace"><section className="furnish-selection" aria-label="Choose furniture">
     <div className="furnish-section-title"><h2>Your starting point</h2><span>Every collection is editable</span></div>
     <div className="furnish-presets"><button disabled={busy||!hydrated} aria-pressed={preset==='custom'} onClick={()=>choosePreset(null)}><span className="preset-icon"><Plus size={22}/></span><strong>Choose my own</strong><small>Build a selection from the catalog</small></button>{presets.map((p,i)=><button key={p.id} disabled={busy||!hydrated} aria-pressed={preset===p.id} onClick={()=>choosePreset(i)}><span className="preset-icon"><Sparkles size={22}/></span><strong>{p.name}</strong><small>{p.furniture.length} pre-selected pieces · {i===0?'A home for gathering':'A quieter city retreat'}</small></button>)}</div>
@@ -84,7 +91,7 @@ function FurnitureDemo(){
    <aside className="furnish-cart" aria-label="Your furniture selection"><div className="furnish-cart-title"><h2>Your selection</h2><span>{total.count} {total.count===1?'piece':'pieces'}</span></div>
     {!total.count?<p className="furnish-empty">Choose a collection or add pieces from the catalog to start your home.</p>:<ul className="furnish-cart-lines">{selection.map(line=>{const item=catalog.find(i=>i.id===line.id)!,price=priceFor(line.id);return <li key={line.id}><span><b>{line.quantity} ×</b> {item.name.split(/ — |, /)[0]}</span><strong>{price?usd(price.amount*line.quantity):'Not priced'}</strong></li>;})}</ul>}
     <div className="furnish-total" aria-live="polite"><span>{total.unpriced?'Priced furniture subtotal':'Furniture total'}</span><strong>{usd(total.amount)}</strong></div><p className="furnish-price-note">USD · Catalog prices. Tax and delivery extra.{total.unpriced>0&&<> {total.unpriced} unpriced {total.unpriced===1?'piece is':'pieces are'} excluded; this is a partial total.</>}</p>
-    {busy?<div className="furnish-progress" role="status"><LoaderCircle className="furnish-spinner" size={25}/><h3>{job?.status==='submitting'?'Sending your selection…':job?.status==='queued'?'Your arrangement is queued':(job?.attempt??0)>0||job?.status==='needs_revision'?'Refining the fit…':'Astra is arranging your home'}</h3><p>{job?.status==='needs_revision'||(job?.attempt??0)>0?'Adjusting furniture to clear walls, doors, and other pieces.':'Working through the floor plan, furniture dimensions, and room layout. This can take several minutes.'}</p><span className="furnish-elapsed">{Math.floor(elapsed/60)}:{String(elapsed%60).padStart(2,'0')} elapsed</span>{job?.token&&<><small>You can refresh this page and we’ll reconnect.</small><button className="furnish-text-button" disabled={cancelling} onClick={cancel}>{cancelling?'Cancelling…':'Cancel arrangement'}</button></>}</div>:result?<div className="furnish-complete"><span><Check size={18}/> Your arrangement is ready</span><p>{result.summary}</p>{result.unplaced.length>0&&<div className="furnish-unplaced"><strong>{result.unplaced.length} pieces could not be placed</strong><ul>{result.unplaced.map(p=><li key={p.instanceId}>{catalog.find(i=>i.id===instances(selection).find(s=>s.instanceId===p.instanceId)?.id)?.name.split(/ — |, /)[0]}: {p.reason}</li>)}</ul><p>The subtotal above includes your full selection.</p></div>}<button className="furnish-primary" onClick={()=>setExploring(true)}>Explore your furnished home <ArrowRight size={18}/></button><button className="furnish-text-button" onClick={arrange}>Try another arrangement</button></div>:<><button className="furnish-primary" disabled={!hydrated||!total.count||configured===false} onClick={arrange}><Sparkles size={18}/>Arrange with Astra <ArrowRight size={18}/></button><p className="furnish-ai-note">GPT-6 Astra places your selected pieces in the apartment. Then walk in and make it yours.</p></>}
+    {busy?<p className="furnish-ai-note">Your request status is shown above. You can cancel there; your selection will be saved.</p>:result?<div className="furnish-complete"><span><Check size={18}/> Your arrangement is ready</span><p>{result.summary}</p>{result.unplaced.length>0&&<div className="furnish-unplaced"><strong>{result.unplaced.length} pieces could not be placed</strong><ul>{result.unplaced.map(p=><li key={p.instanceId}>{catalog.find(i=>i.id===instances(selection).find(s=>s.instanceId===p.instanceId)?.id)?.name.split(/ — |, /)[0]}: {p.reason}</li>)}</ul><p>The subtotal above includes your full selection.</p></div>}<button className="furnish-primary" onClick={openResult}>Explore your furnished home <ArrowRight size={18}/></button><button className="furnish-text-button" onClick={arrange}>Try another arrangement</button></div>:<><button className="furnish-primary" disabled={!hydrated||!total.count||configured===false} onClick={arrange}><Sparkles size={18}/>Arrange with Astra <ArrowRight size={18}/></button><p className="furnish-ai-note">GPT-6 Astra places your selected pieces in the apartment. Then walk in and make it yours.</p></>}
     {(error||(!busy&&job?.error))&&<p className="furnish-error" role="alert">{error||job?.error}</p>}
     {configured===false&&<p className="furnish-error" role="alert">OpenAI isn’t connected yet. Add OPENAI_API_KEY to the server environment to enable arranging.</p>}
     {job?.status==='cancelled'&&<p role="status">Arrangement cancelled. Your selection is saved.</p>}

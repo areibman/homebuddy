@@ -17,6 +17,7 @@ import Link from 'next/link';
 import {useSearchParams} from 'next/navigation';
 import {homeDefinitions,type HomeDefinition} from './home-definitions';
 import {isPlayable} from '../city/playable';
+import {selectionFromLayout,selectionTotal,usd} from '../furnish/selection';
 
 type Overlay='inventory'|'details'|'photos'|null;
 const priceFor=(id:string)=>prices.find(p=>p.id===id);
@@ -26,7 +27,7 @@ function CatalogPhoto({item,link=false}:{item:(typeof items)[number];link?:boole
  if(!item.source.photo_url)return <img src={item.files.preview} alt={item.name+' — original 3D design preview'}/>;
  return failed?<div className="photo-unavailable">Photo unavailable{link&&<a href={item.source.url} target="_blank" rel="noreferrer">View photo on IKEA ↗</a>}</div>:<img src={item.source.photo_url} alt={item.name+' — IKEA catalog photo'} onError={()=>setFailed(true)}/>;
 }
-export function RoomEditor({home=homeDefinitions['13'],layoutIndex=0,furnishing}:{home?:HomeDefinition;layoutIndex?:number;furnishing?:{total:string;unpriced:number;onEdit:()=>void}}){
+export function RoomEditor({home=homeDefinitions['13'],layoutIndex=0,furnishing}:{home?:HomeDefinition;layoutIndex?:number;furnishing?:{total:string;unpriced:number;onEdit:()=>void;requestLabel?:string}}){
  const [lighting,setLighting]=useState<LightingChoice>('auto'),lightingRef=useRef<LightingChoice>('auto');
  const [furnitureExploded,setFurnitureExploded]=useState(false);
  const [hover,setHover]=useState<FurnitureHover>(null);
@@ -48,8 +49,11 @@ export function RoomEditor({home=homeDefinitions['13'],layoutIndex=0,furnishing}
  const change=(next:string)=>{if(!api.current)return;setMode(next);api.current.mode(next);};
  const item=items.find(item=>item.id===detail?.id),price=item?priceFor(item.id):undefined;
  const hoveredItem=items.find(item=>item.id===hover?.id);
+ const currentLayout=home.plan.layouts?.[selectedLayout];
+ const presetBudget=furnishing&&currentLayout&&currentLayout.id!=='astra'?selectionTotal(selectionFromLayout(currentLayout.furniture)):null;
+ const budget=furnishing?{total:presetBudget?usd(presetBudget.amount):furnishing.total,unpriced:presetBudget?.unpriced??furnishing.unpriced,label:presetBudget?currentLayout!.name:'Astra selection'}:null;
  return <div className={'decorator '+(mode==='fps'?'is-walking':'')}>
-  <nav className="room-nav"><a className="homebuddy-brand" href="/"><Box size={21}/><b>homebuddy</b></a><div className="project-location"><span>{home.title}</span><span className="nav-slash">/</span><strong>{home.subtitle}</strong><span className="location-city">San Francisco</span></div>{furnishing?<div className="furnishing-budget"><span><strong>{furnishing.total}</strong><small>Selected furniture{furnishing.unpriced?' · partial subtotal':''}</small></span><button onClick={furnishing.onEdit}>Edit selection</button></div>:<a className="library-link" href="/catalog">Furniture library <SquareArrowOutUpRight size={14}/></a>}</nav>
+  <nav className="room-nav"><a className="homebuddy-brand" href="/"><Box size={21}/><b>homebuddy</b></a><div className="project-location"><span>{home.title}</span><span className="nav-slash">/</span><strong>{home.subtitle}</strong><span className="location-city">San Francisco</span></div>{furnishing&&budget?<div className="furnishing-budget"><span><strong>{budget.total}</strong><small>{budget.label}{budget.unpriced?' · partial subtotal':''}</small></span><button onClick={furnishing.onEdit}>{furnishing.requestLabel??'Edit selection'}</button></div>:<a className="library-link" href="/catalog">Furniture library <SquareArrowOutUpRight size={14}/></a>}</nav>
   <div className="room-layout"><section className="room-stage" aria-label="Apartment editor" aria-busy={!ready||motion!==null}>
    <div ref={host} className="room-canvas"/>
    {mode==='iso'&&!active&&!motion&&!overlay&&hover&&hoveredItem&&<FurnitureHoverLabel hover={hover} name={hoveredItem.name.split(/ — |, /)[0]} price={money(hoveredItem.id)}/>}

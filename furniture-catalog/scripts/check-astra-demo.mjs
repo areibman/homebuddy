@@ -13,8 +13,16 @@ try{
  const {selectionTotal,validateSelection,selectionFromLayout,instances}=await vite.ssrLoadModule('/app/furnish/selection.ts');
  const {validatePlacementResult}=await vite.ssrLoadModule('/app/furnish/placement-geometry.ts');
  const {homeDefinitions}=await vite.ssrLoadModule('/app/decorate/home-definitions.ts');
+ const {homeWithArrangement,homeWithSavedSuggestions}=await vite.ssrLoadModule('/app/furnish/arrangement.ts');
  const {GET,POST}=await vite.ssrLoadModule('/app/api/placements/route.ts');
  const home=homeDefinitions['15'];
+ const savedHome=homeWithSavedSuggestions(home);
+ assert.deepEqual(savedHome.plan.layouts.map(l=>l.id),['gather','retreat','saved-astra-city']);
+ assert.equal(home.plan.layouts.length,2,'Saved suggestions do not mutate the original home');
+ const savedAstra=savedHome.plan.layouts[2];
+ assert.deepEqual(validatePlacementResult({summary:'Saved Astra layout',placements:savedAstra.furniture,unplaced:[]},selectionFromLayout(savedAstra.furniture),home.plan).issues,[],'Cached Astra layout still fits current architecture');
+ const preview=homeWithArrangement(savedHome,{summary:'New result',placements:[],unplaced:[]});
+ assert.deepEqual(preview.plan.layouts.map(l=>l.id),['astra','gather','retreat','saved-astra-city'],'Generated and saved suggestions remain selectable together');
  assert.deepEqual(selectionTotal([{id:'nightstand',quantity:4},{id:'coffee-table',quantity:1}]),{amount:549.95,count:5,unpriced:0});
  assert.deepEqual(selectionTotal([{id:'tv-cinema-65',quantity:1}]),{amount:0,count:1,unpriced:1});
  for(const bad of [[],[{id:'fake',quantity:1}],[{id:'bed',quantity:1.5}],[{id:'bed',quantity:-1}],[{id:'bed',quantity:1},{id:'bed',quantity:1}]])assert.throws(()=>validateSelection(bad));
@@ -45,7 +53,7 @@ try{
   assert.equal((await POST(request({action:'create',homeId:'15',selection:[{id:'bed',quantity:1}]},'https://another-site.test'))).status,403);assert.equal(calls,0);
   assert.equal((await POST(request({action:'create',homeId:'15',selection:[{id:'fake',quantity:1}]}))).status,400);assert.equal(calls,0);
   const created=await POST(request({action:'create',homeId:'15',selection:[{id:'coffee-table',quantity:1,price:0}]})).then(r=>r.json());
-  assert.equal(created.status,'queued');assert.equal(created.total.amount,29.99);assert.equal(lastPayload.model,'gpt-6-astra');assert.equal(lastPayload.background,true);assert.equal(lastPayload.text.format.strict,true);
+  assert.equal(created.status,'queued');assert(created.checkedAt>0,'Status includes the last OpenAI confirmation time');assert.equal(created.total.amount,29.99);assert.equal(lastPayload.model,'gpt-6-astra');assert.equal(lastPayload.background,true);assert.equal(lastPayload.text.format.strict,true);
   assert.equal(JSON.parse(lastPayload.input).selectedFurniture.length,1);
   assert.equal((await POST(request({action:'status',token:created.token+'tampered'}))).status,400);assert.equal(calls,1);
   upstreamState='in_progress';assert.equal((await POST(request({action:'status',token:created.token})).then(r=>r.json())).status,'in_progress');
