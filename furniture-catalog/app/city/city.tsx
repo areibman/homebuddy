@@ -17,7 +17,7 @@ export default function City({homes,zoom,reset,onReady,onZoom}:Props){
    if(disposed||!host.current)return;
    const instance=L.map(host.current,{zoomControl:false,scrollWheelZoom:true,minZoom:11,maxZoom:19}).setView(center,13);
    map.current=instance;instance.on('zoomend',()=>zoomCallback.current(instance.getZoom()));
-   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on('tileerror',()=>setTileError(true)).on('tileload',()=>setTileError(false)).addTo(instance);
+   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{className:'city-basemap',maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on('tileerror',()=>setTileError(true)).on('tileload',()=>setTileError(false)).addTo(instance);
    markers.current=L.layerGroup().addTo(instance);
    observer=new ResizeObserver(()=>instance.invalidateSize());observer.observe(host.current);
    setLoaded(true);readyCallback.current();

@@ -1,8 +1,11 @@
 import { sites } from '@openai/sites-vite-plugin';
 import tailwindcss from '@tailwindcss/postcss';
 import vinext from 'vinext';
-import { defineConfig } from 'vite';
+import { defineConfig, type ViteDevServer } from 'vite';
 import hostingConfig from './.openai/hosting.json';
+import {randomBytes} from 'node:crypto';
+import {request as httpRequest} from 'node:http';
+import {fileURLToPath} from 'node:url';
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   '00000000-0000-4000-8000-000000000000';
@@ -56,6 +59,30 @@ export default defineConfig(async ({ command }) => {
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
+      command === 'serve' && !process.env.ASSET_WORKER_URL && {
+        name: 'homebuddy-local-asset-worker',
+        async configureServer(server: ViteDevServer) {
+          const {createAssetWorker} = await import('./server/asset-worker.mjs');
+          const token = randomBytes(32).toString('hex');
+          const worker = await createAssetWorker({
+            root: fileURLToPath(new URL('./.asset-jobs', import.meta.url)), token,
+          });
+          server.middlewares.use('/api/imports', (req, res) => {
+            if(req.method === 'POST' && req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) {
+              res.writeHead(403, {'Content-Type':'application/json'});
+              res.end(JSON.stringify({error:'Please upload from Homebuddy.'}));return;
+            }
+            const upstream = httpRequest(worker.url + (req.url || '/'), {
+              method:req.method, headers:{...req.headers, authorization:`Bearer ${token}`},
+            }, response => {res.writeHead(response.statusCode || 502,response.headers);response.pipe(res);});
+            upstream.on('error', () => {if(!res.headersSent)res.writeHead(503,{'Content-Type':'application/json'});res.end(JSON.stringify({error:'The asset worker is unavailable.'}));});
+            req.pipe(upstream);
+          });
+          server.httpServer?.once('close', () => {
+            void worker.close();
+          });
+        },
+      },
       vinext(),
       sites(),
       useWorkerRuntime && cloudflare({
