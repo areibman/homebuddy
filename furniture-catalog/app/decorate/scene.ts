@@ -41,14 +41,14 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks,home:HomeDefini
  const floors:T.Mesh[]=[],floorPieces:T.Group[]=[],fixed:T.Box3[]=[],furniture:T.Group[]=[];const templates=new Map<string,T.Group>();let current:T.Group|null=null,disposed=false,overlayOpen=false;
  const mat=(color:string)=>new T.MeshStandardMaterial({color,roughness:.85});
  function box(parent:T.Object3D,x:number,y:number,z:number,w:number,h:number,d:number,color:string){const m=new T.Mesh(new T.BoxGeometry(w,h,d),mat(color));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
- const ceiling=createCeiling(plan.footprint,plan.height);scene.add(ceiling.root);ceiling.root.traverse(o=>{if(o instanceof T.Mesh)blockers.push(o);});
+ const ceiling=createCeiling(plan.interiorFootprint??plan.footprint,plan.height);scene.add(ceiling.root);ceiling.root.traverse(o=>{if(o instanceof T.Mesh)blockers.push(o);});
  let cityPanorama:T.Texture|null=null;
- const cityLoad=new T.TextureLoader().loadAsync('/environments/san-francisco-city-panorama.png').then(texture=>{texture.mapping=T.EquirectangularReflectionMapping;texture.colorSpace=T.SRGBColorSpace;cityPanorama=texture;cityBackdrop.setTexture(texture);}).catch(()=>{});
+ const cityLoad=home.panorama===null?Promise.resolve():new T.TextureLoader().loadAsync(home.panorama??'/environments/san-francisco-city-panorama.png').then(texture=>{texture.mapping=T.EquirectangularReflectionMapping;texture.colorSpace=T.SRGBColorSpace;cityPanorama=texture;cityBackdrop.setTexture(texture);}).catch(()=>{});
  const listingAssets=await loadListingMaterials(renderer.capabilities.getMaxAnisotropy(),home.listing);const listingMaterials=listingAssets.maps;
  const foundation=new T.Group();foundation.name='Continuous floor foundation';foundation.add(createSlab(plan.footprint,-.26,.255,mat('#bcb09d')));scene.add(foundation);floorPieces.push(foundation);
  for(const [floorIndex,[x,z,w,d]] of plan.floors.entries()){
   const panel=new T.Group();panel.name='Floor section';scene.add(panel);floorPieces.push(panel);
-  const floor=box(panel,x+w/2,-.125,z+d/2,w,.25,d,x===3.8?'#c5d4cf':'#bcb09d');floors.push(floor);
+  const floor=box(panel,x+w/2,-.125,z+d/2,w,.25,d,(plan.floorFinishes?.[floorIndex]==='tile'?plan.appearance?.tile:plan.appearance?.floor)??(x===3.8?'#c5d4cf':'#bcb09d'));floors.push(floor);
   const finish=plan.floorFinishes?.[floorIndex]??(z===0?'carpet':x===3.8?'tile':'floor');const floorMap=listingMaterials[finish];
   if(floorMap){const material=floor.material as T.MeshStandardMaterial;material.color.set('#ffffff');material.map=floorMap;material.roughness=finish==='carpet'?.95:finish==='tile'?.38:.72;
    const position=floor.geometry.getAttribute('position'),uv=floor.geometry.getAttribute('uv');
@@ -86,7 +86,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks,home:HomeDefini
  controls.enabled=!assembly.active;ui.motion(assembly.active?'assembly':null);
  function inputBlocked(){return assembly.active||viewTransition.active||furnitureVisibility.active||layoutMotion.active||furnitureExplosion.active||overlayOpen;}
  await cityLoad;
- const failures=results.filter(r=>r.status==='rejected').length;ui.status(failures?`${failures} catalog models could not load. Other pieces are ready.`:!cityPanorama?'The city view could not load. Reload to try again.':!listingMaterials.floor?'Some listing finishes could not load. Showing fallback finishes.':'');
+ const failures=results.filter(r=>r.status==='rejected').length;ui.status(failures?`${failures} catalog models could not load. Other pieces are ready.`:home.panorama!==null&&!cityPanorama?'The city view could not load. Reload to try again.':home.listing.finishes.floor&&!listingMaterials.floor?'Some listing finishes could not load. Showing fallback finishes.':'');
  const outline=new T.BoxHelper(new T.Object3D(),0x3b8a62);outline.visible=false;scene.add(outline);const ray=new T.Raycaster(),pointer=new T.Vector2(),keys=new Set<string>(),lookKeys=new Set<string>();let valid=false;
  function inside(x:number,z:number,margin=0){return plan.floors.some(([a,b,w,d])=>x>=a+margin&&x<=a+w-margin&&z>=b+margin&&z<=b+d-margin);}
  function bounds(g:T.Group){g.updateMatrixWorld(true);return new T.Box3().setFromObject(g);}

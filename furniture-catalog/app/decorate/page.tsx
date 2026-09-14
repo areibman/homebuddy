@@ -53,7 +53,7 @@ export function RoomEditor({home=homeDefinitions['13'],layoutIndex=0,furnishing}
  const presetBudget=furnishing&&currentLayout&&currentLayout.id!=='astra'?selectionTotal(selectionFromLayout(currentLayout.furniture)):null;
  const budget=furnishing?{total:presetBudget?usd(presetBudget.amount):furnishing.total,unpriced:presetBudget?.unpriced??furnishing.unpriced,label:presetBudget?currentLayout!.name:'Astra selection'}:null;
  return <div className={'decorator '+(mode==='fps'?'is-walking':'')}>
-  <nav className="room-nav"><a className="homebuddy-brand" href="/"><Box size={21}/><b>homebuddy</b></a><div className="project-location"><span>{home.title}</span><span className="nav-slash">/</span><strong>{home.subtitle}</strong><span className="location-city">San Francisco</span></div>{furnishing&&budget?<div className="furnishing-budget"><span><strong>{budget.total}</strong><small>{budget.label}{budget.unpriced?' · partial subtotal':''}</small></span><button onClick={furnishing.onEdit}>{furnishing.requestLabel??'Edit selection'}</button></div>:<a className="library-link" href="/catalog">Furniture library <SquareArrowOutUpRight size={14}/></a>}</nav>
+  <nav className="room-nav"><a className="homebuddy-brand" href="/"><Box size={21}/><b>homebuddy</b></a><div className="project-location"><span>{home.title}</span><span className="nav-slash">/</span><strong>{home.subtitle}</strong><span className="location-city">{home.location??'San Francisco'}</span></div>{furnishing&&budget?<div className="furnishing-budget"><span><strong>{budget.total}</strong><small>{budget.label}{budget.unpriced?' · partial subtotal':''}</small></span><button onClick={furnishing.onEdit}>{furnishing.requestLabel??'Edit selection'}</button></div>:<a className="library-link" href="/catalog">Furniture library <SquareArrowOutUpRight size={14}/></a>}</nav>
   <div className="room-layout"><section className="room-stage" aria-label="Apartment editor" aria-busy={!ready||motion!==null}>
    <div ref={host} className="room-canvas"/>
    {mode==='iso'&&!active&&!motion&&!overlay&&hover&&hoveredItem&&<FurnitureHoverLabel hover={hover} name={hoveredItem.name.split(/ — |, /)[0]} price={money(hoveredItem.id)}/>}
@@ -80,6 +80,8 @@ export function RoomEditor({home=homeDefinitions['13'],layoutIndex=0,furnishing}
 export default function Decorate(){
  const query=useSearchParams();
  const selection={id:query.get('home')??'13',page:Number(query.get('plan')??0)};
+ const imported=homeDefinitions[selection.id];
+ if(imported&&!homes.some(h=>h.id===selection.id)){const layoutIndex=Math.max(0,Math.min((imported.plan.layouts?.length??1)-1,Number(query.get('layout'))||0));return <RoomEditor key={imported.id} home={imported} layoutIndex={layoutIndex}/>;}
  const home=homes.find(h=>h.id===selection.id);
  if(!home)return <main style={{padding:32}}><h1>Home not found</h1><Link href="/">Choose a floor plan</Link></main>;
  if(!isPlayable(home))return <main style={{padding:32}}><h1>This home isn’t playable yet</h1><p>Its explorable interior is not available.</p><Link href="/">Choose a playable home</Link></main>;

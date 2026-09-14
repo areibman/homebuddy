@@ -10,7 +10,7 @@ async function render(path) {
 const city = await render('/');
 assert.equal((city.match(/<button[^>]*class="list-home"[^>]*disabled/g) || []).length, 18, 'Incomplete homes are disabled');
 assert.equal((city.match(/href="\/decorate\?home=13"/g) || []).length, 1, 'Spera links directly to its playable interior');
-assert(!/href="\/decorate\?home=(?!(?:13|15))/.test(city), 'Incomplete homes have no editor links');
+assert(!/href="\/decorate\?home=(?!(?:13|15|flowhouse-wb1)(?:"|&))/.test(city), 'Incomplete homes have no editor links');
 assert(city.includes('San Francisco street map'), 'Street map container renders');
 const unavailable = await render('/decorate?home=01');
 assert(unavailable.includes('This home isn’t playable yet'), 'Old deep links cannot open incomplete homes');
@@ -22,6 +22,9 @@ assert(bush.includes('333 Bush Street')&&bush.includes('1,250')&&bush.includes('
 assert(city.includes('/furnish?home=15'),'Bush Street enters the furniture selection demo from the map');
 const furnishing=await render('/furnish?home=15');
 assert(furnishing.includes('Choose my own')&&furnishing.includes('Skyline Social')&&furnishing.includes('Evening Retreat')&&furnishing.includes('Arrange with Astra'),'Demo offers custom furniture, both collections, and Astra placement');
+const flowhouse=await render('/decorate?home=flowhouse-wb1');
+assert(flowhouse.includes('Flow House')&&flowhouse.includes('WB1')&&flowhouse.includes('970')&&flowhouse.includes('Quiet mornings')&&flowhouse.includes('room-canvas'),'Imported WB1 has its own furnished editor');
+assert(city.includes('/decorate?home=flowhouse-wb1'),'Imported WB1 is discoverable from the homepage');
 const unknown = await render('/decorate?home=missing');
 assert(unknown.includes('Home not found'), 'Unknown homes retain their not-found state');
 const catalog = await render('/catalog');

@@ -5,7 +5,7 @@ import {createHingedDoor} from './hinged-door.ts';
 export type Fixture = {type:'closet-interior'|'microwave'|'shelving'|'closet'|'walk-in-closet'|'laundry'|'toilet'|'vanity'|'bathtub'|'shower'|'stove'|'dishwasher'|'sink'|'cabinet'|'refrigerator';x:number;z:number;width:number;depth:number;height:number;rotation?:number;upper?:boolean;cooktop?:string;island?:boolean;y?:number;freezer?:string};
 export type Opening = {wall:number;start:number;width:number;sill:number;height:number};
 export type Door = {x:number;z:number;width:number;rotation:number;swing:number;label?:string;leaves?:2;initialOpen?:boolean;keepFullHeight?:boolean;glazed?:boolean};
-export type ArchitecturePlan = {height:number;closetVolumes?:{name:string;rect:number[];side:string;start:number;opening:number}[];walls:number[][];fixtures:Fixture[];windows:Opening[];doors:Door[];appearance?:{wood?:string;stone?:string;wall?:string;refrigerator?:string;trim?:boolean};columns?:number[][];lights?:number[][];surfacePanels?:{line:number[];height:number;bottom:number;finish:string}[]};
+export type ArchitecturePlan = {height:number;railings?:number[][];closetVolumes?:{name:string;rect:number[];side:string;start:number;opening:number}[];walls:number[][];fixtures:Fixture[];windows:Opening[];doors:Door[];appearance?:{floor?:string;tile?:string;wood?:string;stone?:string;wall?:string;refrigerator?:string;trim?:boolean};columns?:number[][];lights?:number[][];surfacePanels?:{line:number[];height:number;bottom:number;finish:string}[]};
 const materials = () => ({
  ceramic:new T.MeshStandardMaterial({color:'#fafbf9',roughness:.24}),
  wood:new T.MeshStandardMaterial({color:'#a9b9ac',roughness:.62}),
@@ -178,7 +178,12 @@ export function buildArchitecture(plan:ArchitecturePlan){
  // Segment each wall around real window openings instead of drawing glass over solid walls.
  plan.walls.forEach(([x,z,xx,zz],index)=>{
   const length=Math.hypot(xx-x,zz-z),along=new T.Vector3((xx-x)/length,0,(zz-z)/length);
-  function segment(start:number,end:number,bottom:number,top:number){if(end-start<.001||top-bottom<.001)return;const center=new T.Vector3(x,0,z).addScaledVector(along,(start+end)/2);const o=box(root,'Wall',center.x,(bottom+top)/2,center.z,end-start+.12,top-bottom,.12,m.wall);o.rotation.y=-Math.atan2(zz-z,xx-x);o.userData.bottom=bottom;o.userData.top=top;const raycast=o.raycast.bind(o);o.raycast=(ray,hits)=>{if(o.visible)raycast(ray,hits);};wallMeshes.push(o);o.updateMatrixWorld(true);colliders.push(new T.Box3().setFromObject(o));}
+  function segment(start:number,end:number,bottom:number,top:number){if(end-start<.001||top-bottom<.001)return;const center=new T.Vector3(x,0,z).addScaledVector(along,(start+end)/2);const o=box(root,'Wall',center.x,(bottom+top)/2,center.z,end-start+.12,top-bottom,.12,m.wall);o.rotation.y=-Math.atan2(zz-z,xx-x);o.userData.bottom=bottom;o.userData.top=top;const raycast=o.raycast.bind(o);o.raycast=(ray,hits)=>{if(o.visible)raycast(ray,hits);};wallMeshes.push(o);o.updateMatrixWorld(true);if(Math.abs(along.x)<1e-6||Math.abs(along.z)<1e-6){colliders.push(new T.Box3().setFromObject(o));}else{
+   // A single world-space AABB over a diagonal wall incorrectly blocks the hall.
+   // Keep one seamless mesh and cover its thin footprint with short collider boxes.
+   const half=(end-start+.12)/2;
+   for(let a=-half;a<half;a+=.05)colliders.push(new T.Box3(new T.Vector3(a,-(top-bottom)/2,-.06),new T.Vector3(Math.min(a+.05,half),(top-bottom)/2,.06)).applyMatrix4(o.matrixWorld));
+  }}
   let cursor=0;for(const win of plan.windows.filter(v=>v.wall===index).sort((a,b)=>a.start-b.start)){
    segment(cursor,win.start,0,plan.height);segment(win.start,win.start+win.width,0,win.sill);segment(win.start,win.start+win.width,win.sill+win.height,plan.height);cursor=win.start+win.width;
    const g=new T.Group();g.name='Window';g.position.set(x,0,z).addScaledVector(along,win.start+win.width/2);g.rotation.y=-Math.atan2(zz-z,xx-x);root.add(g);
@@ -224,6 +229,14 @@ export function buildArchitecture(plan:ArchitecturePlan){
    // Closet fronts and paired leaves stay recognizable in isometric view.
    if(!door.keepFullHeight)doorMeshes.push(o);
   }});
+ }
+ // Balcony guards remain at their actual height in both views.
+ for(const [x,z,xx,zz] of plan.railings??[]){
+  const length=Math.hypot(xx-x,zz-z),g=new T.Group();g.name='Balcony railing';g.position.set((x+xx)/2,0,(z+zz)/2);g.rotation.y=-Math.atan2(zz-z,xx-x);root.add(g);
+  box(g,'Glass balcony guard',0,.55,0,length,1.1,.035,m.glass);
+  box(g,'Balcony handrail',0,1.1,0,length,.045,.065,m.metal);
+  for(let i=0;i<=Math.ceil(length);i++)box(g,'Balcony post',-length/2+length*i/Math.ceil(length),.55,0,.04,1.1,.04,m.metal);
+  g.updateMatrixWorld(true);colliders.push(new T.Box3().setFromObject(g));
  }
  // Retain closed closet enclosures in the dollhouse view. Full-height mode uses
  // the existing room walls, so these overlays are hidden there to avoid coplanar faces.

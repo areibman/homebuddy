@@ -6,6 +6,7 @@ One application lives in `furniture-catalog/` (the historical directory name). R
 - `/decorate?home=13`: explore and decorate Spera Plan E (503 sq ft).
 - `/decorate?home=15`: explore 333 Bush Street #4101 (1,250 sq ft), with Gather and Retreat furniture arrangements, listing finishes, full appliances, and 11 working doors. Download the furnished Blender scenes through Photos & floor plan.
 - Other home IDs show an unavailable state until their playable interior is implemented. Availability and verified map coordinates live in `app/city/playable.ts`.
+- `/decorate?home=flowhouse-wb1`: Flow House WB1, reconstructed from page 1 of the supplied PDF (970 sq ft plus balcony), with Palm & oak and Quiet mornings furnishing arrangements and Blender downloads. Dimensions and finishes are estimates; details are in `furniture-catalog/app/decorate/homes/flowhouse-wb1/README.md`.
 - `/catalog`: the shared furniture library.
 - Homepage **Upload your space**: upload a floor plan, photos, and/or walkthrough videos, then generate 3D assets with a background Codex process running `gpt-6-astra`. Completed models appear in `/catalog`, with rendered previews and GLB downloads.
 - `/furnish?home=15`: the Bush Street demo. Choose catalog furniture or start with Skyline Social / Evening Retreat, review quantities and the catalog subtotal, then ask GPT-6 Astra to arrange the selected pieces. The map opens this flow for Bush Street.
