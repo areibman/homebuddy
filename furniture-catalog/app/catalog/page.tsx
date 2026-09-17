@@ -2,6 +2,7 @@
 import {createElement,useEffect,useRef,useState} from 'react';
 import {Box,ArrowDownToLine,RotateCcw,MoveUpRight,Layers,Image as ImageIcon,Columns2} from 'lucide-react';
 import rawCatalog from '../catalog.json';
+import {CustomModels} from './custom-models';
 type Item={id:string;name:string;category:string;description:string;materials:string[];dimensions_m:{width:number;depth:number;height:number};dimensions_note?:string;source:{retailer:string;url:string;photo_url:string;article_number:string;checked_date:string};files:{preview:string;glb:string;blend?:string};provenance:string;viewer?:{orbit?:string;field_of_view?:string};view?:{camera_orbit_degrees?:{theta:number;phi:number}}};
 
 const cm=(m:number)=>new Intl.NumberFormat('en',{maximumFractionDigits:1}).format(m*100);
@@ -28,7 +29,7 @@ export default function Home(){
  const framingOrbit=item.viewer?.orbit||referenceOrbits[item.id]||(angles?`${angles.theta}deg ${angles.phi}deg 112%`:"20deg 78deg 112%");
  const orbit=framingOrbit;
  return <main>
- <header><a className="brand" href="/" aria-label="Homebuddy city home"><span className="brandmark"><Box size={23}/></span>homebuddy <span className="brand-sub">Asset catalog</span></a><a className="collection-download" href="/">Choose a home ↗</a><a className="collection-download" href="/furniture-collection.zip" download><ArrowDownToLine size={16}/><span>Download starter collection</span></a></header>
+ <header><a className="collection-download" href="/">Back to the apartment</a><a className="collection-download" href="/homes">Your homes ↗</a><a className="collection-download" href="/account">Account</a><a className="collection-download" href="/furniture-collection.zip" download><ArrowDownToLine size={16}/><span>Download starter collection</span></a></header>
  <section className="intro"><div><p className="eyebrow">THE WHOLE HOME <span className="intro-dot">/</span> {catalog.length} 3D ASSETS</p><h1>A home, piece by piece.</h1></div><div className="collection-count"><strong>{String(catalog.length).padStart(2,'0')}</strong><span>assets<br/>to explore</span></div></section>
  {catalogError&&<output style={{display:'block',padding:'12px 24px'}}>{catalogError} <a href="/">Check uploads →</a></output>}
  <section className="workspace compare-workspace" aria-label="Selected furniture">
@@ -42,6 +43,7 @@ export default function Home(){
   <aside><p className="eyebrow">{item.category}</p><h2>{item.name}</h2><p className="description">{item.description}</p>{item.source.url&&<a className="retailer-link" href={item.source.url} target="_blank" rel="noreferrer">View original {item.source.retailer} listing <MoveUpRight size={15}/></a>}<div className="material-tags">{item.materials.map(d=><span key={d}>{d}</span>)}</div><dl className="dimensions"><div><dt>Width</dt><dd>{cm(dims.width)}<small>cm</small></dd></div><div><dt>Depth</dt><dd>{cm(dims.depth)}<small>cm</small></dd></div><div><dt>Height</dt><dd>{cm(dims.height)}<small>cm</small></dd></div></dl>{item.dimensions_note&&<p className="dimension-note">{item.dimensions_note}</p>}<a className="primary" href={item.files.glb} download><ArrowDownToLine size={17}/>Download model <span>GLB</span></a>{item.files.blend&&<a className="secondary" href={item.files.blend} download><Layers size={16}/>Editable Blender scene<MoveUpRight size={15}/></a>}<p className="note">{item.source.photo_url?<>Reconstructed from the linked catalog photo.<br/>Photo and product design belong to IKEA.<br/>Reference checked {item.source.checked_date}.</>:<>{item.source.retailer==='Your uploads'?item.provenance:<>Original Homebuddy design.<br/>An editable scene asset, not a retail product.</>}</>}</p></aside>
  </section>
  <section className="browse"><div className="browse-heading"><h3>Furniture & your spaces</h3><span>IKEA references, Homebuddy designs & your uploads</span></div><div className="object-grid">{catalog.map((obj,i)=><button className={'object-card '+(selected===i?'active':'')} key={obj.id} aria-pressed={selected===i} onClick={()=>select(i)}><div className="thumb"><CatalogPhoto item={obj} thumbnail/><span className="card-index">{String(i+1).padStart(2,'0')}</span><span className="card-open"><MoveUpRight size={15}/></span></div><div className="card-copy"><span>{obj.category}</span><strong>{obj.name}</strong></div></button>)}</div></section>
- <footer><span>FORM / Virtual furniture catalog</span><span>IKEA references · Original Homebuddy designs · Not affiliated with IKEA</span></footer>
+ <CustomModels />
+<footer><span>FORM / Virtual furniture catalog</span><span>IKEA references · Original Homebuddy designs · Not affiliated with IKEA</span></footer>
  </main>
 }

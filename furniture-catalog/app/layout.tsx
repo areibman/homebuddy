@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Bricolage_Grotesque, Figtree, Geist, Geist_Mono, IBM_Plex_Mono } from 'next/font/google';
+import { Providers } from './studio/providers';
 import './globals.css';
+import './studio/studio.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -12,8 +14,25 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const display = Bricolage_Grotesque({
+  variable: '--font-display',
+  subsets: ['latin'],
+});
+
+const body = Figtree({
+  variable: '--font-body',
+  subsets: ['latin'],
+});
+
+const mono = IBM_Plex_Mono({
+  variable: '--font-mono',
+  subsets: ['latin'],
+  weight: ['400', '500'],
+});
+
 export const metadata: Metadata = {
-  title: 'FORM — Furniture Library', description: 'Compare original IKEA catalog photos with independent 3D recreations. View product dimensions and download editable models.',
+  title: 'Homebuddy — Furnish the room you already have',
+  description: 'Walk through a furnished apartment, then upload your own floor plan and photos.',
 };
 
 export default function RootLayout({
@@ -24,9 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${display.variable} ${body.variable} ${mono.variable} antialiased`}
       >
-        {children}
+        <Providers url={process.env.VITE_CONVEX_URL ?? process.env.CONVEX_URL ?? ''}>
+          {children}
+        </Providers>
       </body>
     </html>
   );

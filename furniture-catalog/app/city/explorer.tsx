@@ -1,6 +1,6 @@
 "use client";
 import {useEffect,useMemo,useState} from 'react';
-import {ArrowUpRight,House,MapPin,List,Minus,Plus,RotateCcw,X,LockKeyhole} from 'lucide-react';
+import {ArrowUpRight,MapPin,List,Minus,Plus,RotateCcw,X,LockKeyhole} from 'lucide-react';
 import City from './city';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -24,7 +24,7 @@ export default function CityExplorer(){
   return()=>controller.abort();
  },[]);
  return <main className="city-explorer">
-  <header className="topbar"><Link href="/" className="brand"><House size={22}/>homebuddy<span>.</span></Link><nav aria-label="Homebuddy"><span className="top-location"><MapPin size={15}/>San Francisco, CA</span><Link href="/catalog">Furniture library <ArrowUpRight size={15}/></Link><button className="browse-button" aria-expanded={list} aria-controls="home-list" onClick={()=>setList(!list)}><List size={17}/>{list?'Hide homes':'Browse homes'}</button></nav></header>
+  <header className="topbar"><nav aria-label="Homebuddy"><Link href="/">Apartment demo</Link><span className="top-location"><MapPin size={15}/>San Francisco, CA</span><Link href="/catalog">Furniture library <ArrowUpRight size={15}/></Link><button className="browse-button" aria-expanded={list} aria-controls="home-list" onClick={()=>setList(!list)}><List size={17}/>{list?'Hide homes':'Browse homes'}</button></nav></header>
   <City homes={visible} zoom={zoom} reset={reset} onReady={()=>setReady(true)} onZoom={setZoom}/>
   <section className="city-heading"><h1>Explore San Francisco<span>.</span></h1><p>Choose a playable home to walk inside and decorate.</p><fieldset className="filters" aria-label="Bedrooms">{filters.map((f,i)=><button key={f} aria-pressed={filter===i} onClick={()=>setFilter(i)}>{f}</button>)}</fieldset><output className="home-count"><span className="status-dot"/>{playable.length} playable · {visible.length-playable.length} unavailable</output>{!playable.length&&<p className="empty-state">No playable homes match this filter. <button onClick={()=>setFilter(0)}>Show all homes</button></p>}<UploadSpace/><Link href="/decorate?home=flowhouse-wb1" className="browse-button">Flow House · WB1 <ArrowUpRight size={15}/></Link></section>
   {!ready&&<output className="map-loading">Loading street map…</output>}

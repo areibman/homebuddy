@@ -1,10 +1,10 @@
-import CityExplorer from './city/explorer';
+import { LandingPage } from './studio/landing';
 
 export const metadata = {
-  title: 'Homebuddy | San Francisco',
-  description: 'Explore San Francisco homes, preview their floor plans, and furnish your apartment with the Homebuddy 3D editor.',
+  title: 'Homebuddy — Furnish the room you already have',
+  description: 'Walk a furnished apartment, upload your own floor plan, and arrange furniture you can actually order.',
 };
 
 export default function Home() {
-  return <CityExplorer />;
+  return <LandingPage />;
 }

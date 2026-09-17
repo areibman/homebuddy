@@ -17,7 +17,7 @@ export default function FloorPlanEditor({home,initialPage}:{home:Home;initialPag
  const change=(key:number,values:Partial<Piece>)=>update(current=>current.map(p=>p.key===key?{...p,...values}:p));
  const current=pieces.find(p=>p.key===selected);
  return <main className="plan-editor">
-  <nav className="plan-editor-nav"><Link href="/">← Choose a home</Link><strong>{home.name}</strong><Link href="/catalog">Furniture library ↗</Link></nav>
+  <nav className="plan-editor-nav"><Link href="/homes">← Your homes</Link><strong>{home.name}</strong><Link href="/catalog">Furniture library ↗</Link></nav>
   <div className="plan-editor-layout"><section className="plan-workspace" aria-label="Floor-plan decorator">
    <header><div><h1>Decorate your floor plan</h1><p>Place furniture, drag to move, and rotate to try a layout.</p></div><label>Floor plan <select value={page} onChange={e=>{setPage(Number(e.target.value));setSelected(null);setLoaded(false);}}>{home.images.map((_,i)=><option key={i} value={i}>Plan {i+1}</option>)}</select></label></header>
    <div className="plan-adjustments"><label>Image width (meters) <input aria-label="Image width in meters" type="number" min="1" max="100" step="0.5" value={width} onChange={e=>setWidth(Math.max(1,Math.min(100,Number(e.target.value)||1)))}/></label><span>Set the scale using the printed dimensions, including image margins.</span><label>Zoom <select value={zoom} onChange={e=>setZoom(Number(e.target.value))}><option value={1}>100%</option><option value={1.5}>150%</option><option value={2}>200%</option></select></label></div>

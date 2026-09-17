@@ -83,8 +83,23 @@ export async function POST(request:Request){
    payload.input+='\nRevise this proposed arrangement: '+JSON.stringify(checked.result)+'\nCorrect every fit-check issue: '+JSON.stringify(checked.issues)+'. You may mark an item unplaced if there is no valid position. Do not keep invalid placements.';
    const response=await openai('',payload);return present(response,{...job,id:response.id,attempt:job.attempt+1});
   }
-  if(body.action!=='create'||body.homeId!=='15')return json({error:'Choose the Bush Street apartment to start this demo.'},400);
-  const selection=validateSelection(body.selection),response=await openai('',requestBody(body.homeId,selection));
-  return present(response,{id:response.id,homeId:body.homeId,selection,expires:Date.now()+24*60*60*1000,attempt:0});
+  if(body.action!=='create'||typeof body.homeId!=='string'||!homeDefinitions[body.homeId])return json({error:'Choose a sample floor plan that can be arranged in 3D.'},400);
+  const token=request.headers.get('Authorization')?.replace(/^Bearer\s+/i,'');
+  if(!token||typeof body.recordId!=='string')return json({error:'Sign in from your home. Arranging uses credits.'},401);
+  const convexUrl=process.env.CONVEX_URL||process.env.VITE_CONVEX_URL;
+  if(!convexUrl)return json({error:'Accounts are not connected.'},503);
+  const {ConvexHttpClient}=await import('convex/browser');
+  const {api}=await import('../../../convex/_generated/api');
+  const client=new ConvexHttpClient(convexUrl);
+  client.setAuth(token);
+  const arrangementId=await client.mutation(api.arrangements.reserve,{homeId:body.recordId as never,style:typeof body.style==='string'?body.style:'Scandinavian'});
+  try{
+   const selection=validateSelection(body.selection),response=await openai('',requestBody(body.homeId,selection));
+   await client.mutation(api.arrangements.complete,{arrangementId,summary:'Astra accepted the arrangement.'});
+   return present(response,{id:response.id,homeId:body.homeId,selection,expires:Date.now()+24*60*60*1000,attempt:0});
+  }catch(error){
+   await client.mutation(api.arrangements.refund,{arrangementId,reason:error instanceof Error?error.message:'The arrangement did not start.'}).catch(()=>{});
+   throw error;
+  }
  }catch(error){return json({error:error instanceof Error?error.message:'The request could not be completed.',retryable:error instanceof UpstreamError&&error.retryable},error instanceof UpstreamError&&error.retryable?503:400);}
 }

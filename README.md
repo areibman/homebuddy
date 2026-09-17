@@ -2,7 +2,10 @@
 
 One application lives in `furniture-catalog/` (the historical directory name). Run `npm run dev` from this repository root.
 
-- `/`: browse a real OpenStreetMap street map and enter a playable home directly. Incomplete interiors are disabled in the list and omitted from the map.
+- `/`: marketing site for uploading floor plans, arranging IKEA furniture, and managing plans with Stripe.
+- `/homes`: signed-in list of homes. Upload floor plans and photos. The plan limits how many homes an account can keep. Walkable samples can still open the 3D editor.
+- `/account`: name, credits, plan, and Stripe billing.
+- Sign-in uses Convex Auth (email and password). Credits are spent on AI arrangements (12) and custom furniture uploads (25).
 - `/decorate?home=13`: explore and decorate Spera Plan E (503 sq ft).
 - `/decorate?home=15`: explore 333 Bush Street #4101 (1,250 sq ft), with Gather and Retreat furniture arrangements, listing finishes, full appliances, and 11 working doors. Download the furnished Blender scenes through Photos & floor plan.
 - Other home IDs show an unavailable state until their playable interior is implemented. Availability and verified map coordinates live in `app/city/playable.ts`.
