@@ -2,7 +2,7 @@ import {AlertCircle,ArrowRight,Check,LoaderCircle} from 'lucide-react';
 import {useEffect,useRef} from 'react';
 import type {PlacementResult} from './selection';
 
-export type ArrangementJob={token?:string;status:string;model?:string;attempt?:number;result?:PlacementResult;error?:string;issues?:string[];retryable?:boolean;checkedAt?:number};
+export type ArrangementJob={arrangementId?:string;token?:string;status:string;model?:string;attempt?:number;result?:PlacementResult;error?:string;issues?:string[];retryable?:boolean;checkedAt?:number};
 export const isPending=(job:ArrangementJob|null)=>Boolean(job&&['submitting','queued','in_progress','revising','needs_revision'].includes(job.status));
 const duration=(seconds:number)=>`${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;
 
@@ -20,6 +20,6 @@ export function ArrangementStatus({job,count,elapsed,connectionError,cancelling,
    {isPending(job)&&<div className="arrangement-live-meta" aria-live="off"><strong>{duration(elapsed)} elapsed</strong><span>{age===null?'Not yet acknowledged by OpenAI':`Last confirmed by OpenAI ${age<2?'just now':`${age}s ago`}`}</span></div>}
    {failed&&<small>Your selection is saved. No failed layout has been applied.</small>}
   </div>
-  <div className="arrangement-status-actions">{complete?<button className="furnish-primary" onClick={onExplore}>View arrangement <ArrowRight size={17}/></button>:failed||cancelled||unconfirmed?<button className="furnish-primary" onClick={onRetry}>{unconfirmed?'Start another request':'Try again'} <ArrowRight size={17}/></button>:job.token?<button className="arrangement-cancel" disabled={cancelling} onClick={onCancel}>{cancelling?'Cancelling…':'Cancel request'}</button>:null}</div>
+  <div className="arrangement-status-actions">{complete?<button className="furnish-primary" onClick={onExplore}>View arrangement <ArrowRight size={17}/></button>:failed||cancelled||unconfirmed?<button className="furnish-primary" onClick={onRetry}>{unconfirmed?'Start another request':'Try again'} <ArrowRight size={17}/></button>:job.arrangementId||job.token?<button className="arrangement-cancel" disabled={cancelling} onClick={onCancel}>{cancelling?'Cancelling…':'Cancel request'}</button>:null}</div>
  </section>;
 }

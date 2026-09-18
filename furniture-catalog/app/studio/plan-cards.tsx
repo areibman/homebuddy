@@ -37,7 +37,7 @@ export function PlanCards({ showPacks = false }: { showPacks?: boolean }) {
   }
 
   return (
-    <div className="hb-plans">
+    <div className={yearly ? 'hb-plans is-yearly' : 'hb-plans'}>
       <div className="hb-toggle" role="group" aria-label="Billing period">
         <button type="button" aria-pressed={!yearly} onClick={() => setYearly(false)}>Monthly</button>
         <button type="button" aria-pressed={yearly} onClick={() => setYearly(true)}>Yearly · about 4 months free</button>
@@ -47,11 +47,20 @@ export function PlanCards({ showPacks = false }: { showPacks?: boolean }) {
           const price = plan.id === 'studio' ? 0 : yearly ? plan.priceYearly : plan.priceMonthly;
           return (
             <article key={plan.id} className={plan.id === 'atelier' ? 'popular' : ''}>
-              {plan.id === 'atelier' && <span className="hb-popular">Most used</span>}
-              <h3>{plan.label}</h3>
-              <p className="hb-price"><strong>{price === 0 ? 'Free' : `$${price}`}</strong>{price > 0 && <span>{yearly ? ' / month, billed yearly' : ' / month'}</span>}</p>
-              {yearly && plan.yearlyBilled > 0 && <p className="hb-billed">${plan.yearlyBilled} billed once a year</p>}
-              <p>{plan.blurb}</p>
+              <h3>
+                {plan.label}
+                {plan.id === 'atelier' && <span className="hb-popular">Most used</span>}
+              </h3>
+              <p className="hb-price">
+                <strong>{price === 0 ? 'Free' : `$${price}`}</strong>
+                {price > 0 && <span>{yearly ? '/ month, billed yearly' : '/ month'}</span>}
+              </p>
+              {yearly && (
+                <p className="hb-billed" aria-hidden={plan.yearlyBilled === 0}>
+                  {plan.yearlyBilled > 0 ? `$${plan.yearlyBilled} billed once a year` : '\u00a0'}
+                </p>
+              )}
+              <p className="hb-blurb">{plan.blurb}</p>
               <ul>{plan.points.map((point) => <li key={point}>{point}</li>)}</ul>
               {plan.id === 'studio' ? (
                 <Link className="hb-button ghost" href={isAuthenticated ? '/homes' : '/sign-in'}>Start with one home</Link>

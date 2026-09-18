@@ -18,11 +18,11 @@ export function selectionTotal(selection:Selection){
  for(const line of selection){const price=priceFor(line.id);count+=line.quantity;if(price)cents+=Math.round(price.amount*100)*line.quantity;else unpriced+=line.quantity;}
  return {amount:cents/100,count,unpriced};
 }
-export function validateSelection(value:unknown):Selection {
- if(!Array.isArray(value)||!value.length||value.length>catalog.length)throw new Error('Choose at least one piece of furniture.');
+export function validateSelection(value:unknown, source:{id:string}[]=catalog):Selection {
+ if(!Array.isArray(value)||!value.length||value.length>Math.max(source.length,catalog.length))throw new Error('Choose at least one piece of furniture.');
  const seen=new Set<string>();let total=0;
  for(const line of value){
-  if(!line||typeof line.id!=='string'||!catalog.some(i=>i.id===line.id)||seen.has(line.id)||!Number.isInteger(line.quantity)||line.quantity<1||line.quantity>10)throw new Error('The furniture selection is invalid.');
+  if(!line||typeof line.id!=='string'||!source.some(i=>i.id===line.id)||seen.has(line.id)||!Number.isInteger(line.quantity)||line.quantity<1||line.quantity>10)throw new Error('The furniture selection is invalid.');
   seen.add(line.id);total+=line.quantity;
  }
  if(total>MAX_PIECES)throw new Error(`Choose up to ${MAX_PIECES} pieces for one arrangement.`);

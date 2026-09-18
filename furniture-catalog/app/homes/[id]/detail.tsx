@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useMutation, useQuery } from 'convex/react';
 import { useAuthToken } from '@convex-dev/auth/react';
@@ -9,6 +9,8 @@ import type { Id } from '../../../convex/_generated/dataModel';
 import { AuthGate, SiteNav } from '../../studio/chrome';
 import { ARRANGEMENT_COST, STYLES } from '../../studio/content';
 import { readableError } from '../../studio/errors';
+import { deleteAssets, signedUrls, uploadAsset } from '../../assets/client';
+import { GenerateInterior } from './generate-interior';
 
 export function HomeDetail({ homeId }: { homeId: string }) {
   return (
@@ -22,7 +24,6 @@ function HomeBody({ homeId }: { homeId: Id<'homes'> }) {
   const home = useQuery(api.homes.get, { homeId });
   const me = useQuery(api.account.me);
   const saveFile = useMutation(api.homes.saveFile);
-  const uploadUrl = useMutation(api.homes.generateUploadUrl);
   const update = useMutation(api.homes.update);
   const remove = useMutation(api.homes.remove);
   const removeFile = useMutation(api.homes.removeFile);
@@ -31,16 +32,20 @@ function HomeBody({ homeId }: { homeId: Id<'homes'> }) {
   const [pending, setPending] = useState('');
   const [style, setStyle] = useState('');
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [fileUrls, setFileUrls] = useState<Record<string, string>>({});
+  useEffect(() => {
+    if (!token || !home?.files) return;
+    const keys = home.files.map((file) => file.assetKey).filter((key): key is string => Boolean(key));
+    void signedUrls(token, keys).then(setFileUrls).catch(() => undefined);
+  }, [token, home]);
 
   async function upload(kind: 'floor_plan' | 'photo', file: File) {
     setError('');
     setPending(kind);
     try {
-      const url = await uploadUrl();
-      const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': file.type || 'application/octet-stream' }, body: file });
-      if (!response.ok) throw new Error('The upload did not finish.');
-      const { storageId } = await response.json() as { storageId: Id<'_storage'> };
-      await saveFile({ homeId, storageId, kind, fileName: file.name, contentType: file.type || 'application/octet-stream' });
+      if (!token) throw new Error('Sign in to upload.');
+      const uploaded = await uploadAsset(token, file, kind);
+      await saveFile({ homeId, assetKey: uploaded.key, kind, fileName: file.name, contentType: uploaded.contentType, size: uploaded.size });
     } catch (err) {
       setError(readableError(err, 'Could not save that file.'));
     } finally {
@@ -95,37 +100,31 @@ function HomeBody({ homeId }: { homeId: Id<'homes'> }) {
               {home.files.length === 0 && <p>Nothing uploaded yet.</p>}
               {home.files.map((file) => (
                 <figure key={file.id} className="hb-panel" style={{ margin: 0 }}>
-                  {file.contentType === 'application/pdf' ? <iframe title={file.fileName} src={file.url ?? undefined} /> : file.url && <img src={file.url} alt={file.fileName} />}
+                  {file.contentType === 'application/pdf' ? <iframe title={file.fileName} src={fileUrls[file.assetKey || ''] || file.url || undefined} /> : (fileUrls[file.assetKey || ''] || file.url) && <img src={fileUrls[file.assetKey || ''] || file.url || undefined} alt={file.fileName} />}
                   <figcaption>
                     <strong>{file.kind === 'floor_plan' ? 'Floor plan' : 'Photo'}</strong>
                     <small className="hb-meta">{file.fileName}</small>
-                    <button type="button" className="hb-text-link" onClick={() => void removeFile({ fileId: file.id })}>Remove</button>
+                    <button type="button" className="hb-text-link" onClick={() => void removeFile({ fileId: file.id }).then((result) => { if (token && result.key) void deleteAssets(token, [result.key]); })}>Remove</button>
                   </figcaption>
                 </figure>
               ))}
             </div>
           </section>
-          <aside className="hb-panel">
-            <h2>Arrange</h2>
-            <p>Pick a style. The furniture is placed in the room, then you walk through it.</p>
-            <label className="hb-field">Style
-              <select value={chosen} onChange={(event) => { setStyle(event.target.value); void update({ homeId, style: event.target.value }); }}>
-                {STYLES.map((item) => <option key={item.name}>{item.name}</option>)}
-              </select>
-            </label>
-            {home.sampleId ? (
-              <>
-                <Link className="hb-button" href={`/furnish?home=${home.sampleId}&record=${home.id}`}>Arrange this apartment</Link>
-                <Link className="hb-text-link" href={`/decorate?home=${home.sampleId}`}>Walk the current interior</Link>
-              </>
-            ) : (
-              <button className="hb-button" type="button" disabled={pending === 'arrange' || (me?.credits ?? 0) < ARRANGEMENT_COST} onClick={() => void arrangeList()}>
-                {pending === 'arrange' ? 'Arranging…' : 'Arrange this room'}
+          <aside className="hb-stack">
+            <GenerateInterior home={home} />
+            <section className="hb-panel">
+              <h2>Furniture list</h2>
+              <p>Pick a style. Astra picks catalog pieces that fit this home and returns a list you can order. {ARRANGEMENT_COST} credits.</p>
+              <label className="hb-field">Style
+                <select value={chosen} onChange={(event) => { setStyle(event.target.value); void update({ homeId, style: event.target.value }); }}>
+                  {STYLES.map((item) => <option key={item.name}>{item.name}</option>)}
+                </select>
+              </label>
+              <button className="hb-button ghost" type="button" disabled={pending === 'arrange' || (me?.credits ?? 0) < ARRANGEMENT_COST} onClick={() => void arrangeList()}>
+                {pending === 'arrange' ? 'Choosing…' : 'Suggest a furniture list'}
               </button>
-            )}
-            {!home.sampleId && <p>Uploaded plans get a buyable furniture list. Walkable samples can place pieces inside the walls.</p>}
-            {error && <p className="hb-error" role="alert">{error}</p>}
-            <h3 style={{ marginTop: 18 }}>Arrangements</h3>
+              {error && <p className="hb-error" role="alert">{error}</p>}
+              <h3 style={{ marginTop: 18 }}>Arrangements</h3>
             {home.arrangements.length === 0 && <p>None yet.</p>}
             {home.arrangements.map((row) => (
               <article key={row.id} style={{ marginTop: 10 }}>
@@ -136,6 +135,7 @@ function HomeBody({ homeId }: { homeId: Id<'homes'> }) {
                 )}
               </article>
             ))}
+            </section>
           </aside>
         </div>
         <div style={{ marginTop: 28 }}>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Bricolage_Grotesque, Figtree, Geist, Geist_Mono, IBM_Plex_Mono } from 'next/font/google';
 import { Providers } from './studio/providers';
 import './globals.css';
@@ -30,6 +30,12 @@ const mono = IBM_Plex_Mono({
   weight: ['400', '500'],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
+
 export const metadata: Metadata = {
   title: 'Homebuddy — Furnish the room you already have',
   description: 'Walk through a furnished apartment, then upload your own floor plan and photos.',
@@ -45,7 +51,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${display.variable} ${body.variable} ${mono.variable} antialiased`}
       >
-        <Providers url={process.env.VITE_CONVEX_URL ?? process.env.CONVEX_URL ?? ''}>
+        <Providers url={process.env.NEXT_PUBLIC_CONVEX_URL ?? process.env.CONVEX_URL ?? process.env.VITE_CONVEX_URL ?? ''}>
           {children}
         </Providers>
       </body>

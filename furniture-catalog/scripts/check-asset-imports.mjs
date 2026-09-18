@@ -1,72 +1,117 @@
 import assert from 'node:assert/strict';
-import {mkdtemp,writeFile,chmod,readFile,rm,mkdir} from 'node:fs/promises';
+import {mkdtemp,writeFile,rm,mkdir,copyFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
-import {join,resolve} from 'node:path';
+import {join} from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {createAssetWorker,MODEL} from '../server/asset-worker.mjs';
+import {createAssetStore} from '../server/asset-store.mjs';
 
+// Exercises the worker without OpenAI or Convex: an injected `generate` writes fixture output, an
+// injected local asset store stands in for S3, and jobs arrive through /adopt the way the web app
+// pushes them after recording them in Convex.
 const temporary=await mkdtemp(join(tmpdir(),'homebuddy-import-check-'));
 const token=randomUUID();let worker;
 try{
- const fixture=join(temporary,'codex-fixture');
- const item=JSON.parse(await readFile(resolve('app/catalog.json'),'utf8'))[0];
- const fixtureBody=`#!${process.execPath}
-const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const args=process.argv.slice(2);assert.equal(args[args.indexOf('--model')+1],${JSON.stringify(MODEL)});assert.equal(args[args.indexOf('--sandbox')+1],'workspace-write');
-const output=args[args.indexOf('--add-dir')+1];
-let prompt='';process.stdin.on('data',c=>prompt+=c);process.stdin.on('end',()=>{
- setTimeout(()=>{
- fs.copyFileSync(${JSON.stringify(resolve('public',item.files.glb.slice(1).split('?')[0]))},path.join(output,'test.glb'));
- fs.copyFileSync(${JSON.stringify(resolve('public',item.files.preview.slice(1).split('?')[0]))},path.join(output,'test.png'));
- fs.writeFileSync(path.join(output,'catalog.json'),JSON.stringify([{name:'Fixture asset',category:'Test',description:'Integration fixture only',materials:['Fabric'],dimensions_m:{width:2,depth:1,height:1},provenance:'Fixture',files:{glb:'test.glb',preview:'test.png'}}]));
- },100);
-});`;
- await writeFile(fixture,fixtureBody);await chmod(fixture,0o700);
+ const jsonChunk=Buffer.from(JSON.stringify({asset:{version:'2.0'},meshes:[{primitives:[{attributes:{}}]}]}));
+ const padded=Buffer.concat([jsonChunk,Buffer.alloc((4-jsonChunk.length%4)%4,0x20)]);
+ const bin=Buffer.alloc(4);
+ const header=Buffer.alloc(12);header.write('glTF',0);header.writeUInt32LE(2,4);header.writeUInt32LE(12+8+padded.length+8+bin.length,8);
+ const jsonHead=Buffer.alloc(8);jsonHead.writeUInt32LE(padded.length,0);jsonHead.write('JSON',4);
+ const binHead=Buffer.alloc(8);binHead.writeUInt32LE(bin.length,0);binHead.write('BIN\0',4);
+ const glbPath=join(temporary,'fixture.glb'),pngPath=join(temporary,'fixture.png');
+ await writeFile(glbPath,Buffer.concat([header,jsonHead,padded,binHead,bin]));
+ const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==','base64');
+ await writeFile(pngPath,png);
+ const interior=JSON.stringify({name:'Fixture room',height:2.7,footprint:[[0,0],[4,0],[4,4],[0,4]],floors:[[0,0,4,4]],walls:[[0,0,4,0],[4,0,4,4],[4,4,0,4],[0,4,0,0]],fixtures:[],doors:[],furniture:[],spawn:[2,2]});
+ const catalog=JSON.stringify([{name:'Fixture asset',category:'Test',description:'Integration fixture only',materials:['Fabric'],dimensions_m:{width:2,depth:1,height:1},provenance:'Fixture',files:{glb:'test.glb',preview:'test.png'}}]);
+
+ const store=createAssetStore({mode:'local',root:join(temporary,'store')});
+ const userId='user_fixture';
+ const reference=await store.put(store.userKey(userId,'plan.png'),png,'image/png');
  const root=join(temporary,'jobs');
- worker=await createAssetWorker({root,token,command:fixture});
- const request=(query='',options={})=>fetch(worker.url+'/'+query,{...options,headers:{Authorization:'Bearer '+token,...options.headers}});
- const form=(name='My room',filename='floor.png')=>{const body=new FormData();body.set('name',name);body.append('files',new Blob([new Uint8Array([137,80,78,71,13,10,26,10,0])]),filename);return body;};
- async function submit(body,key=randomUUID()){return request('',{method:'POST',headers:{'Idempotency-Key':key},body});}
- async function waitFor(id,status){for(let i=0;i<100;i++){const {jobs}=await(await request()).json();const job=jobs.find(j=>j.id===id);if(job?.status===status)return job;await new Promise(r=>setTimeout(r,30));}throw new Error('Job did not reach '+status);}
- assert.equal((await fetch(worker.url)).status,401);
- assert.equal((await submit(form('','a.png'))).status,400);
- assert.equal((await submit(form('Bad','script.html'))).status,400);
- const empty=new FormData();empty.set('name','Empty');assert.equal((await submit(empty)).status,400);
- const key=randomUUID();
- const submissions=await Promise.all([submit(form(),key),submit(form(),key)]);
- assert.equal(submissions[0].status,202);assert.equal(submissions[1].status,202);
- const job=await submissions[0].json();assert.equal((await submissions[1].json()).id,job.id,'Concurrent retries have one job');
- await waitFor(job.id,'completed');
- assert.equal((await(await request()).json()).jobs.length,1);
- const {items}=await(await request('?catalog=1')).json();assert.equal(items.length,1);assert.equal(items[0].source.retailer,'Your uploads');
- const model=await request(items[0].files.glb.slice('/api/imports'.length));assert.equal(model.status,200);assert.equal(Buffer.from(await model.arrayBuffer()).toString('utf8',0,4),'glTF');
- assert.equal((await request('?asset='+encodeURIComponent(job.id+'/../job.json'))).status,404);
- assert.equal((await request('?asset='+encodeURIComponent(job.id+'/catalog.json'))).status,404);
- // Exercise the hosted API proxy too; local Vite uses a streaming middleware.
+
+ const calls=[];
+ const fullGenerate=async({output,model,prompt})=>{
+  assert.equal(model,MODEL);calls.push(prompt.slice(0,40));
+  await copyFile(glbPath,join(output,'test.glb'));await copyFile(pngPath,join(output,'test.png'));
+  await writeFile(join(output,'interior.json'),interior);await writeFile(join(output,'catalog.json'),catalog);
+ };
+ const planOnlyGenerate=async({output,prompt})=>{
+  if(prompt.startsWith('Reconstruct the architecture'))await writeFile(join(output,'interior.json'),interior);
+  else throw new Error('Furniture pass fell over');
+ };
+ const furnitureOnlyGenerate=async({output,prompt})=>{
+  if(prompt.startsWith('Generate catalog-ready')){await copyFile(glbPath,join(output,'test.glb'));await copyFile(pngPath,join(output,'test.png'));await writeFile(join(output,'catalog.json'),catalog);}
+ };
+ const failGenerate=async()=>{throw new Error('OpenAI sandbox could not complete generation. Check Astra access and the reference files, then upload again.');};
+
+ const request=(path='',options={})=>fetch(worker.url+path,{...options,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json',...options.headers}});
+ const adopt=(job)=>request('/adopt',{method:'POST',body:JSON.stringify({userId,name:'Fixture home',notes:'',inputKeys:[reference.key],...job})});
+ async function waitFor(id,status){for(let i=0;i<200;i++){const {jobs}=await(await request()).json();const job=jobs.find(j=>j.id===id);if(job?.status===status)return job;if(job?.status==='failed'&&status!=='failed')throw new Error('Job failed: '+job.error);await new Promise(r=>setTimeout(r,25));}throw new Error('Job did not reach '+status);}
+
+ // Full success: both passes run, models publish under the owner's prefix.
+ worker=await createAssetWorker({root,token,generate:fullGenerate,store});
+ assert.equal((await fetch(worker.url)).status,401,'Unauthenticated requests are rejected');
+ assert.equal((await request('/adopt',{method:'POST',body:JSON.stringify({id:'job_noowner',inputKeys:[reference.key]})})).status,400,'Jobs need an owner');
+ assert.equal((await adopt({id:'job_wrongowner',inputKeys:['homes/someone_else/x.png']})).status,400,'Inputs must belong to the owner');
+ assert.equal((await adopt({id:'job_missing',inputKeys:['homes/user_fixture/missing.png']})).status,400,'Missing uploads are rejected');
+ assert.equal((await adopt({id:'job_empty',inputKeys:[]})).status,400,'Jobs need references');
+ const first=await adopt({id:'job_full'});assert.equal(first.status,202);
+ const again=await adopt({id:'job_full'});assert.equal((await again.json()).id,'job_full','Adopting twice is idempotent');
+ const done=await waitFor('job_full','completed');
+ assert.equal(done.assetCount,1);assert.equal(done.interiorStatus,'ready');
+ assert.equal(calls.length,2,'Architecture and furniture run as separate passes');
+ assert.ok(await store.get(`homes/${userId}/catalog/job_full/test.glb`),'GLB published to the asset store');
+ assert.ok(await store.get(`homes/${userId}/catalog/job_full/test.png`),'Preview published to the asset store');
+ await worker.close();
+
+ // A furniture failure leaves a walkable plan.
+ worker=await createAssetWorker({root,token,generate:planOnlyGenerate,store});
+ await adopt({id:'job_planonly'});
+ const planOnly=await waitFor('job_planonly','completed');
+ assert.equal(planOnly.interiorStatus,'ready');assert.equal(planOnly.assetCount,0);
+ await worker.close();
+
+ // A missing plan still publishes furniture and records why the plan failed.
+ worker=await createAssetWorker({root,token,generate:furnitureOnlyGenerate,store});
+ await adopt({id:'job_furnitureonly'});
+ const furnitureOnly=await waitFor('job_furnitureonly','completed');
+ assert.equal(furnitureOnly.interiorStatus,'failed');assert.equal(furnitureOnly.assetCount,1);assert.match(furnitureOnly.error,/walls and a footprint/);
+ await worker.close();
+
+ // Nothing usable fails the job with the upstream message.
+ worker=await createAssetWorker({root,token,generate:failGenerate,store});
+ await adopt({id:'job_failed'});
+ assert.match((await waitFor('job_failed','failed')).error,/OpenAI sandbox/);
+ assert.equal((await store.get(`homes/${userId}/catalog/job_failed/test.glb`)),null,'Failed jobs publish nothing');
+ await worker.close();
+
+ // Restart: finished jobs survive, in-flight jobs are marked failed.
+ const interrupted='job_interrupted';await mkdir(join(root,interrupted));await writeFile(join(root,interrupted,'job.json'),JSON.stringify({id:interrupted,status:'running',name:'Interrupted',createdAt:new Date().toISOString()}));
+ worker=await createAssetWorker({root,token,generate:failGenerate,store});
+ const {jobs}=await(await request()).json();
+ assert.equal(jobs.find(j=>j.id==='job_full').status,'completed','Completed jobs survive restart');
+ assert.match(jobs.find(j=>j.id===interrupted).error,/interrupted/);
+ assert.equal((await(await request('?asset=job_full/test.glb')).json()).configured,true,'The worker no longer serves files; every GET is the health report');
+ await worker.close();
+
+ // The web route enqueues only; without Convex it explains itself instead of proxying.
  const {createServer}=await import('vite');
- const vite=await createServer({configFile:false,cacheDir:join(temporary,'vite-cache'),server:{middlewareMode:true},appType:'custom',logLevel:'error',optimizeDeps:{noDiscovery:true,include:[]}});
- const priorUrl=process.env.ASSET_WORKER_URL,priorToken=process.env.ASSET_WORKER_TOKEN;
+ const vite=await createServer({configFile:false,cacheDir:join(temporary,'vite-cache'),server:{middlewareMode:true},appType:'custom',logLevel:'error',optimizeDeps:{noDiscovery:true,include:[]},resolve:{alias:{'@':process.cwd()}}});
+ const prior={url:process.env.ASSET_WORKER_URL,token:process.env.ASSET_WORKER_TOKEN,convex:[process.env.NEXT_PUBLIC_CONVEX_URL,process.env.CONVEX_URL,process.env.VITE_CONVEX_URL]};
  try{
   const api=await vite.ssrLoadModule('/app/api/imports/route.ts');
   delete process.env.ASSET_WORKER_URL;delete process.env.ASSET_WORKER_TOKEN;
-  assert.equal((await api.GET(new Request('http://app/api/imports'))).status,503);
-  process.env.ASSET_WORKER_URL=worker.url;process.env.ASSET_WORKER_TOKEN=token;
-  assert.equal((await api.GET(new Request('http://app/api/imports?catalog=1'))).status,200);
-  assert.equal((await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{Origin:'http://other-site'},body:form()}))).status,403);
-  const proxied=await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{Origin:'http://app','Idempotency-Key':key},body:form()}));
-  assert.equal(proxied.status,202);assert.equal((await proxied.json()).id,job.id);
-  assert.equal((await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{'Content-Length':String(100*1024*1024)},body:'too large'}))).status,413);
- }finally{if(priorUrl===undefined)delete process.env.ASSET_WORKER_URL;else process.env.ASSET_WORKER_URL=priorUrl;if(priorToken===undefined)delete process.env.ASSET_WORKER_TOKEN;else process.env.ASSET_WORKER_TOKEN=priorToken;await vite.close();}
- await worker.close();worker=await createAssetWorker({root,token,command:fixture});
- assert.equal((await(await request('?catalog=1')).json()).items.length,1,'Catalog survives restart');
- assert.equal((await(await submit(form(),key)).json()).id,job.id,'Retry survives restart');
- await worker.close();
- const bad=join(temporary,'codex-failure');await writeFile(bad,`#!${process.execPath}\nprocess.exit(1);`);await chmod(bad,0o700);
- worker=await createAssetWorker({root,token,command:bad});
- const failed=await(await submit(form('Failed job'))).json();assert.match((await waitFor(failed.id,'failed')).error,/Codex/);
- assert.equal((await(await request('?catalog=1')).json()).items.length,1,'Failed jobs never enter catalog');
- await worker.close();
- const interrupted=randomUUID();await mkdir(join(root,interrupted));await writeFile(join(root,interrupted,'job.json'),JSON.stringify({id:interrupted,status:'running',name:'Interrupted',createdAt:new Date().toISOString()}));
- worker=await createAssetWorker({root,token,command:bad});assert.match((await waitFor(interrupted,'failed')).error,/interrupted/);
- console.log('PASS: validation, authorization, duplicate submissions, Astra command, completion, asset downloads, traversal protection, restart persistence, failed and interrupted jobs.');
+  assert.deepEqual(await(await api.GET()).json(),{configured:false,model:MODEL},'Health reports a missing worker');
+  assert.equal((await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{Origin:'http://other-site','Content-Type':'application/json'},body:'{}'}))).status,403,'Cross-origin uploads are rejected');
+  assert.equal((await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{'Content-Type':'multipart/form-data'},body:'x'}))).status,415,'Multipart is no longer proxied');
+  delete process.env.NEXT_PUBLIC_CONVEX_URL;delete process.env.CONVEX_URL;delete process.env.VITE_CONVEX_URL;
+  assert.equal((await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer x'},body:'{}'}))).status,503,'Missing Convex is reported');
+  process.env.CONVEX_URL='http://127.0.0.1:1';
+  assert.equal((await api.POST(new Request('http://app/api/imports',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'}))).status,401,'Sign-in is required');
+ }finally{
+  for(const [name,value] of [['ASSET_WORKER_URL',prior.url],['ASSET_WORKER_TOKEN',prior.token],['NEXT_PUBLIC_CONVEX_URL',prior.convex[0]],['CONVEX_URL',prior.convex[1]],['VITE_CONVEX_URL',prior.convex[2]]]){if(value===undefined)delete process.env[name];else process.env[name]=value;}
+  await vite.close();
+ }
+ console.log('PASS: authorization, ownership checks, idempotent adoption, two-pass generation, partial results, failure reporting, restart handling, and the enqueue-only web route.');
 }finally{await worker?.close();await rm(temporary,{recursive:true,force:true});}

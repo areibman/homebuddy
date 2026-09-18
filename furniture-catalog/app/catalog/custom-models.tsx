@@ -1,22 +1,28 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useMutation, useQuery } from 'convex/react';
-import { useConvexAuth } from '@convex-dev/auth/react';
+import { useAuthToken, useConvexAuth } from '@convex-dev/auth/react';
 import { api } from '../../convex/_generated/api';
-import type { Id } from '../../convex/_generated/dataModel';
 import { CUSTOM_FURNITURE_COST } from '../studio/content';
+import { deleteAssets, signedUrls, uploadAsset } from '../assets/client';
 
 export function CustomModels() {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const me = useQuery(api.account.me);
   const models = useQuery(api.furniture.list);
-  const uploadUrl = useMutation(api.furniture.generateUploadUrl);
+  const token = useAuthToken();
   const save = useMutation(api.furniture.save);
   const remove = useMutation(api.furniture.remove);
   const [error, setError] = useState('');
   const [pending, setPending] = useState(false);
+  const [downloads, setDownloads] = useState<Record<string, string>>({});
+  useEffect(() => {
+    if (!token || !models?.length) return;
+    const keys = models.flatMap((model) => [model.glbKey, model.previewKey].filter((key): key is string => Boolean(key)));
+    void signedUrls(token, keys).then(setDownloads).catch(() => undefined);
+  }, [token, models]);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -33,25 +39,20 @@ export function CustomModels() {
     setPending(true);
     setError('');
     try {
-      const url = await uploadUrl();
-      const uploaded = await fetch(url, { method: 'POST', headers: { 'Content-Type': glb.type || 'model/gltf-binary' }, body: glb });
-      if (!uploaded.ok) throw new Error('The model did not finish uploading.');
-      const { storageId } = await uploaded.json() as { storageId: Id<'_storage'> };
-      let previewStorageId: Id<'_storage'> | undefined;
+      if (!token) throw new Error('Sign in to upload a model.');
+      const uploaded = await uploadAsset(token, glb, 'glb');
       const preview = data.get('preview');
-      if (preview instanceof File && preview.size) {
-        const previewUrl = await uploadUrl();
-        const previewResponse = await fetch(previewUrl, { method: 'POST', headers: { 'Content-Type': preview.type }, body: preview });
-        if (previewResponse.ok) previewStorageId = (await previewResponse.json() as { storageId: Id<'_storage'> }).storageId;
-      }
+      const previewUpload = preview instanceof File && preview.size ? await uploadAsset(token, preview, 'preview') : undefined;
       await save({
         name: String(data.get('name') || ''),
         category: String(data.get('category') || 'Your models'),
         widthCm: Number(data.get('width')),
         depthCm: Number(data.get('depth')),
         heightCm: Number(data.get('height')),
-        glbStorageId: storageId,
-        previewStorageId,
+        glbKey: uploaded.key,
+        previewKey: previewUpload?.key,
+        glbSize: uploaded.size,
+        contentType: uploaded.contentType,
       });
       event.currentTarget.reset();
     } catch (err) {
@@ -92,9 +93,9 @@ export function CustomModels() {
                 <span>
                   <strong>{model.name}</strong>
                   <small>{model.category} · {Math.round(model.widthM * 100)} × {Math.round(model.depthM * 100)} cm · {model.creditsCharged} credits</small>
-                  {model.glbUrl && <a href={model.glbUrl}>Download GLB</a>}
+                  {(downloads[model.glbKey || ''] || model.glbUrl) && <a href={downloads[model.glbKey || ''] || model.glbUrl || undefined}>Download GLB</a>}
                 </span>
-                <button type="button" onClick={() => void remove({ id: model.id })}>Remove</button>
+                <button type="button" onClick={() => void remove({ id: model.id }).then((result) => { if (token) void deleteAssets(token, result.keys); })}>Remove</button>
               </article>
             ))}
           </div>

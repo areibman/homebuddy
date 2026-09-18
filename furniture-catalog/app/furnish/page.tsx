@@ -1,12 +1,16 @@
 'use client';
-import {useEffect,useMemo,useRef,useState} from 'react';
+import {Suspense,useEffect,useMemo,useRef,useState} from 'react';
+import {useQuery} from 'convex/react';
+import {api} from '../../convex/_generated/api';
+import type {Id} from '../../convex/_generated/dataModel';
 import {useAuthToken} from '@convex-dev/auth/react';
 import Link from 'next/link';
 import {useSearchParams} from 'next/navigation';
 import {ArrowLeft,ArrowRight,Check,Minus,Plus,Sparkles} from 'lucide-react';
-import catalog from '../catalog.json';
-import {homeDefinitions} from '../decorate/home-definitions';
-import {RoomEditor} from '../decorate/page';
+import {useCatalog} from '../catalog/use-catalog';
+import type {HomeDefinition} from '../decorate/home-definitions';
+import {fromInterior,materializeSample} from '../decorate/resolve-home';
+import {RoomEditor} from '../decorate/room-editor';
 import {homeWithArrangement,homeWithSavedSuggestions} from './arrangement';
 import {ArrangementStatus,isPending,type ArrangementJob as Job} from './arrangement-status';
 import {instances,MAX_PIECES,priceFor,selectionFromLayout,selectionTotal,usd,type Selection} from './selection';
@@ -18,8 +22,9 @@ async function call(body:unknown,token?:string|null):Promise<Job>{
  const response=await fetch('/api/placements',{method:'POST',headers:{'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)});
  const data=await response.json() as Job;if(!response.ok)throw new ArrangementError(data.error??'The arrangement request failed.',data.retryable);return data;
 }
-function FurnitureDemo({sample,record}:{sample:string;record:string}){
- const home=homeDefinitions[sample];
+type SavedLayout={id:string;layoutStatus:string|null;openaiResponseId:string|null;summary:string;selection:Selection;placements:{id:string;instanceId:string;x:number;z:number;r:number}[];unplaced:{instanceId:string;reason:string}[];attempt:number;issues:string[]}|null|undefined;
+function FurnitureDemo({sample,record,home,saved}:{sample:string;record:string;home:HomeDefinition;saved:SavedLayout}){
+ const catalog=useCatalog();
  const storage=`${STORAGE_PREFIX}-${sample}`;
  const token=useAuthToken();
  const presets=home.plan.layouts??[];
@@ -31,14 +36,14 @@ function FurnitureDemo({sample,record}:{sample:string;record:string}){
  const [editorHome,setEditorHome]=useState(savedHome);
  const requestBusy=useRef(false),total=selectionTotal(selection),busy=isPending(job);
  useEffect(()=>{
-  try{const saved=JSON.parse(localStorage.getItem(storage)??'null');if(saved&&Array.isArray(saved.selection)&&saved.selection.every((s:{id:string;quantity:number})=>catalog.some(i=>i.id===s.id)&&Number.isInteger(s.quantity)&&s.quantity>0&&s.quantity<=10)&&selectionTotal(saved.selection).count<=MAX_PIECES){setSelection(saved.selection);setPreset(saved.preset??'custom');setStarted(saved.started??0);if(saved.job?.token||['failed','cancelled','unconfirmed'].includes(saved.job?.status))setJob(saved.job);else if(saved.job?.status==='submitting')setJob({status:'unconfirmed',error:'The page reloaded before OpenAI acknowledged the request.'});}}
+  try{const saved=JSON.parse(localStorage.getItem(storage)??'null');if(saved&&Array.isArray(saved.selection)&&saved.selection.every((s:{id:string;quantity:number})=>catalog.some(i=>i.id===s.id)&&Number.isInteger(s.quantity)&&s.quantity>0&&s.quantity<=10)&&selectionTotal(saved.selection).count<=MAX_PIECES){setSelection(saved.selection);setPreset(saved.preset??'custom');}}
   catch{}setHydrated(true);
   fetch('/api/placements').then(r=>r.json() as Promise<{configured:boolean}>).then(data=>setConfigured(Boolean(data.configured))).catch(()=>setConfigured(null));
  },[]);
- useEffect(()=>{if(hydrated)try{localStorage.setItem(storage,JSON.stringify({selection,preset,job,started}));}catch{}},[selection,preset,job,started,hydrated,storage]);
+ useEffect(()=>{if(hydrated)try{localStorage.setItem(storage,JSON.stringify({selection,preset}));}catch{}},[selection,preset,hydrated,storage]);
  useEffect(()=>{if(!busy)return;const tick=()=>setElapsed(Math.floor((Date.now()-started)/1000));tick();const timer=setInterval(tick,1000);return()=>clearInterval(timer);},[busy,started]);
  useEffect(()=>{
-  if(cancelling||!job?.token||!['queued','in_progress','needs_revision'].includes(job.status))return;
+  if(cancelling||!job?.arrangementId||!['queued','in_progress','needs_revision'].includes(job.status))return;
   let disposed=false,timer:ReturnType<typeof setTimeout>;let failures=0;
   async function poll(){
    if(requestBusy.current){timer=setTimeout(poll,1000);return;}
@@ -46,14 +51,21 @@ function FurnitureDemo({sample,record}:{sample:string;record:string}){
    try{
     const revise=job!.status==='needs_revision';
     if(revise&&(job!.attempt??0)>=2){if(!disposed)setJob({...job!,status:'failed',error:'A few pieces still do not fit. Adjust your selection and try again.'});return;}
-    const next=await call({action:revise?'revise':'status',token:job!.token});
-    if(!disposed){setError('');setJob(next);if(['queued','in_progress'].includes(next.status)&&next.token===job!.token&&next.status===job!.status)timer=setTimeout(poll,3000);}
+    const next=await call({action:revise?'revise':'status',arrangementId:job!.arrangementId,homeId:sample,recordId:record},token);
+    if(!disposed){setError('');setJob(next);if(['queued','in_progress'].includes(next.status)&&next.arrangementId===job!.arrangementId&&next.status===job!.status)timer=setTimeout(poll,3000);}
    }catch(e){if(!disposed){if(e instanceof ArrangementError&&!e.retryable)setJob({...job!,status:'failed',error:e.message});else{setError('Connection interrupted. Reconnecting to your saved request…');timer=setTimeout(poll,Math.min(15000,3000*++failures));}}}
    finally{requestBusy.current=false;}
   }
   timer=setTimeout(poll,job.status==='needs_revision'?100:2500);
   return()=>{disposed=true;clearTimeout(timer);};
- },[job?.token,job?.status,job?.attempt,cancelling]);
+ },[job?.arrangementId,job?.status,job?.attempt,cancelling,sample,record,token]);
+ const resumed=useRef(false);
+ useEffect(()=>{
+  if(resumed.current||!saved?.openaiResponseId)return;
+  resumed.current=true;
+  setJob({arrangementId:saved.id,status:saved.layoutStatus||'queued',attempt:saved.attempt,issues:saved.issues,error:saved.layoutStatus==='failed'?saved.summary:undefined,result:saved.layoutStatus==='completed'?{summary:saved.summary,placements:saved.placements,unplaced:saved.unplaced}:undefined});
+  if(saved.selection.length)setSelection(saved.selection);
+ },[saved]);
  const arrangedHome=useMemo(()=>job?.result?homeWithArrangement(savedHome,job.result):savedHome,[job?.result]);
  const openResult=()=>{setEditorHome(arrangedHome);setInitialLayout(0);setExploring(true);};
  const openSaved=(index:number)=>{setEditorHome(arrangedHome);setInitialLayout(index+(job?.result?1:0));setExploring(true);};
@@ -70,8 +82,8 @@ function FurnitureDemo({sample,record}:{sample:string;record:string}){
   finally{requestBusy.current=false;}
  }
  async function cancel(){
-  if(!job?.token||cancelling)return;setCancelling(true);
-  try{setJob(await call({action:'cancel',token:job.token}));setError('');}
+  if(!job?.arrangementId||cancelling)return;setCancelling(true);
+  try{setJob(await call({action:'cancel',arrangementId:job.arrangementId,homeId:sample,recordId:record},token));setError('');}
   catch(e){setError(e instanceof Error?e.message:'Cancellation could not be confirmed.');}
   finally{setCancelling(false);}
  }
@@ -82,7 +94,7 @@ function FurnitureDemo({sample,record}:{sample:string;record:string}){
  return <main className="furnish-page">
   <nav className="furnish-nav"><Link href={`/homes/${record}`}><ArrowLeft size={16}/> Back to this home</Link></nav>
   <div className="furnish-body">
-   <section className="furnish-heading"><div><p className="furnish-eyebrow">{home.title} · {home.subtitle}</p><h1>Make yourself at home.</h1><p>Pick your furniture. We’ll find its place.</p></div><div className="furnish-property"><img src={home.listing.photos[0].src} alt={home.title}/><span><strong>{home.location??home.title}</strong><small>{home.beds} bedrooms · {home.sqft.toLocaleString()} sq ft</small></span></div></section>
+   <section className="furnish-heading"><div><p className="furnish-eyebrow">{home.title} · {home.subtitle}</p><h1>Make yourself at home.</h1><p>Pick your furniture. We’ll find its place.</p></div><div className="furnish-property">{home.listing.photos[0]&&<img src={home.listing.photos[0].src} alt={home.title}/>}<span><strong>{home.location??home.title}</strong><small>{home.beds} bedrooms · {home.sqft.toLocaleString()} sq ft</small></span></div></section>
    <ol className="furnish-steps" aria-label="Furnishing progress"><li className={!busy&&!result?'current':'done'}><span>{busy||result?<Check size={14}/>:1}</span>Choose furniture</li><li className={busy?'current':result?'done':''}><span>{result?<Check size={14}/>:2}</span>Arrange with Astra</li><li className={result?'current':''}><span>3</span>Explore your home</li></ol>
    {job&&<ArrangementStatus job={job} count={total.count} elapsed={elapsed} connectionError={error} cancelling={cancelling} onCancel={cancel} onRetry={arrange} onExplore={openResult}/>}
    <section className="saved-suggestions" aria-label="Saved suggestions"><div><h2>Ready-to-view suggestions</h2><p>Saved layouts. Open instantly and switch between them in 3D.</p></div><div className="saved-suggestion-options">{savedHome.plan.layouts!.map((layout,index)=><button key={layout.id} onClick={()=>openSaved(index)}><strong>{layout.name}</strong><span>{layout.id==='saved-astra-city'?'Saved Astra design':'Saved preset'} <ArrowRight size={14}/></span></button>)}</div></section>
@@ -105,11 +117,18 @@ function FurnitureDemo({sample,record}:{sample:string;record:string}){
   </div>
  </main>;
 }
-export default function Furnish(){
+function Furnish(){
  const query=useSearchParams();
  const sample=query.get('home')??'15';
  const record=query.get('record');
- if(!homeDefinitions[sample])return <main className="furnish-page" style={{padding:40}}><h1>That floor plan cannot be arranged in 3D.</h1><Link href="/homes">Back to your homes</Link></main>;
+ const interior=useQuery(api.interiors.get,{ref:sample});
+ const saved=useQuery(api.arrangements.latest,record?{homeId:record as Id<'homes'>}:'skip');
  if(!record)return <main className="furnish-page" style={{padding:40}}><h1>Start from one of your homes.</h1><p>Pick the apartment you want furnished, then arrange it.</p><Link href="/homes">Your homes</Link></main>;
- return <FurnitureDemo sample={sample} record={record}/>;
+ if(interior===undefined)return <main className="furnish-page" style={{padding:40}}><p>Loading this floor plan…</p></main>;
+ const home=interior?.status==='ready'&&interior.plan?fromInterior(interior):materializeSample(sample);
+ if(!home)return <main className="furnish-page" style={{padding:40}}><h1>That floor plan cannot be arranged in 3D.</h1><p>{interior?.status==='failed'?interior.error:'Its walkable interior is not ready yet.'}</p><Link href="/homes">Back to your homes</Link></main>;
+ return <FurnitureDemo key={home.id} sample={sample} record={record} home={home} saved={saved??null}/>;
+}
+export default function FurnishPage(){
+ return <Suspense fallback={<main className="furnish-page" style={{padding:40}}><p>Loading this floor plan…</p></main>}><Furnish /></Suspense>;
 }

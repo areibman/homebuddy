@@ -1,5 +1,6 @@
 import { Password } from "@convex-dev/auth/providers/Password";
 import { convexAuth } from "@convex-dev/auth/server";
+import type { MutationCtx } from "./_generated/server";
 import { WELCOME_CREDITS } from "./plans";
 
 export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
@@ -17,17 +18,18 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   callbacks: {
     async afterUserCreatedOrUpdated(ctx, { userId, existingUserId }) {
       if (existingUserId) return;
-      const existing = await ctx.db
+      const db = (ctx as MutationCtx).db;
+      const existing = await db
         .query("profiles")
         .withIndex("by_user", (q) => q.eq("userId", userId))
         .unique();
       if (existing) return;
-      await ctx.db.insert("profiles", {
+      await db.insert("profiles", {
         userId,
         plan: "studio",
         credits: WELCOME_CREDITS,
       });
-      await ctx.db.insert("creditLedger", {
+      await db.insert("creditLedger", {
         userId,
         delta: WELCOME_CREDITS,
         reason: "welcome",

@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {createSlab} from './slab.ts';
+import {createSlab} from './slab';
 export function createCeiling(footprint:number[][],height:number){
  const root=new T.Group();root.name='First-person ceiling';root.visible=false;
  const material=new T.MeshStandardMaterial({color:'#f4f3ee',roughness:.95});

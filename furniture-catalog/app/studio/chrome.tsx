@@ -1,6 +1,8 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useConvexAuth } from '@convex-dev/auth/react';
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
@@ -8,26 +10,54 @@ import { api } from '../../convex/_generated/api';
 export function SiteNav() {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const me = useQuery(api.account.me);
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
   return (
-    <header className="hb-nav">
+    <header className={open ? 'hb-nav is-open' : 'hb-nav'}>
       <div className="hb-bar">
-        <nav className="hb-links" aria-label="Homebuddy">
-          <Link href="/">Home</Link>
-          <a href="/#features">Features</a>
-          <Link href="/homes">Homes</Link>
-          <Link href="/catalog">Catalog</Link>
-          <Link href="/pricing">Plans</Link>
-        </nav>
-        <div className="hb-nav-end">
-          {isAuthenticated && me && <span className="hb-credits">{me.credits} credits</span>}
-          {!isLoading && isAuthenticated ? (
-            <Link className="hb-text-link" href="/account">Account</Link>
-          ) : (
-            <Link className="hb-text-link" href="/sign-in">Sign in</Link>
-          )}
-          <Link className="hb-button" href={isAuthenticated ? '/homes' : '/sign-in'}>
-            {isAuthenticated ? 'Your homes' : 'Upload a floor plan'}
-          </Link>
+        <Link className="hb-brand-compact" href="/" onClick={() => setOpen(false)}>Homebuddy</Link>
+        <button
+          type="button"
+          className="hb-menu"
+          aria-expanded={open}
+          aria-controls="site-menu"
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? 'Close' : 'Menu'}
+        </button>
+        <div id="site-menu" className="hb-menu-panel">
+          <nav className="hb-links" aria-label="Homebuddy">
+            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+            <a href="/#features" onClick={() => setOpen(false)}>Features</a>
+            <Link href="/homes" onClick={() => setOpen(false)}>Homes</Link>
+            <Link href="/catalog" onClick={() => setOpen(false)}>Catalog</Link>
+            <Link href="/pricing" onClick={() => setOpen(false)}>Plans</Link>
+          </nav>
+          <div className="hb-nav-end">
+            {isAuthenticated && me && <span className="hb-credits">{me.credits} credits</span>}
+            {!isLoading && isAuthenticated ? (
+              <Link className="hb-text-link" href="/account" onClick={() => setOpen(false)}>Account</Link>
+            ) : (
+              <Link className="hb-text-link" href="/sign-in" onClick={() => setOpen(false)}>Sign in</Link>
+            )}
+            <Link className="hb-button" href={isAuthenticated ? '/homes' : '/sign-in'} onClick={() => setOpen(false)}>
+              {isAuthenticated ? 'Your homes' : 'Upload a floor plan'}
+            </Link>
+          </div>
         </div>
       </div>
     </header>

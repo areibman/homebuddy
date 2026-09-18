@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {createIndoorLightField,type IndoorLightPlan,type LightBarrier} from './indoor-light-field.ts';
+import {createIndoorLightField,type IndoorLightPlan,type LightBarrier} from './indoor-light-field';
 
 type DoorLightSource={pivot:T.Group;width:number};
 export function createIndoorLighting(plan:IndoorLightPlan,doors:DoorLightSource[]){

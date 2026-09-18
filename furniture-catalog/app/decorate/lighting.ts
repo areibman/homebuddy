@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {lightingAt,lightingPresets,type LightingChoice,type LightingMode} from './lighting-presets.ts';
+import {lightingAt,lightingPresets,type LightingChoice,type LightingMode} from './lighting-presets';
 
 /** One fixed, house-sized shadow volume: orbiting the camera cannot move its texel grid. */
 export function configureSunShadow(sun:T.DirectionalLight,footprint:number[][],height:number,maxTextureSize:number){

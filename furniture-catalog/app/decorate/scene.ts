@@ -2,7 +2,7 @@ import * as T from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createCityBackdrop} from './city-backdrop';
-import {createSlab} from './slab';
+import {createFloorCap,createSlab} from './slab';
 import {createCeiling} from './ceiling';
 import {createRoomLighting} from './lighting';
 import {createIndoorLighting} from './indoor-lighting';
@@ -11,7 +11,7 @@ import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {loadListingMaterials} from './listing-materials';
 import {homeDefinitions,type HomeDefinition} from './home-definitions';
 import {buildArchitecture,type ArchitecturePlan} from './architecture';
-import items from '../catalog.json';
+import {cityPanorama as cityPanoramaUrl,seedCatalog,type CatalogItem} from '../catalog/items';
 import {createFurnitureCarry,removePlacedFurniture} from './furniture-carry';
 import {createFurnitureCollisions} from './furniture-collisions';
 import {CARRY_REACH,clampCarryReach,nearbyCarryPosition,createDragAnchor,dragCarryPosition} from './carry-position';
@@ -26,34 +26,44 @@ import {createFurnitureExplosion} from './furniture-explosion';
 import type {FurnitureHover} from './furniture-hover-label';
 import {createAssembly,createViewTransition} from './scene-motion';
 type Callbacks={hover?:(hover:FurnitureHover)=>void;furnitureExploded?:(expanded:boolean)=>void;furnitureVisible?:(visible:boolean)=>void;status:(s:string)=>void;count:(n:number)=>void;active:(s:string)=>void;playing:(v:boolean)=>void;hint:(hint:ObjectHint)=>void;motion:(phase:'assembly'|'camera'|'furniture'|null)=>void;inventory:()=>void;details:(id:string,placed:boolean)=>void;placement:(valid:boolean)=>void;door?:(hint:{index:number;label:string}|null)=>void};
-export async function mountRoom(host:HTMLDivElement,ui:Callbacks,home:HomeDefinition=homeDefinitions['13'],layoutIndex=0,lightingChoice:LightingChoice='auto'){
+export async function mountRoom(host:HTMLDivElement,ui:Callbacks,home:HomeDefinition=homeDefinitions['13'],layoutIndex=0,lightingChoice:LightingChoice='auto',catalogItems:CatalogItem[]=seedCatalog,options:{zoom?:number;azimuth?:number}={}){
+ const items=catalogItems;
  const plan=home.plan,placements=plan.layouts?.[layoutIndex]?.furniture??plan.furniture;
  const xs=plan.footprint.map(p=>p[0]),zs=plan.footprint.map(p=>p[1]),cx=(Math.min(...xs)+Math.max(...xs))/2,cz=(Math.min(...zs)+Math.max(...zs))/2,span=Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...zs)-Math.min(...zs)),viewSize=Math.max(7,span*.83);
  const spawn=plan.spawn??[5.7,7.1];
  const player=createPlayer(spawn[0],spawn[1]),cursorLook=createCursorLook();let playing=false,fallback=false,jumpQueued=false;let lockTimer:ReturnType<typeof setTimeout>|undefined;
  const scene=new T.Scene();scene.background=null;const cityBackdrop=createCityBackdrop();const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFShadowMap;renderer.shadowMap.autoUpdate=false;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1;renderer.outputColorSpace=T.SRGBColorSpace;renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('aria-label','3D apartment. WASD to move, arrow keys to look, E inventory, left-click move or place, Q or R to rotate 15 degrees, Shift Q or R for 90 degrees, right-click details, Delete or Backspace to remove furniture.');host.appendChild(renderer.domElement);
- const iso=new T.OrthographicCamera(-8,8,8,-8,.1,100);iso.position.set(cx+span*1.2,span*1.7,cz+span*1.6);const fps=new T.PerspectiveCamera(65,1,.05,80);fps.position.set(spawn[0],PLAYER.eye,spawn[1]);fps.rotation.order='YXZ';fps.rotation.y=plan.yaw??Math.PI/2;let camera:T.Camera=iso;const controls=new OrbitControls(iso,renderer.domElement);controls.target.set(cx,0,cz);controls.maxPolarAngle=Math.PI/2.5;controls.minZoom=.6;controls.maxZoom=3;controls.update();
+ const iso=new T.OrthographicCamera(-8,8,8,-8,.1,100);iso.zoom=T.MathUtils.clamp(options.zoom??1,.6,3);
+ // Overview camera: azimuth in degrees around the footprint centre; the default matches the editor's historical corner (+x,+z).
+ const azimuth=T.MathUtils.degToRad(options.azimuth??Math.atan2(1.2,1.6)*180/Math.PI);iso.position.set(cx+Math.sin(azimuth)*span*2,span*1.7,cz+Math.cos(azimuth)*span*2);const fps=new T.PerspectiveCamera(65,1,.05,80);fps.position.set(spawn[0],PLAYER.eye,spawn[1]);fps.rotation.order='YXZ';fps.rotation.y=plan.yaw??Math.PI/2;let camera:T.Camera=iso;const controls=new OrbitControls(iso,renderer.domElement);controls.target.set(cx,0,cz);controls.maxPolarAngle=Math.PI/2.5;controls.minZoom=.6;controls.maxZoom=3;controls.update();
 
  const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
  const viewTransition=createViewTransition(iso,fps,controls.target);let targetMode:'iso'|'fps'='iso';
  const environmentRoom=new RoomEnvironment(),pmrem=new T.PMREMGenerator(renderer);const environmentMap=pmrem.fromScene(environmentRoom,.04);scene.environment=environmentMap.texture;scene.environmentIntensity=.08;environmentRoom.dispose();pmrem.dispose();
  const blockers:T.Mesh[]=[];let mouseOverCanvas=false,aimWithKeys=false,lastHint='';
- const floors:T.Mesh[]=[],floorPieces:T.Group[]=[],fixed:T.Box3[]=[],furniture:T.Group[]=[];const templates=new Map<string,T.Group>();let current:T.Group|null=null,disposed=false,overlayOpen=false;
+ const fixed:T.Box3[]=[],furniture:T.Group[]=[];const templates=new Map<string,T.Group>();let current:T.Group|null=null,disposed=false,overlayOpen=false;
  const mat=(color:string)=>new T.MeshStandardMaterial({color,roughness:.85});
- function box(parent:T.Object3D,x:number,y:number,z:number,w:number,h:number,d:number,color:string){const m=new T.Mesh(new T.BoxGeometry(w,h,d),mat(color));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
  const ceiling=createCeiling(plan.interiorFootprint??plan.footprint,plan.height);scene.add(ceiling.root);ceiling.root.traverse(o=>{if(o instanceof T.Mesh)blockers.push(o);});
  let cityPanorama:T.Texture|null=null;
- const cityLoad=home.panorama===null?Promise.resolve():new T.TextureLoader().loadAsync(home.panorama??'/environments/san-francisco-city-panorama.png').then(texture=>{texture.mapping=T.EquirectangularReflectionMapping;texture.colorSpace=T.SRGBColorSpace;cityPanorama=texture;cityBackdrop.setTexture(texture);}).catch(()=>{});
+ const cityLoad=home.panorama===null?Promise.resolve():new T.TextureLoader().loadAsync(home.panorama??cityPanoramaUrl).then(texture=>{texture.mapping=T.EquirectangularReflectionMapping;texture.colorSpace=T.SRGBColorSpace;cityPanorama=texture;cityBackdrop.setTexture(texture);}).catch(()=>{});
+ const loader=new GLTFLoader();
+ const neededIds=new Set(placements.map(piece=>piece.id));
+ const loadModel=async(item:CatalogItem)=>{const gltf=await loader.loadAsync(item.files.glb);const model=gltf.scene;model.updateMatrixWorld(true);let bounds=new T.Box3().setFromObject(model);const size=bounds.getSize(new T.Vector3());model.scale.set(item.dimensions_m.width/size.x,item.dimensions_m.height/size.y,item.dimensions_m.depth/size.z);model.updateMatrixWorld(true);bounds=new T.Box3().setFromObject(model);const center=bounds.getCenter(new T.Vector3());model.position.sub(new T.Vector3(center.x,bounds.min.y,center.z));const group=new T.Group();group.add(model);group.userData.id=item.id;group.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=true;o.receiveShadow=true;}});templates.set(item.id,group);};
+ const neededLoads=Promise.allSettled(items.filter(item=>neededIds.has(item.id)).map(loadModel));
+ const restLoads=Promise.allSettled(items.filter(item=>!neededIds.has(item.id)).map(loadModel));
  const listingAssets=await loadListingMaterials(renderer.capabilities.getMaxAnisotropy(),home.listing);const listingMaterials=listingAssets.maps;
- const foundation=new T.Group();foundation.name='Continuous floor foundation';foundation.add(createSlab(plan.footprint,-.26,.255,mat('#bcb09d')));scene.add(foundation);floorPieces.push(foundation);
+ const floorPlan=new T.Group();floorPlan.name='Floor plan';scene.add(floorPlan);
+ floorPlan.add(createSlab(plan.footprint,-.26,.26,mat(plan.appearance?.floor??'#bcb09d')));
+ const finishRects=new Map<string,number[][]>();
  for(const [floorIndex,[x,z,w,d]] of plan.floors.entries()){
-  const panel=new T.Group();panel.name='Floor section';scene.add(panel);floorPieces.push(panel);
-  const floor=box(panel,x+w/2,-.125,z+d/2,w,.25,d,(plan.floorFinishes?.[floorIndex]==='tile'?plan.appearance?.tile:plan.appearance?.floor)??(x===3.8?'#c5d4cf':'#bcb09d'));floors.push(floor);
-  const finish=plan.floorFinishes?.[floorIndex]??(z===0?'carpet':x===3.8?'tile':'floor');const floorMap=listingMaterials[finish];
-  if(floorMap){const material=floor.material as T.MeshStandardMaterial;material.color.set('#ffffff');material.map=floorMap;material.roughness=finish==='carpet'?.95:finish==='tile'?.38:.72;
-   const position=floor.geometry.getAttribute('position'),uv=floor.geometry.getAttribute('uv');
-   for(let i=0;i<uv.count;i++)uv.setXY(i,(position.getX(i)+x+w/2)/.75,(position.getZ(i)+z+d/2)/.85);uv.needsUpdate=true;
-  }
+  const finish=plan.floorFinishes?.[floorIndex]??(z===0?'carpet':x===3.8?'tile':'floor');
+  finishRects.set(finish,[...(finishRects.get(finish)??[]),[x,z,w,d]]);
+ }
+ for(const [finish,rects] of finishRects){
+  const floor=createFloorCap(rects,0,mat((finish==='tile'?plan.appearance?.tile:plan.appearance?.floor)??(finish==='tile'?'#c5d4cf':'#bcb09d')));
+  const floorMap=listingMaterials[finish];
+  if(floorMap){const material=floor.material as T.MeshStandardMaterial;material.color.set('#ffffff');material.map=floorMap;material.roughness=finish==='carpet'?.95:finish==='tile'?.38:.72;}
+  floorPlan.add(floor);
  }
  const architecture=buildArchitecture(plan as ArchitecturePlan);scene.add(architecture.root);fixed.push(...architecture.colliders);architecture.cutaway(true);
  // Neutral paint avoids repeating the illumination already baked into listing photos.
@@ -65,8 +75,7 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks,home:HomeDefini
  function setLighting(next:LightingChoice){lighting.setMode(next,motionPreference.matches);renderer.shadowMap.needsUpdate=true;}
 
  architecture.root.traverse(o=>{if(o instanceof T.Mesh)blockers.push(o);});
- const loader=new GLTFLoader();
- const results=await Promise.allSettled(items.map(async item=>{const gltf=await loader.loadAsync(item.files.glb);const model=gltf.scene;model.updateMatrixWorld(true);let bounds=new T.Box3().setFromObject(model);const size=bounds.getSize(new T.Vector3());model.scale.set(item.dimensions_m.width/size.x,item.dimensions_m.height/size.y,item.dimensions_m.depth/size.z);model.updateMatrixWorld(true);bounds=new T.Box3().setFromObject(model);const center=bounds.getCenter(new T.Vector3());model.position.sub(new T.Vector3(center.x,bounds.min.y,center.z));const group=new T.Group();group.add(model);group.userData.id=item.id;group.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=true;o.receiveShadow=true;}});templates.set(item.id,group);}));
+ const results=(await Promise.all([neededLoads,restLoads])).flat();
  if(disposed)return {dispose(){}} as any;
  function select(g:T.Group|null){current=g;}
  function add(id:string,x:number,z:number,r:number){const template=templates.get(id);if(!template)return;const g=template.clone(true);g.position.set(x,.01,z);g.rotation.y=r;scene.add(g);furniture.push(g);ui.count(furniture.length);return g;}
@@ -79,7 +88,6 @@ export async function mountRoom(host:HTMLDivElement,ui:Callbacks,home:HomeDefini
  const furnitureCollisions=createFurnitureCollisions();
  let doorTarget:number|null=null,lastDoorHint='',overDoorAction=false;
  const assembly=createAssembly([
-  ...floorPieces.map(object=>({object,layer:'floor' as const})),
   ...architecture.root.children.map(object=>({object,layer:'structure' as const})),
   ...furniture.map(object=>({object,layer:'furniture' as const})),
  ],new T.Vector3(cx,0,cz),motionPreference.matches);

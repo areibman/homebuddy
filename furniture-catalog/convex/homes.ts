@@ -43,6 +43,7 @@ export const get = query({
     if (!home || home.userId !== userId) return null;
     const files = await ctx.db.query("homeFiles").withIndex("by_home", (q) => q.eq("homeId", homeId)).collect();
     const arrangements = await ctx.db.query("arrangements").withIndex("by_home", (q) => q.eq("homeId", homeId)).collect();
+    const interior = await ctx.db.query("interiors").withIndex("by_home", (q) => q.eq("homeId", homeId)).unique();
     return {
       id: home._id,
       name: home.name,
@@ -51,6 +52,9 @@ export const get = query({
       sampleId: home.sampleId ?? null,
       style: home.style ?? "Scandinavian",
       createdAt: home.createdAt,
+      walkable: interior?.status === "ready" || Boolean(home.sampleId),
+      interiorStatus: interior?.status ?? null,
+      interiorError: interior?.error ?? "",
       files: await Promise.all(files.sort((a, b) => b.createdAt - a.createdAt).map(async (file) => ({
         id: file._id,
         kind: file.kind,
@@ -58,7 +62,8 @@ export const get = query({
         contentType: file.contentType,
         size: file.size,
         createdAt: file.createdAt,
-        url: await ctx.storage.getUrl(file.storageId),
+        assetKey: file.assetKey ?? null,
+        url: file.assetKey || !file.storageId ? null : await ctx.storage.getUrl(file.storageId),
       }))),
       arrangements: arrangements.sort((a, b) => b.createdAt - a.createdAt).map((row) => ({
         id: row._id,
@@ -143,7 +148,7 @@ export const remove = mutation({
     if (!home || home.userId !== userId) throw new Error("That home is not on your account.");
     const files = await ctx.db.query("homeFiles").withIndex("by_home", (q) => q.eq("homeId", homeId)).collect();
     for (const file of files) {
-      await ctx.storage.delete(file.storageId);
+      if (file.storageId) await ctx.storage.delete(file.storageId);
       await ctx.db.delete(file._id);
     }
     const arrangements = await ctx.db.query("arrangements").withIndex("by_home", (q) => q.eq("homeId", homeId)).collect();
@@ -152,51 +157,39 @@ export const remove = mutation({
   },
 });
 
-export const generateUploadUrl = mutation({
-  args: {},
-  handler: async (ctx) => {
-    await requireUserId(ctx);
-    return await ctx.storage.generateUploadUrl();
-  },
-});
-
 export const saveFile = mutation({
   args: {
     homeId: v.id("homes"),
-    storageId: v.id("_storage"),
+    assetKey: v.string(),
     kind: v.union(v.literal("floor_plan"), v.literal("photo")),
     fileName: v.string(),
     contentType: v.string(),
+    size: v.number(),
   },
   handler: async (ctx, args) => {
     const userId = await requireUserId(ctx);
     const home = await ctx.db.get(args.homeId);
     if (!home || home.userId !== userId) throw new Error("That home is not on your account.");
+    if (!args.assetKey.startsWith(`homes/${userId}/`)) throw new Error("The file did not finish uploading.");
     const allowed = args.kind === "floor_plan" ? FLOOR_TYPES : PHOTO_TYPES;
     if (!allowed.has(args.contentType)) {
       throw new Error(args.kind === "floor_plan" ? "Floor plans need to be PNG, JPG, WebP, or PDF." : "Photos need to be PNG, JPG, or WebP.");
     }
-    const metadata = await ctx.storage.getMetadata(args.storageId);
-    if (!metadata) throw new Error("The file did not finish uploading.");
-    if (metadata.size > 20 * 1024 * 1024) {
-      await ctx.storage.delete(args.storageId);
-      throw new Error("Keep each file under 20 MB.");
-    }
+    if (args.size > 20 * 1024 * 1024) throw new Error("Keep each file under 20 MB.");
     const files = await ctx.db.query("homeFiles").withIndex("by_home", (q) => q.eq("homeId", args.homeId)).collect();
     const same = files.filter((file) => file.kind === args.kind);
     const limit = args.kind === "floor_plan" ? 8 : 24;
     if (same.length >= limit) {
-      await ctx.storage.delete(args.storageId);
       throw new Error(args.kind === "floor_plan" ? "This home already has 8 floor plans." : "This home already has 24 photos.");
     }
     return await ctx.db.insert("homeFiles", {
       homeId: args.homeId,
       userId,
       kind: args.kind,
-      storageId: args.storageId,
+      assetKey: args.assetKey,
       fileName: args.fileName.trim().slice(0, 180) || "upload",
       contentType: args.contentType,
-      size: metadata.size,
+      size: args.size,
       createdAt: Date.now(),
     });
   },
@@ -208,7 +201,8 @@ export const removeFile = mutation({
     const userId = await requireUserId(ctx);
     const file = await ctx.db.get(fileId);
     if (!file || file.userId !== userId) throw new Error("That file is not on your account.");
-    await ctx.storage.delete(file.storageId);
+    if (file.storageId) await ctx.storage.delete(file.storageId);
     await ctx.db.delete(file._id);
+    return { key: file.assetKey ?? null };
   },
 });

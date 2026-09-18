@@ -16,8 +16,8 @@ function intersects(a:Rect,b:Rect,slack=.015){
  }
  return true;
 }
-function footprint(p:PlacedItem):Rect{
- const d=catalog.find(i=>i.id===p.id)!.dimensions_m;
+function footprint(p:PlacedItem,source:{id:string;dimensions_m:{width:number;depth:number;height:number}}[]=catalog):Rect{
+ const d=source.find(i=>i.id===p.id)?.dimensions_m;if(!d)throw new Error('A placed piece is not in the catalog.');
  return {x:p.x,z:p.z,width:d.width,depth:d.depth,r:p.r};
 }
 export function fixedFootprints(plan:HomePlan):Rect[]{
@@ -59,7 +59,7 @@ function walkingIssues(plan:HomePlan,placed:{item:PlacedItem;rect:Rect}[]):strin
  for(let i=0;i<queue.length;i++){const index=queue[i],x=index%width,z=Math.floor(index/width);for(const [nx,nz] of [[x+1,z],[x-1,z],[x,z+1],[x,z-1]])if(free(nx,nz)){const next=nz*width+nx;states[next]=3;queue.push(next);}}
  return rooms.filter(room=>!queue.some(index=>Math.hypot(xmin+(index%width)*step-room.point[0],zmin+Math.floor(index/width)*step-room.point[1])<.5)).map(room=>`Keep a walking path from the entrance to ${room.name}, near (${room.point.join(', ')}).`);
 }
-export function validatePlacementResult(raw:unknown,selection:Selection,plan:HomePlan):{result:PlacementResult;issues:string[]}{
+export function validatePlacementResult(raw:unknown,selection:Selection,plan:HomePlan,source?:{id:string;dimensions_m:{width:number;depth:number;height:number}}[]):{result:PlacementResult;issues:string[]}{
  const value=raw as PlacementResult;
  if(!value||typeof value.summary!=='string'||value.summary.length>2000||!Array.isArray(value.placements)||!Array.isArray(value.unplaced))throw new Error('Astra returned an unreadable arrangement. Try again.');
  const expected=new Map(instances(selection).map(i=>[i.instanceId,i.id])),seen=new Set<string>(),issues:string[]=[];
@@ -67,7 +67,7 @@ export function validatePlacementResult(raw:unknown,selection:Selection,plan:Hom
  const inside=(x:number,z:number)=>plan.floors.some(([a,b,w,d])=>x>=a-.001&&x<=a+w+.001&&z>=b-.001&&z<=b+d+.001);
  for(const p of value.placements){
   if(!p||expected.get(p.instanceId)!==p.id||seen.has(p.instanceId)||![p.x,p.z,p.r].every(n=>typeof n==='number'&&Number.isFinite(n)&&Math.abs(n)<100))throw new Error('Astra returned an invalid furniture placement. Try again.');
-  seen.add(p.instanceId);const rect=footprint(p);
+  seen.add(p.instanceId);const rect=footprint(p,source);
   // Sample the whole footprint, not only corners: floor sections can be concave.
   const nx=Math.ceil(rect.width/.15),nz=Math.ceil(rect.depth/.15),c=Math.cos(p.r),s=Math.sin(p.r);let fits=true;
   for(let x=0;x<=nx&&fits;x++)for(let z=0;z<=nz;z++){const dx=(x/nx-.5)*rect.width,dz=(z/nz-.5)*rect.depth;if(!inside(p.x+c*dx+s*dz,p.z-s*dx+c*dz)){fits=false;break;}}

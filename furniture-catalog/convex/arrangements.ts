@@ -1,6 +1,6 @@
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { v } from "convex/values";
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 import type { MutationCtx } from "./_generated/server";
 import { applyCredits, profileFor, requireUserId } from "./credits";
@@ -71,6 +71,89 @@ export const complete = mutation({
       status: "completed",
       summary: args.summary.slice(0, 1200),
       pieces: args.pieces?.slice(0, 40),
+    });
+  },
+});
+
+export const get = query({
+  args: { arrangementId: v.id("arrangements") },
+  handler: async (ctx, { arrangementId }) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) return null;
+    const row = await ctx.db.get(arrangementId);
+    if (!row || row.userId !== userId) return null;
+    return {
+      id: row._id,
+      homeId: row.homeId,
+      layoutStatus: row.layoutStatus ?? null,
+      openaiResponseId: row.openaiResponseId ?? null,
+      summary: row.summary ?? "",
+      selection: row.selection ?? [],
+      placements: row.placements ?? [],
+      unplaced: row.unplaced ?? [],
+      attempt: row.attempt ?? 0,
+      issues: row.issues ?? [],
+    };
+  },
+});
+
+export const latest = query({
+  args: { homeId: v.id("homes") },
+  handler: async (ctx, { homeId }) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) return null;
+    const home = await ctx.db.get(homeId);
+    if (!home || home.userId !== userId) return null;
+    const rows = await ctx.db.query("arrangements").withIndex("by_home", (q) => q.eq("homeId", homeId)).collect();
+    const row = rows.filter((item) => item.openaiResponseId || item.layoutStatus).sort((a, b) => b.createdAt - a.createdAt)[0];
+    if (!row) return null;
+    return {
+      id: row._id,
+      status: row.status,
+      layoutStatus: row.layoutStatus ?? null,
+      openaiResponseId: row.openaiResponseId ?? null,
+      summary: row.summary ?? "",
+      selection: row.selection ?? [],
+      placements: row.placements ?? [],
+      unplaced: row.unplaced ?? [],
+      attempt: row.attempt ?? 0,
+      issues: row.issues ?? [],
+      createdAt: row.createdAt,
+    };
+  },
+});
+
+export const saveLayout = mutation({
+  args: {
+    arrangementId: v.id("arrangements"),
+    openaiResponseId: v.optional(v.string()),
+    layoutStatus: v.string(),
+    selection: v.optional(v.array(v.object({ id: v.string(), quantity: v.number() }))),
+    placements: v.optional(v.array(v.object({
+      id: v.string(),
+      instanceId: v.string(),
+      x: v.number(),
+      z: v.number(),
+      r: v.number(),
+    }))),
+    unplaced: v.optional(v.array(v.object({ instanceId: v.string(), reason: v.string() }))),
+    summary: v.optional(v.string()),
+    attempt: v.optional(v.number()),
+    issues: v.optional(v.array(v.string())),
+  },
+  handler: async (ctx, args) => {
+    const userId = await requireUserId(ctx);
+    const row = await ctx.db.get(args.arrangementId);
+    if (!row || row.userId !== userId) throw new Error("That arrangement is not on your account.");
+    await ctx.db.patch(row._id, {
+      openaiResponseId: args.openaiResponseId ?? row.openaiResponseId,
+      layoutStatus: args.layoutStatus.slice(0, 40),
+      selection: args.selection?.slice(0, 40) ?? row.selection,
+      placements: args.placements?.slice(0, 80),
+      unplaced: args.unplaced?.slice(0, 40),
+      summary: args.summary?.slice(0, 1200) ?? row.summary,
+      attempt: args.attempt,
+      issues: args.issues?.slice(0, 40),
     });
   },
 });

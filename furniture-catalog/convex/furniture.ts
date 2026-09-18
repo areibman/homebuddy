@@ -19,17 +19,11 @@ export const list = query({
       heightM: row.heightM,
       creditsCharged: row.creditsCharged,
       createdAt: row.createdAt,
-      glbUrl: await ctx.storage.getUrl(row.glbStorageId),
-      previewUrl: row.previewStorageId ? await ctx.storage.getUrl(row.previewStorageId) : null,
+      glbKey: row.glbKey ?? null,
+      previewKey: row.previewKey ?? null,
+      glbUrl: row.glbKey ? null : row.glbStorageId ? await ctx.storage.getUrl(row.glbStorageId) : null,
+      previewUrl: row.previewKey ? null : row.previewStorageId ? await ctx.storage.getUrl(row.previewStorageId) : null,
     })));
-  },
-});
-
-export const generateUploadUrl = mutation({
-  args: {},
-  handler: async (ctx) => {
-    await requireUserId(ctx);
-    return await ctx.storage.generateUploadUrl();
   },
 });
 
@@ -40,8 +34,10 @@ export const save = mutation({
     widthCm: v.number(),
     depthCm: v.number(),
     heightCm: v.number(),
-    glbStorageId: v.id("_storage"),
-    previewStorageId: v.optional(v.id("_storage")),
+    glbKey: v.string(),
+    previewKey: v.optional(v.string()),
+    glbSize: v.number(),
+    contentType: v.string(),
   },
   handler: async (ctx, args) => {
     const userId = await requireUserId(ctx);
@@ -51,23 +47,13 @@ export const save = mutation({
     if (![args.widthCm, args.depthCm, args.heightCm].every((n) => n >= 5 && n <= 500)) {
       throw new Error("Enter width, depth, and height in centimeters, between 5 and 500.");
     }
-    const glb = await ctx.storage.getMetadata(args.glbStorageId);
-    if (!glb) throw new Error("The model did not finish uploading.");
-    if (glb.size > 30 * 1024 * 1024) {
-      await ctx.storage.delete(args.glbStorageId);
-      throw new Error("Keep the model under 30 MB.");
+    const prefix = `homes/${userId}/`;
+    if (!args.glbKey.startsWith(prefix) || (args.previewKey && !args.previewKey.startsWith(prefix))) {
+      throw new Error("The model did not finish uploading.");
     }
-    const contentType = glb.contentType ?? "";
-    if (contentType.startsWith("image/") || contentType === "application/pdf" || contentType.startsWith("video/")) {
-      await ctx.storage.delete(args.glbStorageId);
+    if (args.glbSize > 30 * 1024 * 1024) throw new Error("Keep the model under 30 MB.");
+    if (args.contentType.startsWith("image/") || args.contentType === "application/pdf" || args.contentType.startsWith("video/")) {
       throw new Error("Upload a GLB model, not a photo or PDF.");
-    }
-    if (args.previewStorageId) {
-      const preview = await ctx.storage.getMetadata(args.previewStorageId);
-      if (!preview || preview.size > 8 * 1024 * 1024) {
-        await ctx.storage.delete(args.previewStorageId);
-        throw new Error("The preview image needs to be under 8 MB.");
-      }
     }
     const id = await ctx.db.insert("customFurniture", {
       userId,
@@ -76,8 +62,8 @@ export const save = mutation({
       widthM: args.widthCm / 100,
       depthM: args.depthCm / 100,
       heightM: args.heightCm / 100,
-      glbStorageId: args.glbStorageId,
-      previewStorageId: args.previewStorageId,
+      glbKey: args.glbKey,
+      previewKey: args.previewKey,
       creditsCharged: CUSTOM_FURNITURE_COST,
       createdAt: Date.now(),
     });
@@ -92,8 +78,9 @@ export const remove = mutation({
     const userId = await requireUserId(ctx);
     const row = await ctx.db.get(id);
     if (!row || row.userId !== userId) throw new Error("That model is not on your account.");
-    await ctx.storage.delete(row.glbStorageId);
+    if (row.glbStorageId) await ctx.storage.delete(row.glbStorageId);
     if (row.previewStorageId) await ctx.storage.delete(row.previewStorageId);
     await ctx.db.delete(row._id);
+    return { keys: [row.glbKey, row.previewKey].filter((key): key is string => Boolean(key)) };
   },
 });

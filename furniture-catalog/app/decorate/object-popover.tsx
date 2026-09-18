@@ -2,7 +2,7 @@
 import {useRef} from 'react';
 import {Keycap,MouseGlyph} from './input-glyph';
 import type {ObjectHint} from './look-input';
-import items from '../catalog.json';
+import {useCatalog} from '../catalog/use-catalog';
 import {Trash2} from 'lucide-react';
 function RotationButton({direction,rotate,quarterTurn=false}:{direction:'q'|'r';rotate:(direction:'q'|'r',quarterTurn?:boolean)=>void;quarterTurn?:boolean}){
  return <button aria-label={'Rotate '+(direction==='q'?'left':'right')+(quarterTurn?' 90 degrees':' 15 degrees')} aria-keyshortcuts={(quarterTurn?'Shift+':'')+direction.toUpperCase()} title={quarterTurn?'Snap to next 90° angle · Shift+R':'Rotate 15° · Shift for 90°'}
@@ -11,7 +11,7 @@ function RotationButton({direction,rotate,quarterTurn=false}:{direction:'q'|'r';
  onClick={e=>rotate(direction,quarterTurn||e.shiftKey)}>{quarterTurn?<Keycap>90°</Keycap>:<><Keycap>{direction.toUpperCase()}</Keycap><span>{direction==='q'?'↶':'↷'}</span></>}</button>;
 }
 export function PlacementPopover({id,hint,valid,place,rotate,details,remove,cancel}:{id:string;hint:ObjectHint;valid:boolean;place:()=>void;rotate:(direction:'q'|'r',quarterTurn?:boolean)=>void;details:()=>void;remove:()=>void;cancel:()=>void}){
- const item=items.find(item=>item.id===id);
+ const item=useCatalog().find(item=>item.id===id);
  // Keep actions reachable while the carried object follows the cursor.
  const anchor=useRef<ObjectHint>(null);
  if(!anchor.current&&hint)anchor.current=hint;

@@ -9,3 +9,30 @@
 .recreation-pane{background:#fff}.model-stage{background:#fff}.reference-image .catalog-photo{padding:12px}.model-caption{background:#fff}
 /* Compare both products inside equal square image canvases, even when the details panel is taller. */
 .viewer-panes.split .model-stage model-viewer{height:auto!important;min-height:0!important;max-height:100%;width:100%!important;aspect-ratio:1}
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:clip}
+.label-narrow,.hint-coarse{display:none}
+@media(pointer:coarse){.hint-fine{display:none}.hint-coarse{display:inline}}
+.catalog-page>header{gap:8px}
+.catalog-page>header .collection-download{white-space:nowrap;min-height:44px}
+@media(max-width:760px){
+  .catalog-page>header{height:auto;flex-wrap:wrap;align-items:center;padding:10px 16px calc(10px + env(safe-area-inset-top));gap:8px}
+  .catalog-page>header .collection-download{flex:0 1 auto;padding:0 12px}
+  .catalog-page .label-wide{display:none}
+  .catalog-page .label-narrow{display:inline}
+  .catalog-page .intro{align-items:flex-start;gap:8px;padding:22px 16px 18px}
+  .catalog-page .workspace,.catalog-page .browse{margin-inline:16px}
+  .catalog-page .viewer-toolbar{padding:12px}
+  .catalog-page .view-switch{width:100%}
+  .catalog-page .view-switch button{flex:1;justify-content:center;min-height:44px;white-space:nowrap;padding-inline:8px}
+  .catalog-page .compare-workspace .primary,.catalog-page .compare-workspace .secondary{max-width:none}
+  .catalog-page footer{padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+  .catalog-page .dimensions dd{font-size:18px}
+  .catalog-page h1{font-size:clamp(1.85rem,9vw,2.2rem)}
+  .hb input,.hb textarea,.hb select{font-size:16px}
+}
+@media(max-width:420px){
+  .catalog-page .object-grid{gap:8px}
+  .catalog-page .card-copy{padding:10px 8px 12px}
+}

@@ -1,25 +1,25 @@
-import catalog from '../../catalog.json';
-import { homeDefinitions } from '../../decorate/home-definitions';
+import { seedCatalog } from '../../../catalog/items';
+import { homeDefinitions } from '../../../decorate/home-definitions';
+import { assertSameOrigin, bearerToken, convexFor, errorResponse, HttpError, json } from '@/lib/server/convex';
 
 const MODEL = 'gpt-6-astra';
-const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
 
 type Piece = { id: string; quantity: number; reason: string };
 
-export async function POST(request: Request) {
-  if (request.headers.get('Origin') && request.headers.get('Origin') !== new URL(request.url).origin) {
-    return json({ error: 'Start the arrangement from Homebuddy.' }, 403);
-  }
-  const token = request.headers.get('Authorization')?.replace(/^Bearer\s+/i, '');
-  if (!token) return json({ error: 'Sign in to spend credits on an arrangement.' }, 401);
-  if (!process.env.OPENAI_API_KEY) return json({ error: 'Arranging is not connected yet. Add OPENAI_API_KEY on the server.' }, 503);
-  const convexUrl = process.env.CONVEX_URL || process.env.VITE_CONVEX_URL;
-  if (!convexUrl) return json({ error: 'Accounts are not connected.' }, 503);
+export const maxDuration = 60;
 
-  const { ConvexHttpClient } = await import('convex/browser');
-  const { api } = await import('../../../convex/_generated/api');
-  const client = new ConvexHttpClient(convexUrl);
-  client.setAuth(token);
+/** Astra picks catalog pieces for a home that has no walkable plan yet. Placement lives in /api/placements. */
+export async function POST(request: Request) {
+  let handle: Awaited<ReturnType<typeof convexFor>>;
+  try {
+    assertSameOrigin(request, 'Start the arrangement from Homebuddy.');
+    if (!bearerToken(request)) throw new HttpError('Sign in to spend credits on an arrangement.', 401);
+    if (!process.env.OPENAI_API_KEY) throw new HttpError('Arranging is not connected yet. Add OPENAI_API_KEY on the server.', 503);
+    handle = await convexFor(bearerToken(request));
+  } catch (error) {
+    return errorResponse(error);
+  }
+  const { client, api } = handle;
 
   let arrangementId: string | null = null;
   try {
@@ -32,9 +32,11 @@ export async function POST(request: Request) {
       prompt: body.prompt,
     });
     await client.mutation(api.arrangements.markRunning, { arrangementId: arrangementId as never });
-    const pieces = await ask(style, body.prompt ?? '');
+    const live = await client.query(api.catalog.list, {}).catch(() => []);
+    const catalog = live.length ? live : seedCatalog;
+    const pieces = await ask(style, body.prompt ?? '', catalog);
     const summary = pieces.length
-      ? `A ${style.toLowerCase()} list from the catalog: ${pieces.map((piece) => `${piece.quantity} × ${nameFor(piece.id)}`).join(', ')}.`
+      ? `A ${style.toLowerCase()} list from the catalog: ${pieces.map((piece) => `${piece.quantity} × ${nameFor(piece.id, catalog)}`).join(', ')}.`
       : 'Nothing in the catalog fit this request. Credits were used because the request was accepted.';
     await client.mutation(api.arrangements.complete, {
       arrangementId: arrangementId as never,
@@ -53,11 +55,11 @@ export async function POST(request: Request) {
   }
 }
 
-function nameFor(id: string) {
+function nameFor(id: string, catalog = seedCatalog) {
   return catalog.find((item) => item.id === id)?.name.split(/ — |, /)[0] ?? id;
 }
 
-async function ask(style: string, prompt: string): Promise<Piece[]> {
+async function ask(style: string, prompt: string, catalog = seedCatalog): Promise<Piece[]> {
   const catalogBrief = catalog.map((item) => ({
     id: item.id,
     name: item.name,

@@ -1,6 +1,7 @@
 'use client';
 import {useState} from 'react';
 import {ChevronLeft,ChevronRight,ArrowUpRight} from 'lucide-react';
+import {sampleAssetUrl} from '../../server/catalog-paths.mjs';
 import {homeDefinitions,type HomeDefinition} from './home-definitions';
 
 
@@ -8,7 +9,7 @@ import {homeDefinitions,type HomeDefinition} from './home-definitions';
 export function ListingPhotos({home=homeDefinitions['13'],layoutIndex=0}:{home?:HomeDefinition;layoutIndex?:number}){
  const listing=home.listing,media=[{src:home.floorPlan,alt:home.title+' '+home.subtitle+' · Original floor plan'},...listing.photos];
  const layout=home.plan.layouts?.[layoutIndex]?.id;
- const download=home.id==='15'?(!layout||['gather','retreat'].includes(layout)?'/plans/bush-4101-'+(layout??'gather')+'.blend':null):(layout&&home.layoutDownloads?.[layout])||home.download;
+ const download=(layout&&home.layoutDownloads?.[layout])||(home.id==='15'&&(!layout||['gather','retreat'].includes(layout))?sampleAssetUrl('/plans/bush-4101-'+(layout??'gather')+'.blend'):home.download);
  const [index,setIndex]=useState(0),[failed,setFailed]=useState(false);
  const photo=media[index];
  const select=(next:number)=>{setIndex((next+media.length)%media.length);setFailed(false);};

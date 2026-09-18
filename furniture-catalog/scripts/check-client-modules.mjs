@@ -6,7 +6,7 @@ import ts from 'typescript';
 const base = process.env.HOMEBUDDY_URL || 'http://localhost:3000';
 const queue = [
   '/@id/__x00__virtual:vite-rsc/entry-browser',
-  '/app/city/explorer.tsx',
+  '/app/page.tsx',
   '/app/decorate/page.tsx',
   '/app/furnish/page.tsx',
   '/app/catalog/page.tsx',

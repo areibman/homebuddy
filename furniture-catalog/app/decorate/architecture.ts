@@ -1,6 +1,6 @@
 import * as T from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
-import {createHingedDoor} from './hinged-door.ts';
+import {createHingedDoor} from './hinged-door';
 
 export type Fixture = {type:'closet-interior'|'microwave'|'shelving'|'closet'|'walk-in-closet'|'laundry'|'toilet'|'vanity'|'bathtub'|'shower'|'stove'|'dishwasher'|'sink'|'cabinet'|'refrigerator';x:number;z:number;width:number;depth:number;height:number;rotation?:number;upper?:boolean;cooktop?:string;island?:boolean;y?:number;freezer?:string};
 export type Opening = {wall:number;start:number;width:number;sill:number;height:number};

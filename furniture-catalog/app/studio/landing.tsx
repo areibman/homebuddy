@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { SiteFooter, SiteNav } from './chrome';
 import { PlanCards } from './plan-cards';
 import { FAQS, STYLES } from './content';
-import { SampleApartment } from './sample-apartment';
+import { HeroDemo } from './hero-demo';
 
 export function LandingPage() {
   return (
@@ -30,9 +30,7 @@ export function LandingPage() {
               <li><strong>Your plan</strong><span>not a map of other homes</span></li>
             </ul>
           </div>
-          <div className="hb-demo">
-            <SampleApartment />
-          </div>
+          <HeroDemo />
         </section>
 
         <section className="hb-jobs" aria-label="Who this is for">

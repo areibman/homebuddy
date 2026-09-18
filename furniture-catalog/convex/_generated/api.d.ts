@@ -12,11 +12,16 @@ import type * as account from "../account.js";
 import type * as arrangements from "../arrangements.js";
 import type * as auth from "../auth.js";
 import type * as billing from "../billing.js";
+import type * as catalog from "../catalog.js";
 import type * as credits from "../credits.js";
 import type * as furniture from "../furniture.js";
 import type * as homes from "../homes.js";
 import type * as http from "../http.js";
+import type * as interiors from "../interiors.js";
+import type * as jobs from "../jobs.js";
+import type * as migrate from "../migrate.js";
 import type * as plans from "../plans.js";
+import type * as seed from "../seed.js";
 import type * as stripeNode from "../stripeNode.js";
 
 import type {
@@ -30,11 +35,16 @@ declare const fullApi: ApiFromModules<{
   arrangements: typeof arrangements;
   auth: typeof auth;
   billing: typeof billing;
+  catalog: typeof catalog;
   credits: typeof credits;
   furniture: typeof furniture;
   homes: typeof homes;
   http: typeof http;
+  interiors: typeof interiors;
+  jobs: typeof jobs;
+  migrate: typeof migrate;
   plans: typeof plans;
+  seed: typeof seed;
   stripeNode: typeof stripeNode;
 }>;
 
