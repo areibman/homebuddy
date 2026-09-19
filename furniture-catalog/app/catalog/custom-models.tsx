@@ -67,7 +67,7 @@ export function CustomModels() {
       <div className="hb-section-head">
         <p className="hb-kicker">Your models</p>
         <h2>Bring the chair you already own.</h2>
-        <p>Drop in a model and it sits beside the IKEA pieces, ready to place in the apartment you just walked through.</p>
+        <p>Drop in a model and it sits beside the catalog pieces, ready to place in the apartment you just walked through.</p>
       </div>
       {isLoading ? <p>Checking your account…</p> : !isAuthenticated ? <Link className="hb-button" href="/sign-in?next=/catalog">Sign in to upload a model</Link> : (
         <div className="hb-grid-2">

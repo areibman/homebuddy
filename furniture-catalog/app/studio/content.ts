@@ -12,7 +12,7 @@ export const PLANS = [
     priceYearly: 0,
     yearlyBilled: 0,
     blurb: "Walk a furnished apartment, then upload the floor plan of the one you actually have.",
-    points: ["One home", "IKEA furniture you can order", "Upload floor plans and photos", "Walk through in 3D"],
+    points: ["One home", "Furniture you can order", "Upload floor plans and photos", "Walk through in 3D"],
   },
   {
     id: "residence",
@@ -34,7 +34,7 @@ export const PLANS = [
     priceYearly: 39,
     yearlyBilled: 468,
     blurb: "For the weeks when you are furnishing more than one room at a time.",
-    points: ["Ten homes", "Arrange several rooms at once", "Your furniture next to IKEA", "A catalog you can actually buy"],
+    points: ["Ten homes", "Arrange several rooms at once", "Your furniture next to the catalog", "A catalog you can actually buy"],
     popular: true,
   },
   {
@@ -81,7 +81,7 @@ export const FAQS = [
   },
   {
     q: "What furniture can I use?",
-    a: "The catalog starts with IKEA pieces you can order. You can also add a model of a piece you already own, and place it in the same room.",
+    a: "The catalog starts with pieces you can order. Photograph a piece you already own, or add a model, and place it in the same room.",
   },
   {
     q: "How many homes can I have?",
@@ -89,7 +89,7 @@ export const FAQS = [
   },
   {
     q: "Can I upload my own furniture?",
-    a: "Yes. Drop in a model of a sofa, table, or lamp you already have. It stays on your account and sits next to the IKEA catalog, ready to place. Homebuddy is not affiliated with IKEA, and the included models are independent recreations.",
+    a: "Yes. Photograph a piece you already own and it becomes a model you can place in the room. You can also drop in a GLB if you already have one. It stays on your account, next to the catalog. Homebuddy is not affiliated with the retailers, and the included models are independent recreations.",
   },
   {
     q: "What happens to my photos?",

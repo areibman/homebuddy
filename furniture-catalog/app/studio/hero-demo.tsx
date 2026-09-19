@@ -17,7 +17,9 @@ const DEMO_ITEMS = seedCatalog.filter((item) => DEMO_NEEDED.has(item.id));
 const priceLabel = (id: string) => {
   const price = prices.find((entry) => entry.id === id);
   if (price) return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: price.amount % 1 === 0 ? 0 : 2 }).format(price.amount);
-  return DEMO_ITEMS.find((item) => item.id === id)?.source.retailer === 'Homebuddy' ? 'Original design' : 'See IKEA for price';
+  const item = DEMO_ITEMS.find((entry) => entry.id === id);
+  if (!item || item.source.retailer === 'Homebuddy' || item.source.retailer === 'Your uploads' || !item.source.url) return item?.source.retailer === 'Your uploads' ? 'Your upload' : 'Original design';
+  return `See ${item.source.retailer} for price`;
 };
 
 type SceneApi = { mode(next: string): void; changeLayout(index: number): boolean; toggleExplosion(): void; setOverlay(open: boolean): void; dispose(): void };

@@ -67,7 +67,7 @@ export function SiteNav() {
 export function SiteFooter() {
   return (
     <footer className="hb-footer">
-      <p>Walk a furnished apartment, then upload the floor plan of the one you actually have. Not affiliated with IKEA.</p>
+      <p>Walk a furnished apartment, then upload the floor plan of the one you actually have. Not affiliated with the retailers in the catalog.</p>
       <nav aria-label="Footer">
         <Link href="/pricing">Pricing</Link>
         <Link href="/catalog">Catalog</Link>

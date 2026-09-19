@@ -21,7 +21,7 @@ export const PLANS: Record<PlanId, {
     priceMonthly: 0,
     priceYearly: 0,
     yearlyBilled: 0,
-    blurb: "One home to start. The IKEA catalog is included. Welcome credits cover a first arrangement.",
+    blurb: "One home to start. The furniture catalog is included. Welcome credits cover a first arrangement.",
   },
   residence: {
     label: "Residence",
